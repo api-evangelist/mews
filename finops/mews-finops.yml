@@ -8,17 +8,17 @@ modified: '2026-05-08'
 reconciled: false
 tags:
 - Hospitality
-- PMS
 - Hotels
-- Cloud
-- API
+- PMS
+- Property Management
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Mews. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: FOCUS-aligned FinOps profile. Per-property/per-room SaaS plus optional Mews Payments processing
+  volume.
+notes: EUR/USD/GBP billing depending on region.
 sources:
-- https://www.mews.com/
+- https://www.mews.com/en/pricing
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,12 +29,12 @@ alignedWith:
 publisherName: Mews
 serviceCategory: Hospitality
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Hybrid
   billingFrequency: Monthly
-  billingCurrency: USD
+  billingCurrency: EUR
   chargeCategories:
-  - Usage
   - Purchase
+  - Usage
   - Adjustment
 focusColumns:
   ServiceName: Mews
@@ -45,13 +45,19 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: property_saas
+  description: Per-property monthly SaaS.
+  unit: property
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - property
+- name: mews_payments_volume
+  description: Mews Payments processing volume.
+  unit: EUR
+  aggregation: sum
+  dimensions:
+  - property
 principles:
 - name: Visibility
   description: Pull provider invoices or usage exports until a self-serve usage feed is documented.

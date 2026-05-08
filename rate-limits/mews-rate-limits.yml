@@ -8,25 +8,26 @@ modified: '2026-05-08'
 reconciled: false
 tags:
 - Hospitality
-- PMS
 - Hotels
-- Cloud
-- API
+- PMS
+- Property Management
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Mews. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: Mews Connector API uses request throttling on a per-token basis. Specific RPS limits vary;
+  HTTP 429 returned with retry guidance.
+notes: Use Portfolio Access Tokens for multi-property efficiency; honor 429.
 sources:
-- https://www.mews.com/
+- https://mews-systems.gitbook.io/connector-api/guidelines/throttling
+- https://docs.mews.com/connector-api
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: Connector API
+  scope: token
+  metric: requests
+  limit: documented per-token throttle; honor 429
+  notes: Use pagination and Portfolio Access Tokens to stay within limits.
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
