@@ -68,6 +68,57 @@ common:
   url: rate-limits/mews-rate-limits.yml
 - type: FinOps
   url: finops/mews-finops.yml
+- type: Integrations
+  url: https://www.mews.com/en/products/marketplace
+integrations:
+  - name: Frame 2147231403a.svg
+  - name: Flexible Financing with
+  - name: Leven
+  - name: Resource Center Nav Image
+  - name: unfold2026.png
+  - name: siteminder_logo
+  - name: Frame 2147231220
+  - name: Frame 2147231235
+  - name: Frame 2147231223
+  - name: Tripadvisor
+  - name: profitize
+  - name: BEONX
+  - name: Booking.com
+  - name: SiteMinder
+  - name: Expedia
+  - name: 1CHECK image
+  - name: 1Tick.co.za image
+  - name: 20Tabs image
+  - name: 24SevenOffice image
+  - name: 365id scanner image
+  - name: 4SUITES image
+  - name: 4WiFi image
+  - name: 7H NTAK Connector image
+  - name: Aara image
+  - name: Abacus image
+  - name: Abal Consulting image
+  - name: Abitari image
+  - name: Accommodation Data Programme image
+  - name: Accountview image
+  - name: Linkedin
+  - name: Facebook
+  - name: Youtube
+  - name: Instagram
+  - name: Best PMS 2026
+  - name: Best Place to work
+  - name: hoteliers-choice-award
+  - name: Best Restaurant Management Software Award 2025
+  - name: Best Place To Work Award 2025
+  - name: Hoteliers Choice Award 2025
+  - name: PMS Award 2024
+  - name: RMS Award 2025
+  - name: Great Place To Work Award 2025
+  - name: Worlds Independent Hotel Award
+  - name: AICPA SOC2
+  - name: ISO Certified
+  - name: PCI DSS
+  - name: Great place to work
+  - name: NF
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
