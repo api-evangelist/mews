@@ -1,7 +1,7 @@
 aid: mews
 url: https://raw.githubusercontent.com/api-evangelist/mews/refs/heads/main/apis.yml
 name: Mews
-x-type: company
+kind: company
 description: Mews is a cloud property management system (PMS) for hotels, hostels, and apartments. Mews
   exposes a comprehensive Connector API, a Distributor API for booking, and a Channel Manager API. The
   Connector API publishes a full OpenAPI 3.0.4 spec covering operations, events, and webhooks for partners.
