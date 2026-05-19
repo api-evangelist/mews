@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Source assignments
+  description: 'Connector API — Source assignments. 2 operations. Lead operation: Get all source assignments. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Source assignments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-source-assignments
+    baseUri: https://api.mews.com
+    description: Connector API — Source assignments business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-sourceAssignments-getAll
+      path: /api/connector/v1/sourceAssignments/getAll
+      operations:
+      - name: sourceassignmentsgetall
+        method: POST
+        description: Get all source assignments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-sourceAssignments-getAll-2024-09-20
+      path: /api/connector/v1/sourceAssignments/getAll/2024-09-20
+      operations:
+      - name: sourceassignmentsgetall20240920
+        method: POST
+        description: Get all source assignments (ver 2024-09-20)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-source-assignments-rest
+    port: 8080
+    description: REST adapter for Connector API — Source assignments. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/sourceassignments/getall
+      name: api-connector-v1-sourceassignments-getall
+      description: REST surface for api-connector-v1-sourceAssignments-getAll.
+      operations:
+      - method: POST
+        name: sourceassignmentsgetall
+        description: Get all source assignments
+        call: connector-source-assignments.sourceassignmentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/sourceassignments/getall/2024-09-20
+      name: api-connector-v1-sourceassignments-getall-2024-09-20
+      description: REST surface for api-connector-v1-sourceAssignments-getAll-2024-09-20.
+      operations:
+      - method: POST
+        name: sourceassignmentsgetall20240920
+        description: Get all source assignments (ver 2024-09-20)
+        call: connector-source-assignments.sourceassignmentsgetall20240920
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-source-assignments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Source assignments. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-source-assignments
+      description: Get all source assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-source-assignments.sourceassignmentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-source-assignments-ver
+      description: Get all source assignments (ver 2024-09-20)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-source-assignments.sourceassignmentsgetall20240920
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

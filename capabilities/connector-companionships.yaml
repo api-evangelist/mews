@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Companionships
+  description: 'Connector API — Companionships. 1 operations. Lead operation: Get all companionships. Self-contained Naftiko
+    capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Companionships
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-companionships
+    baseUri: https://api.mews.com
+    description: Connector API — Companionships business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-companionships-getAll
+      path: /api/connector/v1/companionships/getAll
+      operations:
+      - name: companionshipsgetall
+        method: POST
+        description: Get all companionships
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-companionships-rest
+    port: 8080
+    description: REST adapter for Connector API — Companionships. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/companionships/getall
+      name: api-connector-v1-companionships-getall
+      description: REST surface for api-connector-v1-companionships-getAll.
+      operations:
+      - method: POST
+        name: companionshipsgetall
+        description: Get all companionships
+        call: connector-companionships.companionshipsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-companionships-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Companionships. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-all-companionships
+      description: Get all companionships
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-companionships.companionshipsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

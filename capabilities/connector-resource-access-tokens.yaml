@@ -1,0 +1,203 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Resource access tokens
+  description: 'Connector API — Resource access tokens. 4 operations. Lead operation: Add resource access tokens. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Resource access tokens
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-resource-access-tokens
+    baseUri: https://api.mews.com
+    description: Connector API — Resource access tokens business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-resourceAccessTokens-add
+      path: /api/connector/v1/resourceAccessTokens/add
+      operations:
+      - name: resourceaccesstokensadd
+        method: POST
+        description: Add resource access tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-resourceAccessTokens-delete
+      path: /api/connector/v1/resourceAccessTokens/delete
+      operations:
+      - name: resourceaccesstokensdelete
+        method: POST
+        description: Delete resource access tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-resourceAccessTokens-getAll
+      path: /api/connector/v1/resourceAccessTokens/getAll
+      operations:
+      - name: resourceaccesstokensgetall
+        method: POST
+        description: Get all resource access tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-resourceAccessTokens-update
+      path: /api/connector/v1/resourceAccessTokens/update
+      operations:
+      - name: resourceaccesstokensupdate
+        method: POST
+        description: Update resource access tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-resource-access-tokens-rest
+    port: 8080
+    description: REST adapter for Connector API — Resource access tokens. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/resourceaccesstokens/add
+      name: api-connector-v1-resourceaccesstokens-add
+      description: REST surface for api-connector-v1-resourceAccessTokens-add.
+      operations:
+      - method: POST
+        name: resourceaccesstokensadd
+        description: Add resource access tokens
+        call: connector-resource-access-tokens.resourceaccesstokensadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/resourceaccesstokens/delete
+      name: api-connector-v1-resourceaccesstokens-delete
+      description: REST surface for api-connector-v1-resourceAccessTokens-delete.
+      operations:
+      - method: POST
+        name: resourceaccesstokensdelete
+        description: Delete resource access tokens
+        call: connector-resource-access-tokens.resourceaccesstokensdelete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/resourceaccesstokens/getall
+      name: api-connector-v1-resourceaccesstokens-getall
+      description: REST surface for api-connector-v1-resourceAccessTokens-getAll.
+      operations:
+      - method: POST
+        name: resourceaccesstokensgetall
+        description: Get all resource access tokens
+        call: connector-resource-access-tokens.resourceaccesstokensgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/resourceaccesstokens/update
+      name: api-connector-v1-resourceaccesstokens-update
+      description: REST surface for api-connector-v1-resourceAccessTokens-update.
+      operations:
+      - method: POST
+        name: resourceaccesstokensupdate
+        description: Update resource access tokens
+        call: connector-resource-access-tokens.resourceaccesstokensupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-resource-access-tokens-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Resource access tokens. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: add-resource-access-tokens
+      description: Add resource access tokens
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-resource-access-tokens.resourceaccesstokensadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-resource-access-tokens
+      description: Delete resource access tokens
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-resource-access-tokens.resourceaccesstokensdelete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-resource-access-tokens
+      description: Get all resource access tokens
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-resource-access-tokens.resourceaccesstokensgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-resource-access-tokens
+      description: Update resource access tokens
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-resource-access-tokens.resourceaccesstokensupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

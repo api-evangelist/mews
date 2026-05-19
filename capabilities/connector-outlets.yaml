@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Outlets
+  description: 'Connector API — Outlets. 1 operations. Lead operation: Get all outlets. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Outlets
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-outlets
+    baseUri: https://api.mews.com
+    description: Connector API — Outlets business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-outlets-getAll
+      path: /api/connector/v1/outlets/getAll
+      operations:
+      - name: outletsgetall
+        method: POST
+        description: Get all outlets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-outlets-rest
+    port: 8080
+    description: REST adapter for Connector API — Outlets. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/outlets/getall
+      name: api-connector-v1-outlets-getall
+      description: REST surface for api-connector-v1-outlets-getAll.
+      operations:
+      - method: POST
+        name: outletsgetall
+        description: Get all outlets
+        call: connector-outlets.outletsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-outlets-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Outlets. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-all-outlets
+      description: Get all outlets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-outlets.outletsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,161 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Resource categories
+  description: 'Connector API — Resource categories. 3 operations. Lead operation: Get all resource categories. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Resource categories
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-resource-categories
+    baseUri: https://api.mews.com
+    description: Connector API — Resource categories business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-resourceCategories-getAll
+      path: /api/connector/v1/resourceCategories/getAll
+      operations:
+      - name: resourcecategoriesgetall
+        method: POST
+        description: Get all resource categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-resourceCategoryAssignments-getAll
+      path: /api/connector/v1/resourceCategoryAssignments/getAll
+      operations:
+      - name: resourcecategoryassignmentsgetall
+        method: POST
+        description: Get all resource category assignments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-resourceCategoryImageAssignments-getAll
+      path: /api/connector/v1/resourceCategoryImageAssignments/getAll
+      operations:
+      - name: resourcecategoryimageassignmentsgetall
+        method: POST
+        description: Get all resource category image assignments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-resource-categories-rest
+    port: 8080
+    description: REST adapter for Connector API — Resource categories. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/resourcecategories/getall
+      name: api-connector-v1-resourcecategories-getall
+      description: REST surface for api-connector-v1-resourceCategories-getAll.
+      operations:
+      - method: POST
+        name: resourcecategoriesgetall
+        description: Get all resource categories
+        call: connector-resource-categories.resourcecategoriesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/resourcecategoryassignments/getall
+      name: api-connector-v1-resourcecategoryassignments-getall
+      description: REST surface for api-connector-v1-resourceCategoryAssignments-getAll.
+      operations:
+      - method: POST
+        name: resourcecategoryassignmentsgetall
+        description: Get all resource category assignments
+        call: connector-resource-categories.resourcecategoryassignmentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/resourcecategoryimageassignments/getall
+      name: api-connector-v1-resourcecategoryimageassignments-getall
+      description: REST surface for api-connector-v1-resourceCategoryImageAssignments-getAll.
+      operations:
+      - method: POST
+        name: resourcecategoryimageassignmentsgetall
+        description: Get all resource category image assignments
+        call: connector-resource-categories.resourcecategoryimageassignmentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-resource-categories-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Resource categories. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-resource-categories
+      description: Get all resource categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-resource-categories.resourcecategoriesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-resource-category-assignments
+      description: Get all resource category assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-resource-categories.resourcecategoryassignmentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-resource-category-image
+      description: Get all resource category image assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-resource-categories.resourcecategoryimageassignmentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

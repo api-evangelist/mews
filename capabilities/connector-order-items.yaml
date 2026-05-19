@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Order items
+  description: 'Connector API — Order items. 2 operations. Lead operation: Cancel order items. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Order items
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-order-items
+    baseUri: https://api.mews.com
+    description: Connector API — Order items business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-orderItems-cancel
+      path: /api/connector/v1/orderItems/cancel
+      operations:
+      - name: orderitemscancel
+        method: POST
+        description: Cancel order items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-orderItems-getAll
+      path: /api/connector/v1/orderItems/getAll
+      operations:
+      - name: orderitemsgetall
+        method: POST
+        description: Get all order items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-order-items-rest
+    port: 8080
+    description: REST adapter for Connector API — Order items. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/orderitems/cancel
+      name: api-connector-v1-orderitems-cancel
+      description: REST surface for api-connector-v1-orderItems-cancel.
+      operations:
+      - method: POST
+        name: orderitemscancel
+        description: Cancel order items
+        call: connector-order-items.orderitemscancel
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/orderitems/getall
+      name: api-connector-v1-orderitems-getall
+      description: REST surface for api-connector-v1-orderItems-getAll.
+      operations:
+      - method: POST
+        name: orderitemsgetall
+        description: Get all order items
+        call: connector-order-items.orderitemsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-order-items-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Order items. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: cancel-order-items
+      description: Cancel order items
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-order-items.orderitemscancel
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-order-items
+      description: Get all order items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-order-items.orderitemsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

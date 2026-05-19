@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Counters
+  description: 'Connector API — Counters. 1 operations. Lead operation: Get all counters. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Counters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-counters
+    baseUri: https://api.mews.com
+    description: Connector API — Counters business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-counters-getAll
+      path: /api/connector/v1/counters/getAll
+      operations:
+      - name: countersgetall
+        method: POST
+        description: Get all counters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-counters-rest
+    port: 8080
+    description: REST adapter for Connector API — Counters. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/counters/getall
+      name: api-connector-v1-counters-getall
+      description: REST surface for api-connector-v1-counters-getAll.
+      operations:
+      - method: POST
+        name: countersgetall
+        description: Get all counters
+        call: connector-counters.countersgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-counters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Counters. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-all-counters
+      description: Get all counters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-counters.countersgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

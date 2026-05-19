@@ -1,0 +1,203 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Products
+  description: 'Connector API — Products. 4 operations. Lead operation: Delete products. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Products
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-products
+    baseUri: https://api.mews.com
+    description: Connector API — Products business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-products-delete
+      path: /api/connector/v1/products/delete
+      operations:
+      - name: productsdelete
+        method: POST
+        description: Delete products
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-products-getAll
+      path: /api/connector/v1/products/getAll
+      operations:
+      - name: productsgetall
+        method: POST
+        description: Get all products
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-products-getPricing
+      path: /api/connector/v1/products/getPricing
+      operations:
+      - name: productsgetpricing
+        method: POST
+        description: Get product pricing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-products-updatePrice
+      path: /api/connector/v1/products/updatePrice
+      operations:
+      - name: productsupdateprice
+        method: POST
+        description: Update product pricing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-products-rest
+    port: 8080
+    description: REST adapter for Connector API — Products. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/products/delete
+      name: api-connector-v1-products-delete
+      description: REST surface for api-connector-v1-products-delete.
+      operations:
+      - method: POST
+        name: productsdelete
+        description: Delete products
+        call: connector-products.productsdelete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/products/getall
+      name: api-connector-v1-products-getall
+      description: REST surface for api-connector-v1-products-getAll.
+      operations:
+      - method: POST
+        name: productsgetall
+        description: Get all products
+        call: connector-products.productsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/products/getpricing
+      name: api-connector-v1-products-getpricing
+      description: REST surface for api-connector-v1-products-getPricing.
+      operations:
+      - method: POST
+        name: productsgetpricing
+        description: Get product pricing
+        call: connector-products.productsgetpricing
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/products/updateprice
+      name: api-connector-v1-products-updateprice
+      description: REST surface for api-connector-v1-products-updatePrice.
+      operations:
+      - method: POST
+        name: productsupdateprice
+        description: Update product pricing
+        call: connector-products.productsupdateprice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-products-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Products. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: delete-products
+      description: Delete products
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-products.productsdelete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-products
+      description: Get all products
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-products.productsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-product-pricing
+      description: Get product pricing
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-products.productsgetpricing
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-product-pricing
+      description: Update product pricing
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-products.productsupdateprice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

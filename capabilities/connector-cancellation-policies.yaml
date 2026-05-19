@@ -1,0 +1,161 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Cancellation policies
+  description: 'Connector API — Cancellation policies. 3 operations. Lead operation: Get all cancellation policies. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Cancellation policies
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-cancellation-policies
+    baseUri: https://api.mews.com
+    description: Connector API — Cancellation policies business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-cancellationPolicies-getAll
+      path: /api/connector/v1/cancellationPolicies/getAll
+      operations:
+      - name: cancellationpoliciesgetall
+        method: POST
+        description: Get all cancellation policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-cancellationPolicies-getByRates
+      path: /api/connector/v1/cancellationPolicies/getByRates
+      operations:
+      - name: cancellationpoliciesgetbyrates
+        method: POST
+        description: Get cancellation policies by rates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-cancellationPolicies-getByReservations
+      path: /api/connector/v1/cancellationPolicies/getByReservations
+      operations:
+      - name: cancellationpoliciesgetbyreservations
+        method: POST
+        description: Get cancellation policies by reservations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-cancellation-policies-rest
+    port: 8080
+    description: REST adapter for Connector API — Cancellation policies. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/cancellationpolicies/getall
+      name: api-connector-v1-cancellationpolicies-getall
+      description: REST surface for api-connector-v1-cancellationPolicies-getAll.
+      operations:
+      - method: POST
+        name: cancellationpoliciesgetall
+        description: Get all cancellation policies
+        call: connector-cancellation-policies.cancellationpoliciesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/cancellationpolicies/getbyrates
+      name: api-connector-v1-cancellationpolicies-getbyrates
+      description: REST surface for api-connector-v1-cancellationPolicies-getByRates.
+      operations:
+      - method: POST
+        name: cancellationpoliciesgetbyrates
+        description: Get cancellation policies by rates
+        call: connector-cancellation-policies.cancellationpoliciesgetbyrates
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/cancellationpolicies/getbyreservations
+      name: api-connector-v1-cancellationpolicies-getbyreservations
+      description: REST surface for api-connector-v1-cancellationPolicies-getByReservations.
+      operations:
+      - method: POST
+        name: cancellationpoliciesgetbyreservations
+        description: Get cancellation policies by reservations
+        call: connector-cancellation-policies.cancellationpoliciesgetbyreservations
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-cancellation-policies-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Cancellation policies. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-cancellation-policies
+      description: Get all cancellation policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-cancellation-policies.cancellationpoliciesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-cancellation-policies-rates
+      description: Get cancellation policies by rates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-cancellation-policies.cancellationpoliciesgetbyrates
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-cancellation-policies-reservations
+      description: Get cancellation policies by reservations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-cancellation-policies.cancellationpoliciesgetbyreservations
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

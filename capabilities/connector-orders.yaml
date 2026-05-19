@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Orders
+  description: 'Connector API — Orders. 1 operations. Lead operation: Add order. Self-contained Naftiko capability covering
+    one Mews business surface.'
+  tags:
+  - Mews
+  - Orders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-orders
+    baseUri: https://api.mews.com
+    description: Connector API — Orders business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-orders-add
+      path: /api/connector/v1/orders/add
+      operations:
+      - name: ordersadd
+        method: POST
+        description: Add order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-orders-rest
+    port: 8080
+    description: REST adapter for Connector API — Orders. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/orders/add
+      name: api-connector-v1-orders-add
+      description: REST surface for api-connector-v1-orders-add.
+      operations:
+      - method: POST
+        name: ordersadd
+        description: Add order
+        call: connector-orders.ordersadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-orders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Orders. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: add-order
+      description: Add order
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-orders.ordersadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

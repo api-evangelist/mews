@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Languages
+  description: 'Connector API — Languages. 2 operations. Lead operation: Get all languages. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Languages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-languages
+    baseUri: https://api.mews.com
+    description: Connector API — Languages business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-languages-getAll
+      path: /api/connector/v1/languages/getAll
+      operations:
+      - name: languagesgetall
+        method: POST
+        description: Get all languages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-languages-getTexts
+      path: /api/connector/v1/languages/getTexts
+      operations:
+      - name: languagesgettexts
+        method: POST
+        description: Get language texts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-languages-rest
+    port: 8080
+    description: REST adapter for Connector API — Languages. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/languages/getall
+      name: api-connector-v1-languages-getall
+      description: REST surface for api-connector-v1-languages-getAll.
+      operations:
+      - method: POST
+        name: languagesgetall
+        description: Get all languages
+        call: connector-languages.languagesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/languages/gettexts
+      name: api-connector-v1-languages-gettexts
+      description: REST surface for api-connector-v1-languages-getTexts.
+      operations:
+      - method: POST
+        name: languagesgettexts
+        description: Get language texts
+        call: connector-languages.languagesgettexts
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-languages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Languages. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-all-languages
+      description: Get all languages
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-languages.languagesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-language-texts
+      description: Get language texts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-languages.languagesgettexts
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

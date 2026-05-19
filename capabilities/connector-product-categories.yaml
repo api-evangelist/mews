@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Product categories
+  description: 'Connector API — Product categories. 1 operations. Lead operation: Get all product categories. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Product categories
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-product-categories
+    baseUri: https://api.mews.com
+    description: Connector API — Product categories business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-productCategories-getAll
+      path: /api/connector/v1/productCategories/getAll
+      operations:
+      - name: productcategoriesgetall
+        method: POST
+        description: Get all product categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-product-categories-rest
+    port: 8080
+    description: REST adapter for Connector API — Product categories. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/productcategories/getall
+      name: api-connector-v1-productcategories-getall
+      description: REST surface for api-connector-v1-productCategories-getAll.
+      operations:
+      - method: POST
+        name: productcategoriesgetall
+        description: Get all product categories
+        call: connector-product-categories.productcategoriesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-product-categories-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Product categories. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-product-categories
+      description: Get all product categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-product-categories.productcategoriesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

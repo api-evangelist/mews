@@ -1,0 +1,287 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Bills
+  description: 'Connector API — Bills. 6 operations. Lead operation: Add bill. Self-contained Naftiko capability covering
+    one Mews business surface.'
+  tags:
+  - Mews
+  - Bills
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-bills
+    baseUri: https://api.mews.com
+    description: Connector API — Bills business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-bills-add
+      path: /api/connector/v1/bills/add
+      operations:
+      - name: billsadd
+        method: POST
+        description: Add bill
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-bills-close
+      path: /api/connector/v1/bills/close
+      operations:
+      - name: billsclose
+        method: POST
+        description: Close bill
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-bills-delete
+      path: /api/connector/v1/bills/delete
+      operations:
+      - name: billsdelete
+        method: POST
+        description: Delete bill
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-bills-getAll
+      path: /api/connector/v1/bills/getAll
+      operations:
+      - name: billsgetall
+        method: POST
+        description: Get all bills
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-bills-getPdf
+      path: /api/connector/v1/bills/getPdf
+      operations:
+      - name: billsgetpdf
+        method: POST
+        description: Get bill PDF
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-bills-update
+      path: /api/connector/v1/bills/update
+      operations:
+      - name: billsupdate
+        method: POST
+        description: Update bills
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-bills-rest
+    port: 8080
+    description: REST adapter for Connector API — Bills. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/bills/add
+      name: api-connector-v1-bills-add
+      description: REST surface for api-connector-v1-bills-add.
+      operations:
+      - method: POST
+        name: billsadd
+        description: Add bill
+        call: connector-bills.billsadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/bills/close
+      name: api-connector-v1-bills-close
+      description: REST surface for api-connector-v1-bills-close.
+      operations:
+      - method: POST
+        name: billsclose
+        description: Close bill
+        call: connector-bills.billsclose
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/bills/delete
+      name: api-connector-v1-bills-delete
+      description: REST surface for api-connector-v1-bills-delete.
+      operations:
+      - method: POST
+        name: billsdelete
+        description: Delete bill
+        call: connector-bills.billsdelete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/bills/getall
+      name: api-connector-v1-bills-getall
+      description: REST surface for api-connector-v1-bills-getAll.
+      operations:
+      - method: POST
+        name: billsgetall
+        description: Get all bills
+        call: connector-bills.billsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/bills/getpdf
+      name: api-connector-v1-bills-getpdf
+      description: REST surface for api-connector-v1-bills-getPdf.
+      operations:
+      - method: POST
+        name: billsgetpdf
+        description: Get bill PDF
+        call: connector-bills.billsgetpdf
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/bills/update
+      name: api-connector-v1-bills-update
+      description: REST surface for api-connector-v1-bills-update.
+      operations:
+      - method: POST
+        name: billsupdate
+        description: Update bills
+        call: connector-bills.billsupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-bills-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Bills. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: add-bill
+      description: Add bill
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-bills.billsadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: close-bill
+      description: Close bill
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-bills.billsclose
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-bill
+      description: Delete bill
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-bills.billsdelete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-bills
+      description: Get all bills
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-bills.billsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-bill-pdf
+      description: Get bill PDF
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-bills.billsgetpdf
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-bills
+      description: Update bills
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-bills.billsupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

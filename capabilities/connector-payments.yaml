@@ -1,0 +1,245 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Payments
+  description: 'Connector API — Payments. 5 operations. Lead operation: Add alternative payment. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Payments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-payments
+    baseUri: https://api.mews.com
+    description: Connector API — Payments business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-payments-addAlternative
+      path: /api/connector/v1/payments/addAlternative
+      operations:
+      - name: paymentsaddalternative
+        method: POST
+        description: Add alternative payment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-payments-addCreditCard
+      path: /api/connector/v1/payments/addCreditCard
+      operations:
+      - name: paymentsaddcreditcard
+        method: POST
+        description: Add credit card payment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-payments-addExternal
+      path: /api/connector/v1/payments/addExternal
+      operations:
+      - name: paymentsaddexternal
+        method: POST
+        description: Add external payment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-payments-getAll
+      path: /api/connector/v1/payments/getAll
+      operations:
+      - name: paymentsgetall
+        method: POST
+        description: Get all payments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-payments-refund
+      path: /api/connector/v1/payments/refund
+      operations:
+      - name: paymentsrefund
+        method: POST
+        description: Refund payment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-payments-rest
+    port: 8080
+    description: REST adapter for Connector API — Payments. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/payments/addalternative
+      name: api-connector-v1-payments-addalternative
+      description: REST surface for api-connector-v1-payments-addAlternative.
+      operations:
+      - method: POST
+        name: paymentsaddalternative
+        description: Add alternative payment
+        call: connector-payments.paymentsaddalternative
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/payments/addcreditcard
+      name: api-connector-v1-payments-addcreditcard
+      description: REST surface for api-connector-v1-payments-addCreditCard.
+      operations:
+      - method: POST
+        name: paymentsaddcreditcard
+        description: Add credit card payment
+        call: connector-payments.paymentsaddcreditcard
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/payments/addexternal
+      name: api-connector-v1-payments-addexternal
+      description: REST surface for api-connector-v1-payments-addExternal.
+      operations:
+      - method: POST
+        name: paymentsaddexternal
+        description: Add external payment
+        call: connector-payments.paymentsaddexternal
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/payments/getall
+      name: api-connector-v1-payments-getall
+      description: REST surface for api-connector-v1-payments-getAll.
+      operations:
+      - method: POST
+        name: paymentsgetall
+        description: Get all payments
+        call: connector-payments.paymentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/payments/refund
+      name: api-connector-v1-payments-refund
+      description: REST surface for api-connector-v1-payments-refund.
+      operations:
+      - method: POST
+        name: paymentsrefund
+        description: Refund payment
+        call: connector-payments.paymentsrefund
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-payments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Payments. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: add-alternative-payment
+      description: Add alternative payment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payments.paymentsaddalternative
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-credit-card-payment
+      description: Add credit card payment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payments.paymentsaddcreditcard
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-external-payment
+      description: Add external payment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payments.paymentsaddexternal
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-payments
+      description: Get all payments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-payments.paymentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: refund-payment
+      description: Refund payment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payments.paymentsrefund
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

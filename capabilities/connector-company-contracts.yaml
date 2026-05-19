@@ -1,0 +1,203 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Company contracts
+  description: 'Connector API — Company contracts. 4 operations. Lead operation: Add company contracts. Self-contained Naftiko
+    capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Company contracts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-company-contracts
+    baseUri: https://api.mews.com
+    description: Connector API — Company contracts business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-companyContracts-add
+      path: /api/connector/v1/companyContracts/add
+      operations:
+      - name: companycontractsadd
+        method: POST
+        description: Add company contracts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-companyContracts-delete
+      path: /api/connector/v1/companyContracts/delete
+      operations:
+      - name: companycontractsdelete
+        method: POST
+        description: Delete company contracts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-companyContracts-getAll
+      path: /api/connector/v1/companyContracts/getAll
+      operations:
+      - name: companycontractsgetall
+        method: POST
+        description: Get all company contracts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-companyContracts-update
+      path: /api/connector/v1/companyContracts/update
+      operations:
+      - name: companycontractsupdate
+        method: POST
+        description: Update company contracts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-company-contracts-rest
+    port: 8080
+    description: REST adapter for Connector API — Company contracts. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/companycontracts/add
+      name: api-connector-v1-companycontracts-add
+      description: REST surface for api-connector-v1-companyContracts-add.
+      operations:
+      - method: POST
+        name: companycontractsadd
+        description: Add company contracts
+        call: connector-company-contracts.companycontractsadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/companycontracts/delete
+      name: api-connector-v1-companycontracts-delete
+      description: REST surface for api-connector-v1-companyContracts-delete.
+      operations:
+      - method: POST
+        name: companycontractsdelete
+        description: Delete company contracts
+        call: connector-company-contracts.companycontractsdelete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/companycontracts/getall
+      name: api-connector-v1-companycontracts-getall
+      description: REST surface for api-connector-v1-companyContracts-getAll.
+      operations:
+      - method: POST
+        name: companycontractsgetall
+        description: Get all company contracts
+        call: connector-company-contracts.companycontractsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/companycontracts/update
+      name: api-connector-v1-companycontracts-update
+      description: REST surface for api-connector-v1-companyContracts-update.
+      operations:
+      - method: POST
+        name: companycontractsupdate
+        description: Update company contracts
+        call: connector-company-contracts.companycontractsupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-company-contracts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Company contracts. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: add-company-contracts
+      description: Add company contracts
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-company-contracts.companycontractsadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-company-contracts
+      description: Delete company contracts
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-company-contracts.companycontractsdelete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-company-contracts
+      description: Get all company contracts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-company-contracts.companycontractsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-company-contracts
+      description: Update company contracts
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-company-contracts.companycontractsupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

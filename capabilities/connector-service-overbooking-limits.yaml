@@ -1,0 +1,161 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Service overbooking limits
+  description: 'Connector API — Service overbooking limits. 3 operations. Lead operation: Clear service overbooking limits.
+    Self-contained Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Service overbooking limits
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-service-overbooking-limits
+    baseUri: https://api.mews.com
+    description: Connector API — Service overbooking limits business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-serviceOverbookingLimits-clear
+      path: /api/connector/v1/serviceOverbookingLimits/clear
+      operations:
+      - name: serviceoverbookinglimitsclear
+        method: POST
+        description: Clear service overbooking limits
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-serviceOverbookingLimits-getAll
+      path: /api/connector/v1/serviceOverbookingLimits/getAll
+      operations:
+      - name: serviceoverbookinglimitsgetall
+        method: POST
+        description: Get all service overbooking limits
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-serviceOverbookingLimits-set
+      path: /api/connector/v1/serviceOverbookingLimits/set
+      operations:
+      - name: serviceoverbookinglimitsset
+        method: POST
+        description: Set service overbooking limits
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-service-overbooking-limits-rest
+    port: 8080
+    description: REST adapter for Connector API — Service overbooking limits. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/serviceoverbookinglimits/clear
+      name: api-connector-v1-serviceoverbookinglimits-clear
+      description: REST surface for api-connector-v1-serviceOverbookingLimits-clear.
+      operations:
+      - method: POST
+        name: serviceoverbookinglimitsclear
+        description: Clear service overbooking limits
+        call: connector-service-overbooking-limits.serviceoverbookinglimitsclear
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/serviceoverbookinglimits/getall
+      name: api-connector-v1-serviceoverbookinglimits-getall
+      description: REST surface for api-connector-v1-serviceOverbookingLimits-getAll.
+      operations:
+      - method: POST
+        name: serviceoverbookinglimitsgetall
+        description: Get all service overbooking limits
+        call: connector-service-overbooking-limits.serviceoverbookinglimitsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/serviceoverbookinglimits/set
+      name: api-connector-v1-serviceoverbookinglimits-set
+      description: REST surface for api-connector-v1-serviceOverbookingLimits-set.
+      operations:
+      - method: POST
+        name: serviceoverbookinglimitsset
+        description: Set service overbooking limits
+        call: connector-service-overbooking-limits.serviceoverbookinglimitsset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-service-overbooking-limits-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Service overbooking limits. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: clear-service-overbooking-limits
+      description: Clear service overbooking limits
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-service-overbooking-limits.serviceoverbookinglimitsclear
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-service-overbooking-limits
+      description: Get all service overbooking limits
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-service-overbooking-limits.serviceoverbookinglimitsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: set-service-overbooking-limits
+      description: Set service overbooking limits
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-service-overbooking-limits.serviceoverbookinglimitsset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

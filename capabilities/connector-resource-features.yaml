@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Resource features
+  description: 'Connector API — Resource features. 2 operations. Lead operation: Get all resource feature assignments. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Resource features
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-resource-features
+    baseUri: https://api.mews.com
+    description: Connector API — Resource features business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-resourceFeatureAssignments-getAll
+      path: /api/connector/v1/resourceFeatureAssignments/getAll
+      operations:
+      - name: resourcefeatureassignmentsgetall
+        method: POST
+        description: Get all resource feature assignments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-resourceFeatures-getAll
+      path: /api/connector/v1/resourceFeatures/getAll
+      operations:
+      - name: resourcefeaturesgetall
+        method: POST
+        description: Get all resource features
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-resource-features-rest
+    port: 8080
+    description: REST adapter for Connector API — Resource features. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/resourcefeatureassignments/getall
+      name: api-connector-v1-resourcefeatureassignments-getall
+      description: REST surface for api-connector-v1-resourceFeatureAssignments-getAll.
+      operations:
+      - method: POST
+        name: resourcefeatureassignmentsgetall
+        description: Get all resource feature assignments
+        call: connector-resource-features.resourcefeatureassignmentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/resourcefeatures/getall
+      name: api-connector-v1-resourcefeatures-getall
+      description: REST surface for api-connector-v1-resourceFeatures-getAll.
+      operations:
+      - method: POST
+        name: resourcefeaturesgetall
+        description: Get all resource features
+        call: connector-resource-features.resourcefeaturesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-resource-features-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Resource features. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-resource-feature-assignments
+      description: Get all resource feature assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-resource-features.resourcefeatureassignmentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-resource-features
+      description: Get all resource features
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-resource-features.resourcefeaturesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

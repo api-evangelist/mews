@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Tax environments
+  description: 'Connector API — Tax environments. 1 operations. Lead operation: Get all tax environments. Self-contained Naftiko
+    capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Tax environments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-tax-environments
+    baseUri: https://api.mews.com
+    description: Connector API — Tax environments business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-taxEnvironments-getAll
+      path: /api/connector/v1/taxEnvironments/getAll
+      operations:
+      - name: taxenvironmentsgetall
+        method: POST
+        description: Get all tax environments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-tax-environments-rest
+    port: 8080
+    description: REST adapter for Connector API — Tax environments. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/taxenvironments/getall
+      name: api-connector-v1-taxenvironments-getall
+      description: REST surface for api-connector-v1-taxEnvironments-getAll.
+      operations:
+      - method: POST
+        name: taxenvironmentsgetall
+        description: Get all tax environments
+        call: connector-tax-environments.taxenvironmentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-tax-environments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Tax environments. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-tax-environments
+      description: Get all tax environments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-tax-environments.taxenvironmentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

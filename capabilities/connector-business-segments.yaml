@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Business segments
+  description: 'Connector API — Business segments. 1 operations. Lead operation: Get all business segments. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Business segments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-business-segments
+    baseUri: https://api.mews.com
+    description: Connector API — Business segments business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-businessSegments-getAll
+      path: /api/connector/v1/businessSegments/getAll
+      operations:
+      - name: businesssegmentsgetall
+        method: POST
+        description: Get all business segments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-business-segments-rest
+    port: 8080
+    description: REST adapter for Connector API — Business segments. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/businesssegments/getall
+      name: api-connector-v1-businesssegments-getall
+      description: REST surface for api-connector-v1-businessSegments-getAll.
+      operations:
+      - method: POST
+        name: businesssegmentsgetall
+        description: Get all business segments
+        call: connector-business-segments.businesssegmentsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-business-segments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Business segments. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-business-segments
+      description: Get all business segments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-business-segments.businesssegmentsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

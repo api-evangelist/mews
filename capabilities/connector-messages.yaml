@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Messages
+  description: 'Connector API — Messages. 2 operations. Lead operation: Add messages. Self-contained Naftiko capability covering
+    one Mews business surface.'
+  tags:
+  - Mews
+  - Messages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-messages
+    baseUri: https://api.mews.com
+    description: Connector API — Messages business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-messages-add
+      path: /api/connector/v1/messages/add
+      operations:
+      - name: messagesadd
+        method: POST
+        description: Add messages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-messages-getAll
+      path: /api/connector/v1/messages/getAll
+      operations:
+      - name: messagesgetall
+        method: POST
+        description: Get all messages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-messages-rest
+    port: 8080
+    description: REST adapter for Connector API — Messages. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/messages/add
+      name: api-connector-v1-messages-add
+      description: REST surface for api-connector-v1-messages-add.
+      operations:
+      - method: POST
+        name: messagesadd
+        description: Add messages
+        call: connector-messages.messagesadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/messages/getall
+      name: api-connector-v1-messages-getall
+      description: REST surface for api-connector-v1-messages-getAll.
+      operations:
+      - method: POST
+        name: messagesgetall
+        description: Get all messages
+        call: connector-messages.messagesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-messages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Messages. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: add-messages
+      description: Add messages
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-messages.messagesadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-messages
+      description: Get all messages
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-messages.messagesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

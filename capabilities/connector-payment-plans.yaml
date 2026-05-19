@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Payment plans
+  description: 'Connector API — Payment plans. 2 operations. Lead operation: Add billing automation payment plan. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Payment plans
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-payment-plans
+    baseUri: https://api.mews.com
+    description: Connector API — Payment plans business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-billingAutomationPaymentPlans-add
+      path: /api/connector/v1/billingAutomationPaymentPlans/add
+      operations:
+      - name: billingautomationpaymentplansadd
+        method: POST
+        description: Add billing automation payment plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-paymentPlans-add
+      path: /api/connector/v1/paymentPlans/add
+      operations:
+      - name: paymentplansadd
+        method: POST
+        description: Add payment plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-payment-plans-rest
+    port: 8080
+    description: REST adapter for Connector API — Payment plans. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/billingautomationpaymentplans/add
+      name: api-connector-v1-billingautomationpaymentplans-add
+      description: REST surface for api-connector-v1-billingAutomationPaymentPlans-add.
+      operations:
+      - method: POST
+        name: billingautomationpaymentplansadd
+        description: Add billing automation payment plan
+        call: connector-payment-plans.billingautomationpaymentplansadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/paymentplans/add
+      name: api-connector-v1-paymentplans-add
+      description: REST surface for api-connector-v1-paymentPlans-add.
+      operations:
+      - method: POST
+        name: paymentplansadd
+        description: Add payment plan
+        call: connector-payment-plans.paymentplansadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-payment-plans-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Payment plans. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: add-billing-automation-payment-plan
+      description: Add billing automation payment plan
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payment-plans.billingautomationpaymentplansadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-payment-plan
+      description: Add payment plan
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payment-plans.paymentplansadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

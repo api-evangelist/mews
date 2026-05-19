@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Payment method requests
+  description: 'Connector API — Payment method requests. 1 operations. Lead operation: Add payment method request. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Payment method requests
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-payment-method-requests
+    baseUri: https://api.mews.com
+    description: Connector API — Payment method requests business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-paymentMethodRequests-add
+      path: /api/connector/v1/paymentMethodRequests/add
+      operations:
+      - name: paymentmethodrequestsadd
+        method: POST
+        description: Add payment method request
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-payment-method-requests-rest
+    port: 8080
+    description: REST adapter for Connector API — Payment method requests. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/paymentmethodrequests/add
+      name: api-connector-v1-paymentmethodrequests-add
+      description: REST surface for api-connector-v1-paymentMethodRequests-add.
+      operations:
+      - method: POST
+        name: paymentmethodrequestsadd
+        description: Add payment method request
+        call: connector-payment-method-requests.paymentmethodrequestsadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-payment-method-requests-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Payment method requests. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: add-payment-method-request
+      description: Add payment method request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-payment-method-requests.paymentmethodrequestsadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Product service orders
+  description: 'Connector API — Product service orders. 1 operations. Lead operation: Get all product service orders. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Product service orders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-product-service-orders
+    baseUri: https://api.mews.com
+    description: Connector API — Product service orders business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-productServiceOrders-getAll
+      path: /api/connector/v1/productServiceOrders/getAll
+      operations:
+      - name: productserviceordersgetall
+        method: POST
+        description: Get all product service orders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-product-service-orders-rest
+    port: 8080
+    description: REST adapter for Connector API — Product service orders. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/productserviceorders/getall
+      name: api-connector-v1-productserviceorders-getall
+      description: REST surface for api-connector-v1-productServiceOrders-getAll.
+      operations:
+      - method: POST
+        name: productserviceordersgetall
+        description: Get all product service orders
+        call: connector-product-service-orders.productserviceordersgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-product-service-orders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Product service orders. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-all-product-service-orders
+      description: Get all product service orders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-product-service-orders.productserviceordersgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,203 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Availability blocks
+  description: 'Connector API — Availability blocks. 4 operations. Lead operation: Add availability blocks. Self-contained
+    Naftiko capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Availability blocks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-availability-blocks
+    baseUri: https://api.mews.com
+    description: Connector API — Availability blocks business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-availabilityBlocks-add
+      path: /api/connector/v1/availabilityBlocks/add
+      operations:
+      - name: availabilityblocksadd
+        method: POST
+        description: Add availability blocks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-availabilityBlocks-delete
+      path: /api/connector/v1/availabilityBlocks/delete
+      operations:
+      - name: availabilityblocksdelete
+        method: POST
+        description: Delete availability blocks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-availabilityBlocks-getAll
+      path: /api/connector/v1/availabilityBlocks/getAll
+      operations:
+      - name: availabilityblocksgetall
+        method: POST
+        description: Get all availability blocks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: api-connector-v1-availabilityBlocks-update
+      path: /api/connector/v1/availabilityBlocks/update
+      operations:
+      - name: availabilityblocksupdate
+        method: POST
+        description: Update availability blocks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-availability-blocks-rest
+    port: 8080
+    description: REST adapter for Connector API — Availability blocks. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/availabilityblocks/add
+      name: api-connector-v1-availabilityblocks-add
+      description: REST surface for api-connector-v1-availabilityBlocks-add.
+      operations:
+      - method: POST
+        name: availabilityblocksadd
+        description: Add availability blocks
+        call: connector-availability-blocks.availabilityblocksadd
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/availabilityblocks/delete
+      name: api-connector-v1-availabilityblocks-delete
+      description: REST surface for api-connector-v1-availabilityBlocks-delete.
+      operations:
+      - method: POST
+        name: availabilityblocksdelete
+        description: Delete availability blocks
+        call: connector-availability-blocks.availabilityblocksdelete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/availabilityblocks/getall
+      name: api-connector-v1-availabilityblocks-getall
+      description: REST surface for api-connector-v1-availabilityBlocks-getAll.
+      operations:
+      - method: POST
+        name: availabilityblocksgetall
+        description: Get all availability blocks
+        call: connector-availability-blocks.availabilityblocksgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/connector/v1/availabilityblocks/update
+      name: api-connector-v1-availabilityblocks-update
+      description: REST surface for api-connector-v1-availabilityBlocks-update.
+      operations:
+      - method: POST
+        name: availabilityblocksupdate
+        description: Update availability blocks
+        call: connector-availability-blocks.availabilityblocksupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-availability-blocks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Availability blocks. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: add-availability-blocks
+      description: Add availability blocks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-availability-blocks.availabilityblocksadd
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-availability-blocks
+      description: Delete availability blocks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-availability-blocks.availabilityblocksdelete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-availability-blocks
+      description: Get all availability blocks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-availability-blocks.availabilityblocksgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-availability-blocks
+      description: Update availability blocks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: connector-availability-blocks.availabilityblocksupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

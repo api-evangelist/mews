@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Cashiers
+  description: 'Connector API — Cashiers. 1 operations. Lead operation: Get all cashiers. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Cashiers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-cashiers
+    baseUri: https://api.mews.com
+    description: Connector API — Cashiers business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-cashiers-getAll
+      path: /api/connector/v1/cashiers/getAll
+      operations:
+      - name: cashiersgetall
+        method: POST
+        description: Get all cashiers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-cashiers-rest
+    port: 8080
+    description: REST adapter for Connector API — Cashiers. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/cashiers/getall
+      name: api-connector-v1-cashiers-getall
+      description: REST surface for api-connector-v1-cashiers-getAll.
+      operations:
+      - method: POST
+        name: cashiersgetall
+        description: Get all cashiers
+        call: connector-cashiers.cashiersgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-cashiers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Cashiers. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-all-cashiers
+      description: Get all cashiers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-cashiers.cashiersgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

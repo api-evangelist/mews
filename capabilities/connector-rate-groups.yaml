@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Rate groups
+  description: 'Connector API — Rate groups. 1 operations. Lead operation: Get all rate groups. Self-contained Naftiko capability
+    covering one Mews business surface.'
+  tags:
+  - Mews
+  - Rate groups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-rate-groups
+    baseUri: https://api.mews.com
+    description: Connector API — Rate groups business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-rateGroups-getAll
+      path: /api/connector/v1/rateGroups/getAll
+      operations:
+      - name: rategroupsgetall
+        method: POST
+        description: Get all rate groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-rate-groups-rest
+    port: 8080
+    description: REST adapter for Connector API — Rate groups. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/connector/v1/rategroups/getall
+      name: api-connector-v1-rategroups-getall
+      description: REST surface for api-connector-v1-rateGroups-getAll.
+      operations:
+      - method: POST
+        name: rategroupsgetall
+        description: Get all rate groups
+        call: connector-rate-groups.rategroupsgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-rate-groups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Rate groups. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-all-rate-groups
+      description: Get all rate groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-rate-groups.rategroupsgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

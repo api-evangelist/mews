@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Connector API — Exchange rates
+  description: 'Connector API — Exchange rates. 1 operations. Lead operation: Get all exchange rates. Self-contained Naftiko
+    capability covering one Mews business surface.'
+  tags:
+  - Mews
+  - Exchange rates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MEWS_API_KEY: MEWS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: connector-exchange-rates
+    baseUri: https://api.mews.com
+    description: Connector API — Exchange rates business capability. Self-contained, no shared references.
+    resources:
+    - name: api-connector-v1-exchangeRates-getAll
+      path: /api/connector/v1/exchangeRates/getAll
+      operations:
+      - name: exchangeratesgetall
+        method: POST
+        description: Get all exchange rates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: connector-exchange-rates-rest
+    port: 8080
+    description: REST adapter for Connector API — Exchange rates. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/connector/v1/exchangerates/getall
+      name: api-connector-v1-exchangerates-getall
+      description: REST surface for api-connector-v1-exchangeRates-getAll.
+      operations:
+      - method: POST
+        name: exchangeratesgetall
+        description: Get all exchange rates
+        call: connector-exchange-rates.exchangeratesgetall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: connector-exchange-rates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Connector API — Exchange rates. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-all-exchange-rates
+      description: Get all exchange rates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: connector-exchange-rates.exchangeratesgetall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
