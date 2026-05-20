@@ -7,71 +7,73 @@ description: Mews is a cloud property management system (PMS) for hotels, hostel
   Connector API publishes a full OpenAPI 3.0.4 spec covering operations, events, and webhooks for partners.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Hospitality
-- Hotels
-- PMS
-- Property Management
+  - Hospitality
+  - Hotels
+  - PMS
+  - Property Management
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-- aid: mews:connector-api
-  name: Mews Connector API
-  description: General-purpose REST API for partners to access Mews Operations data and services. Covers
-    accounts, account notes, accounting items, addresses, age categories, availability, bills, bookings,
-    customers, products, rates, reservations, services, and many more. Publishes OpenAPI 3.0.4 spec; supports
-    Portfolio Access Tokens for multi-property access.
-  humanURL: https://docs.mews.com/connector-api
-  baseURL: https://api.mews.com
-  tags:
-  - REST
-  - PMS
-  - Partner
-  - Webhooks
-  properties:
-  - type: Documentation
-    url: https://docs.mews.com/connector-api
-  - type: OpenAPI
-    url: openapi/mews-connector-openapi.yaml
-  - type: OpenAPI Source
-    url: https://api.mews.com/Swagger/connector/swagger.yaml
-- aid: mews:distributor-api
-  name: Mews Distributor API
-  description: REST API for embedding the Mews booking engine and distributing rates and availability
-    through partner channels.
-  humanURL: https://mews-systems.gitbook.io/distributor-api/
-  tags:
-  - REST
-  - Booking Engine
-  - Distribution
-  properties:
-  - type: Documentation
-    url: https://mews-systems.gitbook.io/distributor-api/
-- aid: mews:channel-manager-api
-  name: Mews Channel Manager API
-  description: REST API for channel managers integrating with Mews to push availability, rates, and inventory.
-  humanURL: https://mews-systems.gitbook.io/channel-manager-api/
-  tags:
-  - REST
-  - Channel Manager
-  properties:
-  - type: Documentation
-    url: https://mews-systems.gitbook.io/channel-manager-api/
+  - aid: mews:connector-api
+    name: Mews Connector API
+    description: General-purpose REST API for partners to access Mews Operations data and services. Covers
+      accounts, account notes, accounting items, addresses, age categories, availability, bills, bookings,
+      customers, products, rates, reservations, services, and many more. Publishes OpenAPI 3.0.4 spec; supports
+      Portfolio Access Tokens for multi-property access.
+    humanURL: https://docs.mews.com/connector-api
+    baseURL: https://api.mews.com
+    tags:
+    - REST
+    - PMS
+    - Partner
+    - Webhooks
+    properties:
+    - type: Documentation
+      url: https://docs.mews.com/connector-api
+    - type: OpenAPI
+      url: openapi/mews-connector-openapi.yaml
+    - type: OpenAPI Source
+      url: https://api.mews.com/Swagger/connector/swagger.yaml
+  - aid: mews:distributor-api
+    name: Mews Distributor API
+    description: REST API for embedding the Mews booking engine and distributing rates and availability
+      through partner channels.
+    humanURL: https://mews-systems.gitbook.io/distributor-api/
+    tags:
+    - REST
+    - Booking Engine
+    - Distribution
+    properties:
+    - type: Documentation
+      url: https://mews-systems.gitbook.io/distributor-api/
+  - aid: mews:channel-manager-api
+    name: Mews Channel Manager API
+    description: REST API for channel managers integrating with Mews to push availability, rates, and inventory.
+    humanURL: https://mews-systems.gitbook.io/channel-manager-api/
+    tags:
+    - REST
+    - Channel Manager
+    properties:
+    - type: Documentation
+      url: https://mews-systems.gitbook.io/channel-manager-api/
 common:
+  - type: GitHubOrganization
+    url: https://github.com/MewsSystems
   - type: LinkedIn
     url: https://www.linkedin.com/company/mewssystems
-- type: Website
-  url: https://www.mews.com/
-- type: Developer
-  url: https://docs.mews.com/
-- type: Plans
-  url: plans/mews-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/mews-rate-limits.yml
-- type: FinOps
-  url: finops/mews-finops.yml
-- type: Integrations
-  url: https://www.mews.com/en/products/marketplace
+  - type: Website
+    url: https://www.mews.com/
+  - type: Developer
+    url: https://docs.mews.com/
+  - type: Plans
+    url: plans/mews-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/mews-rate-limits.yml
+  - type: FinOps
+    url: finops/mews-finops.yml
+  - type: Integrations
+    url: https://www.mews.com/en/products/marketplace
 integrations:
   - name: Frame 2147231403a.svg
   - name: Flexible Financing with
@@ -122,5 +124,5 @@ integrations:
   - name: Great place to work
   - name: NF
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
