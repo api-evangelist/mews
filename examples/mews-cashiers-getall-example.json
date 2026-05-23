@@ -1,0 +1,52 @@
+{
+  "operationId": "cashiers_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/cashiers/getAll",
+  "summary": "Get all cashiers",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "Ids": [
+          "9a36e3fa-2299-474b-a8a2-5ea4da317abc"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2023-10-01T00:00:00Z",
+          "EndUtc": "2023-10-31T00:00:00Z"
+        },
+        "ActivityStates": [
+          "Active"
+        ],
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "Limitation": {
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Cashiers": [
+          {
+            "Id": "9a36e3fa-2299-474b-a8a2-5ea4da317abc",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "IsActive": true,
+            "Name": "Main Cashier",
+            "CreatedUtc": "2023-10-01T11:48:57Z",
+            "UpdatedUtc": "2023-10-28T11:48:57Z"
+          }
+        ],
+        "Cursor": "0b9560fb-055d-47d3-a6d4-e579c44ca558"
+      }
+    }
+  ]
+}

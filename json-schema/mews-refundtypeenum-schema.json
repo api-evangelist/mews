@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RefundTypeEnum",
+  "title": "Refund type",
+  "enum": [
+    "CreditCardPayment",
+    "AlternativePayment"
+  ],
+  "type": "string",
+  "description": "\n\nCreditCardPayment\n\nAlternativePayment",
+  "x-enumNames": [
+    "CreditCardPayment",
+    "AlternativePayment"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

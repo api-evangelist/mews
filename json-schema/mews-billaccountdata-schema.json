@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillAccountData",
+  "title": "Associated account bill data",
+  "required": [
+    "Discriminator"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "$ref": "#/components/schemas/BillAssigneeDataDiscriminator"
+    },
+    "BillCustomerData": {
+      "title": "Bill customer data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCustomerData"
+        }
+      ],
+      "description": "Associated account bill data for customer.",
+      "nullable": true
+    },
+    "BillCompanyData": {
+      "title": "Bill company data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCompanyData"
+        }
+      ],
+      "description": "Associated account bill data for company.",
+      "nullable": true,
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillAccountData"
+}

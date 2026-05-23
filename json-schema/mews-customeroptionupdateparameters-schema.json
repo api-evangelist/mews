@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerOptionUpdateParameters",
+  "title": "Customer update options",
+  "type": "object",
+  "properties": {
+    "SendMarketingEmails": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Send marketing email (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Invoiceable": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Invoiceable (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "BillAddressObjection": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Bill address objection (or `null` if the value should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerOptionUpdateParameters"
+}

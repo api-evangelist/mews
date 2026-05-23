@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Outlet",
+  "title": "Outlet",
+  "required": [
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Name",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the outlet.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the outlet is still active."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the outlet."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the outlet in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the outlet in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Outlet"
+}

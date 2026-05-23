@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyAddParameters",
+  "title": "CompanyAddParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Name",
+    "Options"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the company."
+    },
+    "MotherCompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the mother company.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "InvoicingEmail": {
+      "type": "string",
+      "description": "Email for issuing invoices to the company.",
+      "format": "email",
+      "nullable": true
+    },
+    "WebsiteUrl": {
+      "type": "string",
+      "description": "The website url of the company.",
+      "format": "uri",
+      "nullable": true
+    },
+    "InvoiceDueInterval": {
+      "type": "string",
+      "description": "The maximum time, when the invoice has to be be paid in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Company Options Parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompanyOptionsParameters"
+        }
+      ],
+      "description": "Options of the company."
+    },
+    "CreditRating": {
+      "title": "Credit rating parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreditRatingParameters"
+        }
+      ],
+      "description": "Credit rating to define creditworthiness of the company.",
+      "nullable": true
+    },
+    "Department": {
+      "type": "string",
+      "description": "The internal segmentation of a company, e.g. sales department.",
+      "nullable": true
+    },
+    "DunsNumber": {
+      "type": "string",
+      "description": "The Dun & Bradstreet unique 9-digit DUNS number.",
+      "nullable": true
+    },
+    "ReferenceIdentifier": {
+      "type": "string",
+      "description": "External system identifier - custom identifier used by an external system such as an external database.",
+      "nullable": true
+    },
+    "AccountingCode": {
+      "type": "string",
+      "description": "Accounting code of the company.",
+      "nullable": true
+    },
+    "AdditionalTaxIdentifier": {
+      "type": "string",
+      "description": "Additional tax identifer of the company.",
+      "nullable": true
+    },
+    "BillingCode": {
+      "type": "string",
+      "description": "Billing code of the company.",
+      "nullable": true
+    },
+    "Contact": {
+      "type": "string",
+      "description": "Other contact details, such as telephone, email or similar.",
+      "nullable": true
+    },
+    "ContactPerson": {
+      "type": "string",
+      "description": "Contact person of the company.",
+      "nullable": true
+    },
+    "Identifier": {
+      "type": "string",
+      "description": "Fiscal or legal identifier of the company.",
+      "nullable": true
+    },
+    "Iata": {
+      "type": "string",
+      "description": "Iata of the company.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Notes of the company.",
+      "nullable": true
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identification number of the company.",
+      "nullable": true
+    },
+    "Telephone": {
+      "type": "string",
+      "description": "Contact telephone number.",
+      "format": "tel",
+      "nullable": true
+    },
+    "Address": {
+      "title": "Address parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressParameters"
+        }
+      ],
+      "description": "New address details.",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the company from external system.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyAddParameters"
+}

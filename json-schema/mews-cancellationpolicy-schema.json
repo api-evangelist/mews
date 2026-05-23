@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicy",
+  "title": "Cancellation Policy",
+  "required": [
+    "AbsoluteFee",
+    "Applicability",
+    "ApplicabilityOffset",
+    "CreatedUtc",
+    "FeeExtent",
+    "Id",
+    "IsActive",
+    "RateGroupId",
+    "RelativeFee",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the cancellation policy.",
+      "format": "uuid"
+    },
+    "RateGroupId": {
+      "type": "string",
+      "description": "Unique identifier of the rate group the cancellation policy belongs to.",
+      "format": "uuid"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the cancellation policy creation in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the cancellation policy update in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Applicability": {
+      "$ref": "#/components/schemas/CancellationPolicyApplicability"
+    },
+    "FeeExtent": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CancellationFeeExtent"
+      },
+      "description": "Extent for the cancellation fee, i.e. what should be in scope for the automatic payment."
+    },
+    "ApplicabilityOffset": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Offset for order start (assuming Applicability is set to Start) from which the fee is applied."
+    },
+    "FeeMaximumTimeUnits": {
+      "type": "integer",
+      "description": "Maximum number of time units the cancellation fee is applicable to.",
+      "format": "int32",
+      "nullable": true
+    },
+    "AbsoluteFee": {
+      "title": "Currency value (ver 2023-02-02)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValue"
+        }
+      ],
+      "description": "Absolute value of the fee."
+    },
+    "RelativeFee": {
+      "type": "number",
+      "description": "Relative value of the fee, as a percentage of the reservation price.",
+      "format": "double"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the cancellation policy is still active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CancellationPolicy"
+}

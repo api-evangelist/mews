@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AgeCategoryAdjustment",
+  "title": "Age category adjustment",
+  "required": [
+    "AbsoluteValue",
+    "AgeCategoryId",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "AgeCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the age category.",
+      "format": "uuid"
+    },
+    "AbsoluteValue": {
+      "type": "number",
+      "description": "Absolute value of the adjustment (e.g. `50` represents 50 EUR in case the rate currency is `EUR`).",
+      "format": "double"
+    },
+    "Type": {
+      "title": "Age category adjustment type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgeCategoryAdjustmentTypeEnum"
+        }
+      ],
+      "description": "Age category adjustment type\n\nExtraOccupancyAdjustment\n\nNegativeOccupancyAdjustment\n\nStandardOccupancyAdjustment",
+      "x-enumNames": [
+        "ExtraOccupancyAdjustment",
+        "NegativeOccupancyAdjustment",
+        "StandardOccupancyAdjustment"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AgeCategoryAdjustment"
+}

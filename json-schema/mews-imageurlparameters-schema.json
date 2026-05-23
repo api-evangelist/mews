@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ImageUrlParameters",
+  "title": "ImageUrlParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Images"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Images": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ImageSizeParameters"
+      },
+      "description": "Parameters of images whose URLs should be returned."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ImageUrlParameters"
+}

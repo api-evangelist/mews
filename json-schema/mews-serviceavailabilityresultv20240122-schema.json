@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceAvailabilityResultV20240122",
+  "title": "ServiceAvailabilityResultV20240122",
+  "required": [
+    "ResourceCategoryAvailabilities",
+    "TimeUnitStartsUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "TimeUnitStartsUtc": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Set of all time units covered by the time interval; expressed in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ResourceCategoryAvailabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategoryAvailabilityV20240122"
+      },
+      "description": "Resource category availabilities. Can be empty if no resource categories are assigned to the service."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceAvailabilityResultV20240122"
+}

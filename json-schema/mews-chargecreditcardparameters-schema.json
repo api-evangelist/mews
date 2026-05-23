@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChargeCreditCardParameters",
+  "title": "CreditCard payment data",
+  "required": [
+    "AccessToken",
+    "Amount",
+    "Client",
+    "ClientToken",
+    "CreditCardId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "CreditCardId": {
+      "type": "string",
+      "description": "Unique identifier of the `CreditCard`.",
+      "format": "uuid"
+    },
+    "ReceiptIdentifier": {
+      "type": "string",
+      "description": "Identifier of the payment receipt.",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the `AccountingCategory`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation the payment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmountParameters"
+        }
+      ],
+      "description": "Amount of the credit card payment."
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional payment notes.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ChargeCreditCardParameters"
+}

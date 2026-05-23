@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Task",
+  "title": "Task",
+  "required": [
+    "ClosedUtc",
+    "CreatedUtc",
+    "DeadlineUtc",
+    "Name",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the task.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using Portfolio Access Tokens, ignored otherwise.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name (or title) of the task."
+    },
+    "State": {
+      "minLength": 1,
+      "type": "string",
+      "description": "State of the task."
+    },
+    "Description": {
+      "type": "string",
+      "description": "Further description of the task.",
+      "nullable": true
+    },
+    "DepartmentId": {
+      "type": "string",
+      "description": "Unique identifier of the Department the task is addressed to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ServiceOrderId": {
+      "type": "string",
+      "description": "Unique identifier of the service order (reservation or product service order) the task is linked with.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the task in UTC timezone in ISO 8601 format."
+    },
+    "DeadlineUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Deadline date and time of the task in UTC timezone in ISO 8601 format."
+    },
+    "ClosedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the task in UTC timezone in ISO 8601 format."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Task"
+}

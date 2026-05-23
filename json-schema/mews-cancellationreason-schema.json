@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationReason",
+  "title": "CancellationReason",
+  "enum": [
+    "Other",
+    "ConfirmationMissed",
+    "BookedElsewhere",
+    "ForceMajeure",
+    "GuestComplaint",
+    "NoShow",
+    "PriceTooHigh",
+    "ServiceNotAvailable",
+    "InputError",
+    "InvalidPayment",
+    "TravelAgency",
+    "RequestedByGuest",
+    "Update",
+    "BookingAbandoned",
+    "RequestedByBooker"
+  ],
+  "type": "string"
+}

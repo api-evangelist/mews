@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductTypeEnum",
+  "title": "Product type",
+  "enum": [
+    "Product",
+    "Allowance"
+  ],
+  "type": "string",
+  "description": "\n\nProduct\n\nAllowance",
+  "x-enumNames": [
+    "Product",
+    "Allowance"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

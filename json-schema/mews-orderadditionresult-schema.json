@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderAdditionResult",
+  "title": "OrderAdditionResult",
+  "type": "object",
+  "properties": {
+    "OrderId": {
+      "type": "string",
+      "description": "Unique identifier of the created order.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderAdditionResult"
+}

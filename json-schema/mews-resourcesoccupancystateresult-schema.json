@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourcesOccupancyStateResult",
+  "title": "ResourcesOccupancyStateResult",
+  "required": [
+    "ResourceCategoryOccupancyStates"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceCategoryOccupancyStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategoryOccupancyState"
+      },
+      "description": "The resource categories."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourcesOccupancyStateResult"
+}

@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerClassificationUpdateParameters",
+  "title": "Customer update classifications",
+  "type": "object",
+  "properties": {
+    "PaymasterAccount": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Paymaster account (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Blacklist": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Synonym of Blocklist, left for backward compatibility (`null` if the value should not be updated).",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use Blocklist instead."
+    },
+    "Blocklist": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Blocklist (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Media": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Media (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "LoyaltyProgram": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Loyalty program (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "PreviousComplaint": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Previous complaint (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Returning": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Returning (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Staff": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Staff (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "FriendOrFamily": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Friend or family (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "TopManagement": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Top management (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Important": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Important (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "VeryImportant": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Very important (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Problematic": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Problematic (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Cashlist": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Cashlist (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "DisabledPerson": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Disabled person (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Military": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Military (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Airline": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Airline (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "HealthCompliant": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Health compliant (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "InRoom": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "In room (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "WaitingForRoom": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Waiting for room (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Student": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Student (or `null` if the value should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerClassificationUpdateParameters"
+}

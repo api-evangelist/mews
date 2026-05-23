@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceDataDiscriminatorEnum",
+  "title": "Service data discriminator",
+  "enum": [
+    "Bookable",
+    "Additional"
+  ],
+  "type": "string",
+  "description": "\n\nBookable\n\nAdditional",
+  "x-enumNames": [
+    "Bookable",
+    "Additional"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

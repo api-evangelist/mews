@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceAvailabilityFilterParametersV20240122",
+  "title": "ServiceAvailabilityFilterParametersV20240122",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "FirstTimeUnitStartUtc",
+    "LastTimeUnitStartUtc",
+    "Metrics",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Service](https://mews-systems.gitbook.io/connector-api/operations/services/#service) whose availability should be returned.",
+      "format": "uuid"
+    },
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/), in UTC timezone ISO 8601 format. The maximum size of time interval depends on the service's [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/): 367 hours if hours, 367 days if days, or 60 months if months.",
+      "format": "date-time"
+    },
+    "Metrics": {
+      "minItems": 1,
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceAvailabilityMetricTypeEnum"
+      },
+      "description": "Set of [Service availability metrics](https://mews-systems.gitbook.io/connector-api/operations/services/#service-availability-metrics) to be returned."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceAvailabilityFilterParametersV20240122"
+}

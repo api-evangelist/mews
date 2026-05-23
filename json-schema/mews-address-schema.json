@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Address",
+  "title": "Address",
+  "type": "object",
+  "properties": {
+    "Line1": {
+      "type": "string",
+      "nullable": true
+    },
+    "Line2": {
+      "type": "string",
+      "nullable": true
+    },
+    "City": {
+      "type": "string",
+      "nullable": true
+    },
+    "PostalCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "SubdivisionCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "CountryCode": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Address"
+}

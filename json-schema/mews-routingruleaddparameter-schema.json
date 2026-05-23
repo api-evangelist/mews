@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleAddParameter",
+  "title": "Routing rule parameters",
+  "required": [
+    "Applicability",
+    "CompanyId",
+    "CompanyRelation",
+    "RouteType",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the Company routing rule is assigned to.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the Service routing rule is assigned to.",
+      "format": "uuid"
+    },
+    "CompanyRelation": {
+      "$ref": "#/components/schemas/RoutingRuleCompanyRelation"
+    },
+    "Applicability": {
+      "$ref": "#/components/schemas/RoutingRuleApplicability"
+    },
+    "RouteType": {
+      "$ref": "#/components/schemas/RoutingRuleRouteType"
+    },
+    "AssignmentTargetType": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleAssignmentTargetType"
+        }
+      ],
+      "description": "Relation of company to the bill. Defaults to `CompanyAsDetails`.",
+      "nullable": true
+    },
+    "SelectedStayItems": {
+      "title": "Selected stay items parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleStayItemsAddParameters"
+        }
+      ],
+      "description": "To which stay items routing rule applies to. Required only if `RouteType` value is `SelectedStayItems`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RoutingRuleAddParameter"
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FiscalMachineCommandDataV20250623",
+  "title": "Fiscal machine command data (ver. 2025-06-23)",
+  "required": [
+    "ApiUrl",
+    "Bill",
+    "CreatedUtc",
+    "Device",
+    "FiscalMachineData",
+    "FiscalMachineId",
+    "Id",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the command.",
+      "format": "uuid"
+    },
+    "State": {
+      "title": "Command state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeviceCommandStateEnum"
+        }
+      ],
+      "description": "State of the command.\n\nPending (Created in Mews, but not yet received by the client application.)\n\nReceived (Received by the client application.)\n\nProcessing (Being processed by the client application.)\n\nProcessed (Successfully processed command.)\n\nCancelled (A command whose execution has been canceled before (or during) processing.)\n\nError (A command whose execution or processing was terminated by an error.)",
+      "x-enumNames": [
+        "Pending",
+        "Received",
+        "Processing",
+        "Processed",
+        "Cancelled",
+        "Error"
+      ],
+      "x-enumDescriptions": [
+        "Created in Mews, but not yet received by the client application.",
+        "Received by the client application.",
+        "Being processed by the client application.",
+        "Successfully processed command.",
+        "A command whose execution has been canceled before (or during) processing.",
+        "A command whose execution or processing was terminated by an error."
+      ]
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the command.",
+      "format": "date-time"
+    },
+    "Creator": {
+      "title": "Profile data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileData"
+        }
+      ],
+      "description": "Creator of the command.",
+      "nullable": true
+    },
+    "FiscalMachineId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Identifier of the fiscal machine."
+    },
+    "ApiUrl": {
+      "minLength": 1,
+      "type": "string",
+      "description": "URL of the fiscal machine API."
+    },
+    "FiscalMachineData": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Custom JSON data."
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identifier to be used for fiscalization.",
+      "nullable": true
+    },
+    "Device": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Device"
+        }
+      ],
+      "description": "Device that the command should be executed on."
+    },
+    "Bill": {
+      "title": "Bill (ver 2025-06-23)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillV20250623"
+        }
+      ],
+      "description": "The issued bill that should be fiscalized."
+    },
+    "CommandData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FiscalMachineAdditionalData"
+        }
+      ],
+      "description": "Additional data of the fiscal machine.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "FiscalMachineCommandDataV20250623"
+}

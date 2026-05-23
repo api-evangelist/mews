@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DependentRatePricingParameters",
+  "title": "Dependent rate pricing parameters",
+  "required": [
+    "BaseRateId"
+  ],
+  "type": "object",
+  "properties": {
+    "BaseRateId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the base rate.",
+      "x-schema-id": "HybridIdentifier"
+    },
+    "RelativeAdjustment": {
+      "type": "number",
+      "description": "Relative amount which shows the difference between this rate and the base rate.",
+      "format": "double"
+    },
+    "AbsoluteAdjustment": {
+      "type": "number",
+      "description": "Specific amount which shows the difference between this rate and the base rate.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DependentRatePricingParameters"
+}

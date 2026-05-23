@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CategoryAdjustment",
+  "title": "Resource category adjustment",
+  "required": [
+    "AbsoluteValue",
+    "CategoryId",
+    "RelativeValue"
+  ],
+  "type": "object",
+  "properties": {
+    "CategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the adjustment category.",
+      "format": "uuid"
+    },
+    "ParentCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the parent category that serves as a base price for the current category.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AbsoluteValue": {
+      "type": "number",
+      "description": "Absolute value of the adjustment (e.g. `50` represents 50 EUR in case the rate currency is `EUR`).",
+      "format": "double"
+    },
+    "RelativeValue": {
+      "type": "number",
+      "description": "Relative value of the adjustment (e.g. `0.5` represents 50% increase).",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CategoryAdjustment"
+}

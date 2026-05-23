@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerFileParameters",
+  "title": "CustomerFileParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "CustomerId",
+    "Data",
+    "Name",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the [Customer](https://mews-systems.gitbook.io/connector-api/operations/#customer).",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the file."
+    },
+    "Type": {
+      "minLength": 1,
+      "type": "string",
+      "description": "MIME type of the file (e.g. `application/pdf`)."
+    },
+    "Data": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Base64-encoded data of the file."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerFileParameters"
+}

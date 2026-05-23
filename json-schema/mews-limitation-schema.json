@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Limitation",
+  "title": "Limitation",
+  "required": [
+    "Count"
+  ],
+  "type": "object",
+  "properties": {
+    "Count": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Cursor": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Limitation on the quantity of data returned.",
+  "x-schema-id": "Limitation"
+}

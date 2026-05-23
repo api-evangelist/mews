@@ -1,0 +1,40 @@
+{
+  "operationId": "billingAutomationPaymentPlans_add",
+  "method": "POST",
+  "path": "/api/connector/v1/billingAutomationPaymentPlans/add",
+  "summary": "Add billing automation payment plan",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "BillingAutomationId": "ecd64eec-4423-4c65-b844-814b9199856d",
+        "CustomerId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+        "Name": "Payment Plan Name",
+        "PaymentRequest": {
+          "PaymentMethods": [
+            "PaymentCard",
+            "SepaDirectDebit"
+          ],
+          "Message": "Your scheduled payments will be collected automatically based on your selected plan and timing.",
+          "Note": "Bill for previous month included",
+          "ExpirationDateUtc": "2026-10-01T12:00:00Z",
+          "SendEmail": false
+        },
+        "PaymentOffsetDays": 5,
+        "StartMonth": "2026-10"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "PaymentRequestUrl": "https://example.com/payment-request-url"
+      }
+    }
+  ]
+}

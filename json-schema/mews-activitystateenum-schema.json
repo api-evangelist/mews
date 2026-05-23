@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ActivityStateEnum",
+  "title": "Activity state",
+  "enum": [
+    "Deleted",
+    "Active"
+  ],
+  "type": "string",
+  "description": "\n\nDeleted\n\nActive",
+  "x-enumNames": [
+    "Deleted",
+    "Active"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

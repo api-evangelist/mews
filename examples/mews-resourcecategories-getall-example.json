@@ -1,0 +1,85 @@
+{
+  "operationId": "resourceCategories_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/resourceCategories/getAll",
+  "summary": "Get all resource categories",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "ResourceCategoryIds": [
+          "5c0804f9-d03a-4b13-a57d-b00300781a41",
+          "47d6b462-35ec-467e-a565-b00300781a41"
+        ],
+        "ServiceIds": [
+          "9b3a6c54-63aa-4383-b50e-b0030078184b",
+          "c0f71466-6c0b-4993-88ac-1794f6b7e958"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2023-05-05T00:00:00Z",
+          "EndUtc": "2023-05-10T00:00:00Z"
+        },
+        "ActivityStates": [
+          "Active"
+        ],
+        "Limitation": {
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ResourceCategories": [
+          {
+            "Id": "5c0804f9-d03a-4b13-a57d-b00300781a41",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "ServiceId": "9b3a6c54-63aa-4383-b50e-b0030078184b",
+            "IsActive": true,
+            "Type": "Bed",
+            "Names": {
+              "en-US": "Bed 1"
+            },
+            "ShortNames": {
+              "en-US": "Bed 1"
+            },
+            "Descriptions": {},
+            "Ordering": 2,
+            "Capacity": 1,
+            "ExtraCapacity": 0,
+            "ExternalIdentifier": null
+          },
+          {
+            "Id": "47d6b462-35ec-467e-a565-b00300781a41",
+            "EnterpriseId": "4d0201db-36f5-428b-8d11-4f0a65e960cc",
+            "ServiceId": "c0f71466-6c0b-4993-88ac-1794f6b7e958",
+            "IsActive": true,
+            "Type": "Dorm",
+            "Names": {
+              "en-US": "Dorm 1"
+            },
+            "ShortNames": {
+              "en-US": "Dorm 1"
+            },
+            "Descriptions": {},
+            "Ordering": 1,
+            "Capacity": 4,
+            "ExtraCapacity": 0,
+            "ExternalIdentifier": null
+          }
+        ],
+        "Cursor": "47d6b462-35ec-467e-a565-b00300781a41"
+      }
+    }
+  ]
+}

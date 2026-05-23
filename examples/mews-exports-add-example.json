@@ -1,0 +1,56 @@
+{
+  "operationId": "exports_add",
+  "method": "POST",
+  "path": "/api/connector/v1/exports/add",
+  "summary": "Add export",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EntityType": "Reservation",
+        "Scope": {
+          "EnterpriseIds": [
+            "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          ]
+        },
+        "Filters": {
+          "UpdatedUtc": {
+            "StartUtc": "2020-11-04T00:00:00Z",
+            "EndUtc": "2020-11-05T00:00:00Z"
+          }
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Export": {
+          "Id": "09708665-0e31-4b23-b337-b0a000be0df0",
+          "Status": "Pending",
+          "EntityType": "Reservation",
+          "Scope": {
+            "EnterpriseIds": [
+              "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            ],
+            "ChainIds": null
+          },
+          "Files": [],
+          "ExpiresUtc": null,
+          "Filters": {
+            "UpdatedUtc": {
+              "StartUtc": "2020-11-04T00:00:00Z",
+              "EndUtc": "2020-11-05T00:00:00Z"
+            },
+            "LedgerEntryFilters": null
+          }
+        }
+      }
+    }
+  ]
+}

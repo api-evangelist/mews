@@ -1,0 +1,140 @@
+{
+  "operationId": "reservations_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/getAll",
+  "summary": "Get all reservations (ver 2017-04-12)",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "StartUtc": "2016-01-01T00:00:00Z",
+        "EndUtc": "2016-01-07T00:00:00Z",
+        "ServiceIds": [
+          "bd26d8db-86da-4f96-9efc-e5a4654a4a94"
+        ],
+        "ReservationIds": [
+          "db6cad34-9a91-448b-bea1-abbe01240d9c"
+        ],
+        "CustomerIds": [
+          "8e1d0ca6-1dde-4be0-8566-aafc01866110"
+        ],
+        "RateIds": [
+          "ed4b660b-19d0-434b-9360-a4de2ea42eda"
+        ],
+        "ChannelNumbers": [
+          "TW48ZP"
+        ],
+        "States": [
+          "Started"
+        ],
+        "Extent": {
+          "Reservations": true,
+          "ReservationGroups": true,
+          "Customers": true
+        },
+        "Limitation": {
+          "Cursor": "e7f26210-10e7-462e-9da8-ae8300be8ab7",
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "BusinessSegments": null,
+        "Customers": [
+          {
+            "Address": null,
+            "BirthDate": null,
+            "BirthPlace": null,
+            "CategoryId": null,
+            "Classifications": [],
+            "CreatedUtc": "2016-01-01T00:00:00Z",
+            "Email": null,
+            "FirstName": "John",
+            "Sex": null,
+            "Id": "35d4b117-4e60-44a3-9580-c582117eff98",
+            "IdentityCard": null,
+            "LanguageCode": null,
+            "LastName": "Smith",
+            "LoyaltyCode": null,
+            "NationalityCode": "US",
+            "Notes": "",
+            "Number": "1",
+            "Passport": null,
+            "Phone": "00420123456789",
+            "SecondLastName": null,
+            "TaxIdentificationNumber": null,
+            "Title": null,
+            "UpdatedUtc": "2016-01-01T00:00:00Z",
+            "Visa": null
+          }
+        ],
+        "OrderItems": null,
+        "Products": null,
+        "RateGroups": null,
+        "Rates": null,
+        "ReservationGroups": [
+          {
+            "Id": "c704dff3-7811-4af7-a3a0-7b2b0635ac59",
+            "Name": "13-12-Smith-F712"
+          }
+        ],
+        "Reservations": [
+          {
+            "Id": "bfee2c44-1f84-4326-a862-5289598f6e2d",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "GroupId": "94843f6f-3be3-481b-a1c7-06458774c3df",
+            "Number": "52",
+            "ChannelNumber": "TW48ZP",
+            "ChannelManager": "",
+            "ChannelManagerGroupNumber": null,
+            "ChannelManagerNumber": null,
+            "State": "Processed",
+            "Origin": "Connector",
+            "OriginDetail": null,
+            "Purpose": "Student",
+            "CreatedUtc": "2016-02-20T14:58:02Z",
+            "UpdatedUtc": "2016-02-20T14:58:02Z",
+            "CancelledUtc": null,
+            "StartUtc": "2016-02-20T13:00:00Z",
+            "EndUtc": "2016-02-22T11:00:00Z",
+            "ReleasedUtc": null,
+            "RequestedCategoryId": "773d5e42-de1e-43a0-9ce6-f940faf2303f",
+            "AssignedResourceId": "20e00c32-d561-4008-8609-82d8aa525714",
+            "AssignedResourceLocked": false,
+            "BusinessSegmentId": null,
+            "CompanyId": null,
+            "TravelAgencyId": null,
+            "AvailabilityBlockId": null,
+            "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+            "VoucherId": null,
+            "CustomerId": "35d4b117-4e60-44a3-9580-c582117eff98",
+            "PersonCounts": [
+              {
+                "AgeCategoryId": "1f67644f-052d-4863-acdf-ae1600c60ca0",
+                "Count": 2
+              },
+              {
+                "AgeCategoryId": "ab58c939-be30-4a60-8f75-ae1600c60c9f",
+                "Count": 2
+              }
+            ]
+          }
+        ],
+        "Services": null,
+        "Resources": null,
+        "ResourceCategories": null,
+        "ResourceCategoryAssignments": null,
+        "Notes": null,
+        "Cursor": "8d02142f-31cf-4115-90bf-ae5200c7a1ba"
+      }
+    }
+  ]
+}

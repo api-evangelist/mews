@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerOptionsEnum",
+  "title": "Customer option",
+  "enum": [
+    "None",
+    "SendMarketingEmails",
+    "Invoiceable",
+    "BillAddressObjection",
+    "SendMarketingPostalMail",
+    "SendPartnerMarketingEmails",
+    "SendPartnerMarketingPostalMail",
+    "WithdrawCardConsent",
+    "GuestPhotoConsent",
+    "IdPhotosConsent"
+  ],
+  "type": "string",
+  "description": "\n\nNone\n\nSendMarketingEmails\n\nInvoiceable\n\nBillAddressObjection\n\nSendMarketingPostalMail\n\nSendPartnerMarketingEmails\n\nSendPartnerMarketingPostalMail\n\nWithdrawCardConsent\n\nGuestPhotoConsent\n\nIdPhotosConsent",
+  "x-enumNames": [
+    "None",
+    "SendMarketingEmails",
+    "Invoiceable",
+    "BillAddressObjection",
+    "SendMarketingPostalMail",
+    "SendPartnerMarketingEmails",
+    "SendPartnerMarketingPostalMail",
+    "WithdrawCardConsent",
+    "GuestPhotoConsent",
+    "IdPhotosConsent"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddressUpdateParameters",
+  "title": "Account address update parameters",
+  "required": [
+    "AddressId"
+  ],
+  "type": "object",
+  "properties": {
+    "AddressId": {
+      "type": "string",
+      "description": "Unique identifier of the address.",
+      "format": "uuid"
+    },
+    "Line1": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "First line of the address.",
+      "nullable": true
+    },
+    "Line2": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Second line of the address.",
+      "nullable": true
+    },
+    "City": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "The city.",
+      "nullable": true
+    },
+    "PostalCode": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Postal code.",
+      "format": "postal-code",
+      "nullable": true
+    },
+    "CountryCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "ISO 3166-1 alpha-2 code of the Country.",
+      "nullable": true
+    },
+    "CountrySubdivisionCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "ISO 3166-2 code of the administrative division, e.g. `DE-BW`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddressUpdateParameters"
+}

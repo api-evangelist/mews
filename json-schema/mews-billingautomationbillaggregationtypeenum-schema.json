@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationBillAggregationTypeEnum",
+  "title": "Billing automation bill aggregation type",
+  "enum": [
+    "OnePerReservation",
+    "AggregateByCustomer",
+    "AggregateAll",
+    "AggregatePerReservationGroup"
+  ],
+  "type": "string",
+  "description": "\n\nOnePerReservation (Create a separate bill for each reservation.)\n\nAggregateByCustomer (Create a separate bill for each reservation owner.)\n\nAggregateAll (Group all moved items on one bill.)\n\nAggregatePerReservationGroup (Create a separate bill for each reservation group.)",
+  "x-enumNames": [
+    "OnePerReservation",
+    "AggregateByCustomer",
+    "AggregateAll",
+    "AggregatePerReservationGroup"
+  ],
+  "x-enumDescriptions": [
+    "Create a separate bill for each reservation.",
+    "Create a separate bill for each reservation owner.",
+    "Group all moved items on one bill.",
+    "Create a separate bill for each reservation group."
+  ]
+}

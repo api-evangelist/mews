@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingItem",
+  "title": "Accounting item",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountId` instead."
+    },
+    "OrderId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ServiceId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ProductId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BillId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "InvoiceId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CreditCardId": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Type": {
+      "type": "string",
+      "nullable": true
+    },
+    "SubType": {
+      "type": "string",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "nullable": true
+    },
+    "ConsumptionUtc": {
+      "type": "string",
+      "nullable": true
+    },
+    "ClosedUtc": {
+      "type": "string",
+      "nullable": true
+    },
+    "State": {
+      "type": "string",
+      "nullable": true
+    },
+    "SubState": {
+      "type": "string",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "",
+      "nullable": true
+    },
+    "TaxExemptionReasonCode": {
+      "type": "string",
+      "description": "Code of tax exemption reason. **Restricted!** This property is currently intended for Mews' internal usage and may be subject to change.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingItem"
+}

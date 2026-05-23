@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationUpdateOptionsParameters",
+  "title": "Reservations options parameters update values",
+  "type": "object",
+  "properties": {
+    "OwnerCheckedIn": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "True if the owner of the reservation is checked in. (or `null` if the value should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationUpdateOptionsParameters"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicyByReservationResult",
+  "title": "CancellationPolicyByReservationResult",
+  "required": [
+    "CancellationPolicies"
+  ],
+  "type": "object",
+  "properties": {
+    "CancellationPolicies": {
+      "maxItems": 1300,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CancellationPolicyByReservation"
+      },
+      "description": "List of cancellation policies data grouped by reservation."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CancellationPolicyByReservationResult"
+}

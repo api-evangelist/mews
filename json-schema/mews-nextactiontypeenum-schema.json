@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NextActionTypeEnum",
+  "title": "Payment next action discriminator",
+  "enum": [
+    "RedirectToUrl"
+  ],
+  "type": "string",
+  "description": "\n\nRedirectToUrl (Redirect customer to a URL where they can complete their payment.)",
+  "x-enumNames": [
+    "RedirectToUrl"
+  ],
+  "x-enumDescriptions": [
+    "Redirect customer to a URL where they can complete their payment."
+  ]
+}

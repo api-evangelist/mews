@@ -1,0 +1,75 @@
+{
+  "operationId": "reservations_getAllItems",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/getAllItems",
+  "summary": "Get all reservation items",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ReservationIds": [
+          "e6ea708c-2a2a-412f-a152-b6c76ffad49b"
+        ],
+        "Currency": "EUR",
+        "AccountingStates": [
+          "Closed"
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Reservations": [
+          {
+            "ReservationId": "e6ea708c-2a2a-412f-a152-b6c76ffad49b",
+            "OrderItems": [
+              {
+                "Id": "784a29df-6196-4402-96a0-58695a881239",
+                "AccountId": "d73a087a-00c7-40cf-9372-314d0296334d",
+                "OrderId": "e6ea708c-2a2a-412f-a152-b6c76ffad49b",
+                "BillId": "7fdc2957-bc08-44d3-ba2a-1c1760a84894",
+                "AccountingCategoryId": "0cf7aa90-736f-43e9-a7dc-787704548d86",
+                "Amount": {
+                  "Currency": "EUR",
+                  "NetValue": 19.38,
+                  "GrossValue": 23.26,
+                  "TaxValues": [
+                    {
+                      "Code": "UK-S",
+                      "Value": 3.88
+                    }
+                  ],
+                  "Breakdown": {
+                    "Items": [
+                      {
+                        "TaxRateCode": "UK-S",
+                        "NetValue": 19.38,
+                        "TaxValue": 3.88
+                      }
+                    ]
+                  }
+                },
+                "RevenueType": "Service",
+                "ConsumedUtc": "2016-03-10T13:00:00Z",
+                "ClosedUtc": "2016-04-06T06:41:44Z",
+                "AccountingState": "Closed",
+                "Data": {
+                  "Discriminator": "ProductOrder",
+                  "Value": {
+                    "ProductId": "a3f4e006-b3e4-4485-8a00-ad11015ac494"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

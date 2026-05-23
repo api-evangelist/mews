@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyTierResult",
+  "title": "LoyaltyTierResult",
+  "required": [
+    "LoyaltyTiers"
+  ],
+  "type": "object",
+  "properties": {
+    "LoyaltyTiers": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LoyaltyTier"
+      },
+      "description": "The loyalty tiers of the loyalty program within the chain."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyTierResult"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReleaseStrategyUpdateValue",
+  "title": "Release strategy update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Release strategy",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReleaseStrategyEnum"
+        }
+      ],
+      "description": "The strategy for automatic release of the availability block.\n\nFixedRelease (The availability block is released at a fixed time.)\n\nRollingRelease (Each availability adjustment is released at a fixed offset from its start.)\n\nNone (The availability block is not automatically released.)",
+      "x-enumNames": [
+        "FixedRelease",
+        "RollingRelease",
+        "None"
+      ],
+      "x-enumDescriptions": [
+        "The availability block is released at a fixed time.",
+        "Each availability adjustment is released at a fixed offset from its start.",
+        "The availability block is not automatically released."
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReleaseStrategyUpdateValue"
+}

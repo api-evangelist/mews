@@ -1,0 +1,74 @@
+{
+  "operationId": "accountingItems_update",
+  "method": "POST",
+  "path": "/api/connector/v1/accountingItems/update",
+  "summary": "Update accounting items",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "AccountingItemUpdates": [
+          {
+            "AccountingItemId": "6c2897de-620a-4f48-af1e-ada8004202bd",
+            "AccountId": {
+              "Value": "182a56ee-037d-4da5-b6f8-ada8006e7d5c"
+            },
+            "BillId": {
+              "Value": "9e3791dc-95c7-439a-aa8a-ada8007de0ca"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "OrderItems": [
+          {
+            "Id": "6c2897de-620a-4f48-af1e-ada8004202bd",
+            "AccountId": "182a56ee-037d-4da5-b6f8-ada8006e7d5c",
+            "OrderId": "f9090129-fb49-46d2-9dc5-ad9d015d43b9",
+            "BillId": "9e3791dc-95c7-439a-aa8a-ada8007de0ca",
+            "AccountingCategoryId": "d250149e-a29d-4c70-b607-a1759faf7320",
+            "Amount": {
+              "Currency": "GBP",
+              "NetValue": 95.24,
+              "GrossValue": 100,
+              "TaxValues": [
+                {
+                  "Code": "UK-2020-R",
+                  "Value": 4.76
+                }
+              ],
+              "Breakdown": {
+                "Items": [
+                  {
+                    "TaxRateCode": "UK-2020-R",
+                    "NetValue": 95.24,
+                    "TaxValue": 4.76
+                  }
+                ]
+              }
+            },
+            "RevenueType": "Additional",
+            "ConsumedUtc": "2021-09-19T04:00:20Z",
+            "ClosedUtc": null,
+            "AccountingState": "Open",
+            "Data": {
+              "Discriminator": "CancellationFee",
+              "Value": null
+            }
+          }
+        ],
+        "PaymentItems": []
+      }
+    }
+  ]
+}

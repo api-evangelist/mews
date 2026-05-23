@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationResult",
+  "title": "ReservationResult",
+  "type": "object",
+  "properties": {
+    "Reservations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationOld"
+      },
+      "description": "The reservations that collide with the specified interval.",
+      "nullable": true
+    },
+    "ReservationGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationGroupOld"
+      },
+      "description": "Reservation groups that the reservations are members of.",
+      "nullable": true
+    },
+    "Customers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Customer"
+      },
+      "description": "Customers that are members of the reservations.",
+      "nullable": true
+    },
+    "Services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Service"
+      },
+      "description": "Services that have been reserved.",
+      "nullable": true
+    },
+    "Products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Product"
+      },
+      "description": "Products orderable with reservations.",
+      "nullable": true
+    },
+    "Resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Resource"
+      },
+      "description": "Assigned resources of the reservations.",
+      "nullable": true
+    },
+    "ResourceCategories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategory"
+      },
+      "description": "Resource categories of the resources.",
+      "nullable": true
+    },
+    "ResourceCategoryAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategoryAssignment"
+      },
+      "description": "Assignments of the resources to categories.",
+      "nullable": true
+    },
+    "BusinessSegments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BusinessSegment"
+      },
+      "description": "Business segments of the reservations.",
+      "nullable": true
+    },
+    "Rates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RateForExtent"
+      },
+      "description": "Rates of the reservations.",
+      "nullable": true
+    },
+    "RateGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RateGroupOld"
+      },
+      "description": "Rate groups of the reservation rates.",
+      "nullable": true
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingItem"
+      },
+      "description": "Accounting items that are part of the reservations.",
+      "nullable": true
+    },
+    "OrderItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderItemOld"
+      },
+      "description": "Revenue items of the reservations.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderNote"
+      },
+      "description": "Notes of the reservations.",
+      "nullable": true
+    },
+    "QrCodeData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationQrCodeData"
+      },
+      "description": "QR code data of the reservations.",
+      "nullable": true
+    },
+    "Companies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Company"
+      },
+      "description": "Companies related to the reservations.",
+      "nullable": true
+    },
+    "ResourceAccessTokens": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceAccessToken"
+      },
+      "description": "Resource access tokens for the reservations.",
+      "nullable": true
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last and hence oldest reservation returned. This can be used in [Limitation](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/#limitation) in a subsequent request to fetch the next batch of older reservations.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationResult"
+}

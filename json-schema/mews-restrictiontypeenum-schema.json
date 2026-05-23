@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionTypeEnum",
+  "title": "Restriction type",
+  "enum": [
+    "Stay",
+    "Start",
+    "End"
+  ],
+  "type": "string",
+  "description": "\n\nStay (Guests can't stay within specified dates.)\n\nStart (Guests can't check in within specified dates.)\n\nEnd (Guests can't check out within specified dates.)",
+  "x-enumNames": [
+    "Stay",
+    "Start",
+    "End"
+  ],
+  "x-enumDescriptions": [
+    "Guests can't stay within specified dates.",
+    "Guests can't check in within specified dates.",
+    "Guests can't check out within specified dates."
+  ]
+}

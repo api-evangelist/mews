@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxBreakdownItem",
+  "title": "Tax breakdown item",
+  "required": [
+    "NetValue",
+    "TaxValue"
+  ],
+  "type": "object",
+  "properties": {
+    "TaxRateCode": {
+      "type": "string",
+      "description": "Tax rate code for the item. `null` for untaxed amounts.",
+      "nullable": true
+    },
+    "NetValue": {
+      "type": "number",
+      "description": "The net value that the tax is calculated from.",
+      "format": "double"
+    },
+    "TaxValue": {
+      "type": "number",
+      "description": "The value of the tax.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TaxBreakdownItem"
+}

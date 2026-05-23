@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationPaymentPlanPaymentRequest",
+  "title": "Billing automation payment plan payment request",
+  "required": [
+    "ExpirationDateUtc",
+    "Message",
+    "PaymentMethods",
+    "SendEmail"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentMethods": {
+      "minItems": 1,
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentMethodsEnum"
+      },
+      "description": "Allowed payment methods to use for the payment plan."
+    },
+    "Message": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "type": "string",
+      "description": "Message for customer in the payment request email."
+    },
+    "Note": {
+      "maxLength": 2000,
+      "type": "string",
+      "description": "Internal note for the payment request.",
+      "nullable": true
+    },
+    "ExpirationDateUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Expiration date (UTC time) of the payment request. Must be within 30 days of payment plan creation. ISO-8601 format.",
+      "format": "date-time"
+    },
+    "SendEmail": {
+      "type": "boolean",
+      "description": "Specifies whether a payment request email is sent to the customer."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationPaymentPlanPaymentRequest"
+}

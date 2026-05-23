@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemFilterParameters",
+  "title": "OrderItemFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "OrderItemIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Order items](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item). Required if no other filter is provided.",
+      "nullable": true
+    },
+    "AccountIds": {
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of specific `Accounts` to which the order items belong to. Required if no other filter is provided.",
+      "nullable": true
+    },
+    "ServiceOrderIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the service orders ([product service orders](https://mews-systems.gitbook.io/connector-api/operations/productserviceorders/#product-service-order) or [reservations](https://mews-systems.gitbook.io/connector-api/operations/reservations/#reservation-ver-2023-06-06)). Required if no other filter is provided.",
+      "nullable": true
+    },
+    "ServiceIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Services](https://mews-systems.gitbook.io/connector-api/operations/services/#service). Required if no other filter is provided.",
+      "nullable": true
+    },
+    "BillIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Bills](https://mews-systems.gitbook.io/connector-api/operations/bills/#bill) to which order item is assigned. Required if no other filter is provided.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) was created. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) was updated. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ConsumedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) was consumed. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "CanceledUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) was canceled. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ClosedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) was closed. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "Currency": {
+      "type": "string",
+      "description": "ISO-4217 code of the [Currency](https://mews-systems.gitbook.io/connector-api/operations/currencies/#currency) the item costs should be converted to.",
+      "format": "currency",
+      "nullable": true
+    },
+    "AccountingStates": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingStateEnum"
+      },
+      "description": "Accounting state of the item.",
+      "nullable": true
+    },
+    "Types": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderItemTypeEnum"
+      },
+      "description": "Order item type, e.g. whether product order or space order.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemFilterParameters"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Int32UpdateValue",
+  "title": "Int32 update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "integer",
+      "description": "Value which is to be updated.",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Int32UpdateValue"
+}

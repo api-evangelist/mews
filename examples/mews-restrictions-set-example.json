@@ -1,0 +1,61 @@
+{
+  "operationId": "restrictions_set",
+  "method": "POST",
+  "path": "/api/connector/v1/restrictions/set",
+  "summary": "Set restrictions",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "Data": [
+          {
+            "Type": "Start",
+            "ExactRateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+            "ResourceCategoryId": "773d5e42-de1e-43a0-9ce6-f940faf2303f",
+            "StartUtc": "2023-02-15T00:00:00Z",
+            "EndUtc": "2023-02-22T00:00:00Z",
+            "Days": {
+              "Monday": false,
+              "Tuesday": false,
+              "Wednesday": false,
+              "Thursday": false,
+              "Friday": true,
+              "Saturday": true,
+              "Sunday": true
+            },
+            "MinLength": "P0M2DT0H0M0S",
+            "MaxLength": "P0M7DT0H0M0S"
+          },
+          {
+            "Type": "Start",
+            "BaseRateId": "e5b538b1-36e6-43a0-9f5c-103204c7f68e",
+            "StartUtc": "2023-02-23T00:00:00Z",
+            "EndUtc": "2023-03-03T00:00:00Z",
+            "Days": {
+              "Monday": true,
+              "Tuesday": true,
+              "Wednesday": true,
+              "Thursday": true,
+              "Friday": true,
+              "Saturday": false,
+              "Sunday": false
+            },
+            "MinAdvance": "P0Y0M1DT0H0M0S",
+            "MaxAdvance": "P0Y0M3DT0H0M0S"
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {}
+    }
+  ]
+}

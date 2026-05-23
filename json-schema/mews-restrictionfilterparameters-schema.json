@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionFilterParameters",
+  "title": "RestrictionFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation",
+    "ServiceIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "TimeFilter": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "CollidingUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Restriction` is active.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Restriction` was created.",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Restriction` was updated.",
+      "nullable": true
+    },
+    "RestrictionIds": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Restriction`.",
+      "nullable": true
+    },
+    "ResourceCategoryIds": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Resource category`.",
+      "nullable": true
+    },
+    "RateIds": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Rate`. Returns all restrictions that affect the given rates, i.e. ones without any `Restriction Conditions`, ones assigned directly to specified rates, ones assigned to `Rate group` of specified rates, or ones inherited from base rates.`.",
+      "nullable": true
+    },
+    "ExactRateIds": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Rate`. Returns only those restrictions which have matching `ExactRateId` set in `Restriction Condition`.",
+      "nullable": true
+    },
+    "BaseRateIds": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Rate`. Returns only those restrictions which have matching `BaseRateId` set in `Restriction Condition`.",
+      "nullable": true
+    },
+    "Origin": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RestrictionOrigin"
+        }
+      ],
+      "description": "Restriction origin. Returns only those restrictions which have matching Origin or all if not specified.",
+      "nullable": true
+    },
+    "ServiceIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Service` from which the restrictions are requested."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RestrictionFilterParameters"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentCardStorage",
+  "title": "Payment card storage",
+  "required": [
+    "PublicKey"
+  ],
+  "type": "object",
+  "properties": {
+    "PublicKey": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Key for accessing PCI proxy storage."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "PaymentCardStorage"
+}

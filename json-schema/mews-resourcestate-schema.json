@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceState",
+  "title": "Resource state",
+  "enum": [
+    "Dirty",
+    "Clean",
+    "Inspected",
+    "OutOfService",
+    "OutOfOrder"
+  ],
+  "type": "string",
+  "description": "State of the resource.\n\nDirty\n\nClean\n\nInspected\n\nOutOfService\n\nOutOfOrder",
+  "x-enumNames": [
+    "Dirty",
+    "Clean",
+    "Inspected",
+    "OutOfService",
+    "OutOfOrder"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "x-schema-id": "ResourceState"
+}

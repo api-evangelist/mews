@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingConfigurationOptionEnum",
+  "title": "Accounting configuration option",
+  "enum": [
+    "OptionalCreditCardPaymentDetails",
+    "ReceivableTrackingEnabled",
+    "SeparateDepositsOnBill",
+    "AllowModifyingClosedBills",
+    "RequireAccountingCategorySetup",
+    "GroupTaxesOnBill",
+    "DisplayEmployeeNameOnBill",
+    "TaxDeclarationOnDeposit",
+    "SplitVatByClassificationOnBill",
+    "EmailClosedBillsAfterCheckout"
+  ],
+  "type": "string",
+  "description": "\n\nOptionalCreditCardPaymentDetails (Optional credit card payment details)\n\nReceivableTrackingEnabled (Receivable tracking enabled)\n\nSeparateDepositsOnBill (Separate deposits on bill)\n\nAllowModifyingClosedBills (Allow modifying closed bills)\n\nRequireAccountingCategorySetup (Require accounting category setup)\n\nGroupTaxesOnBill (Group taxes on bill)\n\nDisplayEmployeeNameOnBill (Display employee name on bill)\n\nTaxDeclarationOnDeposit (Tax declaration on deposit)\n\nSplitVatByClassificationOnBill (Split VAT by classification on bill)\n\nEmailClosedBillsAfterCheckout (Send system closed bills automatically after checkout)",
+  "x-enumNames": [
+    "OptionalCreditCardPaymentDetails",
+    "ReceivableTrackingEnabled",
+    "SeparateDepositsOnBill",
+    "AllowModifyingClosedBills",
+    "RequireAccountingCategorySetup",
+    "GroupTaxesOnBill",
+    "DisplayEmployeeNameOnBill",
+    "TaxDeclarationOnDeposit",
+    "SplitVatByClassificationOnBill",
+    "EmailClosedBillsAfterCheckout"
+  ],
+  "x-enumDescriptions": [
+    "Optional credit card payment details",
+    "Receivable tracking enabled",
+    "Separate deposits on bill",
+    "Allow modifying closed bills",
+    "Require accounting category setup",
+    "Group taxes on bill",
+    "Display employee name on bill",
+    "Tax declaration on deposit",
+    "Split VAT by classification on bill",
+    "Send system closed bills automatically after checkout"
+  ],
+  "x-extensible": true
+}

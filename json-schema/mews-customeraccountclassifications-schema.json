@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerAccountClassifications",
+  "title": "Customer classifications",
+  "type": "object",
+  "properties": {
+    "PaymasterAccount": {
+      "type": "boolean",
+      "description": "Paymaster account."
+    },
+    "Blacklist": {
+      "type": "boolean",
+      "description": "Synonym of Blocklist, left for backward compatibility.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use Blocklist instead."
+    },
+    "Blocklist": {
+      "type": "boolean",
+      "description": "Blocklist."
+    },
+    "Media": {
+      "type": "boolean",
+      "description": "Media."
+    },
+    "LoyaltyProgram": {
+      "type": "boolean",
+      "description": "Loyalty program."
+    },
+    "PreviousComplaint": {
+      "type": "boolean",
+      "description": "Previous complaint."
+    },
+    "Returning": {
+      "type": "boolean",
+      "description": "Returning."
+    },
+    "Staff": {
+      "type": "boolean",
+      "description": "Staff."
+    },
+    "FriendOrFamily": {
+      "type": "boolean",
+      "description": "Friend or family."
+    },
+    "TopManagement": {
+      "type": "boolean",
+      "description": "Top management."
+    },
+    "Important": {
+      "type": "boolean",
+      "description": "Important."
+    },
+    "VeryImportant": {
+      "type": "boolean",
+      "description": "Very important."
+    },
+    "Problematic": {
+      "type": "boolean",
+      "description": "Problematic."
+    },
+    "Cashlist": {
+      "type": "boolean",
+      "description": "Cash list."
+    },
+    "DisabledPerson": {
+      "type": "boolean",
+      "description": "Disabled person."
+    },
+    "Military": {
+      "type": "boolean",
+      "description": "Military."
+    },
+    "Airline": {
+      "type": "boolean",
+      "description": "Airline."
+    },
+    "HealthCompliant": {
+      "type": "boolean",
+      "description": "Health compliant."
+    },
+    "InRoom": {
+      "type": "boolean",
+      "description": "In room."
+    },
+    "WaitingForRoom": {
+      "type": "boolean",
+      "description": "Waiting for room."
+    },
+    "Student": {
+      "type": "boolean",
+      "description": "Student."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerAccountClassifications"
+}

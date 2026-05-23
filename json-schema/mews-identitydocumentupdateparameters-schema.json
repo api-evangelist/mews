@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdentityDocumentUpdateParameters",
+  "title": "Identity document update parameters",
+  "required": [
+    "Id"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the document.",
+      "format": "uuid"
+    },
+    "Type": {
+      "title": "Identity document type update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocumentTypeUpdateValue"
+        }
+      ],
+      "description": "Type of the document (or `null` if the type should not be updated).",
+      "nullable": true
+    },
+    "Number": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Number of the document (e.g. passport number or `null` if the number should not be updated).",
+      "nullable": true
+    },
+    "ExpirationDate": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Expiration date in ISO 8601 format (or `null` if the expiration date should not be updated).",
+      "format": "date",
+      "nullable": true
+    },
+    "IssuanceDate": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Date of issuance in ISO 8601 format (or `null` if the issuance date should not be updated).",
+      "format": "date",
+      "nullable": true
+    },
+    "IssuingCountryCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "ISO 3166-1 code of the `Country` (or `null` if the issuing country code should not be updated).",
+      "nullable": true
+    },
+    "IssuingCountrySubdivisionCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Identifier of the country subdivision where the document was issued (province, state or region) (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "IssuingCity": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "City where the document was issued (or `null` if the issuing city should not be updated).",
+      "nullable": true
+    },
+    "IdentityDocumentSupportNumber": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Identity document support number. Only required for Spanish identity cards in Spanish hotels.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "IdentityDocumentUpdateParameters"
+}

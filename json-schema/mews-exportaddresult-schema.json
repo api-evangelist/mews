@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportAddResult",
+  "title": "ExportAddResult",
+  "required": [
+    "Export"
+  ],
+  "type": "object",
+  "properties": {
+    "Export": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Export"
+        }
+      ],
+      "description": "Added export."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportAddResult"
+}

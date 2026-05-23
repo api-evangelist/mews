@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxRate",
+  "title": "Tax rate",
+  "required": [
+    "Code",
+    "Strategy",
+    "TaxationCode"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the tax rate. To be used when posting revenue items which should be accompanied by the tax rate(s) applicable to the nature of the item and the tax environment."
+    },
+    "TaxationCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the `Taxation` the rate is part of."
+    },
+    "Value": {
+      "type": "number",
+      "description": "Tax rate, e.g. `0.21` in case of 21% tax rate.",
+      "format": "double"
+    },
+    "ValidityInvervalsUtc": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DateTimeIntervalUtc"
+      },
+      "description": "Validity intervals in UTC.",
+      "nullable": true
+    },
+    "Strategy": {
+      "title": "Tax rate strategy",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/TaxRateStrategyDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/RelativeTaxRateStrategy"
+            },
+            {
+              "$ref": "#/components/schemas/FlatTaxRateStrategy"
+            },
+            {
+              "$ref": "#/components/schemas/DependentTaxRateStrategy"
+            }
+          ]
+        }
+      },
+      "description": "Tax strategy type, e.g. relative, flat or dependent.",
+      "x-coproduct": true,
+      "x-schema-id": "TaxRateStrategyCoproductOfTaxRateStrategyDiscriminator"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Definition of single tax rate.",
+  "x-schema-id": "TaxRate"
+}

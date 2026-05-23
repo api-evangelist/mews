@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportScopeParameters",
+  "title": "Export scope parameters",
+  "type": "object",
+  "properties": {
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the enterprises to export data for. If not specified, data for all enterprises within the access token's scope will be returned.",
+      "nullable": true
+    },
+    "ChainIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the chains to export data for. If not specified, data for all chains within the access token's scope will be returned.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportScopeParameters"
+}

@@ -1,0 +1,67 @@
+{
+  "operationId": "reservations_price",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/price",
+  "summary": "Price reservations",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "Reservations": [
+          {
+            "Identifier": "1234",
+            "StartUtc": "2018-01-01T14:00:00Z",
+            "EndUtc": "2018-01-02T10:00:00Z",
+            "RequestedCategoryId": "0a5da171-3663-4496-a61e-35ecbd78b9b1",
+            "RateId": "33667cab-f17f-4089-ad07-c2cd50fa0df1",
+            "Notes": "Test reservation",
+            "ProductOrders": [
+              {
+                "ProductId": "3dc5d79b-67ce-48ed-9238-47fcf5d1a59f"
+              }
+            ],
+            "PersonCounts": [
+              {
+                "AgeCategoryId": "1f67644f-052d-4863-acdf-ae1600c60ca0",
+                "Count": 2
+              },
+              {
+                "AgeCategoryId": "ab58c939-be30-4a60-8f75-ae1600c60c9f",
+                "Count": 2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ReservationPrices": [
+          {
+            "Identifier": "1234",
+            "Total": {
+              "Currency": "GBP",
+              "NetValue": 20,
+              "GrossValue": 23,
+              "TaxValues": [
+                {
+                  "Code": "UK-S",
+                  "Value": 3
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

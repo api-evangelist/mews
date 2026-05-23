@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationFeeExtent",
+  "title": "Cancellation Fee Extent",
+  "enum": [
+    "TimeUnits",
+    "Products"
+  ],
+  "type": "string",
+  "description": "Extent for the cancellation fee, i.e. what should be in scope for the automatic payment."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationFeeExtentEnum",
+  "title": "Cancellation Fee Extent",
+  "enum": [
+    "Nothing",
+    "TimeUnits",
+    "Products",
+    "Everything"
+  ],
+  "type": "string",
+  "description": "Extent for the cancellation fee, i.e. what should be in scope for the automatic payment.\n\nNothing\n\nTimeUnits\n\nProducts\n\nEverything",
+  "x-enumNames": [
+    "Nothing",
+    "TimeUnits",
+    "Products",
+    "Everything"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderNote",
+  "title": "Service order note",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the service order note.",
+      "format": "uuid"
+    },
+    "OrderId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service order` to which the Service Order Note belongs.",
+      "format": "uuid"
+    },
+    "Text": {
+      "type": "string",
+      "description": "Content of the service order note.",
+      "nullable": true
+    },
+    "Type": {
+      "title": "Service order note type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderNoteTypeEnum"
+        }
+      ],
+      "description": "A discriminator specifying the type of service order note, e.g. general or channel manager.\n\nGeneral\n\nChannelManager\n\nSpecialRequest",
+      "x-enumNames": [
+        "General",
+        "ChannelManager",
+        "SpecialRequest"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "CreatedUtc": {
+      "type": "string",
+      "description": "Creation date and time of the service order note in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "type": "string",
+      "description": "Last update date and time of the service order note in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderNote"
+}

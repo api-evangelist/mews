@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SenderCoproduct",
+  "title": "Sender",
+  "required": [
+    "Discriminator"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Sender discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SenderDiscriminatorEnum"
+        }
+      ],
+      "description": "The sender of the message.\n\nEnterprise (The message was created by an employee of the enterprise.)\n\nApplication (The message was created by the third party application.)",
+      "x-enumNames": [
+        "Enterprise",
+        "Application"
+      ],
+      "x-enumDescriptions": [
+        "The message was created by an employee of the enterprise.",
+        "The message was created by the third party application."
+      ]
+    },
+    "Value": {
+      "description": "Additional information about the sender. Currently not used and always `null`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SenderCoproduct"
+}

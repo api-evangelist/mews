@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Rate",
+  "title": "Rate",
+  "required": [
+    "GroupId",
+    "Id",
+    "IsActive",
+    "IsBaseRate",
+    "IsDefault",
+    "IsEnabled",
+    "IsPublic",
+    "Names",
+    "ServiceId",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the rate.",
+      "format": "uuid"
+    },
+    "GroupId": {
+      "type": "string",
+      "description": "Unique identifier of `Rate Group` where the rate belongs.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service`.",
+      "format": "uuid"
+    },
+    "BaseRateId": {
+      "type": "string",
+      "description": "Unique identifier of the base `Rate`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "IsBaseRate": {
+      "type": "boolean",
+      "description": "Indicates if this is a base rate."
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the `Business Segment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Indicates if this rate is active."
+    },
+    "IsEnabled": {
+      "type": "boolean",
+      "description": "Indicates if this rate is currently available to customers."
+    },
+    "IsPublic": {
+      "type": "boolean",
+      "description": "Indicates if this rate is publicly available."
+    },
+    "IsDefault": {
+      "type": "boolean",
+      "description": "Indicates if this rate is the default rate for the service. Assigned automatically to the first rate of a service."
+    },
+    "Type": {
+      "title": "Rate type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateTypeEnum"
+        }
+      ],
+      "description": "Type of the rate.\n\nPublic\n\nPrivate\n\nAvailabilityBlock",
+      "x-enumNames": [
+        "Public",
+        "Private",
+        "AvailabilityBlock"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the rate (in the default language).",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Names` instead"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortName": {
+      "type": "string",
+      "description": "Short name of the rate (in the default language).",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Interval in which the rates were updated.",
+      "format": "date-time"
+    },
+    "ExternalNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the external name of the rate.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Description": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the description of the rate.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the rate from external system.",
+      "nullable": true
+    },
+    "TaxExemptionReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaxExemptionReasonTypeEnum"
+        }
+      ],
+      "description": "Specifies the reason a rate is exempt from tax.\n\nUnknown (Unknown tax exemption reason)\n\nIT_N1 (N1 - Escluse ex art.15)\n\nIT_N2_2 (N2.2 - Non soggette \u2013 altri casi)\n\nIT_N3_5 (N3.5 - Non imponibili \u2013 a seguito di dichiarazioni d\u2019intento)\n\nIT_N4 (N4 - Esenti)\n\nIT_N5 (N5 - Regime del margine / IVA non esposta in fattura)\n\nPL_ZW (ZW - Zwolniony)\n\nPL_NP (NP - Nie podlega)\n\nDE_NATO (NATO-ZAbk - Umsatzsteuerbefreiung gem\u00e4\u00df Artikel 67(3) NATO-Zusatzabkommen)",
+      "nullable": true
+    },
+    "TaxExemptionLegalReference": {
+      "type": "string",
+      "description": "Legal reference that states why this rate is exempt from tax.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Rate"
+}

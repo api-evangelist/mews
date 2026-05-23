@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerUpdateParameters",
+  "title": "CustomerUpdateParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "CustomerId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain. Required when using `PortfolioAccessTokens`, ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` to be updated.",
+      "format": "uuid"
+    },
+    "Title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Title"
+        }
+      ],
+      "description": "New title.\n\nMister (Mr.)\n\nMiss (Ms.)\n\nMisses (Mrs.)",
+      "nullable": true
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "New first name.",
+      "nullable": true
+    },
+    "LastName": {
+      "type": "string",
+      "description": "New last name.",
+      "nullable": true
+    },
+    "SecondLastName": {
+      "type": "string",
+      "description": "New second last name.",
+      "nullable": true
+    },
+    "NationalityCode": {
+      "type": "string",
+      "description": "New nationality code as ISO 3166-1 code of the `Country`.",
+      "nullable": true
+    },
+    "PreferredLanguageCode": {
+      "type": "string",
+      "description": "Language and culture code of the customer's preferred language, according to their profile. For example: `en-GB`, `fr-CA`.",
+      "nullable": true
+    },
+    "Sex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SexEnum"
+        }
+      ],
+      "description": "Sex of the customer.\n\nMale\n\nFemale",
+      "nullable": true
+    },
+    "BirthDate": {
+      "type": "string",
+      "description": "New birth date in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "BirthCountryCode": {
+      "type": "string",
+      "description": "Country of birth.",
+      "nullable": true
+    },
+    "BirthCountrySubdivisionCode": {
+      "type": "string",
+      "description": "Province of birth.",
+      "nullable": true
+    },
+    "BirthPlace": {
+      "type": "string",
+      "description": "New birth place.",
+      "nullable": true
+    },
+    "Occupation": {
+      "type": "string",
+      "description": "Occupation of the customer.",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "description": "New email address.",
+      "format": "email",
+      "nullable": true
+    },
+    "Phone": {
+      "type": "string",
+      "description": "New phone number.",
+      "format": "tel",
+      "nullable": true
+    },
+    "LoyaltyCode": {
+      "type": "string",
+      "description": "Loyalty code of the customer.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Internal notes about the customer. Old value will be overwritten.",
+      "nullable": true
+    },
+    "CarRegistrationNumber": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "New registration number of the customer's car.",
+      "nullable": true
+    },
+    "DietaryRequirements": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Customer's dietary requirements, e.g. Vegan, Halal.",
+      "nullable": true
+    },
+    "TaxIdentificationNumber": {
+      "type": "string",
+      "description": "New tax identification number of the customer.",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of `Company` the customer is associated with.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Address": {
+      "title": "Address parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressParameters"
+        }
+      ],
+      "description": "New address details.",
+      "nullable": true
+    },
+    "IdentityCard": {
+      "title": "Identity document parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DocumentParameters"
+        }
+      ],
+      "description": "New identity card details.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Update identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#update-identity-documents) to update document."
+    },
+    "Passport": {
+      "title": "Identity document parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DocumentParameters"
+        }
+      ],
+      "description": "New passport details.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Update identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#update-identity-documents) to update document."
+    },
+    "Visa": {
+      "title": "Identity document parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DocumentParameters"
+        }
+      ],
+      "description": "New visa details.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Update identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#update-identity-documents) to update document."
+    },
+    "DriversLicense": {
+      "title": "Identity document parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DocumentParameters"
+        }
+      ],
+      "description": "New drivers license details.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Update identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#update-identity-documents) to update document."
+    },
+    "Classifications": {
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomerClassificationEnum"
+      },
+      "description": "New classifications of the customer.",
+      "nullable": true
+    },
+    "Options": {
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomerOptionEnum"
+      },
+      "description": "Options of the customer.",
+      "nullable": true
+    },
+    "ItalianDestinationCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New Italian destination code of customer.",
+      "nullable": true
+    },
+    "ItalianFiscalCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New Italian fiscal code of customer.",
+      "nullable": true
+    },
+    "ItalianLotteryCode": {
+      "title": "String update value",
+      "maxLength": 15,
+      "minLength": 2,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New Italian lottery code of customer.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerUpdateParameters"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductCategoryResult",
+  "title": "ProductCategoryResult",
+  "required": [
+    "ProductCategories"
+  ],
+  "type": "object",
+  "properties": {
+    "ProductCategories": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProductCategory"
+      },
+      "description": "Product categories."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last product category returned. This can be used in `Limitation` in a subsequent request to fetch the next batch of product categories.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductCategoryResult"
+}

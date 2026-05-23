@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SpaceDataUpdateParameters",
+  "title": "Space resource data update",
+  "type": "object",
+  "properties": {
+    "FloorNumber": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New number of the floor the space is on.",
+      "nullable": true
+    },
+    "LocationNotes": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New location notes for the space.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SpaceDataUpdateParameters"
+}

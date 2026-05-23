@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Currency",
+  "title": "Currency",
+  "required": [
+    "Code",
+    "Precision"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 three-letter code, e.g. USD or GBP."
+    },
+    "Precision": {
+      "type": "integer",
+      "description": "Precision of the currency (count of decimal places).",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Currency"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdentityDocumentTypeUpdateValue",
+  "title": "Identity document type update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Document type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocumentTypeEnum"
+        }
+      ],
+      "description": "Type of the document (or `null` if the type should not be updated).\n\nIdentityCard\n\nPassport\n\nVisa\n\nDriversLicense",
+      "x-enumNames": [
+        "IdentityCard",
+        "Passport",
+        "Visa",
+        "DriversLicense"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "description": "Has same structure as [String update value](https://mews-systems.gitbook.io/connector-api/operations/_objects#string-update-value).",
+  "x-schema-id": "IdentityDocumentTypeUpdateValue"
+}

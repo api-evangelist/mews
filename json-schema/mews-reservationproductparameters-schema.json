@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationProductParameters",
+  "title": "ReservationProductParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Count",
+    "ProductId",
+    "ReservationId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the [Product](https://mews-systems.gitbook.io/connector-api/operations/products/#product).",
+      "format": "uuid"
+    },
+    "Count": {
+      "type": "integer",
+      "description": "The amount of the products to be added. Note that if the product is charged e.g. per night, count 1 means a single product every night. Count 2 means two products every night.",
+      "format": "int32"
+    },
+    "UnitAmount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Price of the product that overrides the price defined in Mews.",
+      "nullable": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Product start in UTC timezone in ISO 8601 format. For products with charging Once and PerPerson must be set to same value as EndUtc.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "description": "Product end in UTC timezone in ISO 8601 format. For products with charging Once and PerPerson must be set to same value as StartUtc.",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationProductParameters"
+}

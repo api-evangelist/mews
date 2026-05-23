@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerAccountOptions",
+  "title": "Customer options",
+  "type": "object",
+  "properties": {
+    "SendMarketingEmails": {
+      "type": "boolean",
+      "description": "Send marketing emails."
+    },
+    "Invoiceable": {
+      "type": "boolean",
+      "description": "Invoiceable."
+    },
+    "BillAddressObjection": {
+      "type": "boolean",
+      "description": "Bill address objection."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerAccountOptions"
+}

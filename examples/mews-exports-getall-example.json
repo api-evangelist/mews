@@ -1,0 +1,112 @@
+{
+  "operationId": "exports_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/exports/getAll",
+  "summary": "Get all exports",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ExportIds": [
+          "3fa85f64-5717-4562-b3fd-2c963f66afa6",
+          "5f51c9ef-fc1d-4438-90ad-6b925ab7d7a9",
+          "706dc6d5-9511-4751-825e-538ce99da2ce",
+          "f776f20a-6f1a-4ddf-93f4-9dae95261415"
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Exports": [
+          {
+            "Id": "3fa85f64-5717-4562-b3fd-2c963f66afa6",
+            "Status": "Success",
+            "EntityType": "OrderItem",
+            "Scope": {
+              "EnterpriseIds": [
+                "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+              ],
+              "ChainIds": null
+            },
+            "Files": [
+              {
+                "Url": "https://example.com/exports/3fa85f64-5717-4562-b3fd-2c963f66afa6-1.jsonl?example=signature",
+                "SizeInBytes": 1215279
+              },
+              {
+                "Url": "https://example.com/exports/3fa85f64-5717-4562-b3fd-2c963f66afa6-2.jsonl?example=signature",
+                "SizeInBytes": 1398362
+              }
+            ],
+            "ExpiresUtc": "2023-10-26T11:42:28Z",
+            "Filters": {
+              "UpdatedUtc": {
+                "StartUtc": "2020-11-04T00:00:00Z",
+                "EndUtc": "2020-11-05T00:00:00Z"
+              },
+              "LedgerEntryFilters": null
+            }
+          },
+          {
+            "Id": "5f51c9ef-fc1d-4438-90ad-6b925ab7d7a9",
+            "Status": "Pending",
+            "EntityType": "LedgerEntry",
+            "Scope": {
+              "EnterpriseIds": [
+                "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+              ],
+              "ChainIds": null
+            },
+            "Files": [],
+            "ExpiresUtc": null,
+            "Filters": {
+              "UpdatedUtc": null,
+              "LedgerEntryFilters": {
+                "Posting": {
+                  "Start": "2024-01-01",
+                  "End": "2024-01-31"
+                }
+              }
+            }
+          },
+          {
+            "Id": "706dc6d5-9511-4751-825e-538ce99da2ce",
+            "Status": "Processing",
+            "EntityType": "Company",
+            "Scope": {
+              "EnterpriseIds": null,
+              "ChainIds": [
+                "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+              ]
+            },
+            "Files": [],
+            "ExpiresUtc": null,
+            "Filters": null
+          },
+          {
+            "Id": "f776f20a-6f1a-4ddf-93f4-9dae95261415",
+            "Status": "Expired",
+            "EntityType": "OrderItem",
+            "Scope": {
+              "EnterpriseIds": [
+                "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+              ],
+              "ChainIds": null
+            },
+            "Files": [],
+            "ExpiresUtc": "2023-10-24T14:12:30Z",
+            "Filters": null
+          }
+        ]
+      }
+    }
+  ]
+}

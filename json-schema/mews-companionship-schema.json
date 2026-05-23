@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Companionship",
+  "title": "Companionship",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of `Companionship`.",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of Customer.",
+      "format": "uuid"
+    },
+    "ReservationGroupId": {
+      "type": "string",
+      "description": "Unique identifier of ReservationGroup.",
+      "format": "uuid"
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of reservation.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Companionship"
+}

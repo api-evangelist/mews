@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAccountingCategoryAssignment",
+  "title": "Billing automation accounting category assignment",
+  "required": [
+    "AccountingCategoryId",
+    "ItemTypes"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the accounting category.",
+      "format": "uuid"
+    },
+    "ItemTypes": {
+      "title": "Accounting category routed item types",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountingCategoryRoutedItemTypes"
+        }
+      ],
+      "description": "Type of the accounting category routed item."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAccountingCategoryAssignment"
+}

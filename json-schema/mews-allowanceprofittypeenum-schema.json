@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AllowanceProfitTypeEnum",
+  "title": "Allowance profit type",
+  "enum": [
+    "AllowanceBreakage",
+    "AllowanceContraBreakage",
+    "AllowanceLoss",
+    "AllowanceContraLoss"
+  ],
+  "type": "string",
+  "description": "\n\nAllowanceBreakage (Profit of the allowance product.)\n\nAllowanceContraBreakage (Accounting balance for profit of the allowance product.)\n\nAllowanceLoss (Loss of the allowance product.)\n\nAllowanceContraLoss (Accounting balance for loss of the allowance product.)",
+  "x-enumNames": [
+    "AllowanceBreakage",
+    "AllowanceContraBreakage",
+    "AllowanceLoss",
+    "AllowanceContraLoss"
+  ],
+  "x-enumDescriptions": [
+    "Profit of the allowance product.",
+    "Accounting balance for profit of the allowance product.",
+    "Loss of the allowance product.",
+    "Accounting balance for loss of the allowance product."
+  ]
+}

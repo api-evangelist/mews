@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OutletBill",
+  "title": "Outlet bill",
+  "required": [
+    "ClosedUtc",
+    "EnterpriseId",
+    "Id",
+    "OutletId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the bill.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the Enterprise.",
+      "format": "uuid"
+    },
+    "OutletId": {
+      "type": "string",
+      "description": "Unique identifier of the [Outlet](https://mews-systems.gitbook.io/connector-api/operations/outlets/#outlet) where the bill was issued.",
+      "format": "uuid"
+    },
+    "Number": {
+      "type": "string",
+      "description": "Number of the bill.",
+      "nullable": true
+    },
+    "ClosedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the bill closure in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the bill in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes on the bill.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OutletBill"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Source",
+  "title": "Source",
+  "required": [
+    "Code",
+    "Id",
+    "Name",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the source.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the source."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/SourceType"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time when the source was last updated, expressed in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Code": {
+      "type": "integer",
+      "description": "Code of the source.",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Source"
+}

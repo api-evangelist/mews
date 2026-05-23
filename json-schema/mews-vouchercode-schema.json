@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherCode",
+  "title": "Voucher code",
+  "required": [
+    "ActivityState",
+    "Id",
+    "IsActive",
+    "VoucherId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the voucher code.",
+      "format": "uuid"
+    },
+    "VoucherId": {
+      "type": "string",
+      "description": "Unique identifier of `Voucher` the code belongs to.",
+      "format": "uuid"
+    },
+    "Value": {
+      "type": "string",
+      "description": "Value of voucher code used by customers.",
+      "nullable": true
+    },
+    "ValidityStartUtc": {
+      "type": "string",
+      "description": "If specified, marks the beginning of interval in which the code can be used.",
+      "nullable": true
+    },
+    "ValidityEndUtc": {
+      "type": "string",
+      "description": "If specified, marks the end of interval in which the code can be used.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "type": "string",
+      "description": "Creation date and time of the voucher in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "type": "string",
+      "description": "Last update date and time of the voucher in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "ActivityState": {
+      "title": "Activity state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityStateEnum"
+        }
+      ],
+      "description": "Whether voucher code is active or deleted.\n\nDeleted\n\nActive",
+      "deprecated": true,
+      "x-enumNames": [
+        "Deleted",
+        "Active"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ],
+      "x-deprecatedMessage": "Use `IsActive` instead."
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the voucher code is still active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "VoucherCode"
+}

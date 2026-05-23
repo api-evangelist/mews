@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleActionType",
+  "title": "Product action type",
+  "enum": [
+    "Add",
+    "Delete"
+  ],
+  "type": "string",
+  "description": "Action of rule.",
+  "x-enumDescriptions": [
+    "Adds specified item.",
+    "Deletes specified item."
+  ]
+}

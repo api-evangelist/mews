@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Counter",
+  "title": "Counter",
+  "required": [
+    "CreatedUtc",
+    "EnterpriseId",
+    "Format",
+    "Id",
+    "IsDefault",
+    "Name",
+    "Type",
+    "UpdatedUtc",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the counter.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise to which the counter belongs.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the counter."
+    },
+    "IsDefault": {
+      "type": "boolean",
+      "description": "Whether the counter is used by default."
+    },
+    "Value": {
+      "type": "integer",
+      "description": "Current value of the counter.",
+      "format": "int64"
+    },
+    "Format": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Display format of the counter."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/EnterpriseScopeCounterDiscriminator"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the counter in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the counter in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Counter"
+}

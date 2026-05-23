@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAddParameters",
+  "title": "Billing automation add parameters",
+  "required": [
+    "Assignments",
+    "AssignmentTargetType",
+    "BillAggregationType",
+    "Name",
+    "Prepayment",
+    "TriggerType"
+  ],
+  "type": "object",
+  "properties": {
+    "Name": {
+      "maxLength": 255,
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the billing automation."
+    },
+    "Description": {
+      "maxLength": 1000,
+      "type": "string",
+      "description": "Description of the billing automation.",
+      "nullable": true
+    },
+    "CompaniesWithRelations": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CompanyWithBillingAutomationRelation"
+      },
+      "description": "List of companies with relations indicating whether the company is considered a travel agency or a company in the reservation. Can only be empty if `AssignmentTargetType` is `CompanyAsDetails` or `NoCompany`.",
+      "nullable": true
+    },
+    "Prepayment": {
+      "title": "Billing automation prepayment type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationPrepaymentEnum"
+        }
+      ],
+      "description": "Type of prepayment.\n\nAll (All)\n\nPrepaid (Prepaid)",
+      "x-enumNames": [
+        "All",
+        "Prepaid"
+      ],
+      "x-enumDescriptions": [
+        "All",
+        "Prepaid"
+      ]
+    },
+    "AssignmentTargetType": {
+      "title": "Billing automation assignment target type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationAssignmentTargetTypeEnum"
+        }
+      ],
+      "description": "Specifies the type of company assignment to the bill. If set to `NoCompany`, the `BillAggregationType` must be `AggregateByCustomer`.\n\nCompanyAsDetails (The company will be the associated account in the resulting routed bill, and the customer is the owner.)\n\nCompanyAsOwner (The company will be the owner in the resulting routed bill, and the customer might be the associated account.)\n\nNoCompany (The customer will be owner of the bill.)",
+      "x-enumNames": [
+        "CompanyAsDetails",
+        "CompanyAsOwner",
+        "NoCompany"
+      ],
+      "x-enumDescriptions": [
+        "The company will be the associated account in the resulting routed bill, and the customer is the owner.",
+        "The company will be the owner in the resulting routed bill, and the customer might be the associated account.",
+        "The customer will be owner of the bill."
+      ]
+    },
+    "TriggerType": {
+      "title": "Billing automation trigger type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationTriggerTypeEnum"
+        }
+      ],
+      "description": "Trigger type of billing automation.\n\nContinuous (Billing automation is continuously triggered by reservation actions, such as creation, updates, and rebates.)\n\nRecurring (Billing automation is executed monthly.)\n\nLegacy (Billing automation is executed on reservation creation only. Items added later are not transfered to any bill.)",
+      "x-enumNames": [
+        "Continuous",
+        "Recurring",
+        "Legacy"
+      ],
+      "x-enumDescriptions": [
+        "Billing automation is continuously triggered by reservation actions, such as creation, updates, and rebates.",
+        "Billing automation is executed monthly.",
+        "Billing automation is executed on reservation creation only. Items added later are not transfered to any bill."
+      ]
+    },
+    "BillAggregationType": {
+      "title": "Billing automation bill aggregation type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationBillAggregationTypeEnum"
+        }
+      ],
+      "description": "Specifies the type of bill aggregation. If the value is not `AggregateByCustomer`, the `AssignmentTargetType` must be `CompanyAsOwner`.\n\nOnePerReservation (Create a separate bill for each reservation.)\n\nAggregateByCustomer (Create a separate bill for each reservation owner.)\n\nAggregateAll (Group all moved items on one bill.)\n\nAggregatePerReservationGroup (Create a separate bill for each reservation group.)",
+      "x-enumNames": [
+        "OnePerReservation",
+        "AggregateByCustomer",
+        "AggregateAll",
+        "AggregatePerReservationGroup"
+      ],
+      "x-enumDescriptions": [
+        "Create a separate bill for each reservation.",
+        "Create a separate bill for each reservation owner.",
+        "Group all moved items on one bill.",
+        "Create a separate bill for each reservation group."
+      ]
+    },
+    "OrderItemConsumptionPeriod": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationOrderItemConsumptionPeriodTypeEnum"
+        }
+      ],
+      "description": "Specifies the order item consumption period type for the billing automation. This is required if the `TriggerType` is set to `Reccuring`.\n\nMonthBefore (Only items with a consumption date within the previous month will be routed.)\n\nSameMonthAndMonthBefore (Only items with a consumption date within this and the previous month will be routed.)\n\nSameMonth (Only items with a consumption date within this month will be routed.)\n\nSameMonthAndMonthAfter (Only items with a consumption date within this and the next month will be routed.)\n\nMonthAfter (Only items with a consumption date within the next month will be routed.)",
+      "nullable": true
+    },
+    "ProcessingStartOffset": {
+      "maxLength": 20,
+      "type": "string",
+      "description": "Specifies the processing start offset. This is required if the billing automation `TriggerType` is set to `Reccuring`.",
+      "nullable": true
+    },
+    "Assignments": {
+      "maxItems": 20,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillingAutomationAssignmentAddParameters"
+      },
+      "description": "List of billing automation assignments."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAddParameters"
+}

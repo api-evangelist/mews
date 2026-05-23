@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationItemTypesUpdateParameters",
+  "title": "Billing automation item types update parameters",
+  "type": "object",
+  "properties": {
+    "SpaceOrder": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Space order (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "CityTax": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "City tax (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "AllProducts": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Products (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "Deposits": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Deposits(or `null` should it not be updated).",
+      "nullable": true
+    },
+    "AdditionalExpenses": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Additional expenses (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "AllCustomItems": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Custom items (or `null` should it not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationItemTypesUpdateParameters"
+}

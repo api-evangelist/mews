@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicyApplicabilityEnum",
+  "title": "Cancellation Policy Applicability",
+  "enum": [
+    "Creation",
+    "Start",
+    "StartDate"
+  ],
+  "type": "string",
+  "description": "Applicability mode of the cancellation policy.\n\nCreation\n\nStart\n\nStartDate",
+  "x-enumNames": [
+    "Creation",
+    "Start",
+    "StartDate"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LedgerBalance",
+  "title": "Ledger balance",
+  "required": [
+    "ClosingBalance",
+    "Date",
+    "EnterpriseId",
+    "LedgerType",
+    "OpeningBalance"
+  ],
+  "type": "object",
+  "properties": {
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the Enterprise.",
+      "format": "uuid"
+    },
+    "Date": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Day for which the ledger balance applies in ISO 8601 format.",
+      "format": "date"
+    },
+    "LedgerType": {
+      "title": "Accounting ledger type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountingLedgerTypeEnum"
+        }
+      ],
+      "description": "Type of accounting ledger.\n\nRevenue\n\nTax\n\nPayment\n\nDeposit\n\nGuest\n\nCity\n\nNonRevenue",
+      "x-enumNames": [
+        "Revenue",
+        "Tax",
+        "Payment",
+        "Deposit",
+        "Guest",
+        "City",
+        "NonRevenue"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "OpeningBalance": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Ledger opening balance at the start of the day."
+    },
+    "ClosingBalance": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Ledger closing balance at the end of the day."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Ledger balance",
+  "x-schema-id": "LedgerBalance"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddCreditCardResult",
+  "title": "AddCreditCardResult",
+  "type": "object",
+  "properties": {
+    "CreditCardId": {
+      "type": "string",
+      "description": "Unique identifier of the `CreditCard`.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddCreditCardResult"
+}

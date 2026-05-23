@@ -1,0 +1,22 @@
+{
+  "operationId": "voucherCodes_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/voucherCodes/delete",
+  "summary": "Delete voucher codes",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "VoucherCodeIds": [
+          "8c364829-c7ae-4972-b67f-93ea704d7228",
+          "dc9d3488-7fc4-4fc9-a524-14e6504d8734"
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

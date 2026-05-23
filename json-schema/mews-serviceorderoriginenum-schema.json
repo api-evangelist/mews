@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderOriginEnum",
+  "title": "Service order origin",
+  "enum": [
+    "Distributor",
+    "ChannelManager",
+    "Commander",
+    "Import",
+    "Connector",
+    "Navigator"
+  ],
+  "type": "string",
+  "description": "\n\nDistributor (From the Mews Booking Engine or Booking Engine API.)\n\nChannelManager (From a channel manager.)\n\nCommander (From Mews Operations.)\n\nImport (From an import process.)\n\nConnector (From the Mews Connector API.)\n\nNavigator (From Mews Guest Services.)",
+  "x-enumNames": [
+    "Distributor",
+    "ChannelManager",
+    "Commander",
+    "Import",
+    "Connector",
+    "Navigator"
+  ],
+  "x-enumDescriptions": [
+    "From the Mews Booking Engine or Booking Engine API.",
+    "From a channel manager.",
+    "From Mews Operations.",
+    "From an import process.",
+    "From the Mews Connector API.",
+    "From Mews Guest Services."
+  ]
+}

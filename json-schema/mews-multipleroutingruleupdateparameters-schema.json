@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MultipleRoutingRuleUpdateParameters",
+  "title": "MultipleRoutingRuleUpdateParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "RoutingRuleUpdates"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "RoutingRuleUpdates": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RoutingRuleUpdateParameters"
+      },
+      "description": "Collection of Routing rules to be updated."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "MultipleRoutingRuleUpdateParameters"
+}

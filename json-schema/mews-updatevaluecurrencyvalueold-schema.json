@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpdateValueCurrencyValueOld",
+  "title": "Currency value (ver 2018-06-07) update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Value in the specified currency.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "UpdateValueCurrencyValueOld"
+}

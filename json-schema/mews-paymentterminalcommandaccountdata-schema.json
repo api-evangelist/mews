@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentTerminalCommandAccountData",
+  "title": "Account data for payment terminal command",
+  "required": [
+    "Discriminator"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Account type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "Type of the account.\n\nCompany\n\nCustomer",
+      "x-enumNames": [
+        "Company",
+        "Customer"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "Customer": {
+      "title": "Customer data for payment terminal command.",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerminalCommandCustomerData"
+        }
+      ],
+      "description": "Customer data if the `Discriminator` is `Customer`.",
+      "nullable": true
+    },
+    "Company": {
+      "title": "Company data for payment terminal command.",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerminalCommandCompanyData"
+        }
+      ],
+      "description": "Company data if the `Discriminator` is `Company`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentTerminalCommandAccountData"
+}

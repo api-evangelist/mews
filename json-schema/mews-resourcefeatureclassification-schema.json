@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceFeatureClassification",
+  "title": "Resource feature classification",
+  "enum": [
+    "SeaView",
+    "RiverView",
+    "OceanView",
+    "TwinBeds",
+    "DoubleBed",
+    "RollawayBed",
+    "UpperBed",
+    "LowerBed",
+    "Balcony",
+    "AccessibleBathroom",
+    "AccessibleRoom",
+    "ElevatorAccess",
+    "HighFloor",
+    "Kitchenette",
+    "AirConditioning",
+    "PrivateJacuzzi",
+    "PrivateSauna",
+    "EnsuiteRoom",
+    "PrivateBathroom",
+    "SharedBathroom"
+  ],
+  "type": "string",
+  "description": "Classification of `ResourceFeature`."
+}

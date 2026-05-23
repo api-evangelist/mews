@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillPrintEvent",
+  "title": "Bill print event",
+  "type": "object",
+  "properties": {
+    "BillPrintEventId": {
+      "type": "string",
+      "description": "Unique identifier of print event. Must be used in retry calls to retrieve the PDF.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillPrintEvent"
+}

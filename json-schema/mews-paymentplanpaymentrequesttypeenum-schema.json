@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentPlanPaymentRequestTypeEnum",
+  "title": "Payment plan payment request type",
+  "enum": [
+    "Payment",
+    "PaymentMethod"
+  ],
+  "type": "string",
+  "description": "\n\nPayment\n\nPaymentMethod",
+  "x-enumNames": [
+    "Payment",
+    "PaymentMethod"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

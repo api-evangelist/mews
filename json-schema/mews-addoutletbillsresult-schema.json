@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddOutletBillsResult",
+  "title": "AddOutletBillsResult",
+  "required": [
+    "OutletBillIds"
+  ],
+  "type": "object",
+  "properties": {
+    "OutletBillIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Array of unique identifiers of the added Outlet bills."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddOutletBillsResult"
+}

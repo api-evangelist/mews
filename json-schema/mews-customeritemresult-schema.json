@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerItemResult",
+  "title": "CustomerItemResult",
+  "type": "object",
+  "properties": {
+    "Customers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomerItems"
+      },
+      "description": "The customers with their items.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerItemResult"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceClassification",
+  "title": "Resource classification",
+  "enum": [
+    "StandardSingle",
+    "StandardDouble",
+    "SuperiorTwin",
+    "SuperiorDouble",
+    "JuniorSuite",
+    "SharedOrDorm",
+    "Other",
+    "SuperiorSingle",
+    "Triple",
+    "Family",
+    "StandardTwin",
+    "Studio",
+    "SuperiorTripleRoom",
+    "OneBedroomApartment",
+    "ThreeBedroomsApartment",
+    "TwoBedroomsApartment"
+  ],
+  "type": "string",
+  "description": "Classification of the resource category."
+}

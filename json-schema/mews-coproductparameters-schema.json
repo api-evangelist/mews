@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CoproductParameters",
+  "title": "CoproductParameters",
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "type": "string",
+      "nullable": true
+    },
+    "Value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JToken"
+        }
+      ],
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CoproductParameters"
+}

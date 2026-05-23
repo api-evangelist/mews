@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillPdfResult",
+  "title": "BillPdfResult",
+  "required": [
+    "Result"
+  ],
+  "type": "object",
+  "properties": {
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the printed bill.",
+      "format": "uuid"
+    },
+    "Result": {
+      "title": "Bill PDF result discriminator",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/BillPdfResultDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/BillPdfFile"
+            },
+            {
+              "$ref": "#/components/schemas/BillPrintEvent"
+            }
+          ]
+        }
+      },
+      "description": "The result of operation.",
+      "x-coproduct": true,
+      "x-schema-id": "BillPdfResultResultCoproductOfBillPdfResultDiscriminator"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillPdfResult"
+}

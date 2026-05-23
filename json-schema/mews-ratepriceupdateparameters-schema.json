@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RatePriceUpdateParameters",
+  "title": "Rate price update parameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "PriceUpdates",
+    "RateId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "RateId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the `Rate`.",
+      "x-schema-id": "HybridIdentifier"
+    },
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the `Product`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PriceUpdates": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RatePriceUpdate"
+      },
+      "description": "Price adjustments for specific time intervals."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RatePriceUpdateParameters"
+}

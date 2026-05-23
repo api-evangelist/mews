@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentPlanPaymentRequest",
+  "title": "Payment plan payment request",
+  "required": [
+    "Message",
+    "PaymentMethods"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentMethods": {
+      "minItems": 1,
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentMethodsEnum"
+      },
+      "description": "Allowed payment methods to pay for the payment plan."
+    },
+    "Message": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Message in the payment request."
+    },
+    "Note": {
+      "type": "string",
+      "description": "Internal note for the payment request.",
+      "nullable": true
+    },
+    "PaymentRequestType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentPlanPaymentRequestTypeEnum"
+        }
+      ],
+      "description": "Type of payment request to create. If not specified, defaults to `Payment`.\n\nPayment\n\nPaymentMethod",
+      "nullable": true
+    },
+    "PaymentRequestExpirationOffsetDays": {
+      "type": "integer",
+      "description": "Custom expiration date offset in days for the payment request. If not set, it'll expire in one week, unless the first scheduled payment should be executed before. In that case, The expiration date will be set one second before the scheduled payment execution (the last possible moment when we can get the payment method).",
+      "format": "int32",
+      "nullable": true
+    },
+    "SendEmail": {
+      "type": "boolean",
+      "description": "Specifies whether a payment request email is sent to the customer. Defaults to true.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentPlanPaymentRequest"
+}

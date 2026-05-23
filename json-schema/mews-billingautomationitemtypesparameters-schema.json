@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationItemTypesParameters",
+  "title": "Billing automation item types parameters",
+  "required": [
+    "AdditionalExpenses",
+    "AllCustomItems",
+    "AllProducts",
+    "CityTax",
+    "Deposits",
+    "SpaceOrder"
+  ],
+  "type": "object",
+  "properties": {
+    "SpaceOrder": {
+      "type": "boolean",
+      "description": "Space order"
+    },
+    "CityTax": {
+      "type": "boolean",
+      "description": "City tax"
+    },
+    "AllProducts": {
+      "type": "boolean",
+      "description": "All products"
+    },
+    "Deposits": {
+      "type": "boolean",
+      "description": "Deposits"
+    },
+    "AdditionalExpenses": {
+      "type": "boolean",
+      "description": "Additional expenses"
+    },
+    "AllCustomItems": {
+      "type": "boolean",
+      "description": "All custom items"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationItemTypesParameters"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnterpriseScopeCounterDiscriminator",
+  "title": "Counter type discriminator",
+  "enum": [
+    "Counter",
+    "AccountingCounter",
+    "AvailabilityBlockCounter",
+    "BillCounter",
+    "BillPreviewCounter",
+    "FiscalCounter",
+    "ProformaCounter",
+    "RegistrationCardCounter",
+    "ServiceOrderCounter",
+    "CorrectionBillCounter",
+    "PaymentConfirmationBillCounter",
+    "CreditNoteBillCounter"
+  ],
+  "type": "string",
+  "description": "Type of the counter.",
+  "x-enumDescriptions": [
+    "Any type of counter.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceAvailabilityUpdateData",
+  "title": "Availability update",
+  "required": [
+    "FirstTimeUnitStartUtc",
+    "LastTimeUnitStartUtc",
+    "ResourceCategoryId",
+    "UnitCountAdjustment"
+  ],
+  "type": "object",
+  "properties": {
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units), in UTC timezone ISO 8601 format. The maximum size of time interval depends on the service's [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units): 367 hours if hours, 367 days if days, or 60 months if months.",
+      "format": "date-time"
+    },
+    "StartUtc": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "deprecated": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "deprecated": true
+    },
+    "ResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Resource category](https://mews-systems.gitbook.io/connector-api/operations/resources#resource-category) whose availability to update.",
+      "format": "uuid"
+    },
+    "UnitCountAdjustment": {
+      "title": "Int32 update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Int32NullableUpdateValue"
+        }
+      ],
+      "description": "Adjustment value to be applied on the interval, can be both positive and negative (relative adjustment, not an absolute number). If specified without `Value` parameter, removes all adjustments within the interval."
+    },
+    "AvailabilityBlockId": {
+      "type": "string",
+      "description": "Unique identifier of the [Availability block](https://mews-systems.gitbook.io/connector-api/operations/availabilityblocks#availability-block) whose availability to update.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PaxCounts": {
+      "maxItems": 5,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaxCount"
+      },
+      "description": "Collection of predicted occupancy of availability adjustments. Relates how many adjustments are assigned to each count of guests.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceAvailabilityUpdateData"
+}

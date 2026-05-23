@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrder",
+  "title": "Product service order",
+  "required": [
+    "AccountId",
+    "AccountType",
+    "CreatedUtc",
+    "CreatorProfileId",
+    "Id",
+    "Number",
+    "Options",
+    "Origin",
+    "ServiceId",
+    "State",
+    "UpdatedUtc",
+    "UpdaterProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the product service order",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` that product service order is made against.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the Customer or Company who owns the product service order.",
+      "format": "uuid"
+    },
+    "AccountType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "A discriminator specifying the type of account, e.g. `Customer` or `Company`.\n\nCompany\n\nCustomer"
+    },
+    "CreatorProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who created the product service order.",
+      "format": "uuid"
+    },
+    "UpdaterProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who updated the product service order.",
+      "format": "uuid"
+    },
+    "BookerId": {
+      "type": "string",
+      "description": "Unique identifier of the Customer on whose behalf the service order was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Confirmation number of the service order in Mews."
+    },
+    "State": {
+      "title": "Service order state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderStateEnum"
+        }
+      ],
+      "description": "State of the product service order.\n\nInquired (Confirmed neither by the customer nor enterprise.)\n\nConfirmed (Confirmed by both parties, before check-in.)\n\nStarted (Checked in.)\n\nProcessed (Checked out.)\n\nCanceled (Canceled.)\n\nOptional (Confirmed by enterprise but not by the guest (the enterprise is holding resource for the guest).)\n\nRequested (Confirmed by the customer but not by the enterprise (waitlist).)",
+      "x-enumNames": [
+        "Inquired",
+        "Confirmed",
+        "Started",
+        "Processed",
+        "Canceled",
+        "Optional",
+        "Requested"
+      ],
+      "x-enumDescriptions": [
+        "Confirmed neither by the customer nor enterprise.",
+        "Confirmed by both parties, before check-in.",
+        "Checked in.",
+        "Checked out.",
+        "Canceled.",
+        "Confirmed by enterprise but not by the guest (the enterprise is holding resource for the guest).",
+        "Confirmed by the customer but not by the enterprise (waitlist)."
+      ]
+    },
+    "Origin": {
+      "title": "Service order origin",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderOriginEnum"
+        }
+      ],
+      "description": "Origin of the product service order.\n\nDistributor (From the Mews Booking Engine or Booking Engine API.)\n\nChannelManager (From a channel manager.)\n\nCommander (From Mews Operations.)\n\nImport (From an import process.)\n\nConnector (From the Mews Connector API.)\n\nNavigator (From Mews Guest Services.)",
+      "x-enumNames": [
+        "Distributor",
+        "ChannelManager",
+        "Commander",
+        "Import",
+        "Connector",
+        "Navigator"
+      ],
+      "x-enumDescriptions": [
+        "From the Mews Booking Engine or Booking Engine API.",
+        "From a channel manager.",
+        "From Mews Operations.",
+        "From an import process.",
+        "From the Mews Connector API.",
+        "From Mews Guest Services."
+      ]
+    },
+    "CommanderOrigin": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderCommanderOriginEnum"
+        }
+      ],
+      "description": "Further detail about origin in case of Origin Commander.\n\nInPerson\n\nChannel\n\nPhone\n\nEmail\n\nWebsite\n\nMessage\n\nCallCenter\n\nRoomingList",
+      "nullable": true
+    },
+    "OriginDetails": {
+      "type": "string",
+      "description": "Details about the product service order Origin.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the product service order in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the product service order in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "CancelledUtc": {
+      "type": "string",
+      "description": "Cancellation date and time in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "VoucherId": {
+      "type": "string",
+      "description": "Unique identifier of the Voucher that has been used to create product service order.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Identifier of the Business segment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "LinkedReservationId": {
+      "type": "string",
+      "description": "Identifier of the linked Reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Service order options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderOptions"
+        }
+      ],
+      "description": "Options of the service order."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOrder"
+}

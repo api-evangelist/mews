@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderNoteUpdateParameters",
+  "title": "Service order note update parameters",
+  "required": [
+    "ServiceOrderNoteId"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceOrderNoteId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service order note`.",
+      "format": "uuid"
+    },
+    "Text": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Content of the service order note (or `null` if the content should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOrderNoteUpdateParameters"
+}

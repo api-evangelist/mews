@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductChargingModeEnum",
+  "title": "Product charging mode",
+  "enum": [
+    "Once",
+    "PerTimeUnit",
+    "PerPersonPerTimeUnit",
+    "PerPerson"
+  ],
+  "type": "string",
+  "description": "\n\nOnce\n\nPerTimeUnit\n\nPerPersonPerTimeUnit\n\nPerPerson",
+  "x-enumNames": [
+    "Once",
+    "PerTimeUnit",
+    "PerPersonPerTimeUnit",
+    "PerPerson"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    ""
+  ]
+}

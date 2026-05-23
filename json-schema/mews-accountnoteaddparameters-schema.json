@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNoteAddParameters",
+  "title": "Account note parameters",
+  "required": [
+    "AccountId",
+    "Classifications",
+    "Content"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "Content": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "type": "string",
+      "description": "The content of the account note."
+    },
+    "Classifications": {
+      "maxItems": 1,
+      "minItems": 1,
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountNoteClassificationEnum"
+      },
+      "description": "Specifying the classifications of the note based on account type."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountNoteAddParameters"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyOptionUpdateParameters",
+  "title": "Company update options",
+  "type": "object",
+  "properties": {
+    "Invoiceable": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Whether the company is invoiceable or not (or `null` if the `Invoiceable` field should not be updated).",
+      "nullable": true
+    },
+    "AddFeesToInvoices": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Whether the company has an additional fee applied for invoicing or not (or `null` if the `AddFeesToInvoices` field should not be updated).",
+      "nullable": true
+    },
+    "AddTaxDeductedPaymentToInvoices": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Whether tax-deducted payments should be automatically added to invoices (or `null` if the `AddTaxDeductedPaymentToInvoices` field should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Options of the company.",
+  "x-schema-id": "CompanyOptionUpdateParameters"
+}

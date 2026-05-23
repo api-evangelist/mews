@@ -1,0 +1,22 @@
+{
+  "operationId": "loyaltyMemberships_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/loyaltyMemberships/delete",
+  "summary": "Delete loyalty memberships",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "LoyaltyMembershipIds": [
+          "905a4489-0960-4ac9-96ec-793f47365c92",
+          "ac48674e-58a2-43d6-a02b-9ead0b213b17"
+        ],
+        "ChainId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    }
+  ],
+  "responseExamples": []
+}

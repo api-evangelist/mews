@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationData",
+  "title": "Reservation parameters",
+  "required": [
+    "CustomerId",
+    "EndUtc",
+    "PersonCounts",
+    "RateId",
+    "RequestedCategoryId",
+    "StartUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Identifier": {
+      "type": "string",
+      "description": "Identifier of the reservation within the transaction.",
+      "nullable": true
+    },
+    "ChannelNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "State": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderStateOld"
+        }
+      ],
+      "description": "State of the newly created reservation (either `Optional`, `Enquired` or `Confirmed`). If not specified, `Confirmed` is used.",
+      "nullable": true
+    },
+    "StartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Reservation start in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "EndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Reservation end in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ReleasedUtc": {
+      "type": "string",
+      "description": "Release date and time of an unconfirmed reservation in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "AdultCount": {
+      "type": "integer",
+      "format": "int32",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `PersonCounts` instead."
+    },
+    "ChildCount": {
+      "type": "integer",
+      "format": "int32",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `PersonCounts` instead."
+    },
+    "PersonCounts": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationPersonCount"
+      },
+      "description": "Number of people per age category the reservation was booked for. At least one category with valid count must be provided."
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` who owns the reservation.",
+      "format": "uuid"
+    },
+    "BookerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` on whose behalf the reservation was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "RequestedCategoryId": {
+      "type": "string",
+      "description": "Identifier of the requested `ResourceCategory`.",
+      "format": "uuid"
+    },
+    "AssignedResourceId": {
+      "type": "string",
+      "description": "Identifier of the assigned `Resource`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AssignedResourceLocked": {
+      "type": "boolean",
+      "description": "Whether the reservation should be locked to the assigned `Resource`. (`null` or `false` if the reservation should not be locked)",
+      "nullable": true
+    },
+    "RateId": {
+      "type": "string",
+      "description": "Identifier of the reservation `Rate`.",
+      "format": "uuid"
+    },
+    "VoucherCode": {
+      "type": "string",
+      "description": "Voucher code value providing access to specified private `Rate` applied to this reservation.",
+      "nullable": true
+    },
+    "CreditCardId": {
+      "type": "string",
+      "description": "Identifier of `CreditCard` belonging either to the `Customer` who owns the reservation or to the `Booker`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "type": "string",
+      "description": "Identifier of the `Company` that mediated the reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Identifier of the `Company` on behalf of which the reservation was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Identifier of the reservation `BusinessSegment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "TimeUnitAmount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Amount of each night of the reservation.",
+      "nullable": true
+    },
+    "TimeUnitPrices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PerUnitPriceParameters"
+      },
+      "description": "Prices for time units of the reservation. E.g. prices for the first or second night.",
+      "nullable": true
+    },
+    "ProductOrders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProductOrderAdditionData"
+      },
+      "description": "Parameters of the products ordered together with the reservation.",
+      "nullable": true
+    },
+    "AvailabilityBlockId": {
+      "type": "string",
+      "description": "Unique identifier of the `AvailabilityBlock` the reservation is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationData"
+}

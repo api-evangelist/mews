@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceBlockAddParameters",
+  "title": "Resource block parameters",
+  "required": [
+    "EndUtc",
+    "Name",
+    "ResourceId",
+    "StartUtc",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceId": {
+      "type": "string",
+      "description": "Unique identifier of `Resource`.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the resource block."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/ResourceBlockType"
+    },
+    "StartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the interval in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "EndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the interval in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Note describing the resource block.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceBlockAddParameters"
+}

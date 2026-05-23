@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRequestFilterParameters",
+  "title": "PaymentRequestFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "PaymentRequestIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the requested payment requests.",
+      "nullable": true
+    },
+    "AccountIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Customer` accounts to which the payment requests were issued.",
+      "nullable": true
+    },
+    "ReservationIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Reservation` to which the payment requests belong.",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the payment requests were updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "States": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentRequestState"
+      },
+      "description": "A list of payment request states to filter by.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentRequestFilterParameters"
+}

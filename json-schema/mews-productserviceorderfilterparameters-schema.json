@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductServiceOrderFilterParameters",
+  "title": "ProductServiceOrderFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation",
+    "ServiceIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "ProductServiceOrderIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Product service order.",
+      "nullable": true
+    },
+    "ServiceIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Service`."
+    },
+    "AccountIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Customer or Company who owns the product service order.",
+      "nullable": true
+    },
+    "LinkedReservationIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of linked Reservations.",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the Product service orders were updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "States": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceOrderState"
+      },
+      "description": "A list of product service order states to filter by.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductServiceOrderFilterParameters"
+}

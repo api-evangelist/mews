@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillAssigneeDataDiscriminator",
+  "title": "Bill associated account data discriminator",
+  "enum": [
+    "BillCustomerData",
+    "BillCompanyData"
+  ],
+  "type": "string",
+  "description": "Determines type of value."
+}

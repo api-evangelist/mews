@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRequestReason",
+  "title": "Payment request reason",
+  "enum": [
+    "Other",
+    "PaymentCardMissing",
+    "PaymentCardDeclined",
+    "Deposit",
+    "Prepayment",
+    "Fee",
+    "RecurringPayment"
+  ],
+  "type": "string",
+  "description": "A payment request reason."
+}

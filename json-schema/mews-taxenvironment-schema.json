@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxEnvironment",
+  "title": "Tax environment",
+  "required": [
+    "Code",
+    "CountryCode",
+    "TaxationCodes"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the tax environment."
+    },
+    "CountryCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-3 code of associated country, e.g. `USA` or `GBR`."
+    },
+    "ValidityStartUtc": {
+      "type": "string",
+      "description": "If specified, marks the start of the validity interval in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "ValidityEndUtc": {
+      "type": "string",
+      "description": "If specified, marks the end of the validity interval in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "TaxationCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Codes of the `Taxation` that are used by this environment."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Tax environment represents set of `Taxation` together with optional validity interval.",
+  "x-schema-id": "TaxEnvironment"
+}

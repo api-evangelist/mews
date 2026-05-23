@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RatePricingData",
+  "title": "RatePricingData",
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Rate pricing discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RatePricingDiscriminatorEnum"
+        }
+      ],
+      "description": "\n\nBaseRatePricing\n\nDependentRatePricing",
+      "readOnly": true,
+      "x-enumNames": [
+        "BaseRatePricing",
+        "DependentRatePricing"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "BaseRatePricing": {
+      "title": "Base rate pricing",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BaseRatePricingData"
+        }
+      ],
+      "nullable": true
+    },
+    "DependentRatePricing": {
+      "title": "Dependent rate pricing",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DependentRatePricingData"
+        }
+      ],
+      "nullable": true,
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RatePricingData"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditRatingBasic",
+  "title": "Credit rating basic",
+  "enum": [
+    "CreditOk",
+    "PaymentRequiredUpfront",
+    "LocalDecisionRequired"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "Company can book services.",
+    "Company must pay upfront.",
+    "Requires local approval."
+  ]
+}

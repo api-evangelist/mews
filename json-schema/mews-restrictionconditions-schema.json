@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionConditions",
+  "title": "Restriction condition",
+  "required": [
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Type": {
+      "title": "Restriction type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RestrictionTypeEnum"
+        }
+      ],
+      "description": "Restriction type.\n\nStay (Guests can't stay within specified dates.)\n\nStart (Guests can't check in within specified dates.)\n\nEnd (Guests can't check out within specified dates.)",
+      "x-enumNames": [
+        "Stay",
+        "Start",
+        "End"
+      ],
+      "x-enumDescriptions": [
+        "Guests can't stay within specified dates.",
+        "Guests can't check in within specified dates.",
+        "Guests can't check out within specified dates."
+      ]
+    },
+    "ExactRateId": {
+      "type": "string",
+      "description": "Unique identifier of the restricted exact `Rate`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BaseRateId": {
+      "type": "string",
+      "description": "Unique identifier of the restricted base `Rate`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "RateGroupId": {
+      "type": "string",
+      "description": "Unique identifier of the restricted `Rate group`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the restricted `Resource category`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ResourceCategoryType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceCategoryTypeEnum"
+        }
+      ],
+      "description": "Name of the restricted `Resource category type`.\n\nRoom\n\nBed\n\nDorm\n\nApartment\n\nSuite\n\nVilla\n\nSite\n\nOffice\n\nMeetingRoom\n\nParkingSpot\n\nDesk\n\nTeamArea\n\nMembership\n\nTent\n\nCaravanOrRV\n\nUnequippedCampsite\n\nBike\n\nExtraBed\n\nCot\n\nCrib\n\nConferenceRoom\n\nRooftop\n\nGarden\n\nRestaurant\n\nAmphitheater\n\nPrivateSpaces",
+      "nullable": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Start date of the restriction time interval, specified in ISO 8601 format and adjusted to UTC - see [Datetimes](https://mews-systems.gitbook.io/connector-api/guidelines/serialization#datetimes) for important information on format and implementation.",
+      "nullable": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "description": "End date of the restriction time interval, specified in ISO 8601 format and adjusted to UTC - see [Datetimes](https://mews-systems.gitbook.io/connector-api/guidelines/serialization#datetimes) for important information on format and implementation.",
+      "nullable": true
+    },
+    "Days": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The restricted days of week. Defaults to all days when not provided. Ignored when the service uses a time unit longer than a day.",
+      "nullable": true
+    },
+    "Hours": {
+      "title": "Hours",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Hours"
+        }
+      ],
+      "description": "The restricted hours. Defaults to all hours when not provided.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "The conditions or rules that must be met by a reservation for the restriction to apply.",
+  "x-schema-id": "RestrictionConditions"
+}

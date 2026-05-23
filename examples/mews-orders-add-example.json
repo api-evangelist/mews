@@ -1,0 +1,58 @@
+{
+  "operationId": "orders_add",
+  "method": "POST",
+  "path": "/api/connector/v1/orders/add",
+  "summary": "Add order",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "AccountId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+        "Options": {
+          "DisableItemGrouping": false
+        },
+        "ProductOrders": [
+          {
+            "ProductId": "2eb7ad8b-8dfb-4381-aba5-ab58009f2993",
+            "Count": 2,
+            "ExternalIdentifier": "EXT-PROD-001"
+          }
+        ],
+        "Items": [
+          {
+            "Name": "Beer",
+            "UnitCount": 3,
+            "UnitAmount": {
+              "Currency": "USD",
+              "TaxCodes": [
+                "US-DC-G"
+              ],
+              "NetValue": 7.0
+            },
+            "AccountingCategoryId": "90eff5aa-36b4-4689-80c0-ab3a00bb412e",
+            "ExternalIdentifier": "EXT-ITEM-001"
+          }
+        ],
+        "ConsumptionUtc": "2020-02-04T00:00:00Z",
+        "Notes": "Order for guest room service",
+        "BusinessSegmentId": "dc9188f6-fb61-412c-b3fd-af32dab082ed",
+        "BillId": "ea087d64-3901-4eee-b0b7-9fce4c58a005",
+        "LinkedReservationId": "0f515589-99b4-423d-b83a-b237009f0509"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "OrderId": "cdfd5caa-2868-411b-ba95-322e70035f1a"
+      }
+    }
+  ]
+}

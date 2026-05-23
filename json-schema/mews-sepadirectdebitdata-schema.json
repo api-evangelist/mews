@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SepaDirectDebitData",
+  "title": "SEPA Direct Debit data",
+  "required": [
+    "Email",
+    "Iban",
+    "Name",
+    "RemoteIpAddress",
+    "UserAgent"
+  ],
+  "type": "object",
+  "properties": {
+    "Iban": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The customer's bank account number in IBAN format."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Full name of the customer."
+    },
+    "Email": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Email address of the customer.",
+      "format": "email"
+    },
+    "UserAgent": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The user agent of the browser from which the Mandate was accepted by the customer."
+    },
+    "RemoteIpAddress": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The IP address from which the Mandate was accepted by the customer."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SepaDirectDebitData"
+}

@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockAddParameters",
+  "title": "Availability block parameters",
+  "required": [
+    "FirstTimeUnitStartUtc",
+    "LastTimeUnitStartUtc",
+    "RateId",
+    "ServiceId",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Service](https://mews-systems.gitbook.io/connector-api/operations/services#service) to assign block to.",
+      "format": "uuid"
+    },
+    "RateId": {
+      "type": "string",
+      "description": "Unique identifier of the [Rate](https://mews-systems.gitbook.io/connector-api/operations/rates#rate) to assign block to.",
+      "format": "uuid"
+    },
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first time unit, in UTC timezone ISO 8601 format."
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the first time unit, in UTC timezone ISO 8601 format."
+    },
+    "ReleasedUtc": {
+      "type": "string",
+      "description": "The moment when the block and its availability is released, in UTC timezone ISO 8601 format. Takes precedence over `RollingReleaseOffset`.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "RollingReleaseOffset": {
+      "type": "string",
+      "description": "Exact offset from the start of availability adjustments to the moment the availability adjustment should be released, in ISO 8601 duration format. Ignored if `ReleasedUtc` is specified.",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the block.",
+      "nullable": true
+    },
+    "VoucherCode": {
+      "type": "string",
+      "description": "Voucher code providing access to specified private [Rate](https://mews-systems.gitbook.io/connector-api/operations/rates#rate).",
+      "nullable": true
+    },
+    "BookerId": {
+      "type": "string",
+      "description": "Unique identifier of the Booker as a creator of an availability block.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of [Company](https://mews-systems.gitbook.io/connector-api/operations/companies#company).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "type": "string",
+      "description": "Unique identifier of travel agency (`Company` with a `TravelAgencyContract`).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Budget": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "The tentative budget for the total price of reservations.",
+      "nullable": true
+    },
+    "ReservationPurpose": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationPurposeEnum"
+        }
+      ],
+      "description": "The purpose of the block.\n\nLeisure\n\nBusiness\n\nStudent",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the block from external system.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes of the block.",
+      "nullable": true
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AvailabilityBlockStateEnum"
+        }
+      ],
+      "description": "State of the availability block.\n\nConfirmed (The block deducts availability and can have reservations assigned.)\n\nOptional (The block deducts availability and cannot have reservations assigned.)\n\nInquired (The block does not deduct availability and cannot have reservations assigned (waitlist).)\n\nCanceled (The block does not deduct availability and cannot have reservations assigned (waitlist).)"
+    },
+    "QuoteId": {
+      "type": "string",
+      "description": "Unique identifier of the Mews Events quote associated with the availability block.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PurchaseOrderNumber": {
+      "type": "string",
+      "description": "Unique number of the purchase order. This number is propagated to any newly picked up `Reservation` within the block.",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the business segment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PickupDistribution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PickupDistributionEnum"
+        }
+      ],
+      "description": "Specifies how reservations within the block are distributed for pickup. Defaults to `AllInOneGroup` if not provided. This value cannot be updated after creation.\n\nAllInOneGroup (All created reservations in the block are added to the same reservation group.)\n\nIndividualGroups (Reservations can be picked up in multiple groups, with up to 750 reservations per group.)",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityBlockAddParameters"
+}

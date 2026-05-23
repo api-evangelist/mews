@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PayworksData",
+  "title": "PayworksData",
+  "type": "object",
+  "properties": {
+    "MerchantIdentifier": {
+      "type": "string",
+      "nullable": true
+    },
+    "MerchantSecretKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApiUrl": {
+      "type": "string",
+      "nullable": true
+    },
+    "Descriptor": {
+      "type": "string",
+      "nullable": true
+    },
+    "AcceptedCreditCardTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PayworksData"
+}

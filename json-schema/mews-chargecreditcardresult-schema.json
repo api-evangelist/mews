@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChargeCreditCardResult",
+  "title": "ChargeCreditCardResult",
+  "type": "object",
+  "properties": {
+    "PaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the `Payment` item.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ChargeCreditCardResult"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeviceResult",
+  "title": "DeviceResult",
+  "required": [
+    "Devices"
+  ],
+  "type": "object",
+  "properties": {
+    "Devices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Device"
+      },
+      "description": "The devices."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DeviceResult"
+}

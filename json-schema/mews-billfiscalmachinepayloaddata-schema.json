@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillFiscalMachinePayloadData",
+  "title": "Fiscal machine payload",
+  "required": [
+    "Discriminator",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Fiscal machine payload discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FiscalMachinePayloadDataDiscriminatorEnum"
+        }
+      ],
+      "description": "Discriminator of the object.\n\nItalianFiscalMachine",
+      "x-enumNames": [
+        "ItalianFiscalMachine"
+      ],
+      "x-enumDescriptions": [
+        ""
+      ]
+    },
+    "Value": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Base64-encoded data of the file to be printed."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillFiscalMachinePayloadData"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyOptions",
+  "title": "Company Options",
+  "type": "object",
+  "properties": {
+    "Invoiceable": {
+      "type": "boolean",
+      "description": "Whether the company is invoiceable or not."
+    },
+    "AddFeesToInvoices": {
+      "type": "boolean",
+      "description": "Whether the company has an additional fee applied for invoicing or not."
+    },
+    "AddTaxDeductedPaymentToInvoices": {
+      "type": "boolean",
+      "description": "Whether tax-deducted payments should be automatically added to invoices."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Options of the company.",
+  "x-schema-id": "CompanyOptions"
+}

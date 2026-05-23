@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentTerminalCommandData",
+  "title": "Payment terminal command data",
+  "required": [
+    "AccountData",
+    "AccountId",
+    "Amount",
+    "CustomerId",
+    "PaymentTerminalId"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/DeviceCommandData"
+    }
+  ],
+  "properties": {
+    "PaymentTerminalId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Identifier of the payment terminal."
+    },
+    "CustomerId": {
+      "type": "string",
+      "format": "uuid",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountId` instead."
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account.",
+      "format": "uuid"
+    },
+    "FullName": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountData.Customer.FullName`, if `AccountData.Discriminator` is `Customer`."
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Identifier of the bill.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PaymentId": {
+      "type": "string",
+      "description": "Identifier of the `Payment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PreauthorizationId": {
+      "type": "string",
+      "description": "Identifier of the `Preauthorization`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Amount to be processed."
+    },
+    "Fee": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Payment fee to be processed.",
+      "nullable": true
+    },
+    "PaymentTerminalData": {
+      "type": "string",
+      "description": "Custom JSON data.",
+      "nullable": true
+    },
+    "AccountData": {
+      "title": "Account data for payment terminal command",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerminalCommandAccountData"
+        }
+      ],
+      "description": "Account data for the payment terminal command."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentTerminalCommandData"
+}

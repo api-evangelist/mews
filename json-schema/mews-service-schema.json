@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Service",
+  "title": "Service",
+  "required": [
+    "CreatedUtc",
+    "Data",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Name",
+    "Names",
+    "Options",
+    "Ordering",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the service.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the service is still active."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the service.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Names` instead"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "StartTime": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "EndTime": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "Options": {
+      "title": "Service options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOptions"
+        }
+      ],
+      "description": "Options of the service."
+    },
+    "Promotions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Promotions"
+        }
+      ],
+      "description": "",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Promotions` in `Data` instead."
+    },
+    "Type": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "Ordering": {
+      "type": "integer",
+      "description": "Order value for presentation purposes.",
+      "format": "int32"
+    },
+    "Data": {
+      "title": "Service data",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/ServiceDataDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/BookableServiceData"
+            },
+            {
+              "$ref": "#/components/schemas/AdditionalServiceData"
+            }
+          ]
+        }
+      },
+      "description": "Additional information about the specific service.",
+      "x-coproduct": true,
+      "x-schema-id": "ServiceDataCoproductOfServiceDataDiscriminator"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the service from external system.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the service in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the service in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "Service"
+}

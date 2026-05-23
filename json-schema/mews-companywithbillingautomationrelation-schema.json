@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyWithBillingAutomationRelation",
+  "title": "Company with billing automation relation",
+  "required": [
+    "CompanyId",
+    "CompanyRelations"
+  ],
+  "type": "object",
+  "properties": {
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the company.",
+      "format": "uuid"
+    },
+    "CompanyRelations": {
+      "title": "Company with relations parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompanyRelationsParameters"
+        }
+      ],
+      "description": "Company relations."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyWithBillingAutomationRelation"
+}

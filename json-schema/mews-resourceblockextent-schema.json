@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceBlockExtent",
+  "title": "Resource block extent",
+  "type": "object",
+  "properties": {
+    "Inactive": {
+      "type": "boolean",
+      "description": "Whether the response should contain inactive entities."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "ResourceBlockExtent"
+}

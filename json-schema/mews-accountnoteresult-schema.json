@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNoteResult",
+  "title": "AccountNoteResult",
+  "required": [
+    "AccountNotes"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountNotes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountNote"
+      },
+      "description": "The set of requested account notes."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountNoteResult"
+}

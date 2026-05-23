@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SpaceData",
+  "title": "Space resource data",
+  "required": [
+    "FloorNumber"
+  ],
+  "type": "object",
+  "properties": {
+    "FloorNumber": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Number of the floor the space is on."
+    },
+    "LocationNotes": {
+      "type": "string",
+      "description": "Location notes for the space. It can be, for example, Building number the space is located in or the Parking area the particular parking space is at.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SpaceData"
+}

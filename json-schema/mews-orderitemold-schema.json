@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemOld",
+  "title": "Order item",
+  "required": [
+    "AccountId",
+    "AccountingState",
+    "Amount",
+    "CreatedUtc",
+    "CreatorProfileId",
+    "Data",
+    "Id",
+    "OrderId",
+    "OriginalAmount",
+    "RevenueType",
+    "UnitAmount",
+    "UpdatedUtc",
+    "UpdaterProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the item.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (for example `Customer`) the item belongs to.",
+      "format": "uuid"
+    },
+    "OrderId": {
+      "type": "string",
+      "description": "Unique identifier of the order (or `Reservation` which is a special type of order) the item belongs to.",
+      "format": "uuid"
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the `Bill` the item is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the `AccountingCategory` the item belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Unit count of item, i.e. the number of sub-items or units, if applicable.",
+      "format": "int32"
+    },
+    "UnitAmount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Unit amount of item, i.e. the amount of each individual sub-item or unit, if applicable."
+    },
+    "Amount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Amount of item; note a negative amount represents a rebate or payment."
+    },
+    "OriginalAmount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Amount of item; note a negative amount represents a rebate or payment. Contains the earliest known value in conversion chain."
+    },
+    "RevenueType": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Revenue type of the item."
+    },
+    "CreatorProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who created the item.",
+      "format": "uuid"
+    },
+    "UpdaterProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who updated the item.",
+      "format": "uuid"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the item in UTC timezone in ISO 8601 format.",
+      "format": "date"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the item in UTC timezone in ISO 8601 format.",
+      "format": "date"
+    },
+    "ConsumedUtc": {
+      "type": "string",
+      "description": "Date and time of the item consumption in UTC timezone in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "CanceledUtc": {
+      "type": "string",
+      "description": "Cancellation date and time of the item in UTC timezone in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "ClosedUtc": {
+      "type": "string",
+      "description": "Date and time of the item bill closure in UTC timezone in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Start date and time of the item in UTC timezone in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "AccountingState": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Accounting state of the item."
+    },
+    "Data": {
+      "title": "Order item data",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/OrderItemTypeOld"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/RebateOrderItemData"
+            },
+            {
+              "$ref": "#/components/schemas/ProductOrderItemData"
+            }
+          ],
+          "description": "Based on order item discriminator or `null` for types without any additional data.",
+          "nullable": true
+        }
+      },
+      "description": "Additional data specific to particular order item.",
+      "x-coproduct": true,
+      "x-schema-id": "OrderItemOldDataCoproductOfOrderItemTypeOld"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemOld"
+}

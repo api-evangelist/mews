@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateAddTypeEnum",
+  "title": "Rate Add Type",
+  "enum": [
+    "Public",
+    "Private"
+  ],
+  "type": "string",
+  "description": "\n\nPublic\n\nPrivate",
+  "x-enumNames": [
+    "Public",
+    "Private"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

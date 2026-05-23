@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationServiceOrderFilterParameters",
+  "title": "ReservationServiceOrderFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "ReservationIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Reservations](https://mews-systems.gitbook.io/connector-api/operations/#reservation-ver-2023-06-06).",
+      "nullable": true
+    },
+    "ServiceIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Services](https://mews-systems.gitbook.io/connector-api/operations/services/#service). If not provided, all bookable services are used.",
+      "nullable": true
+    },
+    "ReservationGroupIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of [Reservation groups](https://mews-systems.gitbook.io/connector-api/operations/#reservation-group).",
+      "nullable": true
+    },
+    "AccountIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of accounts (currently only [Customers](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer), in the future also [Companies](https://mews-systems.gitbook.io/connector-api/operations/companies/#company)) the reservation is associated with.",
+      "nullable": true
+    },
+    "PartnerCompanyIds": {
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Companies` on behalf of which the reservations were made.",
+      "nullable": true
+    },
+    "TravelAgencyIds": {
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Identifier of the Travel Agencies (`Company`) that mediated the reservations.",
+      "nullable": true
+    },
+    "Numbers": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Reservation confirmation numbers.",
+      "nullable": true
+    },
+    "ChannelNumbers": {
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Numbers or references used by a Channel (OTA, GDS, CRS, etc.) in case the reservation group originates there, e.g. Booking.com confirmation numbers.",
+      "nullable": true
+    },
+    "AssignedResourceIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Resources](https://mews-systems.gitbook.io/connector-api/operations/resources#resource) assigned to the reservations.",
+      "nullable": true
+    },
+    "AvailabilityBlockIds": {
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Availability blocks` assigned to the reservations.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the [Reservation](https://mews-systems.gitbook.io/connector-api/operations/reservations/#reservation-ver-2023-06-06) was created.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Reservations` were updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "CollidingUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the reservations are active. This is defined for a `Reservation` as the period between the reservation's scheduled start time `ScheduledStartUtc` and its scheduled end time `EndUtc`. Reservation is selected if any part of its interval intersects with the interval specified in `CollidingUtc",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ScheduledStartUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval filtering Reservations by their scheduled start time. Cannot be used with `ActualStartUtc`.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ActualStartUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval filtering Reservations by their actual start (check-in) time. Cannot be used with `ScheduledStartUtc`. Note that the filter applies only to started or processed reservations.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ActualEndUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval filtering Reservations by their actual end (check-out) time. Cannot be used with `ScheduledEndUtc`.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ScheduledEndUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval filtering Reservations by their scheduled end time. Cannot be used with `ActualEndUtc`.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "States": {
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceOrderStateEnum"
+      },
+      "description": "A list of service order states to filter by.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationServiceOrderFilterParameters"
+}

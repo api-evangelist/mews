@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationUpdatePerUnitPriceParameters",
+  "title": "Time unit amount update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PerUnitPriceParameters"
+      },
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationUpdatePerUnitPriceParameters"
+}

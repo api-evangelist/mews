@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductAgeCategoryPrice",
+  "title": "Age category price",
+  "required": [
+    "AgeCategoryId",
+    "Prices"
+  ],
+  "type": "object",
+  "properties": {
+    "AgeCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the age category.",
+      "format": "uuid"
+    },
+    "Prices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Amount"
+      },
+      "description": "Prices of the product for the resource category in the covered dates."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductAgeCategoryPrice"
+}

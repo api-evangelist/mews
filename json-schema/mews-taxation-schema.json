@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Taxation",
+  "title": "Taxation",
+  "required": [
+    "Code",
+    "LocalName",
+    "Name"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the taxation."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the taxation."
+    },
+    "LocalName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Local name of the taxation."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Taxation represents set of `TaxRate` within `TaxEnvironment`.",
+  "x-schema-id": "Taxation"
+}

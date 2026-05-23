@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessTokenPermissionsParameters",
+  "title": "Resource access token permission parameter",
+  "type": "object",
+  "properties": {
+    "Bed": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Specify whether the resource access token grants permission to access bed (or null if not being updated).",
+      "nullable": true
+    },
+    "Room": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Specify whether the resource access token grants permission to access room (or null if not being updated).",
+      "nullable": true
+    },
+    "Floor": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Specify whether the resource access token grants permission to access floor (or null if not being updated).",
+      "nullable": true
+    },
+    "Building": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Specify whether the resource access token grants permission to access building (or null if not being updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceAccessTokenPermissionsParameters"
+}

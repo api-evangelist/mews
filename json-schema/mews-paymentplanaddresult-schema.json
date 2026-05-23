@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentPlanAddResult",
+  "title": "PaymentPlanAddResult",
+  "required": [
+    "PaymentRequestUrl"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentRequestUrl": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Payment request URL associated with the created payment plan."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentPlanAddResult"
+}

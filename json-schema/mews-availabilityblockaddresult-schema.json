@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockAddResult",
+  "title": "AvailabilityBlockAddResult",
+  "required": [
+    "AvailabilityBlocks"
+  ],
+  "type": "object",
+  "properties": {
+    "AvailabilityBlocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AvailabilityBlock"
+      },
+      "description": "Availability blocks."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityBlockAddResult"
+}

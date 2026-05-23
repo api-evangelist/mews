@@ -1,0 +1,52 @@
+{
+  "operationId": "resources_getOccupancyState",
+  "method": "POST",
+  "path": "/api/connector/v1/resources/getOccupancyState",
+  "summary": "Get resources' occupancy state",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ResourceCategoryIds": [
+          "773d5e42-de1e-43a0-9ce6-f940faf2303f"
+        ],
+        "ResourceStates": [
+          "Clean",
+          "Inspected"
+        ],
+        "OccupancyStates": [
+          "Vacant",
+          "Reserved"
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ResourceCategoryOccupancyStates": [
+          {
+            "ResourceCategoryId": "773d5e42-de1e-43a0-9ce6-f940faf2303f",
+            "ResourceOccupancyStates": [
+              {
+                "ResourceId": "f3b3b3b3-3b3b-3b3b-3b3b-3b3b3b3b3b3b",
+                "ResourceState": "Inspected",
+                "OccupancyState": "Reserved"
+              },
+              {
+                "ResourceId": "c32386aa-1cd2-414a-a823-489325842fbe",
+                "ResourceState": "Inspected",
+                "OccupancyState": "Vacant"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

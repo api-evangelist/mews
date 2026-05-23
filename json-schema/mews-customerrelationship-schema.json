@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerRelationship",
+  "title": "CustomerRelationship",
+  "required": [
+    "CustomerId",
+    "RelatedCustomerId",
+    "Relationship"
+  ],
+  "type": "object",
+  "properties": {
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the customer in the relationship.",
+      "format": "uuid"
+    },
+    "RelatedCustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the related customer.",
+      "format": "uuid"
+    },
+    "Relationship": {
+      "title": "Customer relationship type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerRelationshipTypeEnum"
+        }
+      ],
+      "description": "Type of relationship between the two customers (e.g. Child = the related customer is the child of this customer).\n\nSpouse\n\nChild\n\nParent\n\nOtherFamily (Any familial relationship that doesn't fit for the options provided)\n\nFriend\n\nColleague\n\nOther",
+      "x-enumNames": [
+        "Spouse",
+        "Child",
+        "Parent",
+        "OtherFamily",
+        "Friend",
+        "Colleague",
+        "Other"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "Any familial relationship that doesn't fit for the options provided",
+        "",
+        "",
+        ""
+      ],
+      "x-extensible": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerRelationship"
+}

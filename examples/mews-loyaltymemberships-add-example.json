@@ -1,0 +1,58 @@
+{
+  "operationId": "loyaltyMemberships_add",
+  "method": "POST",
+  "path": "/api/connector/v1/loyaltyMemberships/add",
+  "summary": "Add loyalty memberships",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "LoyaltyMemberships": [
+          {
+            "AccountId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+            "LoyaltyProgramId": "f701dafb-5765-4cf4-b1dd-1f602a740ae5",
+            "IsPrimary": true,
+            "State": "Enrolled",
+            "MembershipNumber": "MBR-2025-AX49ZT73",
+            "Points": 22,
+            "ExpirationDate": "2029-12-24T00:00:00Z",
+            "Url": "https://rewards.example.com/member/PRV-MBR-9842XKLT",
+            "LoyaltyTierId": "69eedfd2-6f25-42fc-b3c8-39df70f85e37"
+          }
+        ],
+        "ChainId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "LoyaltyMemberships": [
+          {
+            "Id": "905a4489-0960-4ac9-96ec-793f47365c92",
+            "ChainId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "AccountId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+            "LoyaltyProgramId": "f701dafb-5765-4cf4-b1dd-1f602a740ae5",
+            "State": "New",
+            "IsPrimary": true,
+            "ProviderMembershipId": "PRV-MBR-9842XKLT",
+            "Code": "MBR-2025-AX49ZT73",
+            "MembershipNumber": "MBR-2025-AX49ZT73",
+            "Points": 22,
+            "ExpirationDate": "2029-11-04T13:00:00Z",
+            "Url": "https://rewards.example.com/member/PRV-MBR-9842XKLT",
+            "LoyaltyTierId": "69eedfd2-6f25-42fc-b3c8-39df70f85e37",
+            "CreatorProfile": null,
+            "UpdaterProfile": null
+          }
+        ],
+        "Cursor": "905a4489-0960-4ac9-96ec-793f47365c92"
+      }
+    }
+  ]
+}

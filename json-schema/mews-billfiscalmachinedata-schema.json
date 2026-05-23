@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillFiscalMachineData",
+  "title": "Fiscal machine data",
+  "required": [
+    "Discriminator",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Fiscal machine data discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillFiscalMachineDataDiscriminatorEnum"
+        }
+      ],
+      "description": "Discriminator of the object.\n\nItalianFiscalMachineData",
+      "x-enumNames": [
+        "ItalianFiscalMachineData"
+      ],
+      "x-enumDescriptions": [
+        ""
+      ]
+    },
+    "Value": {
+      "title": "Fiscal machine data for Italian fiscal machine",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItalianFiscalMachineData"
+        }
+      ],
+      "description": "Structure of the object depends on `Discriminator` (currently only `ItalianFiscalMachineData` is supported)."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillFiscalMachineData"
+}

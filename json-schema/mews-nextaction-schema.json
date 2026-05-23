@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NextAction",
+  "title": "Alternative payment next action",
+  "required": [
+    "Discriminator",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Payment next action discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextActionTypeEnum"
+        }
+      ],
+      "description": "Determines type of value.\n\nRedirectToUrl (Redirect customer to a URL where they can complete their payment.)",
+      "x-enumNames": [
+        "RedirectToUrl"
+      ],
+      "x-enumDescriptions": [
+        "Redirect customer to a URL where they can complete their payment."
+      ]
+    },
+    "Value": {
+      "minLength": 1,
+      "type": "string",
+      "description": "String value depending on `Type`."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "NextAction"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderStateEnum",
+  "title": "Service order state",
+  "enum": [
+    "Inquired",
+    "Confirmed",
+    "Started",
+    "Processed",
+    "Canceled",
+    "Optional",
+    "Requested"
+  ],
+  "type": "string",
+  "description": "\n\nInquired (Confirmed neither by the customer nor enterprise.)\n\nConfirmed (Confirmed by both parties, before check-in.)\n\nStarted (Checked in.)\n\nProcessed (Checked out.)\n\nCanceled (Canceled.)\n\nOptional (Confirmed by enterprise but not by the guest (the enterprise is holding resource for the guest).)\n\nRequested (Confirmed by the customer but not by the enterprise (waitlist).)",
+  "x-enumNames": [
+    "Inquired",
+    "Confirmed",
+    "Started",
+    "Processed",
+    "Canceled",
+    "Optional",
+    "Requested"
+  ],
+  "x-enumDescriptions": [
+    "Confirmed neither by the customer nor enterprise.",
+    "Confirmed by both parties, before check-in.",
+    "Checked in.",
+    "Checked out.",
+    "Canceled.",
+    "Confirmed by enterprise but not by the guest (the enterprise is holding resource for the guest).",
+    "Confirmed by the customer but not by the enterprise (waitlist)."
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Reservation",
+  "title": "Reservation (ver 2023-06-06)",
+  "required": [
+    "AccountId",
+    "AccountType",
+    "CreatedUtc",
+    "CreatorProfileId",
+    "EndUtc",
+    "GroupId",
+    "Id",
+    "Number",
+    "Options",
+    "Origin",
+    "PersonCounts",
+    "RateId",
+    "RequestedResourceCategoryId",
+    "ScheduledEndUtc",
+    "ScheduledStartUtc",
+    "ServiceId",
+    "StartUtc",
+    "State",
+    "UpdatedUtc",
+    "UpdaterProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` that reservation is made against.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the Customer or Company who owns the reservation, i.e. the main guest linked to the reservation.",
+      "format": "uuid"
+    },
+    "AccountType": {
+      "$ref": "#/components/schemas/AccountType"
+    },
+    "CreatorProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who created the reservation.",
+      "format": "uuid"
+    },
+    "UpdaterProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who updated the reservation.",
+      "format": "uuid"
+    },
+    "BookerId": {
+      "type": "string",
+      "description": "Unique identifier of the booker who made the reservation on behalf of the reservation owner, in the special case where the booker is also a registered customer in Mews.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Confirmation number of the reservation in Mews."
+    },
+    "State": {
+      "title": "Service order state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderStateEnum"
+        }
+      ],
+      "description": "State of the reservation.\n\nInquired (Confirmed neither by the customer nor enterprise.)\n\nConfirmed (Confirmed by both parties, before check-in.)\n\nStarted (Checked in.)\n\nProcessed (Checked out.)\n\nCanceled (Canceled.)\n\nOptional (Confirmed by enterprise but not by the guest (the enterprise is holding resource for the guest).)\n\nRequested (Confirmed by the customer but not by the enterprise (waitlist).)",
+      "x-enumNames": [
+        "Inquired",
+        "Confirmed",
+        "Started",
+        "Processed",
+        "Canceled",
+        "Optional",
+        "Requested"
+      ],
+      "x-enumDescriptions": [
+        "Confirmed neither by the customer nor enterprise.",
+        "Confirmed by both parties, before check-in.",
+        "Checked in.",
+        "Checked out.",
+        "Canceled.",
+        "Confirmed by enterprise but not by the guest (the enterprise is holding resource for the guest).",
+        "Confirmed by the customer but not by the enterprise (waitlist)."
+      ]
+    },
+    "Origin": {
+      "title": "Service order origin",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderOriginEnum"
+        }
+      ],
+      "description": "Origin of the reservation.\n\nDistributor (From the Mews Booking Engine or Booking Engine API.)\n\nChannelManager (From a channel manager.)\n\nCommander (From Mews Operations.)\n\nImport (From an import process.)\n\nConnector (From the Mews Connector API.)\n\nNavigator (From Mews Guest Services.)",
+      "x-enumNames": [
+        "Distributor",
+        "ChannelManager",
+        "Commander",
+        "Import",
+        "Connector",
+        "Navigator"
+      ],
+      "x-enumDescriptions": [
+        "From the Mews Booking Engine or Booking Engine API.",
+        "From a channel manager.",
+        "From Mews Operations.",
+        "From an import process.",
+        "From the Mews Connector API.",
+        "From Mews Guest Services."
+      ]
+    },
+    "CommanderOrigin": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderCommanderOriginEnum"
+        }
+      ],
+      "description": "Further detail about origin in case of Origin `Commander`.\n\nInPerson\n\nChannel\n\nPhone\n\nEmail\n\nWebsite\n\nMessage\n\nCallCenter\n\nRoomingList",
+      "nullable": true
+    },
+    "OriginDetails": {
+      "type": "string",
+      "description": "Details about the reservation `Origin`.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the reservation in UTC timezone.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the reservation in UTC timezone.",
+      "format": "date-time"
+    },
+    "CancelledUtc": {
+      "type": "string",
+      "description": "Cancellation date and time in UTC timezone.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "VoucherId": {
+      "type": "string",
+      "description": "Unique identifier of the `Voucher` that has been used to create reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Identifier of the reservation `BusinessSegment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Service order options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderOptions"
+        }
+      ],
+      "description": "Options of the reservation."
+    },
+    "RateId": {
+      "type": "string",
+      "description": "Identifier of the reservation `Rate`.",
+      "format": "uuid"
+    },
+    "CreditCardId": {
+      "type": "string",
+      "description": "Unique identifier of the Credit card.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "GroupId": {
+      "type": "string",
+      "description": "Unique identifier of the Reservation group.",
+      "format": "uuid"
+    },
+    "RequestedResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the Resource category.",
+      "format": "uuid"
+    },
+    "AssignedResourceId": {
+      "type": "string",
+      "description": "Identifier of the assigned Resource.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AvailabilityBlockId": {
+      "type": "string",
+      "description": "Unique identifier of the Availability block the reservation is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PartnerCompanyId": {
+      "type": "string",
+      "description": "Identifier of the `Company` on behalf of which the reservation was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "type": "string",
+      "description": "Identifier of the Travel Agency (`Company`) that mediated the reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AssignedResourceLocked": {
+      "type": "boolean",
+      "description": "Whether the reservation is locked to the assigned Resource and cannot be moved."
+    },
+    "ChannelNumber": {
+      "type": "string",
+      "description": "Number of the reservation within the Channel (i.e. OTA, GDS, CRS, etc) in case the reservation group originates there (e.g. Booking.com confirmation number).",
+      "nullable": true
+    },
+    "ChannelManagerNumber": {
+      "type": "string",
+      "description": "Unique number of the reservation within the reservation group.",
+      "nullable": true
+    },
+    "CancellationReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderCancellationReasonEnum"
+        }
+      ],
+      "description": "Cancellation reason of the reservation.\n\nOther\n\nConfirmationMissed\n\nBookedElsewhere\n\nForceMajeure\n\nGuestComplaint\n\nNoShow\n\nPriceTooHigh\n\nServiceNotAvailable\n\nInputError\n\nInvalidPayment\n\nTravelAgency\n\nRequestedByGuest\n\nUpdate\n\nBookingAbandoned\n\nRequestedByBooker",
+      "nullable": true
+    },
+    "ReleasedUtc": {
+      "type": "string",
+      "description": "Date when the optional reservation is released in UTC timezone.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "StartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Reservation start or check-in time (if it's earlier than scheduled start) in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `ScheduledStartUtc` and `ActualStartUtc` instead."
+    },
+    "EndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Scheduled end time of reservation in UTC timezone in ISO 8601 format",
+      "format": "date-time",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `ScheduledEndUtc` and `ActualEndUtc` instead."
+    },
+    "ScheduledStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Scheduled start time of reservation in UTC timezone.",
+      "format": "date-time"
+    },
+    "ActualStartUtc": {
+      "type": "string",
+      "description": "Actual customer check-in time of reservation in UTC timezone.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ScheduledEndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Scheduled end time of reservation in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ActualEndUtc": {
+      "type": "string",
+      "description": "Actual end time of reservation in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Purpose": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationPurposeEnum"
+        }
+      ],
+      "description": "Purpose of the reservation.\n\nLeisure\n\nBusiness\n\nStudent",
+      "nullable": true
+    },
+    "QrCodeData": {
+      "type": "string",
+      "description": "QR code data of the reservation.",
+      "nullable": true
+    },
+    "PersonCounts": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationPersonCount"
+      },
+      "description": "Number of people per age category the reservation was booked for."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Reservation"
+}

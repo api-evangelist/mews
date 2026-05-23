@@ -1,0 +1,47 @@
+{
+  "operationId": "loyaltyTiers_update",
+  "method": "POST",
+  "path": "/api/connector/v1/loyaltyTiers/update",
+  "summary": "Update loyalty tiers",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "LoyaltyTierUpdates": [
+          {
+            "LoyaltyTierId": "69eedfd2-6f25-42fc-b3c8-39df70f85e37",
+            "Name": {
+              "Value": "Platinum"
+            },
+            "Code": {
+              "Value": "P1"
+            },
+            "Ordering": {
+              "Value": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "LoyaltyTiers": [
+          {
+            "Id": "69eedfd2-6f25-42fc-b3c8-39df70f85e37",
+            "LoyaltyProgramId": "f701dafb-5765-4cf4-b1dd-1f602a740ae5",
+            "Name": "Platinum",
+            "Code": "P1",
+            "Ordering": 1
+          }
+        ]
+      }
+    }
+  ]
+}

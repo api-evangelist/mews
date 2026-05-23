@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemOptions",
+  "title": "Order item options",
+  "required": [
+    "CanceledWithReservation"
+  ],
+  "type": "object",
+  "properties": {
+    "CanceledWithReservation": {
+      "type": "boolean",
+      "description": "Order item was canceled with reservation cancellation."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Options of the order item.",
+  "x-schema-id": "OrderItemOptions"
+}

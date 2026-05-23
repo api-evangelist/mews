@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationUpdateParameters",
+  "title": "Reservation updates",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "ReservationId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "ChannelNumber": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Number of the reservation within the Channel (i.e. OTA, GDS, CRS, etc) in case the reservation group originates there (e.g. Booking.com confirmation number) (or `null` if the channel number should not be updated).",
+      "nullable": true
+    },
+    "StartUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Reservation start in UTC timezone in ISO 8601 format. (or `null` if the start time should not be updated).",
+      "nullable": true
+    },
+    "EndUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Reservation end in UTC timezone in ISO 8601 format. (or `null` if the end time should not be updated).",
+      "nullable": true
+    },
+    "ReleasedUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Date when the optional reservation is released in UTC timezone in ISO 8601 format. (or `null` if the release time should not be updated).",
+      "nullable": true
+    },
+    "PersonCounts": {
+      "title": "Person counts update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationUpdatePersonCountParameters"
+        }
+      ],
+      "description": "Number of people per age category the reservation is for. If supplied, the person counts will be replaced. (or `null` if the person counts should not be updated).",
+      "nullable": true
+    },
+    "AssignedResourceId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of the assigned `Resource`. If the assigned resource is locked, see `AssignedResourceLocked` for updating the assigned resource. (`null` if the assigned resource should not be updated)",
+      "nullable": true
+    },
+    "RequestedCategoryId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Identifier of the requested `ResourceCategory` (or `null` if resource category should not be updated).",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of the `Company` that mediated the reservation (or `null` if travel agency should not be updated).",
+      "nullable": true
+    },
+    "CompanyId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of the `Company` on behalf of which the reservation was made (or `null` if company should not be updated).",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of the reservation `BusinessSegment` (or `null` if the business segment should not be updated).",
+      "nullable": true
+    },
+    "Purpose": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "`Purpose` of the reservation (or `null` if the purpose should not be updated).",
+      "nullable": true
+    },
+    "RateId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Identifier of the reservation `Rate` (or `null` if the rate should not be updated).",
+      "nullable": true
+    },
+    "CreditCardId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of `CreditCard` belonging to `Customer` who owns the reservation.  (or `null` if the credit card should not be updated).",
+      "nullable": true
+    },
+    "TimeUnitPrices": {
+      "title": "Time unit amount update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationUpdatePerUnitPriceParameters"
+        }
+      ],
+      "description": "Prices for time units of the reservation. E.g. prices for the first or second night. (or `null` if the unit amounts should not be updated).",
+      "nullable": true
+    },
+    "BookerId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of the `Customer` on whose behalf the reservation was made. (or `null` if the booker should not be updated).",
+      "nullable": true
+    },
+    "AssignedResourceLocked": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Whether the reservation should be locked to the assigned `Resource`. To reassign the reservation to a new `Resource`, first set `AssignedResourceLocked` to `false` to unlock the resource. Then, assign the reservation to a new `Resource` by setting `AssignedResourceId` to the new resource ID. (`null` if the lock should not be updated)",
+      "nullable": true
+    },
+    "AvailabilityBlockId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the `AvailabilityBlock` the reservation is assigned to.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Reservations options parameters update values",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationUpdateOptionsParameters"
+        }
+      ],
+      "description": "Options of the reservations.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationUpdateParameters"
+}

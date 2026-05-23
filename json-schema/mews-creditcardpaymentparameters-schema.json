@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditCardPaymentParameters",
+  "title": "CreditCardPaymentParameters",
+  "required": [
+    "AccessToken",
+    "Amount",
+    "Client",
+    "ClientToken",
+    "CreditCard",
+    "CustomerId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of an open bill of the customer where to assign the payment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of an [Accounting category](https://mews-systems.gitbook.io/connector-api/operations/accountingcategories/#accounting-category) to be assigned to the credit card payment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation the payment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmountParameters"
+        }
+      ],
+      "description": "Amount of the credit card payment."
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional payment notes.",
+      "nullable": true
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer).",
+      "format": "uuid"
+    },
+    "CreditCard": {
+      "title": "Credit card parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreditCardParameters"
+        }
+      ],
+      "description": ""
+    },
+    "ReceiptIdentifier": {
+      "type": "string",
+      "description": "Identifier of the payment receipt.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CreditCardPaymentParameters"
+}

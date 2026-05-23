@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AlternativePaymentParameters",
+  "title": "AlternativePaymentParameters",
+  "required": [
+    "AccessToken",
+    "Amount",
+    "Client",
+    "ClientToken",
+    "CustomerId",
+    "Data"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer).",
+      "format": "uuid"
+    },
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Price of the product that overrides the price defined in Mews."
+    },
+    "Method": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/AlternativePaymentMethodDeprecated"
+        }
+      ],
+      "description": "Payment method to use for the alternative payment.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Data` instead."
+    },
+    "RedirectUrl": {
+      "type": "string",
+      "description": "URL where the customer will be redirected after completing their payment.",
+      "format": "uri",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Pass redirect URL to relevant method in `Data` instead."
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation the payment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Data": {
+      "title": "Alternative payment method data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlternativePaymentsData"
+        }
+      ],
+      "description": "Data specific to particular alternative payment method."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AlternativePaymentParameters"
+}

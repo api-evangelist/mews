@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceOccupancyState",
+  "title": "Resource occupancy state",
+  "required": [
+    "OccupancyState",
+    "ResourceId",
+    "ResourceState"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceId": {
+      "type": "string",
+      "description": "Unique identifier of the resource.",
+      "format": "uuid"
+    },
+    "ResourceState": {
+      "title": "Resource state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceState"
+        }
+      ],
+      "description": "Resource state of the resource.\n\nDirty\n\nClean\n\nInspected\n\nOutOfService\n\nOutOfOrder",
+      "x-enumNames": [
+        "Dirty",
+        "Clean",
+        "Inspected",
+        "OutOfService",
+        "OutOfOrder"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "x-schema-id": "ResourceState"
+    },
+    "OccupancyState": {
+      "title": "Occupancy state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OccupancyStateEnum"
+        }
+      ],
+      "description": "State of the resource.\n\nVacant\n\nReservedLocked\n\nReserved\n\nInternalUse\n\nOutOfOrder",
+      "x-enumNames": [
+        "Vacant",
+        "ReservedLocked",
+        "Reserved",
+        "InternalUse",
+        "OutOfOrder"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "description": "The occupancy state of a `Resource`.",
+  "x-schema-id": "ResourceOccupancyState"
+}

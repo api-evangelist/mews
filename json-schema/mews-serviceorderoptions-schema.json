@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderOptions",
+  "title": "Service Order Options",
+  "required": [
+    "AllCompanionsCheckedIn",
+    "AnyCompanionCheckedIn",
+    "ConnectorCheckIn",
+    "OwnerCheckedIn"
+  ],
+  "type": "object",
+  "properties": {
+    "OwnerCheckedIn": {
+      "type": "boolean",
+      "description": "Owner of the reservation checked in."
+    },
+    "AllCompanionsCheckedIn": {
+      "type": "boolean",
+      "description": "All companions of the reservation checked in."
+    },
+    "AnyCompanionCheckedIn": {
+      "type": "boolean",
+      "description": "Any of the companions of the reservation checked in."
+    },
+    "ConnectorCheckIn": {
+      "type": "boolean",
+      "description": "Check in was done via Connector API."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOrderOptions"
+}

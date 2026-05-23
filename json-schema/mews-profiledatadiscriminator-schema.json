@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProfileDataDiscriminator",
+  "title": "Profile data discriminator",
+  "enum": [
+    "Personal",
+    "Enterprise",
+    "Platform",
+    "Static",
+    "Integration"
+  ],
+  "type": "string"
+}

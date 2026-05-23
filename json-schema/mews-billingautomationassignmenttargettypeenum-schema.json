@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAssignmentTargetTypeEnum",
+  "title": "Billing automation assignment target type",
+  "enum": [
+    "CompanyAsDetails",
+    "CompanyAsOwner",
+    "NoCompany"
+  ],
+  "type": "string",
+  "description": "\n\nCompanyAsDetails (The company will be the associated account in the resulting routed bill, and the customer is the owner.)\n\nCompanyAsOwner (The company will be the owner in the resulting routed bill, and the customer might be the associated account.)\n\nNoCompany (The customer will be owner of the bill.)",
+  "x-enumNames": [
+    "CompanyAsDetails",
+    "CompanyAsOwner",
+    "NoCompany"
+  ],
+  "x-enumDescriptions": [
+    "The company will be the associated account in the resulting routed bill, and the customer is the owner.",
+    "The company will be the owner in the resulting routed bill, and the customer might be the associated account.",
+    "The customer will be owner of the bill."
+  ]
+}

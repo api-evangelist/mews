@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateAddData",
+  "title": "Rate parameters",
+  "required": [
+    "Names",
+    "PricingType",
+    "RateGroupId",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the service.",
+      "x-schema-id": "HybridIdentifier"
+    },
+    "RateGroupId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the rate group under which rate is assigned.",
+      "x-schema-id": "HybridIdentifier"
+    },
+    "IsEnabled": {
+      "type": "boolean",
+      "description": "Whether the rate is available to customers. `false` will be used as a default when not provided.",
+      "nullable": true
+    },
+    "Type": {
+      "title": "Rate Add Type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateAddTypeEnum"
+        }
+      ],
+      "description": "Type of the rate.\n\nPublic\n\nPrivate",
+      "x-enumNames": [
+        "Public",
+        "Private"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the accounting category the rate belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the business segment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name of the rate.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the short name of the rate.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ExternalNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the external name of the rate.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Descriptions": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the description.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "PricingType": {
+      "title": "Rate pricing discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RatePricingDiscriminatorEnum"
+        }
+      ],
+      "description": "Discriminator in which field inside `Pricing` contains additional data.\n\nBaseRatePricing\n\nDependentRatePricing",
+      "x-enumNames": [
+        "BaseRatePricing",
+        "DependentRatePricing"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the rate from external system.",
+      "nullable": true
+    },
+    "Pricing": {
+      "title": "Rate add pricing data parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateAddPricingDataParameters"
+        }
+      ],
+      "description": "Contains additional data about pricing of the rate.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateAddData"
+}

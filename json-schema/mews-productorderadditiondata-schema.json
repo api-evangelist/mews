@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductOrderAdditionData",
+  "title": "Product order parameters",
+  "required": [
+    "ProductId"
+  ],
+  "type": "object",
+  "properties": {
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the `Product` to be ordered.",
+      "format": "uuid"
+    },
+    "Count": {
+      "type": "integer",
+      "description": "Count of products to be ordered, e.g. 10 in case of 10 beers.",
+      "format": "int32",
+      "nullable": true
+    },
+    "UnitAmount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Unit amount of the product that overrides the amount defined in Mews.",
+      "nullable": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Product start in UTC timezone in ISO 8601 format. For products with charging `Once` and `PerPerson` must be set to same value as `EndUtc`. Use only with operation [Add reservations](https://mews-systems.gitbook.io/connector-api/operations/reservations#add-reservations) or [Add reservation product](https://mews-systems.gitbook.io/connector-api/operations/reservations#add-reservation-product), can be omitted for [Add order](https://mews-systems.gitbook.io/connector-api/operations/orders#add-order) operation.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "description": "Product end in UTC timezone in ISO 8601 format. For products with charging `Once` and `PerPerson` must be set to same value as `StartUtc`. Use only with operation [Add reservations](https://mews-systems.gitbook.io/connector-api/operations/reservations#add-reservations) or [Add reservation product](https://mews-systems.gitbook.io/connector-api/operations/reservations#add-reservation-product), can be omitted for [Add order](https://mews-systems.gitbook.io/connector-api/operations/orders#add-order) operation.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "External identifier of the product order.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductOrderAdditionData"
+}

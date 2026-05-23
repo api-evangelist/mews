@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationItems",
+  "title": "Reservation items",
+  "required": [
+    "Items",
+    "OrderItems"
+  ],
+  "type": "object",
+  "properties": {
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingItem"
+      },
+      "description": "Accounting items associated with the reservation."
+    },
+    "OrderItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderItemOld"
+      },
+      "description": "Order items associated with the reservation."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationItems"
+}

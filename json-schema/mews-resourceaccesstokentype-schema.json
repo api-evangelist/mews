@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessTokenType",
+  "title": "Resource access token type",
+  "enum": [
+    "PinCode",
+    "RfidTag"
+  ],
+  "type": "string",
+  "description": "Type of stored value."
+}

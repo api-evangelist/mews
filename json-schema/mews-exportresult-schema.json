@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportResult",
+  "title": "ExportResult",
+  "required": [
+    "Exports"
+  ],
+  "type": "object",
+  "properties": {
+    "Exports": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Export"
+      },
+      "description": "Requested exports."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportResult"
+}

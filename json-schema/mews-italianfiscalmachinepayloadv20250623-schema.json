@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ItalianFiscalMachinePayloadV20250623",
+  "title": "Italian fiscal machine payload.",
+  "required": [
+    "Payload"
+  ],
+  "type": "object",
+  "properties": {
+    "Payload": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Base64-encoded data of the file to be printed."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ItalianFiscalMachinePayloadV20250623"
+}

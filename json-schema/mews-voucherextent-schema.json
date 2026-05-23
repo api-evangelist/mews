@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherExtent",
+  "title": "Voucher Extent",
+  "type": "object",
+  "properties": {
+    "Vouchers": {
+      "type": "boolean",
+      "description": "Whether the response should contain main information about vouchers.",
+      "nullable": true
+    },
+    "VoucherCodes": {
+      "type": "boolean",
+      "description": "Whether the response should contain voucher codes used by customers.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `voucherCodes/getAll`"
+    },
+    "VoucherAssignments": {
+      "type": "boolean",
+      "description": "Whether the response should contain assignments between vouchers and Rates.",
+      "nullable": true
+    },
+    "Companies": {
+      "type": "boolean",
+      "description": "Whether the response should contain detail of related companies.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `companies/getAll`"
+    },
+    "Rates": {
+      "type": "boolean",
+      "description": "Whether the response should contain detail of assigned rates.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Extent of data to be returned. Whether only specific voucher info should be returned or related items as well.",
+  "x-schema-id": "VoucherExtent"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LedgerBalanceResult",
+  "title": "LedgerBalanceResult",
+  "required": [
+    "LedgerBalances"
+  ],
+  "type": "object",
+  "properties": {
+    "LedgerBalances": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LedgerBalance"
+      },
+      "description": "The list of filtered ledger balances.",
+      "nullable": true
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last and hence oldest ledger balance returned. This can be used in Limitation in a subsequent request to fetch the next batch of ledger balances.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LedgerBalanceResult"
+}

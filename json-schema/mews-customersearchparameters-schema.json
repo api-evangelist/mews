@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerSearchParameters",
+  "title": "CustomerSearchParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name to search by (applies to first name, last name, and full name).",
+      "nullable": true
+    },
+    "ResourceId": {
+      "type": "string",
+      "description": "Identifier of [Resource](https://mews-systems.gitbook.io/connector-api/operations/resources/#resource) to search by (members of reservation assigned there will be returned).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Extent": {
+      "title": "Customer extent",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerExtent"
+        }
+      ],
+      "description": "Extent of data to be returned.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerSearchParameters"
+}

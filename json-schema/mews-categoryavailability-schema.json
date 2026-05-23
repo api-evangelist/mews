@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CategoryAvailability",
+  "title": "Resource category availability",
+  "required": [
+    "Adjustments",
+    "Availabilities",
+    "CategoryId"
+  ],
+  "type": "object",
+  "properties": {
+    "CategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Resource category](https://mews-systems.gitbook.io/connector-api/operations/resources#resource-category).",
+      "format": "uuid"
+    },
+    "Availabilities": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "Absolute availabilities of the resource category in the covered dates."
+    },
+    "Adjustments": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "Relative availability adjustments set for resource category in the covered dates."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CategoryAvailability"
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentData",
+  "title": "Payment data",
+  "required": [
+    "Discriminator"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Payment data discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentDataDiscriminatorEnum"
+        }
+      ],
+      "description": "Discriminator pointing to the fields within this object that contains additional data.\n\nCreditCard\n\nInvoice\n\nExternal\n\nGhost\n\nAlternative",
+      "readOnly": true,
+      "x-enumNames": [
+        "CreditCard",
+        "Invoice",
+        "External",
+        "Ghost",
+        "Alternative"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "CreditCard": {
+      "title": "Credit card payment data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentCreditCardData"
+        }
+      ],
+      "description": "Contains additional data in the case of a card payment.",
+      "nullable": true
+    },
+    "Invoice": {
+      "title": "Invoice payment data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentInvoiceData"
+        }
+      ],
+      "description": "Contains additional data in the case of an invoice payment.",
+      "nullable": true,
+      "readOnly": true
+    },
+    "External": {
+      "title": "External payment data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentExternalData"
+        }
+      ],
+      "description": "Contains additional data in the case of an external payment.",
+      "nullable": true,
+      "readOnly": true
+    },
+    "Ghost": {
+      "title": "Ghost payment data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentGhostData"
+        }
+      ],
+      "description": "Contains additional data in the case of a ghost payment.",
+      "nullable": true,
+      "readOnly": true
+    },
+    "Alternative": {
+      "title": "Alternative payment data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentAlternativeData"
+        }
+      ],
+      "description": "Contains additional data in the case of an alternative payment.",
+      "nullable": true,
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentData"
+}

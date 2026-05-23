@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ConnectorApiExceptionResult",
+  "title": "ConnectorApiExceptionResult",
+  "type": "object",
+  "properties": {
+    "Message": {
+      "type": "string",
+      "nullable": true
+    },
+    "RequestId": {
+      "type": "string",
+      "nullable": true
+    },
+    "Details": {
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ConnectorApiExceptionResult"
+}

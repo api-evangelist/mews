@@ -1,0 +1,20 @@
+{
+  "operationId": "resourceBlocks_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/resourceBlocks/delete",
+  "summary": "Delete resource blocks",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ResourceBlockIds": [
+          "63f4ebee-7e36-4ca9-b7d8-6331a8b009e5"
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

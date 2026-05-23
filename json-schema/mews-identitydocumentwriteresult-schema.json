@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdentityDocumentWriteResult",
+  "title": "IdentityDocumentWriteResult",
+  "required": [
+    "IdentityDocuments"
+  ],
+  "type": "object",
+  "properties": {
+    "IdentityDocuments": {
+      "maxItems": 10,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/IdentityDocumentV20241025"
+      },
+      "description": "Modified identity documents."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "IdentityDocumentWriteResult"
+}

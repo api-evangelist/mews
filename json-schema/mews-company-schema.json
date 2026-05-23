@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Company",
+  "title": "Company",
+  "required": [
+    "ChainId",
+    "CreditRating",
+    "Id",
+    "IsActive",
+    "Name",
+    "Number",
+    "Options"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the company.",
+      "format": "uuid"
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the company."
+    },
+    "MotherCompanyId": {
+      "type": "string",
+      "description": "Unique identifier of mother company.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "InvoicingEmail": {
+      "type": "string",
+      "description": "Email for issuing invoices to the company.",
+      "format": "email",
+      "nullable": true
+    },
+    "WebsiteUrl": {
+      "type": "string",
+      "description": "The website url of the company.",
+      "format": "uri",
+      "nullable": true
+    },
+    "InvoiceDueInterval": {
+      "type": "string",
+      "description": "The maximum time, when the invoice has to be be paid in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Company Options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompanyOptions"
+        }
+      ],
+      "description": "Options of the company."
+    },
+    "CreditRating": {
+      "title": "Credit Rating",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreditRating"
+        }
+      ],
+      "description": "Credit rating to define creditworthiness of the company."
+    },
+    "Department": {
+      "type": "string",
+      "description": "The internal segmentation of a company, e.g. sales department.",
+      "nullable": true
+    },
+    "DunsNumber": {
+      "type": "string",
+      "description": "The Dun & Bradstreet unique 9-digit DUNS number.",
+      "nullable": true
+    },
+    "ReferenceIdentifier": {
+      "type": "string",
+      "description": "External system identifier - custom identifier used by an external system such as an external database.",
+      "nullable": true
+    },
+    "AccountingCode": {
+      "type": "string",
+      "description": "Accounting code of the company.",
+      "nullable": true
+    },
+    "AdditionalTaxIdentifier": {
+      "type": "string",
+      "description": "Additional tax identifier of the company.",
+      "nullable": true
+    },
+    "BillingCode": {
+      "type": "string",
+      "description": "Billing code of the company.",
+      "nullable": true
+    },
+    "Contact": {
+      "type": "string",
+      "description": "Other contact details, such as telephone, email or similar.",
+      "nullable": true
+    },
+    "ContactPerson": {
+      "type": "string",
+      "description": "Contact person of the company.",
+      "nullable": true
+    },
+    "ElectronicInvoiceIdentifier": {
+      "type": "string",
+      "description": "Electronic invoice identifier of the company.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AdditionalTaxIdentifier` instead."
+    },
+    "Identifier": {
+      "type": "string",
+      "description": "Fiscal or legal identifier of the company.",
+      "nullable": true
+    },
+    "Iata": {
+      "type": "string",
+      "description": "Iata of the company.",
+      "nullable": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the company is still active."
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "Number": {
+      "type": "integer",
+      "description": "Unique number of the company (max 19 digits).",
+      "format": "int64"
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identification number of the company.",
+      "nullable": true
+    },
+    "Telephone": {
+      "type": "string",
+      "description": "Contact telephone number.",
+      "format": "tel",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "type": "string",
+      "description": "Date of [Company](https://mews-systems.gitbook.io/connector-api/operations/#company) creation date and time.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "type": "string",
+      "description": "Date of [Company](https://mews-systems.gitbook.io/connector-api/operations/#company) last update date and time.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Address": {
+      "title": "Address",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OldAddress"
+        }
+      ],
+      "description": "",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use AddressId instead."
+    },
+    "AddressId": {
+      "type": "string",
+      "description": "Unique identifier of the company [Address](https://mews-systems.gitbook.io/connector-api/operations/addresses/#account-address).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "MergeTargetId": {
+      "type": "string",
+      "description": "Unique identifier of the account (Customer) to which this company is linked.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TaxIdentificationNumber": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use TaxIdentifier instead."
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of company from external system.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Company"
+}

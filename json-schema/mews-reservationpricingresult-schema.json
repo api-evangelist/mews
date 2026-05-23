@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationPricingResult",
+  "title": "ReservationPricingResult",
+  "required": [
+    "ReservationPrices"
+  ],
+  "type": "object",
+  "properties": {
+    "ReservationPrices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationPrice"
+      },
+      "description": "The reservation prices."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationPricingResult"
+}

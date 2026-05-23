@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOptions",
+  "title": "Service options",
+  "required": [
+    "BillAsPackage"
+  ],
+  "type": "object",
+  "properties": {
+    "BillAsPackage": {
+      "type": "boolean",
+      "description": "Products should be displayed as a single package instead of individual items."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Options of the service.",
+  "x-schema-id": "ServiceOptions"
+}

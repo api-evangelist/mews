@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateFilterParameters",
+  "title": "Rate filter parameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation",
+    "ServiceIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "Extent": {
+      "title": "Rate extent",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateExtent"
+        }
+      ],
+      "description": "Extent of data to be returned. If not specified, both `Rates` and `RateGroups` will be included.",
+      "nullable": true
+    },
+    "RateIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the requested [Rates](https://mews-systems.gitbook.io/connector-api/operations/rates/#rate).",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which `Rate` was updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ServiceIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Services](https://mews-systems.gitbook.io/connector-api/operations/services/#service) from which the rates are requested."
+    },
+    "ExternalIdentifiers": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identifiers of [Rate](https://mews-systems.gitbook.io/connector-api/operations/#rate) from external systems.",
+      "nullable": true
+    },
+    "ActivityStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityStates"
+      },
+      "description": "Whether to return only active, only deleted, or both types of record. If not specified, both active and deleted will be returned.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateFilterParameters"
+}

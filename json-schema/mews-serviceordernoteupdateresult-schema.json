@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderNoteUpdateResult",
+  "title": "ServiceOrderNoteUpdateResult",
+  "required": [
+    "ServiceOrderNotes"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceOrderNotes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderNote"
+      },
+      "description": "Updated service order notes."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOrderNoteUpdateResult"
+}

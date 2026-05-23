@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AgeCategoryAdjustmentTypeEnum",
+  "title": "Age category adjustment type",
+  "enum": [
+    "ExtraOccupancyAdjustment",
+    "NegativeOccupancyAdjustment",
+    "StandardOccupancyAdjustment"
+  ],
+  "type": "string",
+  "description": "\n\nExtraOccupancyAdjustment\n\nNegativeOccupancyAdjustment\n\nStandardOccupancyAdjustment",
+  "x-enumNames": [
+    "ExtraOccupancyAdjustment",
+    "NegativeOccupancyAdjustment",
+    "StandardOccupancyAdjustment"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    ""
+  ]
+}

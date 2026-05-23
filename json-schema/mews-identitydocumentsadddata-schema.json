@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdentityDocumentsAddData",
+  "title": "Identity document parameters",
+  "required": [
+    "CustomerId",
+    "Number",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "CustomerId": {
+      "type": "string",
+      "description": "Identifier of the `Customer`.",
+      "format": "uuid"
+    },
+    "Type": {
+      "title": "Document type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocumentTypeEnum"
+        }
+      ],
+      "description": "Type of the document.\n\nIdentityCard\n\nPassport\n\nVisa\n\nDriversLicense",
+      "x-enumNames": [
+        "IdentityCard",
+        "Passport",
+        "Visa",
+        "DriversLicense"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Number of the document (e.g. passport number). If the number is not collected in certain regions, such as The Netherlands, use an empty string. In all other cases, a value should be supplied."
+    },
+    "ExpirationDate": {
+      "type": "string",
+      "description": "Expiration date in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "IssuanceDate": {
+      "type": "string",
+      "description": "Date of issuance in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "IssuingCountryCode": {
+      "type": "string",
+      "description": "ISO 3166-1 code of the `Country`).",
+      "nullable": true
+    },
+    "IssuingCountrySubdivisionCode": {
+      "type": "string",
+      "description": "Identifier of the country subdivision where the document was issued (province, state or region).",
+      "nullable": true
+    },
+    "IssuingCity": {
+      "type": "string",
+      "description": "City where the document was issued.",
+      "nullable": true
+    },
+    "IdentityDocumentSupportNumber": {
+      "type": "string",
+      "description": "Identity document support number. Only required for Spanish identity cards in Spanish hotels.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "IdentityDocumentsAddData"
+}

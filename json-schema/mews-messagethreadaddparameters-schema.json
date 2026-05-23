@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MessageThreadAddParameters",
+  "title": "MessageThreadAddParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "OriginalSender",
+    "Subject"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "OriginalSender": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The sender of the original message in the thread."
+    },
+    "Subject": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Subject of the message thread."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "MessageThreadAddParameters"
+}

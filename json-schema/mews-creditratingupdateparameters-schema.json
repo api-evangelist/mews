@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditRatingUpdateParameters",
+  "title": "Credit rating update parameters",
+  "type": "object",
+  "properties": {
+    "Basic": {
+      "title": "Credit rating basic update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreditRatingBasicUpdateValue"
+        }
+      ],
+      "description": "Credit status of a company (or `null` if the credit status should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Credit rating to define creditworthiness of the company.",
+  "x-schema-id": "CreditRatingUpdateParameters"
+}

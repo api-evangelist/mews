@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceResult",
+  "title": "ServiceResult",
+  "required": [
+    "Services"
+  ],
+  "type": "object",
+  "properties": {
+    "Services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Service"
+      },
+      "description": "Services offered by the enterprise."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceResult"
+}

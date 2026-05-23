@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxEnvironmentResult",
+  "title": "TaxEnvironmentResult",
+  "required": [
+    "TaxEnvironments"
+  ],
+  "type": "object",
+  "properties": {
+    "TaxEnvironments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaxEnvironment"
+      },
+      "description": "The supported tax environments."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TaxEnvironmentResult"
+}

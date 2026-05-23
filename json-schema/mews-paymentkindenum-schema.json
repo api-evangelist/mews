@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentKindEnum",
+  "title": "Payment kind",
+  "enum": [
+    "Payment",
+    "Chargeback",
+    "ChargebackReversal",
+    "Refund"
+  ],
+  "type": "string",
+  "description": "\n\nPayment\n\nChargeback\n\nChargebackReversal\n\nRefund",
+  "x-enumNames": [
+    "Payment",
+    "Chargeback",
+    "ChargebackReversal",
+    "Refund"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyClassifications",
+  "title": "CompanyClassifications",
+  "type": "object",
+  "properties": {
+    "Corporate": {
+      "type": "boolean"
+    },
+    "Internal": {
+      "type": "boolean"
+    },
+    "Private": {
+      "type": "boolean"
+    },
+    "OnlineTravelAgency": {
+      "type": "boolean"
+    },
+    "GlobalDistributionSystem": {
+      "type": "boolean"
+    },
+    "Marketing": {
+      "type": "boolean"
+    },
+    "Inactive": {
+      "type": "boolean"
+    },
+    "GovernmentEntity": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyClassifications"
+}

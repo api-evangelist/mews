@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnterpriseFilterParameters",
+  "title": "EnterpriseFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Enterprises](https://mews-systems.gitbook.io/connector-api/operations/#enterprise). If not specified, all enterprises within scope of the Access Token are returned.",
+      "nullable": true
+    },
+    "ExternalIdentifiers": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identifiers of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/#enterprise) from external system.",
+      "nullable": true
+    },
+    "LinkedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which enterprises were linked.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which enterprises were updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "EnterpriseFilterParameters"
+}

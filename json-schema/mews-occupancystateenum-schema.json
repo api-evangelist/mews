@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OccupancyStateEnum",
+  "title": "Occupancy state",
+  "enum": [
+    "Vacant",
+    "ReservedLocked",
+    "Reserved",
+    "InternalUse",
+    "OutOfOrder"
+  ],
+  "type": "string",
+  "description": "Occupancy states of the `Resource`.\n\nVacant\n\nReservedLocked\n\nReserved\n\nInternalUse\n\nOutOfOrder",
+  "x-enumNames": [
+    "Vacant",
+    "ReservedLocked",
+    "Reserved",
+    "InternalUse",
+    "OutOfOrder"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChannelManagerReservation",
+  "title": "ChannelManagerReservation",
+  "type": "object",
+  "properties": {
+    "ReservationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "RequestedRateCode": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ChannelManagerReservation"
+}

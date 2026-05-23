@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RelativeProductPrice",
+  "title": "Relative product price",
+  "type": "object",
+  "properties": {
+    "Multiplier": {
+      "type": "number",
+      "format": "double",
+      "deprecated": true
+    },
+    "Target": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "TaxRateCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "nullable": true,
+      "deprecated": true
+    },
+    "ProductIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "nullable": true,
+      "deprecated": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "RelativeProductPrice"
+}

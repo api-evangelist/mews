@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateExtent",
+  "title": "Rate extent",
+  "type": "object",
+  "properties": {
+    "Rates": {
+      "type": "boolean",
+      "description": "Whether the response should contain rates.",
+      "nullable": true
+    },
+    "RateGroups": {
+      "type": "boolean",
+      "description": "Whether the response should contain rate groups.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `rateGroups/getAll`"
+    },
+    "AvailabilityBlockAssignments": {
+      "type": "boolean",
+      "description": "Whether the response should contain availability block assignments."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Extent of data to be returned.",
+  "x-schema-id": "RateExtent"
+}

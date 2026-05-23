@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PricingModeEnum",
+  "title": "Pricing",
+  "enum": [
+    "Gross",
+    "Net"
+  ],
+  "type": "string",
+  "description": "\n\nGross (The enterprise shows amount with gross prices.)\n\nNet (The enterprise shows amount with net prices.)",
+  "x-enumNames": [
+    "Gross",
+    "Net"
+  ],
+  "x-enumDescriptions": [
+    "The enterprise shows amount with gross prices.",
+    "The enterprise shows amount with net prices."
+  ]
+}

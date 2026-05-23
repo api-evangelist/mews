@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdentityDocumentTypeEnum",
+  "title": "Document type",
+  "enum": [
+    "IdentityCard",
+    "Passport",
+    "Visa",
+    "DriversLicense"
+  ],
+  "type": "string",
+  "description": "\n\nIdentityCard\n\nPassport\n\nVisa\n\nDriversLicense",
+  "x-enumNames": [
+    "IdentityCard",
+    "Passport",
+    "Visa",
+    "DriversLicense"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    ""
+  ]
+}

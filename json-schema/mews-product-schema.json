@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Product",
+  "title": "Product",
+  "required": [
+    "ChargingMode",
+    "Classifications",
+    "ConsumptionMoment",
+    "CreatedUtc",
+    "ExternalNames",
+    "Id",
+    "IsActive",
+    "Names",
+    "Options",
+    "Ordering",
+    "PostingMode",
+    "Price",
+    "Pricing",
+    "Promotions",
+    "ServiceId",
+    "ShortNames",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the product.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Service](https://mews-systems.gitbook.io/connector-api/operations/services/#service).",
+      "format": "uuid"
+    },
+    "CategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the Product category.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of [Accounting Category](https://mews-systems.gitbook.io/connector-api/operations/accountingcategories/#accounting-category).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the product is still active."
+    },
+    "IsDefault": {
+      "type": "boolean",
+      "deprecated": true
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the product. **Deprecated!** Please use Names",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Names` instead."
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ExternalName": {
+      "type": "string",
+      "description": "Name of the product meant to be displayed to customer. **Deprecated!** Please use ExternalNames",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `ExternalNames` instead."
+    },
+    "ExternalNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of external name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortName": {
+      "type": "string",
+      "description": "Short name of the product. **Deprecated!** Please use ShortNames",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `ShortNames` instead."
+    },
+    "ShortNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of short name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Description of the product. **Deprecated!** Please use Descriptions",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Descriptions` instead."
+    },
+    "Descriptions": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of descriptions.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Charging": {
+      "title": "Product charging mode",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductChargingModeEnum"
+        }
+      ],
+      "description": "\n\nOnce\n\nPerTimeUnit\n\nPerPersonPerTimeUnit\n\nPerPerson",
+      "deprecated": true,
+      "x-enumNames": [
+        "Once",
+        "PerTimeUnit",
+        "PerPersonPerTimeUnit",
+        "PerPerson"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "ChargingMode": {
+      "title": "Product charging mode",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductChargingModeEnum"
+        }
+      ],
+      "description": "Charging mode of the product.\n\nOnce\n\nPerTimeUnit\n\nPerPersonPerTimeUnit\n\nPerPerson",
+      "x-enumNames": [
+        "Once",
+        "PerTimeUnit",
+        "PerPersonPerTimeUnit",
+        "PerPerson"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Posting": {
+      "title": "Product posting",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductPostingEnum"
+        }
+      ],
+      "description": "\n\nOnce\n\nDaily",
+      "deprecated": true,
+      "x-enumNames": [
+        "Once",
+        "Daily"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "PostingMode": {
+      "title": "Product posting mode",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductPostingModeEnum"
+        }
+      ],
+      "description": "Charging mode of the product.\n\nOnce\n\nPerTimeUnit",
+      "x-enumNames": [
+        "Once",
+        "PerTimeUnit"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "Options": {
+      "title": "Product options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductOptions"
+        }
+      ],
+      "description": "Options of the product."
+    },
+    "Promotions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Promotions"
+        }
+      ],
+      "description": "Promotions of the product."
+    },
+    "Classifications": {
+      "title": "Product classifications",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductClassifications"
+        }
+      ],
+      "description": "Classifications of the product."
+    },
+    "Price": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Price representing price of the product."
+    },
+    "Pricing": {
+      "title": "Product pricing",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/ProductPricing"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/ExtendedAmount"
+            },
+            {
+              "$ref": "#/components/schemas/RelativeProductPrice"
+            }
+          ]
+        }
+      },
+      "deprecated": true,
+      "x-coproduct": true,
+      "x-schema-id": "ProductPricingCoproductOfProductPricing",
+      "x-deprecatedMessage": "Use `Price` instead."
+    },
+    "ImageIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifier of the product image.",
+      "nullable": true
+    },
+    "Ordering": {
+      "type": "integer",
+      "description": "Order value for presentation purposes.",
+      "format": "int32"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the product from external system.",
+      "nullable": true
+    },
+    "TaxExemptionReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaxExemptionReasonTypeEnum"
+        }
+      ],
+      "description": "Specifies the reason a product is exempt from tax.\n\nUnknown (Unknown tax exemption reason)\n\nIT_N1 (N1 - Escluse ex art.15)\n\nIT_N2_2 (N2.2 - Non soggette \u2013 altri casi)\n\nIT_N3_5 (N3.5 - Non imponibili \u2013 a seguito di dichiarazioni d\u2019intento)\n\nIT_N4 (N4 - Esenti)\n\nIT_N5 (N5 - Regime del margine / IVA non esposta in fattura)\n\nPL_ZW (ZW - Zwolniony)\n\nPL_NP (NP - Nie podlega)\n\nDE_NATO (NATO-ZAbk - Umsatzsteuerbefreiung gem\u00e4\u00df Artikel 67(3) NATO-Zusatzabkommen)",
+      "nullable": true
+    },
+    "TaxExemptionLegalReference": {
+      "type": "string",
+      "description": "Legal reference that states why this product is exempt from tax.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the product in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the product in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ConsumptionMoment": {
+      "title": "Product consumption moment",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductConsumptionMomentEnum"
+        }
+      ],
+      "description": "Consumption moment of the product.\n\nServiceOrderEnd\n\nServiceOrderStart\n\nPostingTimeUnit\n\nNextTimeUnit",
+      "x-enumNames": [
+        "ServiceOrderEnd",
+        "ServiceOrderStart",
+        "PostingTimeUnit",
+        "NextTimeUnit"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Product"
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessToken",
+  "title": "Resource access token",
+  "required": [
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Permissions",
+    "ServiceOrderId",
+    "Type",
+    "UpdatedUtc",
+    "ValidityEndUtc",
+    "ValidityStartUtc",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the resource access token.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "ServiceOrderId": {
+      "type": "string",
+      "description": "Unique identifier of `Reservation`.",
+      "format": "uuid"
+    },
+    "CompanionshipId": {
+      "type": "string",
+      "description": "Unique identifier of `Companionship`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ResourceId": {
+      "type": "string",
+      "description": "Unique identifier of `Resource`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Type": {
+      "$ref": "#/components/schemas/ResourceAccessTokenType"
+    },
+    "Value": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Value of the resource access token."
+    },
+    "SerialNumber": {
+      "type": "string",
+      "description": "Serial number of the resource access token.",
+      "nullable": true
+    },
+    "ValidityStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Marks the start of interval in which the resource access token can be used.",
+      "format": "date-time"
+    },
+    "ValidityEndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Marks the end of interval in which the resource access token can be used.",
+      "format": "date-time"
+    },
+    "Permissions": {
+      "title": "Resource access token permissions",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceAccessTokenPermissions"
+        }
+      ],
+      "description": "Permissions of the resource access token."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the resource access token in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the resource access token in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the resource access token is still active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceAccessToken"
+}

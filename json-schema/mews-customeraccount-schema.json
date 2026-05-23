@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerAccount",
+  "title": "Customer",
+  "required": [
+    "ChainId",
+    "Classifications",
+    "CreatedUtc",
+    "LastName",
+    "LegalEntityIdentifiers",
+    "Options",
+    "UpdatedUtc",
+    "UpdaterProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain.",
+      "format": "uuid"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the customer in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the customer in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdaterProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who updated the customer.",
+      "format": "uuid"
+    },
+    "Email": {
+      "type": "string",
+      "description": "Email address of the customer.",
+      "format": "email",
+      "nullable": true
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identification number of the customer.",
+      "nullable": true
+    },
+    "BillingCode": {
+      "type": "string",
+      "description": "Billing code of the customer.",
+      "nullable": true
+    },
+    "AccountingCode": {
+      "type": "string",
+      "description": "Accounting code of the customer.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Internal notes about the customer.",
+      "nullable": true
+    },
+    "LastName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last name of the customer."
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name of the customer.",
+      "nullable": true
+    },
+    "SecondLastName": {
+      "type": "string",
+      "description": "Second last name of the customer.",
+      "nullable": true
+    },
+    "BirthPlace": {
+      "type": "string",
+      "description": "Place of birth.",
+      "nullable": true
+    },
+    "Telephone": {
+      "type": "string",
+      "description": "Telephone number of the customer (possibly mobile).",
+      "nullable": true
+    },
+    "Occupation": {
+      "type": "string",
+      "description": "Occupation of the customer.",
+      "nullable": true
+    },
+    "CarRegistrationNumber": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Registration number of the customer's car.",
+      "nullable": true
+    },
+    "DietaryRequirements": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Dietary requirements of the customer.",
+      "nullable": true
+    },
+    "LoyaltyCode": {
+      "type": "string",
+      "description": "Loyalty code of the customer.",
+      "nullable": true
+    },
+    "NationalityCode": {
+      "type": "string",
+      "description": "ISO 3166-1 code of the `Country`.",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of `Company` the customer is associated with.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BirthDate": {
+      "type": "string",
+      "description": "Date of birth in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Sex": {
+      "type": "string",
+      "description": "Sex of the customer.",
+      "nullable": true
+    },
+    "Title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Title"
+        }
+      ],
+      "description": "Title prefix of the customer.\n\nMister (Mr.)\n\nMiss (Ms.)\n\nMisses (Mrs.)",
+      "nullable": true
+    },
+    "PreferredLanguageCode": {
+      "type": "string",
+      "description": "Language and culture code of the customer's preferred language. E.g. `en-US` or `fr-FR`.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Customer options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerAccountOptions"
+        }
+      ],
+      "description": "Options of the customer."
+    },
+    "Classifications": {
+      "title": "Customer classifications",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerAccountClassifications"
+        }
+      ],
+      "description": "Classifications of the customer."
+    },
+    "LegalEntityIdentifiers": {
+      "title": "Customer legal identifiers",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LegalEntityIdentifiers"
+        }
+      ],
+      "description": "Legal entity identifiers of the customer."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Updated customer data.",
+  "x-schema-id": "CustomerAccount"
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleConditions",
+  "title": "Rule conditions",
+  "type": "object",
+  "properties": {
+    "RateId": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `Rate`.",
+      "nullable": true
+    },
+    "RateGroupId": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `RateGroup`.",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `BusinessSegment`.",
+      "nullable": true
+    },
+    "ResourceCategoryId": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `ResourceCategory`.",
+      "nullable": true
+    },
+    "ResourceCategoryType": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `ResourceCategoryType`.",
+      "nullable": true
+    },
+    "Origin": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `ReservationOrigin`.",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "title": "Rule condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCondition"
+        }
+      ],
+      "description": "Condition based on `Company`.",
+      "nullable": true
+    },
+    "MinimumTimeUnitCount": {
+      "type": "integer",
+      "description": "Condition based on minimum amount of time units.",
+      "format": "int32",
+      "nullable": true
+    },
+    "MaximumTimeUnitCount": {
+      "type": "integer",
+      "description": "Condition based on maximum amount of time units.",
+      "format": "int32",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "RuleConditions"
+}

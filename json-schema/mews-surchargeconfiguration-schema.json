@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SurchargeConfiguration",
+  "title": "Surcharging fees configuration",
+  "required": [
+    "SurchargeFees"
+  ],
+  "type": "object",
+  "properties": {
+    "SurchargeFees": {
+      "title": "CreditCardTypeDecimalIDictionary",
+      "type": "object",
+      "properties": {
+        "MasterCard": {
+          "type": "number",
+          "format": "double"
+        },
+        "Visa": {
+          "type": "number",
+          "format": "double"
+        },
+        "Amex": {
+          "type": "number",
+          "format": "double"
+        },
+        "Discover": {
+          "type": "number",
+          "format": "double"
+        },
+        "DinersClub": {
+          "type": "number",
+          "format": "double"
+        },
+        "Jcb": {
+          "type": "number",
+          "format": "double"
+        },
+        "Maestro": {
+          "type": "number",
+          "format": "double"
+        },
+        "UnionPay": {
+          "type": "number",
+          "format": "double"
+        },
+        "VPay": {
+          "type": "number",
+          "format": "double"
+        },
+        "RuPay": {
+          "type": "number",
+          "format": "double"
+        },
+        "Dankort": {
+          "type": "number",
+          "format": "double"
+        },
+        "Mir": {
+          "type": "number",
+          "format": "double"
+        },
+        "Verve": {
+          "type": "number",
+          "format": "double"
+        },
+        "Troy": {
+          "type": "number",
+          "format": "double"
+        },
+        "PostFinance": {
+          "type": "number",
+          "format": "double"
+        },
+        "Giro": {
+          "type": "number",
+          "format": "double"
+        },
+        "Bancomat": {
+          "type": "number",
+          "format": "double"
+        },
+        "Bc": {
+          "type": "number",
+          "format": "double"
+        },
+        "CarteBleue": {
+          "type": "number",
+          "format": "double"
+        },
+        "Eftpos": {
+          "type": "number",
+          "format": "double"
+        },
+        "Eps": {
+          "type": "number",
+          "format": "double"
+        },
+        "Interac": {
+          "type": "number",
+          "format": "double"
+        },
+        "Isracard": {
+          "type": "number",
+          "format": "double"
+        },
+        "Meps": {
+          "type": "number",
+          "format": "double"
+        },
+        "Nets": {
+          "type": "number",
+          "format": "double"
+        },
+        "Bancontact": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Dictionary keys are `CreditCardType` and values are surcharging fees as a percentage.",
+      "x-schema-id": "CreditCardTypeDecimalIDictionary"
+    },
+    "SurchargeServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the surcharging `Service`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "SurchargeTaxCode": {
+      "type": "string",
+      "description": "Surcharging fee `TaxCode`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SurchargeConfiguration"
+}

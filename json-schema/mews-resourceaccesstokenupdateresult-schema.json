@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessTokenUpdateResult",
+  "title": "ResourceAccessTokenUpdateResult",
+  "required": [
+    "ResourceAccessTokens"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceAccessTokens": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceAccessToken"
+      },
+      "description": "Updated resource access tokens."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceAccessTokenUpdateResult"
+}

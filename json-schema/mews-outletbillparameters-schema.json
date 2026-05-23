@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OutletBillParameters",
+  "title": "Outlet bill parameters",
+  "required": [
+    "ClosedUtc",
+    "Items",
+    "Number",
+    "OutletId"
+  ],
+  "type": "object",
+  "properties": {
+    "OutletId": {
+      "type": "string",
+      "description": "Unique identifier of the `Outlet` where the bill was issued.",
+      "format": "uuid"
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Number of the bill."
+    },
+    "ClosedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the bill closure in UTC timezone in ISO 8601 format."
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OutletItemParameters"
+      },
+      "description": "The items on the bill."
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the `Account` to be assigned to the bill.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes on the bill.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OutletBillParameters"
+}

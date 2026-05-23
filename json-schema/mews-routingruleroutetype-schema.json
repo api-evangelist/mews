@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleRouteType",
+  "title": "Route type",
+  "enum": [
+    "AllStayItems",
+    "SelectedStayItems"
+  ],
+  "type": "string",
+  "description": "Determines to which stay items the routing rule applies."
+}

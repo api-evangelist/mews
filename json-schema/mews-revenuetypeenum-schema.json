@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RevenueTypeEnum",
+  "title": "Revenue type",
+  "enum": [
+    "Service",
+    "Product",
+    "Additional"
+  ],
+  "type": "string",
+  "description": "Revenue type.\n\nService\n\nProduct\n\nAdditional",
+  "x-enumNames": [
+    "Service",
+    "Product",
+    "Additional"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    ""
+  ]
+}

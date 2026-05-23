@@ -1,0 +1,28 @@
+{
+  "operationId": "vouchers_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/vouchers/delete",
+  "summary": "Delete vouchers",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "VoucherIds": [
+          "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+          "f4a9942c-2616-4074-b1f4-4b959515e933"
+        ],
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {}
+    }
+  ]
+}

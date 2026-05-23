@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemProductData",
+  "title": "Product data",
+  "required": [
+    "ProductId"
+  ],
+  "type": "object",
+  "properties": {
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the [Product](https://mews-systems.gitbook.io/connector-api/operations/products/#product).",
+      "format": "uuid"
+    },
+    "AgeCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Age Category](https://mews-systems.gitbook.io/connector-api/operations/agecategories/#age-category).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ProductType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProductTypeEnum"
+        }
+      ],
+      "description": "Type of Product, e.g. whether allowance or product.\n\nProduct\n\nAllowance",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemProductData"
+}

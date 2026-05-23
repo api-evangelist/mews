@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingConfiguration",
+  "title": "Accounting configuration",
+  "required": [
+    "EnabledExternalPaymentTypes",
+    "Options",
+    "SurchargeConfiguration"
+  ],
+  "type": "object",
+  "properties": {
+    "AdditionalTaxIdentifier": {
+      "maxLength": 50,
+      "type": "string",
+      "description": "Organization number.",
+      "nullable": true
+    },
+    "CompanyName": {
+      "maxLength": 100,
+      "type": "string",
+      "description": "Legal name of the company.",
+      "nullable": true
+    },
+    "BankAccountNumber": {
+      "maxLength": 50,
+      "type": "string",
+      "description": "Bank account number.",
+      "nullable": true
+    },
+    "BankName": {
+      "maxLength": 100,
+      "type": "string",
+      "description": "Name of the bank.",
+      "nullable": true
+    },
+    "Iban": {
+      "maxLength": 40,
+      "type": "string",
+      "description": "International Bank Account Number.",
+      "nullable": true
+    },
+    "Bic": {
+      "maxLength": 11,
+      "type": "string",
+      "description": "Business Identification Code.",
+      "nullable": true
+    },
+    "SurchargeConfiguration": {
+      "title": "Surcharging fees configuration",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SurchargeConfiguration"
+        }
+      ],
+      "description": "Configuration for surcharging fees."
+    },
+    "EnabledExternalPaymentTypes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ExternalPaymentTypeEnum"
+      },
+      "description": "External payment types that are enabled for the enterprise and can be used in `payments/addExternal`."
+    },
+    "Options": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingConfigurationOptionEnum"
+      },
+      "description": "Accounting configuration options."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingConfiguration"
+}

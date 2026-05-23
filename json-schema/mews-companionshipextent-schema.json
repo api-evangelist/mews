@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanionshipExtent",
+  "title": "Companionship extent",
+  "type": "object",
+  "properties": {
+    "Reservations": {
+      "type": "boolean",
+      "description": "Whether the response should contain reservations.",
+      "nullable": true
+    },
+    "ReservationGroups": {
+      "type": "boolean",
+      "description": "Whether the response should contain reservation groups.",
+      "nullable": true
+    },
+    "Customers": {
+      "type": "boolean",
+      "description": "Whether the response should contain customers.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "CompanionshipExtent"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleActionProductData",
+  "title": "Rule action product data",
+  "required": [
+    "ActionType",
+    "ProductId"
+  ],
+  "type": "object",
+  "properties": {
+    "ActionType": {
+      "$ref": "#/components/schemas/RuleActionType"
+    },
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of product.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RuleActionProductData"
+}

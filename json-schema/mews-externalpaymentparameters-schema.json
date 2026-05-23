@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExternalPaymentParameters",
+  "title": "ExternalPaymentParameters",
+  "required": [
+    "AccessToken",
+    "AccountId",
+    "Amount",
+    "Client",
+    "ClientToken"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer) or [Company](https://mews-systems.gitbook.io/connector-api/operations/companies/#company). Company billing may not be enabled for your integration.",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer). **Deprecated!**",
+      "format": "uuid",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountId`."
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of an open bill of the customer where to assign the payment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of an [Accounting category](https://mews-systems.gitbook.io/connector-api/operations/accountingcategories/#accounting-category) to be assigned to the external payment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation the payment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmountParameters"
+        }
+      ],
+      "description": "Amount of the external card payment."
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalPaymentTypeEnum"
+        }
+      ],
+      "description": "Type of the external payment. (Required for the enterprises based in the French Legal Environment where `Unspecified` is considered as fraud.)\n\nUnspecified (Unspecified (unavailable in French Legal Environment))\n\nBadDebts (Bad debts)\n\nBacs (Bacs payment)\n\nWireTransfer (Wire transfer)\n\nInvoice (Invoice)\n\nExchangeRateDifference (Exchange rate difference)\n\nComplimentary (Complimentary)\n\nReseller (Reseller)\n\nExchangeRoundingDifference (Exchange rounding difference)\n\nBarter (Barter)\n\nCommission (Commission)\n\nBankCharges (Bank charges)\n\nCrossSettlement (Cross settlement)\n\nCash (Cash)\n\nCreditCard (Credit card \u2013 deprecated, only for existing partners)\n\nPrepayment (Prepayment)\n\nCheque (Cheque)\n\nBancontact (Bancontact)\n\nIDeal (iDeal \u2013 deprecated, only for existing partners)\n\nPayPal (PayPal \u2013 deprecated, only for existing partners)\n\nGiftCard (Gift card)\n\nLoyaltyPoints (Loyalty points)\n\nChequeVacances (Ch\u00e8que-Vacances)\n\nOnlinePayment (Online payment \u2013 deprecated, only for existing partners)\n\nCardCheck (Card check)\n\nPaymentHubRedirection (Payment hub redirection)\n\nVoucher (Voucher)\n\nMasterCard (MasterCard \u2013 deprecated, only for existing partners)\n\nVisa (Visa \u2013 deprecated, only for existing partners)\n\nAmex (American Express \u2013 deprecated, only for existing partners)\n\nDiscover (Discover \u2013 deprecated, only for existing partners)\n\nDinersClub (Diners Club \u2013 deprecated, only for existing partners)\n\nJcb (JCB \u2013 deprecated, only for existing partners)\n\nUnionPay (UnionPay \u2013 deprecated, only for existing partners)\n\nTwint (TWINT)\n\nReka (Reka)\n\nLoyaltyCard (Loyalty card)\n\nPosDiningAndSpaReward (POS Dining & Spa Reward)\n\nDirectDebit (Direct debit)\n\nDepositCheck (Deposit - check)\n\nDepositCash (Deposit - cash)\n\nDepositCreditCard (Deposit - credit card \u2013 deprecated, only for existing partners)\n\nDepositWireTransfer (Deposit - wire transfer)",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "Identifier of the payment from external system.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional payment notes.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExternalPaymentParameters"
+}

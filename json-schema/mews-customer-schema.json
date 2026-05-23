@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Customer",
+  "title": "Customer",
+  "required": [
+    "ChainId",
+    "Classifications",
+    "CreatedUtc",
+    "CreatorProfileId",
+    "Id",
+    "IsActive",
+    "LastName",
+    "Number",
+    "Options",
+    "PreferredSpaceFeatures",
+    "UpdatedUtc",
+    "UpdaterProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the customer.",
+      "format": "uuid"
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain.",
+      "format": "uuid"
+    },
+    "Number": {
+      "maxLength": 19,
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique number of the customer (max 19 digits)."
+    },
+    "Title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Title"
+        }
+      ],
+      "description": "Title of the customer.\n\nMister (Mr.)\n\nMiss (Ms.)\n\nMisses (Mrs.)",
+      "nullable": true
+    },
+    "Sex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SexEnum"
+        }
+      ],
+      "description": "Sex of the customer.\n\nMale\n\nFemale",
+      "nullable": true
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name of the customer.",
+      "nullable": true
+    },
+    "LastName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last name of the customer."
+    },
+    "SecondLastName": {
+      "type": "string",
+      "description": "Second last name of the customer.",
+      "nullable": true
+    },
+    "NationalityCode": {
+      "type": "string",
+      "description": "ISO 3166-1 code of the [Country](https://mews-systems.gitbook.io/connector-api/operations/countries/#country).",
+      "nullable": true
+    },
+    "PreferredLanguageCode": {
+      "type": "string",
+      "description": "Language and culture code of the customer's preferred language, according to their profile. For example: `en-GB`, `fr-CA`.",
+      "nullable": true
+    },
+    "LanguageCode": {
+      "type": "string",
+      "description": "Language and culture code of the customer's language, based on multiple sources. These sources include the preferred language specified in internal data based on previous bookings, and the preferred language of the customer specified in their profile. If neither of these sources are present, we use the native language based on the customer's nationality. The format is, for example, `en-US` or `fr-FR`.",
+      "nullable": true
+    },
+    "BirthDate": {
+      "type": "string",
+      "description": "Date of birth in ISO 8601 format.",
+      "nullable": true
+    },
+    "BirthCountryCode": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 code of the birth country.",
+      "nullable": true
+    },
+    "BirthCountrySubdivisionCode": {
+      "type": "string",
+      "description": "ISO 3166-2 code of the administrative division, e.g. ES-C.",
+      "nullable": true
+    },
+    "BirthPlace": {
+      "type": "string",
+      "description": "Place of birth.",
+      "nullable": true
+    },
+    "Occupation": {
+      "type": "string",
+      "description": "Occupation of the customer.",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "description": "Email address of the customer.",
+      "nullable": true
+    },
+    "HasOtaEmail": {
+      "type": "boolean",
+      "description": "Whether the customer's email address is a temporary email address from an OTA. For more details, see the [product documentation](https://help.mews.com/s/article/how-to-maintain-ota-guest-profiles-with-verified-email-addresses-obtained-from-the-guest-portal)."
+    },
+    "Phone": {
+      "type": "string",
+      "description": "Phone number of the customer (possibly mobile).",
+      "nullable": true
+    },
+    "TaxIdentificationNumber": {
+      "type": "string",
+      "description": "Tax identification number of the customer.",
+      "nullable": true
+    },
+    "LoyaltyCode": {
+      "type": "string",
+      "description": "Loyalty code of the customer.",
+      "nullable": true
+    },
+    "AccountingCode": {
+      "type": "string",
+      "description": "Accounting code of the customer.",
+      "nullable": true
+    },
+    "BillingCode": {
+      "type": "string",
+      "description": "Billing code of the customer.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Internal notes about the customer.",
+      "nullable": true
+    },
+    "CarRegistrationNumber": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Registration number of the customer's car.",
+      "nullable": true
+    },
+    "DietaryRequirements": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Customer's dietary requirements, e.g. Vegan, Halal.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the customer in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the customer in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Passport": {
+      "title": "Identity document",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocument"
+        }
+      ],
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#get-all-identity-documents) to fetch identity documents."
+    },
+    "IdentityCard": {
+      "title": "Identity document",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocument"
+        }
+      ],
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#get-all-identity-documents) to fetch identity documents."
+    },
+    "Visa": {
+      "title": "Identity document",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocument"
+        }
+      ],
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#get-all-identity-documents) to fetch identity documents."
+    },
+    "DriversLicense": {
+      "title": "Identity document",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdentityDocument"
+        }
+      ],
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#get-all-identity-documents) to fetch identity documents."
+    },
+    "Address": {
+      "title": "Address",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OldAddress"
+        }
+      ],
+      "description": "",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AddressId` instead."
+    },
+    "AddressId": {
+      "type": "string",
+      "description": "Unique identifier of the `Address` of the customer.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Classifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomerClassificationEnum"
+      },
+      "description": "Classifications of the customer."
+    },
+    "Options": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomerOptionsEnum"
+      },
+      "description": "Options of the customer."
+    },
+    "ItalianDestinationCode": {
+      "type": "string",
+      "description": "Value of Italian destination code.",
+      "nullable": true
+    },
+    "ItalianFiscalCode": {
+      "type": "string",
+      "description": "Value of Italian fiscal code.",
+      "nullable": true
+    },
+    "ItalianLotteryCode": {
+      "type": "string",
+      "description": "Italian lottery code.",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of [Company](https://mews-systems.gitbook.io/connector-api/operations/companies/#company) the customer is associated with.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "MergeTargetId": {
+      "type": "string",
+      "description": "Unique identifier of the account ([Customer](https://mews-systems.gitbook.io/connector-api/operations/#customer)) to which this customer is linked.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ActivityState": {
+      "type": "string",
+      "description": "[Activity State](https://mews-systems.gitbook.io/connector-api/operations/#activity-state) of customer record, i.e. whether active or deleted.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `IsActive` instead."
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the customer record is still active."
+    },
+    "PreferredSpaceFeatures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceFeatureClassification"
+      },
+      "description": "A list of room preferences, such as view type, bed type, and amenities."
+    },
+    "CreatorProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who created the customer.",
+      "format": "uuid"
+    },
+    "UpdaterProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who last updated the customer.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Customer"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillExtent",
+  "title": "Bill extent",
+  "type": "object",
+  "properties": {
+    "Items": {
+      "type": "boolean",
+      "description": "Whether the response should contain payments and revenue items.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `orderItems/getAll` and `payments/getAll` with `BillIds` filter instead."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Extent of data to be returned. E.g. it is possible to specify that together with the bills, payments and revenue items should be also returned. **Deprecated!**",
+  "x-schema-id": "BillExtent"
+}

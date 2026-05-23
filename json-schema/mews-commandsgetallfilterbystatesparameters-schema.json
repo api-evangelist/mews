@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CommandsGetAllFilterByStatesParameters",
+  "title": "Get all commands by device identifiers and states",
+  "required": [
+    "DeviceIds",
+    "States"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/CommandsGetAllFilterParameters"
+    }
+  ],
+  "properties": {
+    "DeviceIds": {
+      "maxItems": 100,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Device` to filter by."
+    },
+    "States": {
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DeviceCommandStateEnum"
+      },
+      "description": "States of the commands to filter by."
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the commands were updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    }
+  },
+  "additionalProperties": false,
+  "description": "Filter commands by the unique identifiers of `Device` and states, with optional filtering by update interval.",
+  "x-schema-id": "CommandsGetAllFilterByStatesParameters"
+}

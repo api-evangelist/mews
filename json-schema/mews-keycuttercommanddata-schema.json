@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/KeyCutterCommandData",
+  "title": "Key cutter command data",
+  "required": [
+    "EndUtc",
+    "KeyCount",
+    "LastName",
+    "LockIds",
+    "StartUtc"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/DeviceCommandData"
+    }
+  ],
+  "properties": {
+    "KeyCutterId": {
+      "type": "string",
+      "description": "Identifier of the key cutter.",
+      "nullable": true
+    },
+    "ApiUrl": {
+      "type": "string",
+      "description": "URL of the key cutter server API.",
+      "nullable": true
+    },
+    "KeyCutterData": {
+      "type": "string",
+      "description": "Custom JSON data.",
+      "nullable": true
+    },
+    "KeyCount": {
+      "type": "integer",
+      "description": "Count of keys to cut.",
+      "format": "int32"
+    },
+    "LockIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identifiers of locks/rooms the key should open."
+    },
+    "StartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Reservation start.",
+      "format": "date-time"
+    },
+    "EndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Reservation end.",
+      "format": "date-time"
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name of the reservation owner.",
+      "nullable": true
+    },
+    "LastName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last name of the reservation owner."
+    },
+    "NormalizedFirstName": {
+      "type": "string",
+      "description": "Normalized first name of the customer without special characters.",
+      "nullable": true
+    },
+    "NormalizedLastName": {
+      "type": "string",
+      "description": "Normalized last name of the customer without special characters.",
+      "nullable": true
+    },
+    "Telephone": {
+      "type": "string",
+      "description": "Telephone of the reservation owner.",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "description": "Email of the reservation owner.",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationNumber": {
+      "type": "string",
+      "description": "Confirmation number of the reservation in Mews.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "KeyCutterCommandData"
+}

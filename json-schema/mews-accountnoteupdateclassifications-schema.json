@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNoteUpdateClassifications",
+  "title": "Account note update classifications",
+  "type": "object",
+  "properties": {
+    "General": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Company and Customer: Boolean value defining the general classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "FoodAndBeverage": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the food and beverage classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "FrontOffice": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the front office classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Reservations": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the reservations classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Housekeeping": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the housekeeping classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Maintenance": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the maintenance classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "PreviousStay": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the previous stay classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "FamilyRelations": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the family relations classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Gifts": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the gifts classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Accounting": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the accounting classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Complaints": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the complaints classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Other": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Customer only: Boolean value defining the other classification for the account note (or `null` if the value should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountNoteUpdateClassifications"
+}

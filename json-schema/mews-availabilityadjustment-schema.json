@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityAdjustment",
+  "title": "Availability adjustment",
+  "required": [
+    "ActivityState",
+    "FirstTimeUnitStartUtc",
+    "Id",
+    "IsActive",
+    "LastTimeUnitStartUtc",
+    "ResourceCategoryId",
+    "UnitCount",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the [Availability adjustment](https://mews-systems.gitbook.io/connector-api/operations/#availability-adjustment).",
+      "format": "uuid"
+    },
+    "AvailabilityBlockId": {
+      "type": "string",
+      "description": "Unique identifier of the [Availability block](https://mews-systems.gitbook.io/connector-api/operations/availabilityblocks/#availability-block) which the availability adjustment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Resource category](https://mews-systems.gitbook.io/connector-api/operations/resources/#resource-category) whose availability is updated.",
+      "format": "uuid"
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Start of the interval in UTC timezone in ISO 8601 format.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "description": "End of the interval in UTC timezone in ISO 8601 format.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first [time unit](https://mews-systems.gitbook.io/connector-api/operations/services/#time-unit), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last [time unit](https://mews-systems.gitbook.io/connector-api/operations/services/#time-unit), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Adjustment value applied on the interval.",
+      "format": "int32"
+    },
+    "ActivityState": {
+      "title": "Activity state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityStateEnum"
+        }
+      ],
+      "description": "Shows whether the availability adjustment is active or deleted.\n\nDeleted\n\nActive",
+      "deprecated": true,
+      "x-enumNames": [
+        "Deleted",
+        "Active"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ],
+      "x-deprecatedMessage": "Use `IsActive` instead."
+    },
+    "ReleaseOverrideUtc": {
+      "type": "string",
+      "description": "Exact moment the availability adjustment is released if set; overrides the release strategy of the associated availability block.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the adjustment in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the availability adjustment is still active."
+    },
+    "PaxCounts": {
+      "maxItems": 5,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaxCount"
+      },
+      "description": "Collection of predicted occupancy of availability adjustments. Relates to how many adjustments are assigned to each count of guests.",
+      "nullable": true
+    },
+    "FirstTimeUnitReleaseUtc": {
+      "type": "string",
+      "description": "Exact moment the first time unit of the availability adjustment is released based on `ReleaseOverrideUtc` or the `ReleaseStrategy` of the associated availability block, or the `OperationalEditableHistoryInterval` of the associated enterprise if not set, or `null` if `AvailabilityBlockId` is `null`.",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityAdjustment"
+}

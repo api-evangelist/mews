@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemAdditionData",
+  "title": "Item parameters",
+  "required": [
+    "Name",
+    "UnitAmount",
+    "UnitCount"
+  ],
+  "type": "object",
+  "properties": {
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the item."
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Count of units to be ordered, e.g. 10 in case of 10 beers.",
+      "format": "int32"
+    },
+    "UnitAmount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Unit amount, e.g. amount for one beer (note that total amount of the item is therefore `UnitAmount` times `UnitCount`)."
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of an `AccountingCategory` to be assigned to the item.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "External identifier of the order item.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemAdditionData"
+}

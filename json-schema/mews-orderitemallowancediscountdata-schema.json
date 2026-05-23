@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemAllowanceDiscountData",
+  "title": "Allowance discount data",
+  "required": [
+    "AllowanceProductOrderItemId",
+    "DiscountedOrderItemId"
+  ],
+  "type": "object",
+  "properties": {
+    "DiscountedOrderItemId": {
+      "type": "string",
+      "description": "Unique identifier of [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) which has been discounted by current item.",
+      "format": "uuid"
+    },
+    "AllowanceProductOrderItemId": {
+      "type": "string",
+      "description": "Unique identifier of the allowance product [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) which credit has been consumed by current item.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemAllowanceDiscountData"
+}

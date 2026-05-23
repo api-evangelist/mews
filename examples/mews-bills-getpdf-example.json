@@ -1,0 +1,33 @@
+{
+  "operationId": "bills_getPdf",
+  "method": "POST",
+  "path": "/api/connector/v1/bills/getPdf",
+  "summary": "Get bill PDF",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "BillId": "44eba542-193e-47c7-8077-abd7008eb206",
+        "PdfTemplate": "Detailed"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "BillId": "44eba542-193e-47c7-8077-abd7008eb206",
+        "Result": {
+          "Discriminator": "BillPdfFile",
+          "Value": {
+            "Base64Data": "JVBERi0xLj..."
+          }
+        }
+      }
+    }
+  ]
+}

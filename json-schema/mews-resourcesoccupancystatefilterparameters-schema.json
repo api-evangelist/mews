@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourcesOccupancyStateFilterParameters",
+  "title": "ResourcesOccupancyStateFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "ResourceCategoryIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ResourceCategoryIds": {
+      "maxItems": 5,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `ResourceCategory`."
+    },
+    "ResourceStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceState"
+      },
+      "description": "States of the `Resource`",
+      "nullable": true
+    },
+    "OccupancyStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OccupancyStateEnum"
+      },
+      "description": "Occupancy states of the `Resource`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourcesOccupancyStateFilterParameters"
+}

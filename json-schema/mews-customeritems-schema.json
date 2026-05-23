@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerItems",
+  "title": "Customer items",
+  "required": [
+    "CustomerId",
+    "Items",
+    "OrderItems",
+    "PaymentItems"
+  ],
+  "type": "object",
+  "properties": {
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer`.",
+      "format": "uuid"
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingItem"
+      },
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `OrderItems` and `PaymentItems` instead."
+    },
+    "OrderItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderItemOld"
+      },
+      "description": "The open order items (consumed items such as nights or products)."
+    },
+    "PaymentItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentItemOld"
+      },
+      "description": "The open payment items (such as cash, credit card payments or invoices)."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerItems"
+}

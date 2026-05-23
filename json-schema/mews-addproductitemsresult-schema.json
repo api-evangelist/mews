@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddProductItemsResult",
+  "title": "AddProductItemsResult",
+  "type": "object",
+  "properties": {
+    "ItemIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddProductItemsResult"
+}

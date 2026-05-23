@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountMergeParameter",
+  "title": "Account merge parameters",
+  "required": [
+    "AccountType",
+    "SourceAccountIds",
+    "TargetAccountId"
+  ],
+  "type": "object",
+  "properties": {
+    "SourceAccountIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the source accounts (`Customer` or `Company`)."
+    },
+    "TargetAccountId": {
+      "type": "string",
+      "description": "Unique identifier of the target account (`Customer` or `Company`).",
+      "format": "uuid"
+    },
+    "AccountType": {
+      "title": "Account merge type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MergeAccountTypeEnum"
+        }
+      ],
+      "description": "Specifying types of the accounts provided (`Customer` or `Company`).\n\nCustomer\n\nCompany",
+      "x-enumNames": [
+        "Customer",
+        "Company"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountMergeParameter"
+}

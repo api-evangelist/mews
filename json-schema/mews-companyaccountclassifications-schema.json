@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyAccountClassifications",
+  "title": "Company classifications",
+  "type": "object",
+  "properties": {
+    "Corporate": {
+      "type": "boolean",
+      "description": "Corporate."
+    },
+    "Internal": {
+      "type": "boolean",
+      "description": "Internal."
+    },
+    "Private": {
+      "type": "boolean",
+      "description": "Private."
+    },
+    "OnlineTravelAgency": {
+      "type": "boolean",
+      "description": "Online travel agency."
+    },
+    "GlobalDistributionSystem": {
+      "type": "boolean",
+      "description": "Global distribution system."
+    },
+    "Marketing": {
+      "type": "boolean",
+      "description": "Marketing."
+    },
+    "Inactive": {
+      "type": "boolean",
+      "description": "Inactive."
+    },
+    "GovernmentEntity": {
+      "type": "boolean",
+      "description": "Government Entity"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyAccountClassifications"
+}

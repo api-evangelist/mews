@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRequestAddParameters",
+  "title": "Payment request parameters",
+  "required": [
+    "AccountId",
+    "Amount",
+    "Description",
+    "ExpirationUtc",
+    "Reason",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` account to which the payment request is issued.",
+      "format": "uuid"
+    },
+    "Amount": {
+      "title": "Currency value (ver 2023-02-02)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValue"
+        }
+      ],
+      "description": "Amount of the payment request."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/PaymentRequestType"
+    },
+    "Reason": {
+      "$ref": "#/components/schemas/PaymentRequestReason"
+    },
+    "ExpirationUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the payment request's expiration in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Description": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "type": "string",
+      "description": "Description of the payment request."
+    },
+    "Notes": {
+      "maxLength": 1000,
+      "type": "string",
+      "description": "Payment request's notes.",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation` the payment request belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the `Bill` the payment request is linked to.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentRequestAddParameters"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillTypeEnum",
+  "title": "Bill type",
+  "enum": [
+    "Receipt",
+    "Invoice"
+  ],
+  "type": "string",
+  "description": "After a bill is closed, the Bill Type is set to `Receipt` or `Invoice`. `Receipt` indicates that the bill has been fully paid and the balance is zero. `Invoice` indicates that the bill has not yet been fully paid but an invoice has been issued. Prior to closing, Bill Type should not be used.\n\nReceipt (Default; the bill has been paid in full; only applicable after the bill is closed.)\n\nInvoice (Bill has not been paid in full but an invoice has been issued to request payment.)",
+  "x-enumNames": [
+    "Receipt",
+    "Invoice"
+  ],
+  "x-enumDescriptions": [
+    "Default; the bill has been paid in full; only applicable after the bill is closed.",
+    "Bill has not been paid in full but an invoice has been issued to request payment."
+  ]
+}

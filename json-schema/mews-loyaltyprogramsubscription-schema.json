@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramSubscription",
+  "title": "Loyalty program subscription",
+  "enum": [
+    "Free",
+    "Paid"
+  ],
+  "type": "string",
+  "description": "Subscription of the loyalty program.\n\nFree\n\nPaid",
+  "x-enumNames": [
+    "Free",
+    "Paid"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ],
+  "x-schema-id": "LoyaltyProgramSubscription"
+}

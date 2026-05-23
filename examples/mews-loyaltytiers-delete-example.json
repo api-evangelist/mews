@@ -1,0 +1,21 @@
+{
+  "operationId": "loyaltyTiers_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/loyaltyTiers/delete",
+  "summary": "Delete loyalty tiers",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "LoyaltyTierIds": [
+          "69eedfd2-6f25-42fc-b3c8-39df70f85e37",
+          "3cad97ef-5257-4ced-8599-8e6bbd33331f"
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

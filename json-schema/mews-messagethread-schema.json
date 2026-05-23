@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MessageThread",
+  "title": "Message thread",
+  "required": [
+    "CreatedUtc",
+    "Id",
+    "OriginalSender",
+    "Subject",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the message thread.",
+      "format": "uuid"
+    },
+    "OriginalSender": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The sender of the original message in the thread."
+    },
+    "Subject": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Subject of the message thread."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the message thread in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the message thread in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "IsResolved": {
+      "type": "boolean",
+      "description": "Whether the message thread is resolved."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "MessageThread"
+}

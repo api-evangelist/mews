@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxBreakdown",
+  "title": "Tax breakdown",
+  "required": [
+    "Items"
+  ],
+  "type": "object",
+  "properties": {
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaxBreakdownItem"
+      },
+      "description": "Tax breakdown items per each tax rate applied."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TaxBreakdown"
+}

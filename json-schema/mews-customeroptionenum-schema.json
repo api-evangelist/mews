@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerOptionEnum",
+  "title": "Customer option",
+  "enum": [
+    "SendMarketingEmails",
+    "Invoiceable",
+    "BillAddressObjection",
+    "SendMarketingPostalMail",
+    "SendPartnerMarketingEmails",
+    "SendPartnerMarketingPostalMail",
+    "WithdrawCardConsent",
+    "GuestPhotoConsent",
+    "IdPhotosConsent"
+  ],
+  "type": "string",
+  "description": "\n\nSendMarketingEmails\n\nInvoiceable\n\nBillAddressObjection\n\nSendMarketingPostalMail\n\nSendPartnerMarketingEmails\n\nSendPartnerMarketingPostalMail\n\nWithdrawCardConsent\n\nGuestPhotoConsent (Whether to ask for consent to take a guest photo.)\n\nIdPhotosConsent (Whether to ask for consent to take identity document photos.)",
+  "x-enumNames": [
+    "SendMarketingEmails",
+    "Invoiceable",
+    "BillAddressObjection",
+    "SendMarketingPostalMail",
+    "SendPartnerMarketingEmails",
+    "SendPartnerMarketingPostalMail",
+    "WithdrawCardConsent",
+    "GuestPhotoConsent",
+    "IdPhotosConsent"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Whether to ask for consent to take a guest photo.",
+    "Whether to ask for consent to take identity document photos."
+  ]
+}

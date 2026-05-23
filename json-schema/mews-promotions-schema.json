@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Promotions",
+  "title": "Promotions",
+  "required": [
+    "AfterCheckIn",
+    "AfterCheckOut",
+    "BeforeCheckIn",
+    "BeforeCheckOut",
+    "DuringCheckOut",
+    "DuringStay"
+  ],
+  "type": "object",
+  "properties": {
+    "BeforeCheckIn": {
+      "type": "boolean",
+      "description": "Whether it can be promoted before check-in."
+    },
+    "AfterCheckIn": {
+      "type": "boolean",
+      "description": "Whether it can be promoted after check-in."
+    },
+    "DuringStay": {
+      "type": "boolean",
+      "description": "Whether it can be promoted during stay."
+    },
+    "BeforeCheckOut": {
+      "type": "boolean",
+      "description": "Whether it can be promoted before check-out."
+    },
+    "AfterCheckOut": {
+      "type": "boolean",
+      "description": "Whether it can be promoted after check-out."
+    },
+    "DuringCheckOut": {
+      "type": "boolean",
+      "description": "Whether it can be promoted during check-out."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "Promotions"
+}

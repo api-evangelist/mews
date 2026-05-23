@@ -1,0 +1,39 @@
+{
+  "operationId": "reservations_addProduct",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/addProduct",
+  "summary": "Add reservation product",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ReservationId": "4d2aa234-5d30-472c-899f-ab45008c3479",
+        "ProductId": "47312820-2268-4f5c-864d-aa4100ed82bc",
+        "Count": 1,
+        "StartUtc": "2021-01-02T00:00:00Z",
+        "EndUtc": "2021-01-03T00:00:00Z",
+        "UnitAmount": {
+          "Currency": "GBP",
+          "GrossValue": 10,
+          "TaxCodes": [
+            "UK-S"
+          ]
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ItemIds": [
+          "ff81fd7a-29ba-4160-8e22-ab4300f67b23"
+        ]
+      }
+    }
+  ]
+}

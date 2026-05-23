@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LanguageTextResult",
+  "title": "LanguageTextResult",
+  "required": [
+    "LanguageTexts"
+  ],
+  "type": "object",
+  "properties": {
+    "LanguageTexts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LanguageTexts"
+      },
+      "description": "Texts in the specified languages."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LanguageTextResult"
+}

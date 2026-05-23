@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DocumentParameters",
+  "title": "Identity document parameters",
+  "type": "object",
+  "properties": {
+    "Number": {
+      "type": "string",
+      "description": "Number of the document (e.g. passport number).",
+      "nullable": true
+    },
+    "Expiration": {
+      "type": "string",
+      "description": "Expiration date in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "Issuance": {
+      "type": "string",
+      "description": "Date of issuance in ISO 8601 format.",
+      "format": "date",
+      "nullable": true
+    },
+    "IssuingCountryCode": {
+      "type": "string",
+      "description": "ISO 3166-1 code of the `Country`.",
+      "nullable": true
+    },
+    "IssuingCountrySubdivisionCode": {
+      "type": "string",
+      "description": "Identifier of the country subdivision where the document was issued (province, state or region).",
+      "nullable": true
+    },
+    "IssuingCity": {
+      "type": "string",
+      "description": "City from which document issued",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "DocumentParameters"
+}

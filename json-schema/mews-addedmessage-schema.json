@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddedMessage",
+  "title": "Added message",
+  "required": [
+    "Message"
+  ],
+  "type": "object",
+  "properties": {
+    "Identifier": {
+      "type": "string",
+      "description": "Identifier of the created message.",
+      "nullable": true
+    },
+    "Message": {
+      "title": "Message",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Message"
+        }
+      ],
+      "description": "Message that was added to the `MessageThread`."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddedMessage"
+}

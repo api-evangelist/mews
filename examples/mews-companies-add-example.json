@@ -1,0 +1,126 @@
+{
+  "operationId": "companies_add",
+  "method": "POST",
+  "path": "/api/connector/v1/companies/add",
+  "summary": "Add company",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ChainId": "1df21f06-0cfc-4960-9c58-a3bf1261663e",
+        "Name": "Mews",
+        "Options": {
+          "Invoiceable": true,
+          "AddFeesToInvoices": true
+        },
+        "MotherCompanyId": null,
+        "Identifier": null,
+        "TaxIdentifier": null,
+        "AdditionalTaxIdentifier": null,
+        "BillingCode": null,
+        "AccountingCode": null,
+        "Address": null,
+        "InvoiceDueInterval": "P2DT23H",
+        "Telephone": "111-222-333",
+        "ContacPerson": "SamplePerson",
+        "Contact": "ContactInfo",
+        "Notes": "Note1",
+        "Iata": "PAO",
+        "Department": "Sales",
+        "DunsNumber": "987654321",
+        "CreditRating": {
+          "Basic": "CreditOk"
+        },
+        "ExternalIdentifier": "1234",
+        "ReferenceIdentifier": "a58ff7cb-77e3-495a-bd61-aecf00a3f19d",
+        "WebsiteUrl": "https://www.mews.com"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Companies": [
+          {
+            "Id": "a58ff7cb-77e3-495a-bd61-aecf00a3f19d",
+            "ChainId": "1df21f06-0cfc-4960-9c58-a3bf1261663e",
+            "Name": "Sample Company 1",
+            "IsActive": true,
+            "Number": 11,
+            "Identifier": null,
+            "TaxIdentifier": null,
+            "AdditionalTaxIdentifier": null,
+            "ElectronicInvoiceIdentifier": null,
+            "InvoiceDueInterval": "P2DT23H",
+            "AccountingCode": null,
+            "MotherCompanyId": null,
+            "CreatedUtc": "2022-07-11T09:56:54Z",
+            "UpdatedUtc": "2022-07-11T09:56:54Z",
+            "AddressId": "bab7441c-4b82-43bc-8001-ab0400a346ec",
+            "BillingCode": null,
+            "Iata": "PAO",
+            "Telephone": "111-222-333",
+            "InvoicingEmail": "sample1@mews.com",
+            "ContacPerson": "Sample Person 1",
+            "Contact": "Contact Info 1",
+            "Notes": "Note 1",
+            "Options": {
+              "Invoiceable": true,
+              "AddFeesToInvoices": true
+            },
+            "Department": "Sales",
+            "DunsNumber": "123456789",
+            "CreditRating": {
+              "Basic": "PaymentRequiredUpfront"
+            },
+            "ReferenceIdentifier": "da34b396-77e3-495a-bd61-aecf00a3f19d",
+            "WebsiteUrl": "https://www.mewssystems.com",
+            "ExternalIdentifier": "company0001"
+          },
+          {
+            "Id": "da34b396-41f7-47f6-8847-aecf00a3f19e",
+            "ChainId": "5fcd1933-22f2-40b9-84da-7db04cbecec2",
+            "Name": "Sample Company 2",
+            "IsActive": true,
+            "Number": 12,
+            "Identifier": null,
+            "TaxIdentifier": null,
+            "AdditionalTaxIdentifier": null,
+            "ElectronicInvoiceIdentifier": null,
+            "InvoiceDueInterval": "P2DT23H",
+            "AccountingCode": null,
+            "MotherCompanyId": null,
+            "CreatedUtc": "2022-07-11T09:56:54Z",
+            "UpdatedUtc": "2022-07-11T09:56:54Z",
+            "AddressId": null,
+            "BillingCode": null,
+            "Iata": "PAO",
+            "Telephone": "111-222-333",
+            "InvoicingEmail": "sample2@mews.com",
+            "ContacPerson": "Sample Person 2",
+            "Contact": "Contact Info 2",
+            "Notes": "Note 2",
+            "Options": {
+              "Invoiceable": true,
+              "AddFeesToInvoices": false
+            },
+            "Department": "Accounting",
+            "DunsNumber": "987654321",
+            "CreditRating": {
+              "Basic": "CreditOk"
+            },
+            "ReferenceIdentifier": "a58ff7cb-77e3-495a-bd61-aecf00a3f19d",
+            "WebsiteUrl": "https://www.mews.com",
+            "ExternalIdentifier": "company0002"
+          }
+        ],
+        "Cursor": "da34b396-41f7-47f6-8847-aecf00a3f19e"
+      }
+    }
+  ]
+}

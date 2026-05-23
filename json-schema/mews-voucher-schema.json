@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Voucher",
+  "title": "Voucher",
+  "required": [
+    "ActivityState",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Name",
+    "ServiceId",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of voucher.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of [Service](https://mews-systems.gitbook.io/connector-api/operations/services/#service) the voucher belongs to.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise to which the voucher belongs.",
+      "format": "uuid"
+    },
+    "Name": {
+      "maxLength": 128,
+      "minLength": 1,
+      "type": "string",
+      "description": "Internal name of the voucher."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the voucher in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the voucher in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Type": {
+      "title": "Voucher Type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VoucherTypeEnum"
+        }
+      ],
+      "description": "Type of the voucher.\n\nPublic\n\nPartnerCompany\n\nTravelAgency",
+      "x-enumNames": [
+        "Public",
+        "PartnerCompany",
+        "TravelAgency"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "ActivityState": {
+      "title": "Activity state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityStateEnum"
+        }
+      ],
+      "description": "Whether voucher is active or deleted.\n\nDeleted\n\nActive",
+      "deprecated": true,
+      "x-enumNames": [
+        "Deleted",
+        "Active"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ],
+      "x-deprecatedMessage": "Use `IsActive` instead."
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of [Company](https://mews-systems.gitbook.io/connector-api/operations/companies/#company) the voucher is related to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "type": "string",
+      "description": "Unique identifier of [Company](https://mews-systems.gitbook.io/connector-api/operations/companies/#company) with [Travel agency contract](https://mews-systems.gitbook.io/connector-api/operations/companycontracts/#travel-agency-contract) the voucher is related to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "OccupiableIntervalStartUtc": {
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first time unit, in UTC timezone ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "OccupiableIntervalEndUtc": {
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last time unit, in UTC timezone ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the voucher from external system.",
+      "nullable": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the voucher is still active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Voucher"
+}

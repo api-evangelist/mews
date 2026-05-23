@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceCategoryOccupancyState",
+  "title": "Resource category occupancy state",
+  "required": [
+    "ResourceCategoryId",
+    "ResourceOccupancyStates"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the 'Resource category'.",
+      "format": "uuid"
+    },
+    "ResourceOccupancyStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceOccupancyState"
+      },
+      "description": "The resource occupancy states."
+    }
+  },
+  "additionalProperties": false,
+  "description": "The list of `ResourceOccupancyState`s grouped by resource category.",
+  "x-schema-id": "ResourceCategoryOccupancyState"
+}

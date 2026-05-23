@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CountryResult",
+  "title": "CountryResult",
+  "required": [
+    "Countries",
+    "CountryGroups",
+    "CountryRules",
+    "CountrySubdivisions"
+  ],
+  "type": "object",
+  "properties": {
+    "Countries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Country"
+      },
+      "description": "The supported countries."
+    },
+    "CountrySubdivisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CountrySubdivision"
+      },
+      "description": "The supported country subdivisions."
+    },
+    "CountryRules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CountryRule"
+      },
+      "description": "Country-specific rules"
+    },
+    "CountryGroups": {
+      "title": "Country group",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CountryGroup"
+      },
+      "description": "The supported country groups."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CountryResult"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MultiplePaymentRequestCancelParameters",
+  "title": "MultiplePaymentRequestCancelParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "PaymentRequestIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "PaymentRequestIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Identifiers of payment requests to be canceled."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "MultiplePaymentRequestCancelParameters"
+}

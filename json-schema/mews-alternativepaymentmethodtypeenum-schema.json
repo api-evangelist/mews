@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AlternativePaymentMethodTypeEnum",
+  "title": "Alternative payment method type",
+  "enum": [
+    "Ideal",
+    "ApplePay",
+    "GooglePay",
+    "SepaDirectDebit",
+    "PayPal",
+    "WireTransfer"
+  ],
+  "type": "string",
+  "description": "\n\nIdeal (iDEAL)\n\nApplePay (Apple Pay)\n\nGooglePay (Google Pay)\n\nSepaDirectDebit (SEPA Direct Debit)\n\nPayPal (PayPal)\n\nWireTransfer (Wire transfer)",
+  "x-enumNames": [
+    "Ideal",
+    "ApplePay",
+    "GooglePay",
+    "SepaDirectDebit",
+    "PayPal",
+    "WireTransfer"
+  ],
+  "x-enumDescriptions": [
+    "iDEAL",
+    "Apple Pay",
+    "Google Pay",
+    "SEPA Direct Debit",
+    "PayPal",
+    "Wire transfer"
+  ]
+}

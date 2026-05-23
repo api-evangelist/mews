@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyTierFilterParameters",
+  "title": "LoyaltyTierFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation",
+    "LoyaltyProgramIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the chain. If not specified, the operation returns data for all chains within scope of the Access Token.",
+      "nullable": true
+    },
+    "LoyaltyProgramIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of [Loyalty programs](https://mews-systems.gitbook.io/connector-api/operations/#loyalty-program)."
+    },
+    "LoyaltyTierIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of [Loyalty tiers](https://mews-systems.gitbook.io/connector-api/operations/#loyalty-tier).",
+      "nullable": true
+    },
+    "ActivityStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityStates"
+      },
+      "description": "Whether to return only active, only deleted or both records.",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval of `Loyalty tier` last update date and time.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyTierFilterParameters"
+}

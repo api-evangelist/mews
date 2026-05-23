@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SourceAssignmentV20240920",
+  "title": "Source assignments (ver 2024-09-20)",
+  "required": [
+    "Id",
+    "IsPrimary",
+    "ReservationId",
+    "SourceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the source assignment.",
+      "format": "uuid"
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation`.",
+      "format": "uuid"
+    },
+    "SourceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Source`.",
+      "format": "uuid"
+    },
+    "IsPrimary": {
+      "type": "boolean",
+      "description": "Specifies whether the source is primary for the `Reservation`."
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the source assignment last update in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SourceAssignmentV20240920"
+}

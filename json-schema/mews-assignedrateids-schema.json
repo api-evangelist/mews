@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AssignedRateIds",
+  "title": "Assigned rate ids",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "maxItems": 10,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of Rates (or `null` should it not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Has same structure as [Array of strings update value](https://mews-systems.gitbook.io/connector-api/operations/_objects#array-of-strings-update-value).",
+  "x-schema-id": "AssignedRateIds"
+}

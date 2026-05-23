@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportFilterParameters",
+  "title": "Export filter parameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "ExportIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ExportIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the [Exports](https://mews-systems.gitbook.io/connector-api/operations/#export)."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportFilterParameters"
+}

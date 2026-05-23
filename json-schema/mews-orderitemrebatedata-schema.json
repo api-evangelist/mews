@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemRebateData",
+  "title": "Rebate data",
+  "required": [
+    "ProductId",
+    "RebatedItemId"
+  ],
+  "type": "object",
+  "properties": {
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the [Product](https://mews-systems.gitbook.io/connector-api/operations/products/#product) of the original rebated [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item).",
+      "format": "uuid",
+      "x-mews-legacy-nullable": true
+    },
+    "RebatedItemId": {
+      "type": "string",
+      "description": "Unique identifier of [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) which has been rebated by current item.",
+      "format": "uuid",
+      "x-mews-legacy-nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemRebateData"
+}

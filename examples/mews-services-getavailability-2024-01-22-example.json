@@ -1,0 +1,131 @@
+{
+  "operationId": "services_getAvailability_2024-01-22",
+  "method": "POST",
+  "path": "/api/connector/v1/services/getAvailability/2024-01-22",
+  "summary": "Get service availability (ver 2024-01-22)",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "FirstTimeUnitStartUtc": "2024-02-01T23:00:00.000Z",
+        "LastTimeUnitStartUtc": "2024-02-05T23:00:00.000Z",
+        "Metrics": [
+          "OutOfOrderBlocks",
+          "PublicAvailabilityAdjustment",
+          "OtherServiceReservationCount",
+          "Occupied",
+          "ConfirmedReservations",
+          "OptionalReservations",
+          "BlockAvailability",
+          "AllocatedBlockAvailability",
+          "UsableResources",
+          "ActiveResources",
+          "HouseUse"
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "TimeUnitStartsUtc": [
+          "2024-01-31T23:00:00Z",
+          "2024-02-01T23:00:00Z",
+          "2024-02-02T23:00:00Z",
+          "2024-02-03T23:00:00Z",
+          "2024-02-04T23:00:00Z"
+        ],
+        "ResourceCategoryAvailabilities": [
+          {
+            "ResourceCategoryId": "d1801d11-fe8d-404b-a26f-af170189605a",
+            "Metrics": {
+              "OutOfOrderBlocks": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              "PublicAvailabilityAdjustment": [
+                7,
+                5,
+                4,
+                3,
+                4
+              ],
+              "OtherServiceReservationCount": [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "Occupied": [
+                7,
+                5,
+                4,
+                3,
+                4
+              ],
+              "ConfirmedReservations": [
+                7,
+                5,
+                4,
+                3,
+                4
+              ],
+              "OptionalReservations": [
+                0,
+                2,
+                0,
+                0,
+                1
+              ],
+              "BlockAvailability": [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "AllocatedBlockAvailability": [
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "UsableResources": [
+                8,
+                8,
+                8,
+                8,
+                8
+              ],
+              "ActiveResources": [
+                8,
+                8,
+                8,
+                8,
+                8
+              ],
+              "HouseUse": [
+                1,
+                0,
+                1,
+                0,
+                0
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SourceAssignmentResultV20240920",
+  "title": "SourceAssignmentResultV20240920",
+  "required": [
+    "SourceAssignments"
+  ],
+  "type": "object",
+  "properties": {
+    "SourceAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SourceAssignmentV20240920"
+      },
+      "description": "Assignments between `Reservation` and `Source`."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Opaque pagination cursor which can be used in `Limitation` to fetch newer source assignments.",
+      "format": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SourceAssignmentResultV20240920"
+}

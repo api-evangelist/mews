@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditRatingParameters",
+  "title": "Credit rating parameters",
+  "type": "object",
+  "properties": {
+    "Basic": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreditRatingBasicEnum"
+        }
+      ],
+      "description": "Indicates the credit status of a company.\n\nCreditOk (Company can book services.)\n\nPaymentRequiredUpfront (Company must pay upfront.)\n\nLocalDecisionRequired (Requires local approval.)",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Credit rating to define creditworthiness of the company.",
+  "x-schema-id": "CreditRatingParameters"
+}

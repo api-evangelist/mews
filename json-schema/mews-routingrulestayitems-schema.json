@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleStayItems",
+  "title": "Selected stay items",
+  "type": "object",
+  "properties": {
+    "Nights": {
+      "type": "boolean",
+      "description": "Whether the routing rule applies to nights."
+    },
+    "CityTax": {
+      "type": "boolean",
+      "description": "Whether the routing rule applies to city tax."
+    },
+    "ProductCategoryIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Product categories to which the routing rule applies to.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "RoutingRuleStayItems"
+}

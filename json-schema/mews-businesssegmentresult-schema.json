@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BusinessSegmentResult",
+  "title": "BusinessSegmentResult",
+  "required": [
+    "BusinessSegments"
+  ],
+  "type": "object",
+  "properties": {
+    "BusinessSegments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BusinessSegment"
+      },
+      "description": "Business segments."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last and hence oldest business segment item returned. This can be used in Limitation in a subsequent request to fetch the next batch of older business segment.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BusinessSegmentResult"
+}

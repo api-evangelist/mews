@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyMembershipFilterParameters",
+  "title": "Loyalty membership filter parameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the chain. If not specified, the operation returns data for all chains within scope of the Access Token.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "The time interval during which the membership was created.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "The time interval during which the membership was last updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "LoyaltyMembershipIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of [Loyalty memberships](https://mews-systems.gitbook.io/connector-api/operations/#loyalty-membership).",
+      "nullable": true
+    },
+    "AccountIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of accounts (for example [Customers](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer) or [Companies](https://mews-systems.gitbook.io/connector-api/operations/companies/#company)) the membership is associated with.",
+      "nullable": true
+    },
+    "LoyaltyProgramIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of [Loyalty programs](https://mews-systems.gitbook.io/connector-api/operations/loyaltyprograms/#loyalty-program).",
+      "nullable": true
+    },
+    "MembershipStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LoyaltyMembershipStateEnum"
+      },
+      "description": "States of the loyalty memberships.",
+      "nullable": true
+    },
+    "ActivityStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityStates"
+      },
+      "description": "Whether to return only active, only deleted or both records.",
+      "nullable": true
+    },
+    "Codes": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of loyalty membership codes, such as identification numbers printed on loyalty cards visible to the customer.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `MembershipNumbers` instead."
+    },
+    "MembershipNumbers": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Customer-facing membership numbers, e.g., printed on a loyalty card.",
+      "nullable": true
+    },
+    "ProviderMembershipIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of unique loyalty membership identifiers assigned and managed by the external loyalty provider's system.",
+      "nullable": true
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyMembershipFilterParameters"
+}

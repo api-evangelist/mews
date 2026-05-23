@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationGroup",
+  "title": "Reservation Group",
+  "required": [
+    "EnterpriseId",
+    "Id"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the reservation group.",
+      "format": "uuid"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the reservation group, might be empty or same for multiple groups.",
+      "nullable": true
+    },
+    "ChannelManager": {
+      "type": "string",
+      "description": "Name of the corresponding channel manager.",
+      "nullable": true
+    },
+    "ChannelManagerGroupNumber": {
+      "type": "string",
+      "description": "Identifier of the channel manager.",
+      "nullable": true
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise` the reservation group belongs to.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationGroup"
+}

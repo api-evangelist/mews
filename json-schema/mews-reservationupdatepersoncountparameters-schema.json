@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationUpdatePersonCountParameters",
+  "title": "Person counts update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationPersonCount"
+      },
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationUpdatePersonCountParameters"
+}

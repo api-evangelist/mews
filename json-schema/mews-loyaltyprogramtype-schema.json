@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramType",
+  "title": "Loyalty program type",
+  "enum": [
+    "Hotel",
+    "ExternalPartner",
+    "SoftBrand",
+    "Unknown"
+  ],
+  "type": "string",
+  "description": "Type of the loyalty program.\n\nHotel\n\nExternalPartner\n\nSoftBrand\n\nUnknown",
+  "x-enumNames": [
+    "Hotel",
+    "ExternalPartner",
+    "SoftBrand",
+    "Unknown"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "x-schema-id": "LoyaltyProgramType"
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateForExtent",
+  "title": "Rate for extent",
+  "required": [
+    "GroupId",
+    "Id",
+    "IsActive",
+    "IsBaseRate",
+    "IsEnabled",
+    "IsPublic",
+    "Names",
+    "ServiceId",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the rate.",
+      "format": "uuid"
+    },
+    "GroupId": {
+      "type": "string",
+      "description": "Unique identifier of `Rate Group` where the rate belongs.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service`.",
+      "format": "uuid"
+    },
+    "BaseRateId": {
+      "type": "string",
+      "description": "Unique identifier of the base `Rate`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "IsBaseRate": {
+      "type": "boolean",
+      "description": "Whether the rate is a base rate."
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the `Business Segment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the rate is still active."
+    },
+    "IsEnabled": {
+      "type": "boolean",
+      "description": "Whether the rate is currently available to customers."
+    },
+    "IsPublic": {
+      "type": "boolean",
+      "description": "Whether the rate is publicly available."
+    },
+    "Type": {
+      "title": "Rate type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateTypeEnum"
+        }
+      ],
+      "description": "Type of the rate.\n\nPublic\n\nPrivate\n\nAvailabilityBlock",
+      "x-enumNames": [
+        "Public",
+        "Private",
+        "AvailabilityBlock"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the rate (in the default language).",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Names` instead"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortName": {
+      "type": "string",
+      "description": "Short name of the rate (in the default language).",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Interval in which the rates were updated.",
+      "format": "date-time"
+    },
+    "ExternalNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the external name of the rate.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Description": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the description of the rate.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the rate from external system.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "`Rate` entity, without some of the details, e.g. pricing.",
+  "x-schema-id": "RateForExtent"
+}

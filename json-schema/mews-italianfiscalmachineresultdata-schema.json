@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ItalianFiscalMachineResultData",
+  "title": "ItalianFiscalMachineResultData",
+  "type": "object",
+  "properties": {
+    "SerialNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "Base64Data": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ItalianFiscalMachineResultData"
+}

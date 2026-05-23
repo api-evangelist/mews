@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Message",
+  "title": "Message",
+  "required": [
+    "CreatedUtc",
+    "Id",
+    "MessageThreadId",
+    "Sender",
+    "Text"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the message.",
+      "format": "uuid"
+    },
+    "MessageThreadId": {
+      "type": "string",
+      "description": "Unique identifier of the `MessageThread` to which the message belongs to.",
+      "format": "uuid"
+    },
+    "Text": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Text of the message."
+    },
+    "Sender": {
+      "title": "Sender",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SenderCoproduct"
+        }
+      ],
+      "description": "The sender of the message."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the message in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Message"
+}

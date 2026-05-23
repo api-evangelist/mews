@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LanguageTexts",
+  "title": "Language texts",
+  "required": [
+    "LanguageCode",
+    "Texts"
+  ],
+  "type": "object",
+  "properties": {
+    "LanguageCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Language-culture code of the `Language`."
+    },
+    "Texts": {
+      "title": "Dictionary",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Texts in the specified language by their keys.",
+      "x-schema-id": "Dictionary"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LanguageTexts"
+}

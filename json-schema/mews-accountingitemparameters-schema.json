@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingItemParameters",
+  "title": "AccountingItemParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Extent"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Extent": {
+      "title": "Accounting item extent",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountingItemExtent"
+        }
+      ],
+      "description": "Extent of data to be returned. E.g. it is possible to specify that together with the accounting items, credit card transactions should be also returned."
+    },
+    "ItemIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Accounting items. Required if no other filter is provided.",
+      "nullable": true
+    },
+    "RebatedItemIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Accounting items we are finding rebates for. Required if no other filter is provided.",
+      "nullable": true
+    },
+    "ClosedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the accounting item was closed. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the accounting item was updated. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ConsumedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the accounting item was consumed. Required if no other filter is provided.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "Currency": {
+      "type": "string",
+      "description": "ISO-4217 code of the `Currency` the item costs should be converted to.",
+      "format": "currency",
+      "nullable": true
+    },
+    "States": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingState"
+      },
+      "description": "States the accounting items should be in. If not specified, accounting items in `Open` or `Closed` states are returned.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingItemParameters"
+}

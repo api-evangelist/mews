@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Amount",
+  "title": "Amount",
+  "required": [
+    "Breakdown",
+    "Currency",
+    "GrossValue",
+    "NetValue",
+    "TaxValues"
+  ],
+  "type": "object",
+  "properties": {
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 code of the [Currency](https://mews-systems.gitbook.io/connector-api/operations/currencies/#currency).",
+      "format": "currency"
+    },
+    "NetValue": {
+      "type": "number",
+      "description": "Net value without taxes.",
+      "format": "double"
+    },
+    "GrossValue": {
+      "type": "number",
+      "description": "Gross value including all taxes.",
+      "format": "double"
+    },
+    "TaxValues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaxValue"
+      },
+      "description": "The tax values applied."
+    },
+    "Breakdown": {
+      "title": "Tax breakdown",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaxBreakdown"
+        }
+      ],
+      "description": "Information about individual tax amounts."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "Amount"
+}

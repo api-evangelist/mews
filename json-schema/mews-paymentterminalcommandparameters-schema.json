@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentTerminalCommandParameters",
+  "title": "PaymentTerminalCommandParameters",
+  "required": [
+    "AccessToken",
+    "Amount",
+    "Client",
+    "ClientToken",
+    "CustomerId",
+    "TerminalId",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "TerminalId": {
+      "type": "string",
+      "description": "Unique identifier of the payment terminal.",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer`.",
+      "format": "uuid"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerminalCommandTypeEnum"
+        }
+      ],
+      "description": "The type of payment, e.g. `Preauthorization`.\n\nPayment\n\nPreauthorization"
+    },
+    "Amount": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Amount of the payment."
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the `Bill`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PaymentRequestId": {
+      "type": "string",
+      "description": "Unique identifier of the `PaymentRequest`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation`.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentTerminalCommandParameters"
+}

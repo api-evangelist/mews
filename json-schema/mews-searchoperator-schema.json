@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SearchOperator",
+  "title": "SearchOperator",
+  "enum": [
+    "And",
+    "Or"
+  ],
+  "type": "string"
+}

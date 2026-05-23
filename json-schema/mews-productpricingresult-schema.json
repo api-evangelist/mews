@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductPricingResult",
+  "title": "Product pricing result",
+  "required": [
+    "AgeCategoryPrices",
+    "BaseAmountPrices",
+    "ProductId",
+    "TimeUnitStartsUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the product.",
+      "format": "uuid"
+    },
+    "TimeUnitStartsUtc": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Set of all time units covered by the time interval; expressed in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "BaseAmountPrices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Amount"
+      },
+      "description": "Base prices of the product for each time unit covered by the time interval."
+    },
+    "AgeCategoryPrices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProductAgeCategoryPrice"
+      },
+      "description": "Age category prices."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductPricingResult"
+}

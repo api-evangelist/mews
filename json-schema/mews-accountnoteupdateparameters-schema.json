@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNoteUpdateParameters",
+  "title": "Account note update parameters",
+  "required": [
+    "AccountNoteId",
+    "Classifications"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountNoteId": {
+      "type": "string",
+      "description": "Unique identifier of the account note.",
+      "format": "uuid"
+    },
+    "Content": {
+      "title": "String update value",
+      "maxLength": 1000,
+      "minLength": 1,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Content of the account note (or `null` if the content should not be updated).",
+      "nullable": true
+    },
+    "Classifications": {
+      "title": "Account note update classifications",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountNoteUpdateClassifications"
+        }
+      ],
+      "description": "Classification of the account note."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountNoteUpdateParameters"
+}

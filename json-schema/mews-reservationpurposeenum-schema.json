@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationPurposeEnum",
+  "title": "Reservation purpose",
+  "enum": [
+    "Leisure",
+    "Business",
+    "Student"
+  ],
+  "type": "string",
+  "description": "\n\nLeisure\n\nBusiness\n\nStudent",
+  "x-enumNames": [
+    "Leisure",
+    "Business",
+    "Student"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    ""
+  ]
+}

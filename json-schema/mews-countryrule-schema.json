@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CountryRule",
+  "title": "Country rules",
+  "required": [
+    "CountryCode",
+    "DriverLicenceExpirationDateNotRequired",
+    "IdentityCardExpirationDateNotRequired"
+  ],
+  "type": "object",
+  "properties": {
+    "CountryCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 code, e.g. US or GB."
+    },
+    "IdentityCardExpirationDateNotRequired": {
+      "type": "boolean",
+      "description": "Whether the country requires expiration date for identity card."
+    },
+    "DriverLicenceExpirationDateNotRequired": {
+      "type": "boolean",
+      "description": "Whether the country requires expiration date for driver's license."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Country-specific rules",
+  "x-schema-id": "CountryRule"
+}

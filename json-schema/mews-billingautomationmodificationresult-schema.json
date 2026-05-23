@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationModificationResult",
+  "title": "Billing automation modification result",
+  "type": "object",
+  "properties": {
+    "BillingAutomations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillingAutomation"
+      },
+      "description": "Billing automations affected by the operation.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationModificationResult"
+}

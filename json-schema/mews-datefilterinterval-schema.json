@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DateFilterInterval",
+  "title": "Date filter interval",
+  "required": [
+    "End",
+    "Start"
+  ],
+  "type": "object",
+  "properties": {
+    "Start": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Starting date of the interval in ISO 8601 format.",
+      "format": "date"
+    },
+    "End": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Ending date of the interval in ISO 8601 format.",
+      "format": "date"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DateFilterInterval"
+}

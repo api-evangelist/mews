@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingCategory",
+  "title": "Accounting category",
+  "required": [
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Name",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the category.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the accounting category is still active."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the category."
+    },
+    "Code": {
+      "type": "string",
+      "description": "Code of the category within Mews.",
+      "nullable": true
+    },
+    "ExternalCode": {
+      "type": "string",
+      "description": "Code of the category in external systems.",
+      "nullable": true
+    },
+    "LedgerAccountCode": {
+      "type": "string",
+      "description": "Code of the ledger account (double entry accounting).",
+      "nullable": true
+    },
+    "PostingAccountCode": {
+      "type": "string",
+      "description": "Code of the posting account (double entry accounting).",
+      "nullable": true
+    },
+    "CostCenterCode": {
+      "type": "string",
+      "description": "Code of cost center.",
+      "nullable": true
+    },
+    "Classification": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountingCategoryClassificationEnum"
+        }
+      ],
+      "description": "Classification of the accounting category allowing cross-enterprise reporting.\n\nAccommodation\n\nFoodAndBeverage\n\nTaxes\n\nPayments\n\nExternalRevenue\n\nSundryIncome\n\nWellness\n\nSport\n\nTechnology\n\nFacilities\n\nEvents\n\nTourism",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the accounting category in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the accounting category in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingCategory"
+}

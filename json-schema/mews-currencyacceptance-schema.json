@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CurrencyAcceptance",
+  "title": "Accepted currency",
+  "required": [
+    "Currency",
+    "IsDefault",
+    "IsEnabled"
+  ],
+  "type": "object",
+  "properties": {
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 code of the `Currency`.",
+      "format": "currency"
+    },
+    "IsDefault": {
+      "type": "boolean",
+      "description": "Whether the currency is a default accounting currency."
+    },
+    "IsEnabled": {
+      "type": "boolean",
+      "description": "Whether the currency is enabled for usage."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CurrencyAcceptance"
+}

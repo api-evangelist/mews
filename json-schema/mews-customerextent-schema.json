@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerExtent",
+  "title": "Customer extent",
+  "type": "object",
+  "properties": {
+    "Customers": {
+      "type": "boolean",
+      "description": "Whether the response should contain information about customers.",
+      "nullable": true
+    },
+    "Documents": {
+      "type": "boolean",
+      "description": "Whether the response should contain identity documents of customers.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#get-all-identity-documents) instead."
+    },
+    "Addresses": {
+      "type": "boolean",
+      "description": "Whether the response should contain addresses of customers.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "CustomerExtent"
+}

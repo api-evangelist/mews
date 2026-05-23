@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyTier",
+  "title": "Loyalty tier",
+  "required": [
+    "Code",
+    "Id",
+    "LoyaltyProgramId",
+    "Name",
+    "Ordering"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty tier.",
+      "format": "uuid"
+    },
+    "LoyaltyProgramId": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty program of that loyalty tier.",
+      "format": "uuid"
+    },
+    "Name": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the loyalty tier."
+    },
+    "Code": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the loyalty tier."
+    },
+    "Ordering": {
+      "type": "integer",
+      "description": "Ordering of the loyalty tier.",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyTier"
+}

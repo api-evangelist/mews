@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SenderDiscriminatorEnum",
+  "title": "Sender discriminator",
+  "enum": [
+    "Enterprise",
+    "Application"
+  ],
+  "type": "string",
+  "description": "\n\nEnterprise (The message was created by an employee of the enterprise.)\n\nApplication (The message was created by the third party application.)",
+  "x-enumNames": [
+    "Enterprise",
+    "Application"
+  ],
+  "x-enumDescriptions": [
+    "The message was created by an employee of the enterprise.",
+    "The message was created by the third party application."
+  ]
+}

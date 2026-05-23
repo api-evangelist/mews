@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Payment",
+  "title": "Payment",
+  "required": [
+    "AccountId",
+    "AccountingState",
+    "AccountType",
+    "Amount",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "OriginalAmount",
+    "SettlementUtc",
+    "State",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the payment.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (for example `Customer`) the payment belongs to.",
+      "format": "uuid"
+    },
+    "AccountType": {
+      "$ref": "#/components/schemas/AccountType"
+    },
+    "PaymentRequestId": {
+      "type": "string",
+      "description": "Unique identifier of the `PaymentRequest` the payment is associated with.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the `Bill` the payment is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation` the payment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the `AccountingCategory` the payment belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Payment's amount, negative amount represents either rebate or a payment."
+    },
+    "OriginalAmount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Payment's original amount, negative amount represents either rebate or a payment. Contains the earliest known value in conversion chain."
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "SettlementId": {
+      "type": "string",
+      "description": "Identifier of the settled payment from the external system (ApplePay/GooglePay).",
+      "nullable": true
+    },
+    "ConsumedUtc": {
+      "type": "string",
+      "description": "Date and time of the item consumption in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ClosedUtc": {
+      "type": "string",
+      "description": "Date and time of the payment bill closure in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ChargedUtc": {
+      "type": "string",
+      "description": "Charged date and time of the payment in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the payment created in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the payment in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "SettlementUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the payment settlement in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "AccountingState": {
+      "title": "Order item accounting state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountingStateEnum"
+        }
+      ],
+      "description": "Accounting state of the payment.\n\nOpen (Order items which carry a non-zero value, are open, and have not been closed on a bill or invoice.)\n\nClosed (Order items which carry a non-zero value and have been closed on a bill or invoice.)\n\nInactive (Order items which are either of zero value and have not been canceled, if the state of the payment item is Pending or Failed, or items of optional reservations. Until the reservation is confirmed, all its accounting items are Inactive.)\n\nCanceled (Order items which have been canceled, regardless of whether the item is of zero value.)",
+      "x-enumNames": [
+        "Open",
+        "Closed",
+        "Inactive",
+        "Canceled"
+      ],
+      "x-enumDescriptions": [
+        "Order items which carry a non-zero value, are open, and have not been closed on a bill or invoice.",
+        "Order items which carry a non-zero value and have been closed on a bill or invoice.",
+        "Order items which are either of zero value and have not been canceled, if the state of the payment item is Pending or Failed, or items of optional reservations. Until the reservation is confirmed, all its accounting items are Inactive.",
+        "Order items which have been canceled, regardless of whether the item is of zero value."
+      ]
+    },
+    "State": {
+      "title": "Payment state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentStateEnum"
+        }
+      ],
+      "description": "Payment state of the payment.\n\nCharged\n\nCanceled\n\nPending\n\nFailed\n\nVerifying",
+      "x-enumNames": [
+        "Charged",
+        "Canceled",
+        "Pending",
+        "Failed",
+        "Verifying"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Identifier": {
+      "type": "string",
+      "description": "Additional unique identifier of the payment.",
+      "nullable": true
+    },
+    "Type": {
+      "title": "Payment type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentDiscriminatorEnum"
+        }
+      ],
+      "description": "Payment type, e.g. whether credit card or cash.\n\nPayment\n\nCreditCardPayment\n\nAlternativePayment\n\nCashPayment\n\nInvoicePayment\n\nExternalPayment\n\nGhostPayment\n\nTaxDeductedPayment",
+      "x-enumNames": [
+        "Payment",
+        "CreditCardPayment",
+        "AlternativePayment",
+        "CashPayment",
+        "InvoicePayment",
+        "ExternalPayment",
+        "GhostPayment",
+        "TaxDeductedPayment"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Kind": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentKindEnum"
+        }
+      ],
+      "description": "Payment kind, e.g. whether payment or refund. Value provided only for payments processed by Mews Payments.\n\nPayment\n\nChargeback\n\nChargebackReversal\n\nRefund",
+      "nullable": true
+    },
+    "Data": {
+      "title": "Payment data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentData"
+        }
+      ],
+      "description": "Additional payment data.",
+      "nullable": true
+    },
+    "PaymentOrigin": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentOriginEnum"
+        }
+      ],
+      "description": "Payment origin indicating how the payment was initiated.\n\nOther (Fallback value unmapped in the current version of the API.)\n\nSystem\n\nOperations\n\nAutomaticPayment\n\nPaymentRequest\n\nBookingEngine\n\nApi (Connector API.)\n\nTerminal\n\nChannelManager\n\nOnlineCheckout\n\nBillBalancing\n\nOnlineCheckin\n\nPointOfSales\n\nPaymentToInvoiceLinking",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Payment"
+}

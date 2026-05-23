@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SourceType",
+  "title": "Source type",
+  "enum": [
+    "OnlineTravelAgency",
+    "CentralReservationSystem",
+    "GlobalDistributionSystem",
+    "AlternativeDistributionSystem",
+    "SalesAndCateringSystem",
+    "PropertyManagementSystem",
+    "TourOperatorSystem",
+    "OnlineBookingEngine",
+    "Kiosk",
+    "Agent"
+  ],
+  "type": "string",
+  "description": "Type of the source."
+}

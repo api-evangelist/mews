@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentGhostData",
+  "title": "Ghost payment data",
+  "required": [
+    "OriginalPaymentId"
+  ],
+  "type": "object",
+  "properties": {
+    "OriginalPaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the original payment.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentGhostData"
+}

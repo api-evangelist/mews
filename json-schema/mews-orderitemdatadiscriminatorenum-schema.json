@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemDataDiscriminatorEnum",
+  "title": "Order item data discriminator",
+  "enum": [
+    "Rebate",
+    "Product",
+    "AllowanceDiscount",
+    "AllowanceProfits"
+  ],
+  "type": "string",
+  "description": "\n\nRebate (Rebate.)\n\nProduct (Product.)\n\nAllowanceDiscount (Allowance discount.)\n\nAllowanceProfits (Allowance profits.)",
+  "x-enumNames": [
+    "Rebate",
+    "Product",
+    "AllowanceDiscount",
+    "AllowanceProfits"
+  ],
+  "x-enumDescriptions": [
+    "Rebate.",
+    "Product.",
+    "Allowance discount.",
+    "Allowance profits."
+  ]
+}

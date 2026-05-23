@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillV20250623",
+  "title": "Bill (ver 2025-06-23)",
+  "required": [
+    "AccountId",
+    "AccountType",
+    "AssociatedAccountIds",
+    "CorrectionState",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "State",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the bill.",
+      "format": "uuid"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the bill.",
+      "nullable": true
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (`Customer` or `Company`) the bill is issued to.",
+      "format": "uuid"
+    },
+    "AccountType": {
+      "title": "Account type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "A discriminator specifying the account type, i.e. `Customer` or `Company`.\n\nCompany\n\nCustomer",
+      "x-enumNames": [
+        "Company",
+        "Customer"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "AssociatedAccountIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Customers` or `Companies` that are associated to the bill.",
+      "nullable": true
+    },
+    "CounterId": {
+      "type": "string",
+      "description": "Unique identifier of the bill `Counter`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "State": {
+      "$ref": "#/components/schemas/BillState"
+    },
+    "Type": {
+      "$ref": "#/components/schemas/BillType"
+    },
+    "Number": {
+      "type": "string",
+      "description": "Number of the bill.",
+      "nullable": true
+    },
+    "VariableSymbol": {
+      "type": "string",
+      "description": "Variable symbol of the bill.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the bill creation in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time when the bill was last updated, in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "IssuedUtc": {
+      "type": "string",
+      "description": "Date and time of the bill issuance in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "TaxedUtc": {
+      "type": "string",
+      "description": "Taxation date of the bill in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "PaidUtc": {
+      "type": "string",
+      "description": "Date when the bill was paid in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "DueUtc": {
+      "type": "string",
+      "description": "Bill due date and time in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "LastReminderDateUtc": {
+      "type": "string",
+      "description": "Date and time when an email reminder to pay an invoice was last sent, in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "PurchaseOrderNumber": {
+      "type": "string",
+      "description": "Unique number of the purchase order from the buyer.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Bill options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillOptions"
+        }
+      ],
+      "description": "Options of the bill.",
+      "nullable": true
+    },
+    "Owner": {
+      "title": "Bill owner data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillAccountData"
+        }
+      ],
+      "description": "Additional information about owner of the bill. Can be a `Customer` or `Company`. Persisted at the time of closing of the bill.",
+      "nullable": true
+    },
+    "AssociatedAccountsData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillAccountData"
+      },
+      "description": "Additional information about the associated account of the bill. Can be a `Customer` or `Company`. Persisted at the time of closing of the bill. Currently only one account can be associated with a bill, but this may be extended in future.",
+      "nullable": true
+    },
+    "EnterpriseData": {
+      "title": "Bill enterprise data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillEnterpriseData"
+        }
+      ],
+      "description": "Additional information about the enterprise issuing the bill, including bank account details. Persisted at the time of closing of the bill.",
+      "nullable": true
+    },
+    "CorrectionState": {
+      "title": "Bill correction state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCorrectionStateEnum"
+        }
+      ],
+      "description": "Whether the bill is a regular bill or a corrective bill.\n\nBill (Regular bill.)\n\nCorrectiveBill (Corrective bill, i.e. the `CorrectionType` is either `Edit`, `Cancellation`, or `ReceivablePaymentsBalance`.)",
+      "x-enumNames": [
+        "Bill",
+        "CorrectiveBill"
+      ],
+      "x-enumDescriptions": [
+        "Regular bill.",
+        "Corrective bill, i.e. the `CorrectionType` is either `Edit`, `Cancellation`, or `ReceivablePaymentsBalance`."
+      ]
+    },
+    "CorrectionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCorrectionTypeEnum"
+        }
+      ],
+      "description": "Type of correction.\n\nCancellation\n\nEdit\n\nCreditNote\n\nReinstatement\n\nReceivablePaymentsBalance",
+      "nullable": true
+    },
+    "CorrectedBillId": {
+      "type": "string",
+      "description": "The ID of the bill that the corrective bill corrects. If the corrected bill was deleted, this field is `null`.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillV20250623"
+}

@@ -1,0 +1,60 @@
+{
+  "operationId": "services_getAvailability",
+  "method": "POST",
+  "path": "/api/connector/v1/services/getAvailability",
+  "summary": "Get service availability",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "FirstTimeUnitStartUtc": "2017-01-01T23:00:00.000Z",
+        "LastTimeUnitStartUtc": "2017-01-03T23:00:00.000Z"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "CategoryAvailabilities": [
+          {
+            "Availabilities": [
+              6,
+              7,
+              5
+            ],
+            "Adjustments ": [
+              0,
+              1,
+              -1
+            ],
+            "CategoryId": "773d5e42-de1e-43a0-9ce6-f940faf2303f"
+          },
+          {
+            "Availabilities": [
+              7,
+              7,
+              7
+            ],
+            "Adjustments ": [
+              1,
+              0,
+              -1
+            ],
+            "CategoryId": "a0a7a5c5-c4ef-494a-8b34-6cca97629076"
+          }
+        ],
+        "TimeUnitStartsUtc": [
+          "2017-01-01T23:00:00Z",
+          "2017-01-02T23:00:00Z",
+          "2017-01-03T23:00:00Z"
+        ]
+      }
+    }
+  ]
+}

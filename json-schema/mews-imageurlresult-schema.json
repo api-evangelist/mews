@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ImageUrlResult",
+  "title": "ImageUrlResult",
+  "required": [
+    "ImageUrls"
+  ],
+  "type": "object",
+  "properties": {
+    "ImageUrls": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ImageUrl"
+      },
+      "description": "URLs of the images."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ImageUrlResult"
+}

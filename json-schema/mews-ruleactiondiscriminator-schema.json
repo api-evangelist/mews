@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleActionDiscriminator",
+  "title": "Rule action discriminator",
+  "enum": [
+    "Product"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "Data specific to a product."
+  ]
+}

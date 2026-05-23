@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNoteClassificationEnum",
+  "title": "Account note classification",
+  "enum": [
+    "General",
+    "FoodAndBeverage",
+    "FrontOffice",
+    "Reservations",
+    "Housekeeping",
+    "Maintenance",
+    "PreviousStay",
+    "FamilyRelations",
+    "Gifts",
+    "Accounting",
+    "Complaints",
+    "Other"
+  ],
+  "type": "string",
+  "description": "\n\nGeneral (For Company and Customer)\n\nFoodAndBeverage (Only Customer)\n\nFrontOffice (Only Customer)\n\nReservations (Only Customer)\n\nHousekeeping (Only Customer)\n\nMaintenance (Only Customer)\n\nPreviousStay (Only Customer)\n\nFamilyRelations (Only Customer)\n\nGifts (Only Customer)\n\nAccounting (Only Customer)\n\nComplaints (Only Customer)\n\nOther (Only Customer)",
+  "x-enumNames": [
+    "General",
+    "FoodAndBeverage",
+    "FrontOffice",
+    "Reservations",
+    "Housekeeping",
+    "Maintenance",
+    "PreviousStay",
+    "FamilyRelations",
+    "Gifts",
+    "Accounting",
+    "Complaints",
+    "Other"
+  ],
+  "x-enumDescriptions": [
+    "For Company and Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer",
+    "Only Customer"
+  ],
+  "x-extensible": true
+}

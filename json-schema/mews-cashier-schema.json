@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Cashier",
+  "title": "Cashier",
+  "required": [
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Name",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the cashier.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the cashier is still active."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the cashier."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the `Cashier` in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the `Cashier` in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Cashier"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerSearchResult",
+  "title": "CustomerSearchResult",
+  "required": [
+    "Customers"
+  ],
+  "type": "object",
+  "properties": {
+    "Customers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ChargeableCustomer"
+      },
+      "description": "The customer search results."
+    },
+    "Documents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/IdentityDocument"
+      },
+      "description": "The identity documents of customers.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all identity documents](https://mews-systems.gitbook.io/connector-api/operations/identitydocuments#get-all-identity-documents) to fetch identity documents."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerSearchResult"
+}

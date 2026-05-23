@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateCapacityOffsetUpdateParameters",
+  "title": "RateCapacityOffsetUpdateParameters",
+  "required": [
+    "RateId"
+  ],
+  "type": "object",
+  "properties": {
+    "RateId": {
+      "type": "string",
+      "description": "The unique identifier of the `Rate` to update.",
+      "format": "uuid"
+    },
+    "NegativeOccupancyAdjustment": {
+      "title": "Decimal update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecimalUpdateValue"
+        }
+      ],
+      "description": "Amount added to the price when occupancy is less than the Space Category Capacity. Use a negative value to provide a discount for under-occupancy. Set to 'null' if not updated.",
+      "nullable": true
+    },
+    "ExtraOccupancyAdjustment": {
+      "title": "Decimal update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecimalUpdateValue"
+        }
+      ],
+      "description": "Amount added to the price when the Space Category Capacity is exceeded.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateCapacityOffsetUpdateParameters"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ImageResizeModeEnum",
+  "title": "Image resize mode",
+  "enum": [
+    "Cover",
+    "CoverExact",
+    "Fit",
+    "FitExact"
+  ],
+  "type": "string",
+  "description": "\n\nCover (Resize to fit within the specified size, so the result might be smaller than requested.)\n\nCoverExact (Resize and pad to exactly fit within the specified size.)\n\nFit (Resize to fit within the specified size, so the result might be smaller than requested.)\n\nFitExact (Resize and pad to exactly fit within the specified size.)",
+  "x-enumNames": [
+    "Cover",
+    "CoverExact",
+    "Fit",
+    "FitExact"
+  ],
+  "x-enumDescriptions": [
+    "Resize to fit within the specified size, so the result might be smaller than requested.",
+    "Resize and pad to exactly fit within the specified size.",
+    "Resize to fit within the specified size, so the result might be smaller than requested.",
+    "Resize and pad to exactly fit within the specified size."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeviceCommandResult",
+  "title": "DeviceCommandResult",
+  "required": [
+    "Commands"
+  ],
+  "type": "object",
+  "properties": {
+    "Commands": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DeviceCommand"
+      },
+      "description": "The active commands."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last returned command. This can be used in Limitation in a subsequent request to fetch the next batch of commands.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DeviceCommandResult"
+}

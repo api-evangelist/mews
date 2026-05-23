@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateSetData",
+  "title": "Set rate parameters",
+  "required": [
+    "Names",
+    "PricingType",
+    "ServiceId",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the rate. If it matches an existing rate, that rate will be updated. If no match is found, an error will be returned.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Unique identifier of the rate in the external system. If `Id` is not provided and `ExternalIdentifier` matches an existing rate, the corresponding rate will be updated. If no match is found, a new rate will be created.",
+      "nullable": true
+    },
+    "ServiceId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the service. Ignored in case of updating an existing rate.",
+      "x-schema-id": "HybridIdentifier"
+    },
+    "RateGroupId": {
+      "type": "string",
+      "description": "Unique identifier of the rate group under which rate is assigned. Empty value means that rate is added to a default group or the current group is kept for update, respectively.",
+      "nullable": true,
+      "x-schema-id": "HybridIdentifier"
+    },
+    "IsEnabled": {
+      "type": "boolean",
+      "description": "Whether the rate is available to customers. `true` will be used as a default if not provided.",
+      "nullable": true
+    },
+    "Type": {
+      "title": "Rate Add Type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateAddTypeEnum"
+        }
+      ],
+      "description": "Type of the rate. `Private` will be used as a default if not provided.\n\nPublic\n\nPrivate"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name of the rate.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Descriptions": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the description.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "PricingType": {
+      "title": "Rate pricing discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RatePricingDiscriminatorEnum"
+        }
+      ],
+      "description": "Rate pricing type. Must match existing pricing type in case of update.\n\nBaseRatePricing\n\nDependentRatePricing",
+      "x-enumNames": [
+        "BaseRatePricing",
+        "DependentRatePricing"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "Pricing": {
+      "title": "Rate set pricing data parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RateSetPricingDataParameters"
+        }
+      ],
+      "description": "Contains additional data about pricing of the rate.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateSetData"
+}

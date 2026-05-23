@@ -1,0 +1,31 @@
+{
+  "operationId": "rates_updatePrice",
+  "method": "POST",
+  "path": "/api/connector/v1/rates/updatePrice",
+  "summary": "Update rate price",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+        "PriceUpdates": [
+          {
+            "FirstTimeUnitStartUtc": "2022-01-01T23:00:00.000Z",
+            "LastTimeUnitStartUtc": "2022-01-03T23:00:00.000Z",
+            "Value": 111
+          },
+          {
+            "CategoryId": "e3aa3117-dff0-46b7-b49a-2c0391e70ff9",
+            "FirstTimeUnitStartUtc": "2022-01-04T23:00:00.000Z",
+            "LastTimeUnitStartUtc": "2022-01-05T23:00:00.000Z",
+            "Value": 222
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

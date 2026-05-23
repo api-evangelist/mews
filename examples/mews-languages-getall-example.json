@@ -1,0 +1,38 @@
+{
+  "operationId": "languages_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/languages/getAll",
+  "summary": "Get all languages",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Languages": [
+          {
+            "Code": "zh-CN",
+            "EnglishName": "Chinese (Simplified)",
+            "FallbackLanguageCode": "en-US",
+            "LocalName": "\u4e2d\u6587"
+          },
+          {
+            "Code": "cs-CZ",
+            "EnglishName": "Czech",
+            "FallbackLanguageCode": "en-US",
+            "LocalName": "\u010ce\u0161tina"
+          }
+        ]
+      }
+    }
+  ]
+}

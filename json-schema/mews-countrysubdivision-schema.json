@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CountrySubdivision",
+  "title": "Country subdivision",
+  "required": [
+    "Code",
+    "CountryCode",
+    "EnglishName"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO 3166-2 code of the administrative division, e.g AU-QLD."
+    },
+    "CountryCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO 3166-1 code of the [Country](https://mews-systems.gitbook.io/connector-api/operations/countries#country)."
+    },
+    "EnglishName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "English name of the country subdivision."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CountrySubdivision"
+}

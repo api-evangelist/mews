@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Bill",
+  "title": "Bill",
+  "required": [
+    "AccountId",
+    "AccountType",
+    "AssociatedAccountIds",
+    "CorrectionState",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "OrderItems",
+    "PaymentItems",
+    "Payments",
+    "Revenue",
+    "State",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the bill.",
+      "format": "uuid"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the bill.",
+      "nullable": true
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (`Customer` or `Company`) the bill is issued to.",
+      "format": "uuid"
+    },
+    "AccountType": {
+      "title": "Account type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "A discriminator specifying the [type of account](https://mews-systems.gitbook.io/connector-api/operations/accounts/#account-type), i.e. `Customer` or `Company`.\n\nCompany\n\nCustomer",
+      "x-enumNames": [
+        "Company",
+        "Customer"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` the bill is issued to.",
+      "format": "uuid",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountId` instead."
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the `Company` specified in `CompanyDetails` or the `Company` the bill is issued to.",
+      "format": "uuid",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AssociatedAccountIds` instead."
+    },
+    "AssociatedAccountIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Customers` or `Companies` that are associated to the bill.",
+      "nullable": true
+    },
+    "CounterId": {
+      "type": "string",
+      "description": "Unique identifier of the bill `Counter`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "State": {
+      "$ref": "#/components/schemas/BillState"
+    },
+    "Type": {
+      "$ref": "#/components/schemas/BillType"
+    },
+    "Number": {
+      "type": "string",
+      "description": "Number of the bill.",
+      "nullable": true
+    },
+    "VariableSymbol": {
+      "type": "string",
+      "description": "Variable symbol of the bill.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the bill creation in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "IssuedUtc": {
+      "type": "string",
+      "description": "Date and time of the bill issuance in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "TaxedUtc": {
+      "type": "string",
+      "description": "Taxation date of the bill in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "PaidUtc": {
+      "type": "string",
+      "description": "Date when the bill was paid in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "DueUtc": {
+      "type": "string",
+      "description": "Bill due date and time in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "LastReminderDateUtc": {
+      "type": "string",
+      "description": "Date and time when an email reminder to pay an invoice was last sent, in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time when the bill was last updated, in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "PurchaseOrderNumber": {
+      "type": "string",
+      "description": "Unique number of the purchase order from the buyer.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Bill options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillOptions"
+        }
+      ],
+      "description": "Options of the bill.",
+      "nullable": true
+    },
+    "Revenue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingItem"
+      },
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `orderItems/getAll` with `BillId` instead."
+    },
+    "Payments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingItem"
+      },
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `payments/getAll` with `BillId` instead."
+    },
+    "OrderItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderItemOld"
+      },
+      "description": "The order items (consumed items such as nights or products) on the bill.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `orderItems/getAll` with `BillId` instead."
+    },
+    "PaymentItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentItemOld"
+      },
+      "description": "The payment items (such as cash, credit card payments or invoices) on the bill.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "AssigneeData": {
+      "title": "Bill assignee data",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/BillAssigneeDataDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/BillCompanyData"
+            },
+            {
+              "$ref": "#/components/schemas/BillCustomerData"
+            }
+          ]
+        }
+      },
+      "nullable": true,
+      "deprecated": true,
+      "x-coproduct": true,
+      "x-schema-id": "BillAssigneeDataCoproductOfBillAssigneeDataDiscriminator",
+      "x-deprecatedMessage": "Use `OwnerData` instead."
+    },
+    "OwnerData": {
+      "title": "Bill owner data",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/BillAssigneeDataDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/BillCompanyData"
+            },
+            {
+              "$ref": "#/components/schemas/BillCustomerData"
+            }
+          ]
+        }
+      },
+      "description": "Additional information about owner of the bill. Can be a `Customer` or `Company`. Persisted at the time of closing of the bill.",
+      "nullable": true,
+      "x-coproduct": true,
+      "x-schema-id": "BillOwnerDataCoproductOfBillAssigneeDataDiscriminator"
+    },
+    "CompanyDetails": {
+      "title": "Bill company data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCompanyData"
+        }
+      ],
+      "description": "Additional information about the company assigned to the bill. Not the same as the owner. Persisted at the time of closing of the bill.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AssociatedAccountData` instead."
+    },
+    "AssociatedAccountData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillAccountData"
+      },
+      "description": "Additional information about the associated account of the bill. Can be a `Customer` or `Company`. Persisted at the time of closing of the bill. Currently only one account can be associated with a bill, but this may be extended in future.",
+      "nullable": true
+    },
+    "EnterpriseData": {
+      "title": "Bill enterprise data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillEnterpriseData"
+        }
+      ],
+      "description": "Additional information about the enterprise issuing the bill, including bank account details. Persisted at the time of closing of the bill.",
+      "nullable": true
+    },
+    "CorrectionState": {
+      "title": "Bill correction state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCorrectionStateEnum"
+        }
+      ],
+      "description": "Whether the bill is a regular bill or a corrective bill.\n\nBill (Regular bill.)\n\nCorrectiveBill (Corrective bill, i.e. the `CorrectionType` is either `Edit`, `Cancellation`, or `ReceivablePaymentsBalance`.)",
+      "x-enumNames": [
+        "Bill",
+        "CorrectiveBill"
+      ],
+      "x-enumDescriptions": [
+        "Regular bill.",
+        "Corrective bill, i.e. the `CorrectionType` is either `Edit`, `Cancellation`, or `ReceivablePaymentsBalance`."
+      ]
+    },
+    "CorrectionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillCorrectionTypeEnum"
+        }
+      ],
+      "description": "Type of correction.\n\nCancellation\n\nEdit\n\nCreditNote\n\nReinstatement\n\nReceivablePaymentsBalance",
+      "nullable": true
+    },
+    "CorrectedBillId": {
+      "type": "string",
+      "description": "The ID of the bill that the corrective bill corrects. If the corrected bill was deleted, this field is `null`.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Bill"
+}

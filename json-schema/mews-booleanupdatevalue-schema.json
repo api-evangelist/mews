@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BooleanUpdateValue",
+  "title": "Boolean update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "boolean",
+      "description": "Value which is to be updated."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BooleanUpdateValue"
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountAddress",
+  "title": "Account address",
+  "required": [
+    "AccountType"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the address.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of a [Company](https://mews-systems.gitbook.io/connector-api/operations/companies/#company) or a [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer) within the enterprise.",
+      "format": "uuid"
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountType": {
+      "$ref": "#/components/schemas/AccountType"
+    },
+    "Line1": {
+      "maxLength": 1023,
+      "type": "string",
+      "description": "First line of the address.",
+      "nullable": true
+    },
+    "Line2": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Second line of the address.",
+      "nullable": true
+    },
+    "City": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "The city.",
+      "nullable": true
+    },
+    "PostalCode": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Postal code.",
+      "nullable": true
+    },
+    "CountryCode": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 code of the Country.",
+      "nullable": true
+    },
+    "CountrySubdivisionCode": {
+      "type": "string",
+      "description": "ISO 3166-2 code of the administrative division, e.g. DE-BW.",
+      "nullable": true
+    },
+    "Latitude": {
+      "type": "number",
+      "description": "The latitude.",
+      "format": "double",
+      "nullable": true
+    },
+    "Longitude": {
+      "type": "number",
+      "description": "The longitude.",
+      "format": "double",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "type": "string",
+      "description": "Last update date and time of the address in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the address is still active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountAddress"
+}

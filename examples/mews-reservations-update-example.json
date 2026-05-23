@@ -1,0 +1,197 @@
+{
+  "operationId": "reservations_update",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/update",
+  "summary": "Update reservations",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "Client": "Sample Client 1.0.0",
+        "Reason": "Testing",
+        "CheckOverbooking": true,
+        "CheckRateApplicability": true,
+        "Reprice": true,
+        "ApplyCancellationFee": true,
+        "ReservationUpdates": [
+          {
+            "ReservationId": "622605a9-2969-441f-9610-aa720099ae1c",
+            "StartUtc": {
+              "Value": "2019-10-01T14:00:00Z"
+            },
+            "EndUtc": {
+              "Value": "2019-10-03T10:00:00Z"
+            },
+            "AssignedResourceId": {
+              "Value": "16ce4335-2198-408b-8949-9722894a42fb"
+            },
+            "AssignedResourceLocked": {
+              "Value": "false"
+            },
+            "ChannelNumber": null,
+            "RequestedCategoryId": null,
+            "TravelAgencyId": {
+              "Value": null
+            },
+            "CompanyId": {
+              "Value": "73ba34d1-f375-460c-bf2d-8a63e71677a6"
+            },
+            "BusinessSegmentId": null,
+            "Purpose": {
+              "Value": "Business"
+            },
+            "RateId": null,
+            "BookerId": {
+              "Value": "92923102-bf91-4a4a-8ee8-9dcb79c9d6de"
+            },
+            "TimeUnitPrices": {
+              "Value": [
+                {
+                  "Index": 0,
+                  "Amount": {
+                    "Currency": "GBP",
+                    "GrossValue": 20,
+                    "TaxCodes": [
+                      "UK-S"
+                    ]
+                  }
+                },
+                {
+                  "Index": 1,
+                  "Amount": {
+                    "Currency": "GBP",
+                    "GrossValue": 30,
+                    "TaxCodes": [
+                      "UK-S"
+                    ]
+                  }
+                }
+              ]
+            },
+            "PersonCounts": {
+              "Value": [
+                {
+                  "AgeCategoryId": "ab58c939-be30-4a60-8f75-ae1600c60c9f",
+                  "Count": 2
+                },
+                {
+                  "AgeCategoryId": "1f67644f-052d-4863-acdf-ae1600c60ca0",
+                  "Count": 2
+                }
+              ]
+            },
+            "CreditCardId": {
+              "Value": "5d802a8f-3238-42b2-94be-ab0300ab2b6c"
+            },
+            "AvailabilityBlockId": {
+              "Value": "aaaa654a4a94-4f96-9efc-86da-bd26d8db"
+            },
+            "Options": {
+              "OwnerCheckedIn": {
+                "Value": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "BusinessSegments": null,
+        "Customers": [
+          {
+            "Address": null,
+            "BirthDate": null,
+            "BirthPlace": null,
+            "CategoryId": null,
+            "Classifications": [],
+            "CreatedUtc": "2016-01-01T00:00:00Z",
+            "Email": null,
+            "FirstName": "John",
+            "Sex": null,
+            "Id": "35d4b117-4e60-44a3-9580-c582117eff98",
+            "IdentityCard": null,
+            "LanguageCode": null,
+            "LastName": "Smith",
+            "LoyaltyCode": null,
+            "NationalityCode": "US",
+            "Notes": "",
+            "Number": "1",
+            "Passport": null,
+            "Phone": "00420123456789",
+            "SecondLastName": null,
+            "TaxIdentificationNumber": null,
+            "Title": null,
+            "UpdatedUtc": "2016-01-01T00:00:00Z",
+            "Visa": null
+          }
+        ],
+        "OrderItems": null,
+        "Products": null,
+        "RateGroups": null,
+        "Rates": null,
+        "ReservationGroups": [
+          {
+            "Id": "c704dff3-7811-4af7-a3a0-7b2b0635ac59",
+            "Name": "13-12-Smith-F712"
+          }
+        ],
+        "Reservations": [
+          {
+            "Id": "bfee2c44-1f84-4326-a862-5289598f6e2d",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "GroupId": "94843f6f-3be3-481b-a1c7-06458774c3df",
+            "Number": "52",
+            "ChannelNumber": "TW48ZP",
+            "ChannelManager": "",
+            "ChannelManagerGroupNumber": null,
+            "ChannelManagerNumber": null,
+            "State": "Processed",
+            "Origin": "Connector",
+            "OriginDetail": null,
+            "Purpose": "Student",
+            "CreatedUtc": "2016-02-20T14:58:02Z",
+            "UpdatedUtc": "2016-02-20T14:58:02Z",
+            "CancelledUtc": null,
+            "StartUtc": "2016-02-20T13:00:00Z",
+            "EndUtc": "2016-02-22T11:00:00Z",
+            "ReleasedUtc": null,
+            "RequestedCategoryId": "773d5e42-de1e-43a0-9ce6-f940faf2303f",
+            "AssignedResourceId": "20e00c32-d561-4008-8609-82d8aa525714",
+            "AssignedResourceLocked": false,
+            "BusinessSegmentId": null,
+            "CompanyId": null,
+            "TravelAgencyId": null,
+            "AvailabilityBlockId": null,
+            "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+            "VoucherId": null,
+            "CustomerId": "35d4b117-4e60-44a3-9580-c582117eff98",
+            "PersonCounts": [
+              {
+                "AgeCategoryId": "1f67644f-052d-4863-acdf-ae1600c60ca0",
+                "Count": 2
+              },
+              {
+                "AgeCategoryId": "ab58c939-be30-4a60-8f75-ae1600c60c9f",
+                "Count": 2
+              }
+            ]
+          }
+        ],
+        "Services": null,
+        "Resources": null,
+        "ResourceCategories": null,
+        "ResourceCategoryAssignments": null,
+        "Notes": null,
+        "Cursor": "8d02142f-31cf-4115-90bf-ae5200c7a1ba"
+      }
+    }
+  ]
+}

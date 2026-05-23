@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRefundParameters",
+  "title": "PaymentRefundParameters",
+  "required": [
+    "AccessToken",
+    "AccountId",
+    "Client",
+    "ClientToken",
+    "PaymentId",
+    "Reason"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "PaymentId": {
+      "type": "string",
+      "description": "Unique identifier of specific [Payment](https://mews-systems.gitbook.io/connector-api/operations/payments/#payment).",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (for example [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer)) the payment belongs to.",
+      "format": "uuid"
+    },
+    "Reason": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Refund reason."
+    },
+    "ValueToRefund": {
+      "type": "number",
+      "description": "Refund amount. If not provided, the whole payment will be refunded.",
+      "format": "double",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentRefundParameters"
+}

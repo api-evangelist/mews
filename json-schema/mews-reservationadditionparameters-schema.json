@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationAdditionParameters",
+  "title": "ReservationAdditionParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Reservations",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` to be reserved.",
+      "format": "uuid"
+    },
+    "GroupId": {
+      "type": "string",
+      "description": "Unique identifier of the `ReservationGroup` where the reservations are added. If not specified, a new group is created.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "GroupName": {
+      "type": "string",
+      "description": "Name of the `ReservationGroup` where the reservations are added to. If `GroupId` is specified, this field is ignored. If not specified, the group name is automatically created.",
+      "nullable": true
+    },
+    "Reservations": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationData"
+      },
+      "description": "Parameters of the new reservations."
+    },
+    "CheckRateApplicability": {
+      "type": "boolean",
+      "description": "Indicates whether the system will check and prevent a booking being made using a restricted rate, e.g. a private rate. The default is `true`, i.e. the system will normally check for this unless the property is set to `false`.",
+      "nullable": true
+    },
+    "CheckOverbooking": {
+      "type": "boolean",
+      "description": "Indicates whether the system will check and prevent a booking being made in the case of an overbooking, i.e. where there is an insufficient number of resources available to meet the request. The default is `true`, i.e. the system will normally check for this unless the property is set to `false`.",
+      "nullable": true
+    },
+    "SendConfirmationEmail": {
+      "type": "boolean",
+      "description": "Whether the confirmation email is sent. Default value is `true`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationAdditionParameters"
+}

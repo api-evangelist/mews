@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOverbookingLimitSetData",
+  "title": "Service overbooking limits set parameters",
+  "required": [
+    "FirstTimeUnitStartUtc",
+    "LastTimeUnitStartUtc",
+    "Limit"
+  ],
+  "type": "object",
+  "properties": {
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units), in UTC timezone ISO 8601 format. The maximum size of time interval depends on the service's [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units): 367 days.",
+      "format": "date-time"
+    },
+    "Limit": {
+      "maximum": 2147483647,
+      "minimum": 0,
+      "type": "integer",
+      "description": "Number of overbookings allowed for the `Service`. Must be non-negative.",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOverbookingLimitSetData"
+}

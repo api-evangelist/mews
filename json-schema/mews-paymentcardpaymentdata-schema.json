@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentCardPaymentData",
+  "title": "Credit card payment item data",
+  "type": "object",
+  "properties": {
+    "PaymentCardId": {
+      "type": "string",
+      "description": "Unique identifier of the `CreditCard`.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentCardPaymentData"
+}

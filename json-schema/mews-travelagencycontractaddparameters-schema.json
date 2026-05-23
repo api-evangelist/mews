@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TravelAgencyContractAddParameters",
+  "title": "Travel agency contract parameters",
+  "required": [
+    "CompanyId",
+    "Options",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` the travel agency contract is created to.",
+      "format": "uuid"
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the `Company` the travel agency contract is issued to.",
+      "format": "uuid"
+    },
+    "CommissionIncluded": {
+      "type": "boolean",
+      "description": "Whether commission of the travel agency is included in the rate.",
+      "nullable": true
+    },
+    "Commission": {
+      "type": "number",
+      "description": "Commission of the travel agency. Value must be between 0 and 1.",
+      "format": "double",
+      "nullable": true
+    },
+    "ChannelManagerBusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the `BusinessSegment` used for incoming reservations originating from Channel Managers, for this particular contract.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ChannelManagerAbsoluteAdjustment": {
+      "type": "number",
+      "description": "Flat fee added to (or subtracted from) the reservation price when coming from Channel Managers.",
+      "format": "double",
+      "nullable": true
+    },
+    "ChannelManagerRelativeAdjustment": {
+      "type": "number",
+      "description": "Percentage of the reservation price added to (or subtracted from) price when coming from Channel Managers. Value must be between -1 and 1.",
+      "format": "double",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Travel agency contract options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TravelAgencyContractOptions"
+        }
+      ],
+      "description": "Options of the travel agency contract."
+    },
+    "AccountingCode": {
+      "type": "string",
+      "description": "Accounting code of the travel agency contract.",
+      "nullable": true
+    },
+    "InvoiceDueInterval": {
+      "type": "string",
+      "description": "The maximum time, when the invoice has to be be paid in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "ContactPerson": {
+      "type": "string",
+      "description": "Contact person of the travel agency.",
+      "nullable": true
+    },
+    "ContactEmail": {
+      "type": "string",
+      "description": "Contact email of the travel agency.",
+      "format": "email",
+      "nullable": true
+    },
+    "AdditionalContactInfo": {
+      "type": "string",
+      "description": "Additional contact info of the travel agency.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes of the travel agency contract.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TravelAgencyContractAddParameters"
+}

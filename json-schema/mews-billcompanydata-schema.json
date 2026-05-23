@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillCompanyData",
+  "title": "Bill company data",
+  "required": [
+    "Id",
+    "Name"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "ID of the `Company`.",
+      "nullable": true
+    },
+    "Address": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        }
+      ],
+      "description": "Address of the company.",
+      "nullable": true
+    },
+    "LegalIdentifiers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The set of `LegalIdentifiers` for the company.",
+      "nullable": true
+    },
+    "BillingCode": {
+      "type": "string",
+      "description": "A unique code for Mews to list on invoices it sends to the company.",
+      "nullable": true
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the company."
+    },
+    "FiscalIdentifier": {
+      "type": "string",
+      "description": "Fiscal identifier of the company.",
+      "nullable": true
+    },
+    "AdditionalTaxIdentifier": {
+      "type": "string",
+      "description": "Additional tax identifier of the company.",
+      "nullable": true
+    },
+    "DUNS": {
+      "type": "string",
+      "description": "DUNS (Data Universal Numbering System) number of the company.",
+      "nullable": true
+    },
+    "Telephone": {
+      "type": "string",
+      "description": "Company telephone number.",
+      "nullable": true
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identifier of the company.",
+      "nullable": true
+    },
+    "InvoicingEmail": {
+      "type": "string",
+      "description": "Invoicing email of the company.",
+      "nullable": true
+    },
+    "Department": {
+      "type": "string",
+      "description": "Department of the company.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "BillCompanyData"
+}

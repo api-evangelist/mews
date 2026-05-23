@@ -1,0 +1,69 @@
+{
+  "operationId": "rateGroups_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/rateGroups/getAll",
+  "summary": "Get all rate groups",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "RateGroupIds": [
+          "6b3f718a-b537-45b0-a8ee-d30897723834"
+        ],
+        "ServiceIds": [
+          "bd26d8db-86da-4f96-9efc-e5a4654a4a94"
+        ],
+        "ExternalIdentifiers": [
+          "RG-001"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2024-01-27T11:48:57Z",
+          "EndUtc": "2024-02-27T11:48:57Z"
+        },
+        "ActivityStates": [
+          "Active"
+        ],
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "Limitation": {
+          "Count": 1000,
+          "Cursor": "e7f26210-10e7-462e-9da8-ae8300be8ab7"
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "RateGroups": [
+          {
+            "Id": "6b3f718a-b537-45b0-a8ee-d30897723834",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "IsActive": true,
+            "CreatedUtc": "2023-01-11T13:32:32Z",
+            "UpdatedUtc": "2023-01-13T15:27:28Z",
+            "Ordering": 0,
+            "Names": {
+              "en-US": "Default group"
+            },
+            "ShortNames": {
+              "en-US": "Default group"
+            },
+            "Descriptions": {
+              "en-US": "Default group"
+            },
+            "ExternalIdentifier": "RG-001"
+          }
+        ],
+        "Cursor": "6b3f718a-b537-45b0-a8ee-d30897723834"
+      }
+    }
+  ]
+}

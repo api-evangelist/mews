@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRefundResult",
+  "title": "PaymentRefundResult",
+  "required": [
+    "Amount",
+    "PaymentId",
+    "RefundId",
+    "State",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentId": {
+      "type": "string",
+      "description": "Unique identifier of specific [Payment](https://mews-systems.gitbook.io/connector-api/operations/payments/#payment).",
+      "format": "uuid"
+    },
+    "RefundId": {
+      "type": "string",
+      "description": "Unique identifier of refund.",
+      "format": "uuid"
+    },
+    "Type": {
+      "title": "Refund type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RefundTypeEnum"
+        }
+      ],
+      "description": "Type of refund.\n\nCreditCardPayment\n\nAlternativePayment",
+      "x-enumNames": [
+        "CreditCardPayment",
+        "AlternativePayment"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "Amount": {
+      "title": "Currency value (ver 2023-02-02)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValue"
+        }
+      ],
+      "description": "Absolute value of the fee."
+    },
+    "State": {
+      "title": "Payment state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentStateEnum"
+        }
+      ],
+      "description": "Payment state of the refund.\n\nCharged\n\nCanceled\n\nPending\n\nFailed\n\nVerifying",
+      "x-enumNames": [
+        "Charged",
+        "Canceled",
+        "Pending",
+        "Failed",
+        "Verifying"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentRefundResult"
+}

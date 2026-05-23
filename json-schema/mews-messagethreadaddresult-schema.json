@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MessageThreadAddResult",
+  "title": "MessageThreadAddResult",
+  "required": [
+    "MessageThreads"
+  ],
+  "type": "object",
+  "properties": {
+    "MessageThreads": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MessageThread"
+      },
+      "description": "The created message threads."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "MessageThreadAddResult"
+}

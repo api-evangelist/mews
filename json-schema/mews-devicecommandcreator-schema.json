@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeviceCommandCreator",
+  "title": "User",
+  "required": [
+    "LastName"
+  ],
+  "type": "object",
+  "properties": {
+    "FirstName": {
+      "type": "string",
+      "description": "First name of the user.",
+      "nullable": true
+    },
+    "LastName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last name of the user."
+    },
+    "ImageUrl": {
+      "type": "string",
+      "description": "URL of the profile image.",
+      "format": "uri",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DeviceCommandCreator"
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAssignment",
+  "title": "Billing automation assignment",
+  "required": [
+    "BillingAutomationId",
+    "Id",
+    "RoutedItemTypes",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the billing automation assignment.",
+      "format": "uuid"
+    },
+    "BillingAutomationId": {
+      "type": "string",
+      "description": "Unique identifier of the billing automation.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the related service.",
+      "format": "uuid"
+    },
+    "RoutedItemTypes": {
+      "title": "Billing automation item types parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationItemTypesParameters"
+        }
+      ],
+      "description": "Type of items that are going to be routed."
+    },
+    "RateIds": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Rates` used in billing automation conditions.",
+      "nullable": true
+    },
+    "ProductCategoryIds": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Product Categories` used in billing automation conditions.",
+      "nullable": true
+    },
+    "ProductIds": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Products` used in billing automation conditions.",
+      "nullable": true
+    },
+    "AccountingCategoryAssignments": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillingAutomationAccountingCategoryAssignment"
+      },
+      "description": "List of accounting category assignments used in billing automation conditions.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAssignment"
+}

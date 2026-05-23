@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Account",
+  "title": "Account",
+  "required": [
+    "Discriminator",
+    "Id"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the account.",
+      "format": "uuid"
+    },
+    "Discriminator": {
+      "title": "Account type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "Type of the account.\n\nCompany\n\nCustomer",
+      "x-enumNames": [
+        "Company",
+        "Customer"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "Customer": {
+      "title": "Customer",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerAccount"
+        }
+      ],
+      "description": "Updated customer data.",
+      "nullable": true
+    },
+    "Company": {
+      "title": "Company",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompanyAccount"
+        }
+      ],
+      "description": "Updated company data.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Account"
+}

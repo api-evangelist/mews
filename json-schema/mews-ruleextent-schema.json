@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleExtent",
+  "title": "Rule extent",
+  "type": "object",
+  "properties": {
+    "RuleActions": {
+      "type": "boolean",
+      "description": "Whether the response should contain rule actions.",
+      "nullable": true
+    },
+    "Rates": {
+      "type": "boolean",
+      "description": "Whether the response should contain rates.",
+      "nullable": true
+    },
+    "RateGroups": {
+      "type": "boolean",
+      "description": "Whether the response should contain rate groups.",
+      "nullable": true
+    },
+    "ResourceCategories": {
+      "type": "boolean",
+      "description": "Whether the response should contain rate resource categories.",
+      "nullable": true
+    },
+    "BusinessSegments": {
+      "type": "boolean",
+      "description": "Whether the response should contain business segments.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "RuleExtent"
+}

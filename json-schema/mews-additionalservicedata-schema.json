@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AdditionalServiceData",
+  "title": "Additional service data",
+  "required": [
+    "Promotions"
+  ],
+  "type": "object",
+  "properties": {
+    "Promotions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Promotions"
+        }
+      ],
+      "description": "Promotions of the service."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AdditionalServiceData"
+}

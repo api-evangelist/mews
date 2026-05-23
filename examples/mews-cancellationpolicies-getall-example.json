@@ -1,0 +1,65 @@
+{
+  "operationId": "cancellationPolicies_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/cancellationPolicies/getAll",
+  "summary": "Get all cancellation policies",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "ServiceIds": [
+          "e654f217-d1b5-46be-a820-e93ba568dfac"
+        ],
+        "CancellationPolicyIds": [
+          "fe795f96-0b64-445b-89ed-c032563f2bac"
+        ],
+        "RateGroupIds": [
+          "deb9444e-6897-4f2a-86b4-aff100c2896e"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2023-04-27T11:48:57Z",
+          "EndUtc": "2023-04-27T11:48:57Z"
+        },
+        "Limitation": {
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "CancellationPolicies": [
+          {
+            "Id": "769fc613-838f-41a7-ac2a-aff100c3189f",
+            "RateGroupId": "deb9444e-6897-4f2a-86b4-aff100c2896e",
+            "CreatedUtc": "2023-04-27T11:48:57Z",
+            "UpdatedUtc": "2023-04-27T11:48:57Z",
+            "Applicability": "Creation",
+            "FeeExtent": [
+              "TimeUnits",
+              "Products"
+            ],
+            "ApplicabilityOffset": "0M0D0:0:0.0",
+            "FeeMaximumTimeUnits": 0,
+            "AbsoluteFee": {
+              "Currency": "EUR",
+              "Value": 15
+            },
+            "RelativeFee": 0
+          }
+        ],
+        "Cursor": "769fc613-838f-41a7-ac2a-aff100c3189f"
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DaysParameters",
+  "title": "Days parameters",
+  "required": [
+    "Friday",
+    "Monday",
+    "Saturday",
+    "Sunday",
+    "Thursday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "type": "object",
+  "properties": {
+    "Monday": {
+      "type": "boolean",
+      "description": "Monday enabled"
+    },
+    "Tuesday": {
+      "type": "boolean",
+      "description": "Tuesday enabled"
+    },
+    "Wednesday": {
+      "type": "boolean",
+      "description": "Wednesday enabled"
+    },
+    "Thursday": {
+      "type": "boolean",
+      "description": "Thursday enabled"
+    },
+    "Friday": {
+      "type": "boolean",
+      "description": "Friday enabled"
+    },
+    "Saturday": {
+      "type": "boolean",
+      "description": "Saturday enabled"
+    },
+    "Sunday": {
+      "type": "boolean",
+      "description": "Sunday enabled"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DaysParameters"
+}

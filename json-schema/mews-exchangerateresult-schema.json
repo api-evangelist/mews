@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExchangeRateResult",
+  "title": "ExchangeRateResult",
+  "required": [
+    "ExchangeRates"
+  ],
+  "type": "object",
+  "properties": {
+    "ExchangeRates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ExchangeRate"
+      },
+      "description": "The available exchange rates."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExchangeRateResult"
+}

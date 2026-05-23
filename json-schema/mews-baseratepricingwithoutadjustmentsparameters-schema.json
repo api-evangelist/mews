@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BaseRatePricingWithoutAdjustmentsParameters",
+  "title": "Base rate pricing parameters (without occupancy adjustments)",
+  "required": [
+    "Amount"
+  ],
+  "type": "object",
+  "properties": {
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Price of the product that overrides the price defined in Mews."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BaseRatePricingWithoutAdjustmentsParameters"
+}

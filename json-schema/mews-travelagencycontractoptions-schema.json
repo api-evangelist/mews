@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TravelAgencyContractOptions",
+  "title": "Travel agency contract options",
+  "required": [
+    "IncludeCancellationFeeInCommissionEstimate",
+    "SkipAutomaticSettlement"
+  ],
+  "type": "object",
+  "properties": {
+    "IncludeCancellationFeeInCommissionEstimate": {
+      "type": "boolean",
+      "description": "Cancellation fee will be considered when calculating the travel agency commission estimate."
+    },
+    "SkipAutomaticSettlement": {
+      "type": "boolean",
+      "description": "Reservations from travel agencies will not be automatically charged."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "TravelAgencyContractOptions"
+}

@@ -1,0 +1,38 @@
+{
+  "operationId": "images_getUrls",
+  "method": "POST",
+  "path": "/api/connector/v1/images/getUrls",
+  "summary": "Get image URLs",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "Images": [
+          {
+            "ImageId": "57a971a5-a335-48f4-8cd1-595245d1a876",
+            "Width": 200,
+            "Height": 150,
+            "ResizeMode": "Fit"
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ImageUrls": [
+          {
+            "ImageId": "57a971a5-a335-48f4-8cd1-595245d1a876",
+            "Url": "https://cdn.demo.mews.li/Media/Image/57a971a5-a335-48f4-8cd1-595245d1a876?Mode=Fit&Width=200&Height=150"
+          }
+        ]
+      }
+    }
+  ]
+}

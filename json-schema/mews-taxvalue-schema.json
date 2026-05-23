@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxValue",
+  "title": "Tax value",
+  "required": [
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "type": "string",
+      "description": "Code corresponding to tax type.",
+      "nullable": true
+    },
+    "Value": {
+      "type": "number",
+      "description": "Amount of tax applied.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TaxValue"
+}

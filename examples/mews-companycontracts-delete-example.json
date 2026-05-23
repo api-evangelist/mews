@@ -1,0 +1,25 @@
+{
+  "operationId": "companyContracts_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/companyContracts/delete",
+  "summary": "Delete company contracts",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "TravelAgencyContractIds": [
+          "0078f370-3787-43dc-a615-af150066bb88",
+          "652d4a22-ac33-42b7-abe7-af1f00820023"
+        ],
+        "ServiceIds": [
+          "a1d6dee8-355b-44c3-b6be-faef1a7eb6c0",
+          "d5a2aac3-5194-479b-ba05-6c073398e0fd"
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillCloseAccountParameters",
+  "title": "Bill close account parameters",
+  "required": [
+    "Id"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the associated account (`Customer` or `Company`) the bill is associated to.",
+      "format": "uuid"
+    },
+    "TaxIdentifier": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Tax identifier of the associated account to be put on a bill.",
+      "nullable": true
+    },
+    "Address": {
+      "title": "Address parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressParameters"
+        }
+      ],
+      "description": "Address of the associated account to be displayed on bill. Overrides the default one taken from account profile.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillCloseAccountParameters"
+}

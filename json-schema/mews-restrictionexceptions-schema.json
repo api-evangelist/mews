@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionExceptions",
+  "title": "Restriction exception",
+  "type": "object",
+  "properties": {
+    "MinAdvance": {
+      "type": "string",
+      "description": "The minimum time before the reservation starts, you can reserve in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "MaxAdvance": {
+      "type": "string",
+      "description": "The maximum time before the reservation starts, you can reserve in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "MinLength": {
+      "type": "string",
+      "description": "Minimal reservation length in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "MaxLength": {
+      "type": "string",
+      "description": "Maximal reservation length in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "MinPrice": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Value of the minimum price per time unit.",
+      "nullable": true
+    },
+    "MaxPrice": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Value of the maximum price per time unit.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "The rules that prevent the restriction from applying to a reservation, even when all conditions have been met.",
+  "x-schema-id": "RestrictionExceptions"
+}

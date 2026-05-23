@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PreauthorizationResult",
+  "title": "PreauthorizationResult",
+  "required": [
+    "Preauthorizations"
+  ],
+  "type": "object",
+  "properties": {
+    "Preauthorizations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Preauthorization"
+      },
+      "description": "Preauthorizations of the specified `Customer`."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PreauthorizationResult"
+}

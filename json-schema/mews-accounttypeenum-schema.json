@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountTypeEnum",
+  "title": "Account type",
+  "enum": [
+    "Company",
+    "Customer"
+  ],
+  "type": "string",
+  "description": "A discriminator specifying the account type, e.g. `Customer` or `Company`\n\nCompany\n\nCustomer",
+  "x-enumNames": [
+    "Company",
+    "Customer"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

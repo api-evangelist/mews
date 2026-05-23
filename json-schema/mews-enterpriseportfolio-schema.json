@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnterprisePortfolio",
+  "title": "Enterprise",
+  "required": [
+    "AccommodationEnvironmentCode",
+    "AccountingEditableHistoryInterval",
+    "AccountingEnvironmentCode",
+    "Address",
+    "AddressId",
+    "ChainId",
+    "ChainName",
+    "CreatedUtc",
+    "DefaultLanguageCode",
+    "EditableHistoryInterval",
+    "GroupNames",
+    "Id",
+    "LegalEnvironmentCode",
+    "LinkedUtc",
+    "Name",
+    "OperationalEditableHistoryInterval",
+    "Pricing",
+    "Subscription",
+    "TaxEnvironmentCode",
+    "TimeZoneIdentifier",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise.",
+      "format": "uuid"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the enterprise from external system.",
+      "nullable": true
+    },
+    "HoldingKey": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifies an enterprise in the external system of a holding company. The holding company may administer multiple portfolios.",
+      "nullable": true
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain to which the enterprise belongs.",
+      "format": "uuid"
+    },
+    "ChainName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the `Chain` to which the enterprise belongs."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the enterprise in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the enterprise in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the enterprise."
+    },
+    "ShortName": {
+      "maxLength": 11,
+      "type": "string",
+      "description": "Short name of the enterprise used in Manager Report exports.",
+      "nullable": true
+    },
+    "TimeZoneIdentifier": {
+      "minLength": 1,
+      "type": "string",
+      "description": "IANA timezone identifier of the enterprise."
+    },
+    "LegalEnvironmentCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the legal environment where the enterprise resides."
+    },
+    "AccommodationEnvironmentCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique code of the accommodation environment where the enterprise resides."
+    },
+    "AccountingEnvironmentCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique code of the accounting environment where the enterprise resides."
+    },
+    "TaxEnvironmentCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique code of the tax environment where the enterprise resides."
+    },
+    "DefaultLanguageCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Language-culture codes of the enterprise default `Language`."
+    },
+    "EditableHistoryInterval": {
+      "minLength": 1,
+      "type": "string",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountingEditableHistoryInterval` and `OperationalEditableHistoryInterval` instead."
+    },
+    "AccountingEditableHistoryInterval": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Editable history interval for accounting data in ISO 8601 duration format."
+    },
+    "OperationalEditableHistoryInterval": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Editable history interval for operational data in ISO 8601 duration format."
+    },
+    "BusinessDayClosingOffset": {
+      "type": "string",
+      "description": "The offset value for the business day closing time, in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "WebsiteUrl": {
+      "type": "string",
+      "description": "URL of the enterprise website.",
+      "format": "uri",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "description": "Email address of the enterprise.",
+      "format": "email",
+      "nullable": true
+    },
+    "Phone": {
+      "type": "string",
+      "description": "Phone number of the enterprise.",
+      "format": "tel",
+      "nullable": true
+    },
+    "LogoImageId": {
+      "type": "string",
+      "description": "Unique identifier of the `Image` of the enterprise logo.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CoverImageId": {
+      "type": "string",
+      "description": "Unique identifier of the `Image` of the enterprise cover.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Pricing": {
+      "title": "Pricing",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PricingModeEnum"
+        }
+      ],
+      "description": "Pricing of the enterprise.\n\nGross (The enterprise shows amount with gross prices.)\n\nNet (The enterprise shows amount with net prices.)",
+      "x-enumNames": [
+        "Gross",
+        "Net"
+      ],
+      "x-enumDescriptions": [
+        "The enterprise shows amount with gross prices.",
+        "The enterprise shows amount with net prices."
+      ]
+    },
+    "TaxPrecision": {
+      "type": "integer",
+      "description": "Tax precision used for financial calculations in the enterprise. If `null`, `Currency` precision is used.",
+      "format": "int32",
+      "nullable": true
+    },
+    "AddressId": {
+      "type": "string",
+      "description": "Unique identifier of the `Address` of the enterprise.",
+      "format": "uuid"
+    },
+    "Address": {
+      "title": "Address",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OldAddress"
+        }
+      ],
+      "description": "Address of the enterprise."
+    },
+    "GroupNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of the group names of the enterprise."
+    },
+    "Subscription": {
+      "title": "Enterprise subscription",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnterpriseSubscription"
+        }
+      ],
+      "description": "Subscription information of the enterprise."
+    },
+    "LinkedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time when enterprise was added to the portfolio in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "EnterprisePortfolio"
+}

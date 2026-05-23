@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyMembershipStateUpdateValue",
+  "title": "Loyalty membership state update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Loyalty membership state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoyaltyMembershipStateEnum"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "New",
+        "Pending",
+        "Enrolled",
+        "Canceled",
+        "Declined"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyMembershipStateUpdateValue"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationServiceOrderResult",
+  "title": "ReservationServiceOrderResult",
+  "required": [
+    "Reservations"
+  ],
+  "type": "object",
+  "properties": {
+    "Reservations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Reservation"
+      },
+      "description": "The reservations of the enterprise."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationServiceOrderResult"
+}

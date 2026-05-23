@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExtendedAmountParameters",
+  "title": "Amount parameters",
+  "required": [
+    "Currency"
+  ],
+  "type": "object",
+  "properties": {
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 code of the `Currency`.",
+      "format": "currency"
+    },
+    "TaxCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The tax values applied.",
+      "nullable": true
+    },
+    "NetValue": {
+      "type": "number",
+      "description": "Net value in case the item is taxed.",
+      "format": "double",
+      "nullable": true
+    },
+    "GrossValue": {
+      "type": "number",
+      "description": "Gross value including all taxes.",
+      "format": "double",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "ExtendedAmountParameters"
+}

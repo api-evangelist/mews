@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationOld",
+  "title": "Reservation (ver 2017-04-12)",
+  "required": [
+    "AssignedResourceLocked",
+    "CompanionIds",
+    "CreatedUtc",
+    "CustomerId",
+    "EndUtc",
+    "GroupId",
+    "Id",
+    "Number",
+    "Options",
+    "Origin",
+    "OwnerId",
+    "PersonCounts",
+    "RateId",
+    "RequestedCategoryId",
+    "ServiceId",
+    "StartUtc",
+    "State",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the Service that is reserved.",
+      "format": "uuid"
+    },
+    "GroupId": {
+      "type": "string",
+      "description": "Unique identifier of the Reservation group.",
+      "format": "uuid"
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Confirmation number of the reservation in Mews."
+    },
+    "ChannelNumber": {
+      "type": "string",
+      "description": "Number of the reservation within the Channel (i.e. OTA, GDS, CRS, etc) in case the reservation group originates there (e.g. Booking.com confirmation number).",
+      "nullable": true
+    },
+    "ChannelManagerNumber": {
+      "type": "string",
+      "description": "Unique number of the reservation within the reservation group.",
+      "nullable": true
+    },
+    "ChannelManagerGroupNumber": {
+      "type": "string",
+      "description": "Number of the reservation group within a Channel manager that transferred the reservation from Channel to Mews.",
+      "nullable": true
+    },
+    "ChannelManager": {
+      "type": "string",
+      "description": "Name of the Channel manager (e.g. AvailPro, SiteMinder, TravelClick, etc).",
+      "nullable": true
+    },
+    "State": {
+      "$ref": "#/components/schemas/ServiceOrderStateOld"
+    },
+    "Origin": {
+      "$ref": "#/components/schemas/ReservationOldOrigin"
+    },
+    "OriginDetails": {
+      "type": "string",
+      "description": "Details about the reservation origin.",
+      "nullable": true
+    },
+    "Purpose": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ReservationPurpose"
+        }
+      ],
+      "description": "Purpose of the reservation.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the reservation in UTC timezone in ISO 8601 format."
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the reservation in UTC timezone in ISO 8601 format."
+    },
+    "CancelledUtc": {
+      "type": "string",
+      "description": "Cancellation date and time in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "StartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the reservation in UTC timezone in ISO 8601 format. This is either the scheduled reservation start time, or the actual customer check-in time if this is earlier than the scheduled start time."
+    },
+    "EndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the reservation (departure) in UTC timezone in ISO 8601 format."
+    },
+    "ReleasedUtc": {
+      "type": "string",
+      "description": "Date when the optional reservation is released in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "RequestedCategoryId": {
+      "type": "string",
+      "description": "Identifier of the requested Resource category.",
+      "format": "uuid"
+    },
+    "AssignedSpaceId": {
+      "type": "string",
+      "description": "Identifier of the assigned Space.",
+      "format": "uuid",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AssignedResourceId` instead."
+    },
+    "AssignedSpaceLocked": {
+      "type": "boolean",
+      "description": "Whether the reservation is locked to the assigned Space and cannot be moved.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AssignedResourceLocked` instead."
+    },
+    "AssignedResourceId": {
+      "type": "string",
+      "description": "Identifier of the assigned Resource.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AssignedResourceLocked": {
+      "type": "boolean",
+      "description": "Whether the reservation is locked to the assigned Resource and cannot be moved."
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Identifier of the reservation Business segment.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Identifier of the Company on behalf of which the reservation was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "type": "string",
+      "description": "Identifier of the Company that mediated the reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AvailabilityBlockId": {
+      "type": "string",
+      "description": "Unique identifier of the Availability block the reservation is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "RateId": {
+      "type": "string",
+      "description": "Identifier of the reservation Rate.",
+      "format": "uuid"
+    },
+    "VoucherId": {
+      "type": "string",
+      "description": "Unique identifier of the Voucher that has been used to create reservation.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CreditCardId": {
+      "type": "string",
+      "description": "Unique identifier of the Credit card.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CancellationReason": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/CancellationReason"
+        }
+      ],
+      "description": "Cancellation reason of the reservation.",
+      "nullable": true
+    },
+    "AdultCount": {
+      "type": "integer",
+      "description": "Count of adults the reservation was booked for.",
+      "format": "int32",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `PersonCounts` instead."
+    },
+    "ChildCount": {
+      "type": "integer",
+      "description": "Count of children the reservation was booked for.",
+      "format": "int32",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `PersonCounts` instead."
+    },
+    "PersonCounts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationPersonCount"
+      },
+      "description": "Number of people per age category the reservation was booked for."
+    },
+    "OwnerId": {
+      "type": "string",
+      "description": "Unique identifier of the Customer or Company who owns the reservation.",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the Customer who owns the reservation.",
+      "format": "uuid",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `OwnerId` instead."
+    },
+    "BookerId": {
+      "type": "string",
+      "description": "Unique identifier of the Customer on whose behalf the reservation was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CompanionIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Customer`s that will use the resource.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `companionships/getAll` instead."
+    },
+    "ChannelManagerId": {
+      "type": "string",
+      "description": "Channel Manager number.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `ChannelManagerNumber` instead."
+    },
+    "Options": {
+      "title": "Reservation options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationOptions"
+        }
+      ],
+      "description": "Options of the reservation."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "ReservationOld"
+}

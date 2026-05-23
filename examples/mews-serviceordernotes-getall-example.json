@@ -1,0 +1,48 @@
+{
+  "operationId": "serviceOrderNotes_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/serviceOrderNotes/getAll",
+  "summary": "Get all service order notes",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceOrderIds": [
+          "1dc0c6bf-2ce6-4a9f-af97-af5c01676720"
+        ],
+        "ServiceOrderNoteIds": [
+          "a06a225b-00f7-48c8-a463-af5c016768e9"
+        ],
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "Limitation": {
+          "Count": 100
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ServiceOrderNotes": [
+          {
+            "Id": "a06a225b-00f7-48c8-a463-af5c016768e9",
+            "OrderId": "1dc0c6bf-2ce6-4a9f-af97-af5c01676720",
+            "Text": "Shaken, not stirred.",
+            "Type": "General",
+            "CreatedUtc": "2022-11-29T21:48:32Z",
+            "UpdatedUtc": "2022-11-30T12:36:37Z"
+          }
+        ],
+        "Cursor": "a06a225b-00f7-48c8-a463-af5c016768e9"
+      }
+    }
+  ]
+}

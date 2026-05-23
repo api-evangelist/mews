@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportDataFilters",
+  "title": "Export data filters",
+  "type": "object",
+  "properties": {
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Filters entities by the specified UTC update interval. The end of the interval must be no later than 5 minutes in the past. The maximum interval is 180 days.",
+      "nullable": true
+    },
+    "LedgerEntryFilters": {
+      "title": "Export ledger entry data filters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportLedgerEntryDataFilters"
+        }
+      ],
+      "description": "Filters specific to the `LedgerEntry` entity type. Required when `EntityType` is `LedgerEntry`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportDataFilters"
+}

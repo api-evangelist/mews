@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PerUnitPriceParameters",
+  "title": "Time unit amount parameters",
+  "type": "object",
+  "properties": {
+    "Index": {
+      "type": "integer",
+      "description": "Index of the unit. Indexing starts with `0`. E.g. the first night of the reservation has index `0`.",
+      "format": "int32"
+    },
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Amount of the unit.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PerUnitPriceParameters"
+}

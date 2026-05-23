@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ContractUpdateResult",
+  "title": "ContractUpdateResult",
+  "required": [
+    "TravelAgencyContracts"
+  ],
+  "type": "object",
+  "properties": {
+    "TravelAgencyContracts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TravelAgencyContract"
+      },
+      "description": "The updated travel agency contracts."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ContractUpdateResult"
+}

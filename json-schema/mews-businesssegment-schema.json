@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BusinessSegment",
+  "title": "Business segment",
+  "required": [
+    "CreatedUtc",
+    "Id",
+    "IsActive",
+    "Name",
+    "ServiceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the business segment.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service`.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the business segment is still active."
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the business segment."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the business segment in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the business segment in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BusinessSegment"
+}

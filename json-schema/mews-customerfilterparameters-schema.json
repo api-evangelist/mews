@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerFilterParameters",
+  "title": "CustomerFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Extent",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the chains. Required when using Portfolio Access Tokens, ignored otherwise.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which Customer was created.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which Customer was updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "Extent": {
+      "title": "Customer extent",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerExtent"
+        }
+      ],
+      "description": "Extent of data to be returned."
+    },
+    "DeletedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which Customer was deleted. `ActivityStates` value `Deleted` should be provided with this filter to get expected results.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "ActivityStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityStates"
+      },
+      "description": "Whether to return only active, only deleted or both records.",
+      "nullable": true
+    },
+    "CustomerIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of Customers. Required if no other filter is provided.",
+      "nullable": true
+    },
+    "CompanyIds": {
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifier of the Company the customer is associated with.",
+      "nullable": true
+    },
+    "Emails": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails of the [Customers](https://mews-systems.gitbook.io/connector-api/operations/#customer).",
+      "nullable": true
+    },
+    "FirstNames": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "First names of the [Customers](https://mews-systems.gitbook.io/connector-api/operations/#customer).",
+      "nullable": true
+    },
+    "LastNames": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Last names of the [Customers](https://mews-systems.gitbook.io/connector-api/operations/#customer).",
+      "nullable": true
+    },
+    "LoyaltyCodes": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Loyalty codes of the [Customers](https://mews-systems.gitbook.io/connector-api/operations/#customer).",
+      "nullable": true
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerFilterParameters"
+}

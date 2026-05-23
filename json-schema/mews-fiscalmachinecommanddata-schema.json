@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FiscalMachineCommandData",
+  "title": "Fiscal machine command data",
+  "required": [
+    "Bill"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/DeviceCommandData"
+    }
+  ],
+  "properties": {
+    "FiscalMachineId": {
+      "type": "string",
+      "description": "Identifier of the fiscal machine.",
+      "nullable": true
+    },
+    "ApiUrl": {
+      "type": "string",
+      "description": "URL of the fiscal machine API.",
+      "nullable": true
+    },
+    "FiscalMachineData": {
+      "type": "string",
+      "description": "Custom JSON data.",
+      "nullable": true
+    },
+    "Bill": {
+      "title": "Bill",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Bill"
+        }
+      ],
+      "description": "The issued bill that should be fiscalized."
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identifier to be used for fiscalization.",
+      "nullable": true
+    },
+    "BillFiscalMachineData": {
+      "title": "Fiscal machine data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillFiscalMachineData"
+        }
+      ],
+      "description": "Fiscal machine data; currently only `ItalianFiscalMachineData` is supported.",
+      "nullable": true
+    },
+    "PayloadData": {
+      "title": "Fiscal machine payload",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillFiscalMachinePayloadData"
+        }
+      ],
+      "description": "Fiscal machine payload data; currently only `ItalianFiscalMachinePayloadData` is supported.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "FiscalMachineCommandData"
+}

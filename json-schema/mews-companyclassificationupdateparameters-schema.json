@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyClassificationUpdateParameters",
+  "title": "Company update classifications",
+  "type": "object",
+  "properties": {
+    "Corporate": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Corporate (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Internal": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Internal (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Private": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Private (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "OnlineTravelAgency": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Online travel agency (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "GlobalDistributionSystem": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Global distribution system (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Marketing": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Marketing (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "Inactive": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Inactive (or `null` if the value should not be updated).",
+      "nullable": true
+    },
+    "GovernmentEntity": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Government Entity (or `null` if the value should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyClassificationUpdateParameters"
+}

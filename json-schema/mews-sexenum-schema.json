@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SexEnum",
+  "title": "Sex",
+  "enum": [
+    "Male",
+    "Female"
+  ],
+  "type": "string",
+  "description": "\n\nMale\n\nFemale",
+  "x-enumNames": [
+    "Male",
+    "Female"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

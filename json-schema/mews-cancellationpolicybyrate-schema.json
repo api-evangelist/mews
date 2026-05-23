@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicyByRate",
+  "title": "Cancellation policy data grouped by rate",
+  "required": [
+    "Policies",
+    "RateId"
+  ],
+  "type": "object",
+  "properties": {
+    "RateId": {
+      "type": "string",
+      "description": "Unique identifier of the `Rate`.",
+      "format": "uuid"
+    },
+    "Policies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CancellationPolicyData"
+      },
+      "description": "Collection of cancellation policy data."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CancellationPolicyByRate"
+}

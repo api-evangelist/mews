@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillOptionsParameters",
+  "title": "Bill options parameters",
+  "required": [
+    "DisplayCustomer",
+    "DisplayTaxation"
+  ],
+  "type": "object",
+  "properties": {
+    "DisplayCustomer": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Display customer information on a bill."
+    },
+    "DisplayTaxation": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Display taxation detail on a bill."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "BillOptionsParameters"
+}

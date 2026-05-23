@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicyData",
+  "title": "Cancellation policy data",
+  "required": [
+    "AbsoluteFee",
+    "Applicability",
+    "ApplicabilityOffset",
+    "FeeExtents",
+    "RelativeFee"
+  ],
+  "type": "object",
+  "properties": {
+    "Applicability": {
+      "title": "Cancellation Policy Applicability",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CancellationPolicyApplicabilityEnum"
+        }
+      ],
+      "description": "Applicability mode of the cancellation policy.\n\nCreation\n\nStart\n\nStartDate",
+      "x-enumNames": [
+        "Creation",
+        "Start",
+        "StartDate"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "FeeExtents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CancellationFeeExtentEnum"
+      },
+      "description": "Extent for the cancellation fee, i.e. what should be in scope for the automatic payment."
+    },
+    "ApplicabilityOffset": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Offset for order start (assuming Applicability is set to Start) from which the fee is applied in ISO 8601 duration format."
+    },
+    "FeeMaximumTimeUnits": {
+      "type": "integer",
+      "description": "Maximum number of time units the cancellation fee is applicable to.",
+      "format": "int32",
+      "nullable": true
+    },
+    "AbsoluteFee": {
+      "title": "Currency value (ver 2023-02-02)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValue"
+        }
+      ],
+      "description": "Absolute value of the fee."
+    },
+    "RelativeFee": {
+      "type": "number",
+      "description": "Relative value of the fee, as a percentage of the reservation price.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CancellationPolicyData"
+}

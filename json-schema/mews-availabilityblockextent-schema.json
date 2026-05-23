@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockExtent",
+  "title": "Availability block extent",
+  "type": "object",
+  "properties": {
+    "AvailabilityBlocks": {
+      "type": "boolean",
+      "description": "Whether the response should contain the general availability blocks.",
+      "nullable": true
+    },
+    "Adjustments": {
+      "type": "boolean",
+      "description": "Whether the response should contain individual availability adjustments related to availability blocks.",
+      "nullable": true
+    },
+    "ServiceOrders": {
+      "type": "boolean",
+      "description": "Whether the response should contain reservations related to availability blocks.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all reservations (ver 2023-06-06)](https://mews-systems.gitbook.io/connector-api/operations/reservations#get-all-reservations-ver-2023-06-06) instead."
+    },
+    "Rates": {
+      "type": "boolean",
+      "description": "Whether the response should contain rates related to availability blocks.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all rates](https://mews-systems.gitbook.io/connector-api/operations/rates#get-all-rates) instead."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "AvailabilityBlockExtent"
+}

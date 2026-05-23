@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockStateEnum",
+  "title": "Availability block state",
+  "enum": [
+    "Confirmed",
+    "Optional",
+    "Inquired",
+    "Canceled"
+  ],
+  "type": "string",
+  "description": "\n\nConfirmed (The block deducts availability and can have reservations assigned.)\n\nOptional (The block deducts availability and cannot have reservations assigned.)\n\nInquired (The block does not deduct availability and cannot have reservations assigned (waitlist).)\n\nCanceled (The block does not deduct availability and cannot have reservations assigned (waitlist).)",
+  "x-enumNames": [
+    "Confirmed",
+    "Optional",
+    "Inquired",
+    "Canceled"
+  ],
+  "x-enumDescriptions": [
+    "The block deducts availability and can have reservations assigned.",
+    "The block deducts availability and cannot have reservations assigned.",
+    "The block does not deduct availability and cannot have reservations assigned (waitlist).",
+    "The block does not deduct availability and cannot have reservations assigned (waitlist)."
+  ]
+}

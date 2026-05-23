@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ParentProductCategory",
+  "title": "Parent product category",
+  "required": [
+    "Id",
+    "Names"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the product category.",
+      "format": "uuid"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "ParentProductCategory"
+}

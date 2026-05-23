@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockUpdateParameters",
+  "title": "Availability block update parameters",
+  "type": "object",
+  "properties": {
+    "AvailabilityBlockId": {
+      "type": "string",
+      "description": "Unique identifier of the [Availability block](https://mews-systems.gitbook.io/connector-api/operations/availabilityblocks#availability-block).",
+      "format": "uuid"
+    },
+    "Name": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "The name of the block (or `null` if the name should not be updated).",
+      "nullable": true
+    },
+    "FirstTimeUnitStartUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first time unit, in UTC timezone ISO 8601 format (or `null` if the start time should not be updated).",
+      "nullable": true
+    },
+    "LastTimeUnitStartUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "End of the time interval, expressed as the timestamp for the start of the last time unit, in UTC timezone ISO 8601 format (or `null` if the end time should not be updated).",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Identifier of the block from external system (or `null` if the identifier should not be updated).",
+      "nullable": true
+    },
+    "State": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "State of the availability block (or `null` if not updated).",
+      "nullable": true
+    },
+    "ReservationPurpose": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "The purpose of the block (or `null` if not updated).",
+      "nullable": true
+    },
+    "CompanyId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the [Company](https://mews-systems.gitbook.io/connector-api/operations/companies#company) (or `null` if not updated).",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the travel agency (i.e. `Company`; or `null` if not updated).",
+      "nullable": true
+    },
+    "BookerId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the Booker as a creator of an availability block (or `null` if not updated).",
+      "nullable": true
+    },
+    "Notes": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Additional notes of the block (or `null` if not updated).",
+      "nullable": true
+    },
+    "Budget": {
+      "title": "Currency value (ver 2018-06-07) update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateValueCurrencyValueOld"
+        }
+      ],
+      "description": "The tentative budget for the total price of reservations (or `null` if not updated).",
+      "nullable": true
+    },
+    "CancellationReason": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Cancellation reason of the availability block (or `null` if not updated).",
+      "nullable": true
+    },
+    "CancellationReasonDetail": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Cancellation reason detail of the availability block (or `null` if not updated).",
+      "nullable": true
+    },
+    "RollingReleaseOffset": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Exact offset from the start of availability adjustments to the moment the availability adjustment should be released, in ISO 8601 duration format. Required if `ReleaseStrategy` is set to `RollingRelease`, ignored otherwise.",
+      "nullable": true
+    },
+    "ReleasedUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "The moment when the block and its availability is released, in UTC timezone ISO 8601 format. Required if `ReleaseStrategy` is set to `FixedRelease`, or used when `ReleaseStrategy` update is unspecified.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ReleaseStrategy": {
+      "title": "Release strategy update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReleaseStrategyUpdateValue"
+        }
+      ],
+      "description": "The strategy for automatic release of the availability block (or `null` if not updated).",
+      "nullable": true
+    },
+    "QuoteId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the Mews Events quote associated with the availability block (or `null` if not updated).",
+      "nullable": true
+    },
+    "PurchaseOrderNumber": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Unique number of the purchase order. This number is propagated to any newly picked up `Reservation` within the block.",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the Business segment.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityBlockUpdateParameters"
+}

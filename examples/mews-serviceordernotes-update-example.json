@@ -1,0 +1,42 @@
+{
+  "operationId": "serviceOrderNotes_update",
+  "method": "POST",
+  "path": "/api/connector/v1/serviceOrderNotes/update",
+  "summary": "Update service order notes",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceOrderNoteUpdates": [
+          {
+            "ServiceOrderNoteId": "a06a225b-00f7-48c8-a463-af5c016768e9",
+            "Text": {
+              "Value": "Shaken, not stirred."
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ServiceOrderNotes": [
+          {
+            "Id": "a06a225b-00f7-48c8-a463-af5c016768e9",
+            "OrderId": "1dc0c6bf-2ce6-4a9f-af97-af5c01676720",
+            "Text": "Shaken, not stirred.",
+            "Type": "General",
+            "CreatedUtc": "2022-11-29T21:48:32Z",
+            "UpdatedUtc": "2022-11-30T12:36:37Z"
+          }
+        ]
+      }
+    }
+  ]
+}

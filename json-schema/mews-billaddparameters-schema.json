@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillAddParameters",
+  "title": "Bill parameters",
+  "required": [
+    "AccountId"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (`Customer` or `Company`) the bill is issued to. Company billing may not be enabled for your integration.",
+      "format": "uuid"
+    },
+    "AssociatedAccountId": {
+      "type": "string",
+      "description": "Account that has a possible link with the owner of the bill.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the newly created bill.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillAddParameters"
+}

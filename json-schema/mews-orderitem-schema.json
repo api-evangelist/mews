@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItem",
+  "title": "Order item",
+  "required": [
+    "AccountingState",
+    "Amount",
+    "ConsumedUtc",
+    "CreatedUtc",
+    "CreatorProfileId",
+    "EnterpriseId",
+    "Id",
+    "Options",
+    "OriginalAmount",
+    "RevenueType",
+    "ServiceId",
+    "ServiceOrderId",
+    "Type",
+    "UnitAmount",
+    "UnitCount",
+    "UpdatedUtc",
+    "UpdaterProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the order item.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (for example [Customer](https://mews-systems.gitbook.io/connector-api/operations/customers/#customer)) the order item belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "A discriminator specifying the [type of account](https://mews-systems.gitbook.io/connector-api/operations/accounts/#account-type), e.g. customer or company.\n\nCompany\n\nCustomer",
+      "nullable": true
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Service](https://mews-systems.gitbook.io/connector-api/operations/services/#service) the order item is assigned to.",
+      "format": "uuid"
+    },
+    "ServiceOrderId": {
+      "type": "string",
+      "description": "Unique identifier of the [Service order](https://mews-systems.gitbook.io/connector-api/operations/serviceorders/#service-order) the order item is assigned to.",
+      "format": "uuid"
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the [Bill](https://mews-systems.gitbook.io/connector-api/operations/bills/#bill) the order item is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Accounting category](https://mews-systems.gitbook.io/connector-api/operations/accountingcategories/#accounting-category) the order item belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BillingName": {
+      "type": "string",
+      "description": "Name of the order item for billing purposes.",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "Identifier of the entity from external system.",
+      "nullable": true
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Unit count of item, i.e. the number of sub-items or units, if applicable.",
+      "format": "int32"
+    },
+    "UnitAmount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Unit amount of item, i.e. the amount of each individual sub-item or unit, if applicable."
+    },
+    "Amount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Amount of item; note a negative amount represents a rebate or payment."
+    },
+    "OriginalAmount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Order item's original amount. Negative amount represents either rebate or a payment. Contains the earliest known value in conversion chain."
+    },
+    "RevenueType": {
+      "title": "Revenue type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevenueTypeEnum"
+        }
+      ],
+      "description": "Revenue type of the item.\n\nService\n\nProduct\n\nAdditional",
+      "x-enumNames": [
+        "Service",
+        "Product",
+        "Additional"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "CreatorProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who created the order item.",
+      "format": "uuid"
+    },
+    "UpdaterProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the user who updated the order item.",
+      "format": "uuid"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the order item created in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the order item in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ConsumedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the item consumption in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "CanceledUtc": {
+      "type": "string",
+      "description": "Cancellation date and time of the order item in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ClosedUtc": {
+      "type": "string",
+      "description": "Date and time of the item bill closure in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Start of the order item in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ClaimedUtc": {
+      "type": "string",
+      "description": "Date and time when the order item was claimed in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "AccountingState": {
+      "title": "Order item accounting state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountingStateEnum"
+        }
+      ],
+      "description": "Accounting state of the order item.\n\nOpen (Order items which carry a non-zero value, are open, and have not been closed on a bill or invoice.)\n\nClosed (Order items which carry a non-zero value and have been closed on a bill or invoice.)\n\nInactive (Order items which are either of zero value and have not been canceled, if the state of the payment item is Pending or Failed, or items of optional reservations. Until the reservation is confirmed, all its accounting items are Inactive.)\n\nCanceled (Order items which have been canceled, regardless of whether the item is of zero value.)",
+      "x-enumNames": [
+        "Open",
+        "Closed",
+        "Inactive",
+        "Canceled"
+      ],
+      "x-enumDescriptions": [
+        "Order items which carry a non-zero value, are open, and have not been closed on a bill or invoice.",
+        "Order items which carry a non-zero value and have been closed on a bill or invoice.",
+        "Order items which are either of zero value and have not been canceled, if the state of the payment item is Pending or Failed, or items of optional reservations. Until the reservation is confirmed, all its accounting items are Inactive.",
+        "Order items which have been canceled, regardless of whether the item is of zero value."
+      ]
+    },
+    "Type": {
+      "title": "Order item type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemTypeEnum"
+        }
+      ],
+      "description": "Order item type, e.g. whether product order or space order.\n\nCancellationFee\n\nNightRebate\n\nProductOrderRebate\n\nAdditionalExpenseRebate\n\nDeposit\n\nExchangeRateDifference\n\nCustomItem\n\nServiceCharge\n\nCityTax\n\nCityTaxDiscount\n\nSpaceOrder\n\nProductOrder\n\nSurcharge\n\nTaxCorrection\n\nResourceUpgradeFee\n\nInvoiceFee\n\nMulticurrencyFee\n\nAllowanceDiscount\n\nAllowanceBreakage\n\nAllowanceContraBreakage",
+      "x-enumNames": [
+        "CancellationFee",
+        "NightRebate",
+        "ProductOrderRebate",
+        "AdditionalExpenseRebate",
+        "Deposit",
+        "ExchangeRateDifference",
+        "CustomItem",
+        "ServiceCharge",
+        "CityTax",
+        "CityTaxDiscount",
+        "SpaceOrder",
+        "ProductOrder",
+        "Surcharge",
+        "TaxCorrection",
+        "ResourceUpgradeFee",
+        "InvoiceFee",
+        "MulticurrencyFee",
+        "AllowanceDiscount",
+        "AllowanceBreakage",
+        "AllowanceContraBreakage"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Options": {
+      "title": "Order item options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemOptions"
+        }
+      ],
+      "description": "Options of the order item."
+    },
+    "Data": {
+      "title": "Order item data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemData"
+        }
+      ],
+      "description": "Additional order item data.",
+      "nullable": true
+    },
+    "TaxExemptionReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaxExemptionReasonTypeEnum"
+        }
+      ],
+      "description": "Specifies the reason an order item is exempt from tax.\n\nUnknown (Unknown tax exemption reason)\n\nIT_N1 (N1 - Escluse ex art.15)\n\nIT_N2_2 (N2.2 - Non soggette \u2013 altri casi)\n\nIT_N3_5 (N3.5 - Non imponibili \u2013 a seguito di dichiarazioni d\u2019intento)\n\nIT_N4 (N4 - Esenti)\n\nIT_N5 (N5 - Regime del margine / IVA non esposta in fattura)\n\nPL_ZW (ZW - Zwolniony)\n\nPL_NP (NP - Nie podlega)\n\nDE_NATO (NATO-ZAbk - Umsatzsteuerbefreiung gem\u00e4\u00df Artikel 67(3) NATO-Zusatzabkommen)",
+      "nullable": true
+    },
+    "TaxExemptionLegalReference": {
+      "type": "string",
+      "description": "Legal reference that states why this order item is exempt from tax.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItem"
+}

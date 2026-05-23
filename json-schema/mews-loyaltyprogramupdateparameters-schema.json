@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramUpdateParameters",
+  "title": "Loyalty program update parameters",
+  "required": [
+    "LoyaltyProgramId"
+  ],
+  "type": "object",
+  "properties": {
+    "LoyaltyProgramId": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty program.",
+      "format": "uuid"
+    },
+    "Name": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Name of the loyalty program (or `null` if the name should not be updated).",
+      "nullable": true
+    },
+    "Type": {
+      "title": "Loyalty program type update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoyaltyProgramTypeUpdateValue"
+        }
+      ],
+      "description": "Type of the loyalty program (or `null` if the type should not be updated).",
+      "nullable": true
+    },
+    "Subscription": {
+      "title": "Loyalty program subscription update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoyaltyProgramSubscriptionUpdateValue"
+        }
+      ],
+      "description": "Subscription of the loyalty program (or `null` if the subscription should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgramUpdateParameters"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddTaskResult",
+  "title": "AddTaskResult",
+  "type": "object",
+  "properties": {
+    "TaskId": {
+      "type": "string",
+      "description": "Unique identifier of added task.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddTaskResult"
+}

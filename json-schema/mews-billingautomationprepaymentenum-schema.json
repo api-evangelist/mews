@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationPrepaymentEnum",
+  "title": "Billing automation prepayment type",
+  "enum": [
+    "All",
+    "Prepaid"
+  ],
+  "type": "string",
+  "description": "\n\nAll (All)\n\nPrepaid (Prepaid)",
+  "x-enumNames": [
+    "All",
+    "Prepaid"
+  ],
+  "x-enumDescriptions": [
+    "All",
+    "Prepaid"
+  ]
+}

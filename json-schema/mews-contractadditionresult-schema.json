@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ContractAdditionResult",
+  "title": "ContractAdditionResult",
+  "required": [
+    "TravelAgencyContracts"
+  ],
+  "type": "object",
+  "properties": {
+    "TravelAgencyContracts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TravelAgencyContract"
+      },
+      "description": "The added travel agency contracts."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ContractAdditionResult"
+}

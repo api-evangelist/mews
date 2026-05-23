@@ -1,0 +1,141 @@
+{
+  "operationId": "resources_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/resources/getAll",
+  "summary": "Get all resources",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ResourceIds": [
+          "20e00c32-d561-4008-8609-82d8aa525714",
+          "1ec29188-01ca-4294-9983-fac59f85a448",
+          "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        ],
+        "Names": [
+          "101",
+          "102",
+          "Suite 1"
+        ],
+        "Extent": {
+          "Resources": true,
+          "ResourceCategories": false,
+          "ResourceCategoryAssignments": false,
+          "ResourceCategoryImageAssignments": false,
+          "ResourceFeatures": false,
+          "ResourceFeatureAssignments": false,
+          "Inactive": false
+        },
+        "CreatedUtc": {
+          "StartUtc": "2023-01-01T00:00:00Z",
+          "EndUtc": "2023-12-31T23:59:59Z"
+        },
+        "UpdatedUtc": {
+          "StartUtc": "2023-06-01T00:00:00Z",
+          "EndUtc": "2023-06-30T23:59:59Z"
+        },
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "Limitation": {
+          "Count": 100
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Resources": [
+          {
+            "Id": "20e00c32-d561-4008-8609-82d8aa525714",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "IsActive": true,
+            "ParentResourceId": null,
+            "Name": "101",
+            "State": "Clean",
+            "Descriptions": {
+              "en-US": "Standard room with city view"
+            },
+            "CreatedUtc": "2023-01-15T10:30:00Z",
+            "UpdatedUtc": "2023-06-15T14:20:00Z",
+            "Data": {
+              "Discriminator": "Space",
+              "Value": {
+                "FloorNumber": "1",
+                "LocationNotes": "Building A, near elevator"
+              }
+            },
+            "ExternalNames": {
+              "en-US": "Room 101"
+            },
+            "Directions": {
+              "en-US": "Take elevator to first floor, turn right"
+            }
+          },
+          {
+            "Id": "1ec29188-01ca-4294-9983-fac59f85a448",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "IsActive": true,
+            "ParentResourceId": "20e00c32-d561-4008-8609-82d8aa525714",
+            "Name": "101A",
+            "State": "Inspected",
+            "Descriptions": {
+              "en-US": "Bed in room 101"
+            },
+            "CreatedUtc": "2023-01-15T10:35:00Z",
+            "UpdatedUtc": "2023-06-15T14:25:00Z",
+            "Data": {
+              "Discriminator": "Object",
+              "Value": {}
+            },
+            "ExternalNames": {
+              "en-US": "Bed A"
+            },
+            "Directions": {
+              "en-US": "Located in room 101"
+            }
+          },
+          {
+            "Id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "IsActive": true,
+            "ParentResourceId": null,
+            "Name": "Suite 1",
+            "State": "Dirty",
+            "Descriptions": {
+              "en-US": "Luxury suite with ocean view"
+            },
+            "CreatedUtc": "2023-02-01T09:00:00Z",
+            "UpdatedUtc": "2023-06-20T16:45:00Z",
+            "Data": {
+              "Discriminator": "Space",
+              "Value": {
+                "FloorNumber": "5",
+                "LocationNotes": "Penthouse level, private elevator access"
+              }
+            },
+            "ExternalNames": {
+              "en-US": "Presidential Suite"
+            },
+            "Directions": {
+              "en-US": "Private elevator to penthouse level"
+            }
+          }
+        ],
+        "ResourceCategories": null,
+        "ResourceCategoryAssignments": null,
+        "ResourceCategoryImageAssignments": null,
+        "ResourceFeatures": null,
+        "ResourceFeatureAssignments": null,
+        "Cursor": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      }
+    }
+  ]
+}

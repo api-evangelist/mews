@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BaseRatePricingData",
+  "title": "Base rate pricing",
+  "required": [
+    "Amount"
+  ],
+  "type": "object",
+  "properties": {
+    "Amount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Price of the product that overrides the price defined in Mews."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BaseRatePricingData"
+}

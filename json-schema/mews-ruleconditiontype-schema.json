@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleConditionType",
+  "title": "Condition type",
+  "enum": [
+    "Equals",
+    "NotEquals"
+  ],
+  "type": "string",
+  "description": "Type of condition."
+}

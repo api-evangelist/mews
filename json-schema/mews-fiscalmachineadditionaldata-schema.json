@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FiscalMachineAdditionalData",
+  "title": "FiscalMachineAdditionalData",
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FiscalMachineDataDiscriminatorEnum"
+        }
+      ],
+      "description": "Type of additional data for Italian fiscal machine.\n\nItalianFiscalMachineData\n\nItalianFiscalMachinePayload",
+      "nullable": true
+    },
+    "ItalianFiscalMachineData": {
+      "title": "Italian fiscal machine data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItalianFiscalMachineDataV20250623"
+        }
+      ],
+      "description": "Fiscal machine data for Italian fiscal machine.",
+      "nullable": true
+    },
+    "ItalianFiscalMachinePayload": {
+      "title": "Italian fiscal machine payload.",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItalianFiscalMachinePayloadV20250623"
+        }
+      ],
+      "description": "Fiscal machine payload for Italian fiscal machine.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "FiscalMachineAdditionalData"
+}

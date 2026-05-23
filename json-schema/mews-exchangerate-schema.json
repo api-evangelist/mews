@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExchangeRate",
+  "title": "Exchange rate",
+  "required": [
+    "EnterpriseId",
+    "Id",
+    "SourceCurrency",
+    "TargetCurrency",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the Exchange Rate.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/configuration/#enterprise) to which the Exchange Rate belongs.",
+      "format": "uuid"
+    },
+    "SourceCurrency": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 code of the source [Currency](https://mews-systems.gitbook.io/connector-api/operations/currencies/#currency).",
+      "format": "currency"
+    },
+    "TargetCurrency": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 code of the target [Currency](https://mews-systems.gitbook.io/connector-api/operations/currencies/#currency).",
+      "format": "currency"
+    },
+    "Value": {
+      "type": "number",
+      "description": "The exchange rate from the source currency to the target currency.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExchangeRate"
+}

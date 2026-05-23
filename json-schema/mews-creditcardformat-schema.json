@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditCardFormat",
+  "title": "Credit card format",
+  "enum": [
+    "Physical",
+    "Virtual"
+  ],
+  "type": "string",
+  "description": "Format of the credit card."
+}

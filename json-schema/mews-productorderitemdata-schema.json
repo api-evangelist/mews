@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductOrderItemData",
+  "title": "Product order item data",
+  "required": [
+    "ProductId"
+  ],
+  "type": "object",
+  "properties": {
+    "ProductId": {
+      "type": "string",
+      "description": "Unique identifier of the `Product`.",
+      "format": "uuid"
+    },
+    "AgeCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the `AgeCategory`.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductOrderItemData"
+}

@@ -1,0 +1,82 @@
+{
+  "operationId": "cancellationPolicies_getByReservations",
+  "method": "POST",
+  "path": "/api/connector/v1/cancellationPolicies/getByReservations",
+  "summary": "Get cancellation policies by reservations",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ReservationIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "CancellationPolicies": [
+          {
+            "ReservationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Policies": [
+              {
+                "Applicability": "Start",
+                "FeeExtents": [
+                  "TimeUnits",
+                  "Products"
+                ],
+                "ApplicabilityOffset": "P10DT20H30M",
+                "FeeMaximumTimeUnits": 1,
+                "AbsoluteFee": {
+                  "Currency": "EUR",
+                  "Value": 20.0
+                },
+                "RelativeFee": 0.1
+              }
+            ]
+          },
+          {
+            "ReservationId": "4d0201db-36f5-428b-8d11-4f0a65e960cc",
+            "Policies": [
+              {
+                "Applicability": "Start",
+                "FeeExtents": [
+                  "TimeUnits",
+                  "Products"
+                ],
+                "ApplicabilityOffset": "P5DT10H30M",
+                "FeeMaximumTimeUnits": 2,
+                "AbsoluteFee": {
+                  "Currency": "EUR",
+                  "Value": 15.0
+                },
+                "RelativeFee": 0.4
+              },
+              {
+                "Applicability": "Start",
+                "FeeExtents": [
+                  "TimeUnits",
+                  "Products"
+                ],
+                "ApplicabilityOffset": "P10DT10H30M",
+                "FeeMaximumTimeUnits": 2,
+                "AbsoluteFee": {
+                  "Currency": "EUR",
+                  "Value": 15.0
+                },
+                "RelativeFee": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

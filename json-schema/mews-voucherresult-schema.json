@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherResult",
+  "title": "VoucherResult",
+  "type": "object",
+  "properties": {
+    "Vouchers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Voucher"
+      },
+      "description": "Details about vouchers added to the system.",
+      "nullable": true
+    },
+    "VoucherCodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/VoucherCode"
+      },
+      "description": "Information about voucher codes used by customers.",
+      "nullable": true
+    },
+    "VoucherAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/VoucherAssignment"
+      },
+      "description": "The assignments between vouchers and [Rates](https://mews-systems.gitbook.io/connector-api/operations/rates/#rate).",
+      "nullable": true
+    },
+    "Rates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RateForExtent"
+      },
+      "description": "The assigned rates.",
+      "nullable": true
+    },
+    "Companies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Company"
+      },
+      "description": "The related companies and travel agencies.",
+      "nullable": true
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "VoucherResult"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MobileKeyData",
+  "title": "MobileKeyData",
+  "type": "object",
+  "properties": {
+    "EndpointId": {
+      "type": "string",
+      "description": "Unique identifier of the mobile key endpoint.",
+      "nullable": true
+    },
+    "Label": {
+      "type": "string",
+      "description": "Label of the mobile key.",
+      "nullable": true
+    },
+    "Description": {
+      "type": "string",
+      "description": "Description of the mobile key.",
+      "nullable": true
+    },
+    "RevokeMobileKeyId": {
+      "type": "string",
+      "description": "Unique identifier of the mobile key for revocation.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Mobile key command data",
+  "x-schema-id": "MobileKeyData"
+}

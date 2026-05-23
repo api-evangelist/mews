@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherWriteResult",
+  "title": "VoucherWriteResult",
+  "type": "object",
+  "properties": {
+    "Vouchers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Voucher"
+      },
+      "description": "Details about vouchers added to the system.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "VoucherWriteResult"
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyFilterParameters",
+  "title": "CompanyFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "ChainIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Chain`. If not specified, the operation returns data for all chains within scope of the Access Token.",
+      "nullable": true
+    },
+    "MotherCompanyIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of mother `Company`.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the companies were created.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the companies were updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "TimeFilter": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/CompanyTimeFilter"
+        }
+      ],
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use CreatedUtc or UpdatedUtc instead."
+    },
+    "StartUtc": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use CreatedUtc or UpdatedUtc instead."
+    },
+    "EndUtc": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use CreatedUtc or UpdatedUtc instead."
+    },
+    "Ids": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of [Companies](https://mews-systems.gitbook.io/connector-api/operations/#company).",
+      "nullable": true
+    },
+    "ExternalIdentifiers": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identifiers of [Company](https://mews-systems.gitbook.io/connector-api/operations/#company) from external system.",
+      "nullable": true
+    },
+    "Names": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Names of [Companies](https://mews-systems.gitbook.io/connector-api/operations/#company).",
+      "nullable": true
+    },
+    "ActivityStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityStates"
+      },
+      "description": "Whether to return only active, only deleted, or both types of record. If not specified, both active and deleted records will be returned.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyFilterParameters"
+}

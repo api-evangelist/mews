@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentMethodRequestPaymentMethodsEnum",
+  "title": "Acceptable payment methods",
+  "enum": [
+    "PaymentCard",
+    "SepaDirectDebit"
+  ],
+  "type": "string",
+  "description": "\n\nPaymentCard\n\nSepaDirectDebit",
+  "x-enumNames": [
+    "PaymentCard",
+    "SepaDirectDebit"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

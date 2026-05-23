@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TravelAgencyContract",
+  "title": "Travel agency contract",
+  "required": [
+    "CompanyId",
+    "CreatedUtc",
+    "Id",
+    "IsActive",
+    "Options",
+    "ServiceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the contract.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` the contract is related to.",
+      "format": "uuid"
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the contracted `Company`.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the contract is still active."
+    },
+    "CommissionIncluded": {
+      "type": "boolean",
+      "description": "Whether commission of the travel agency is included in the rate. When `CommissionIncluded` is not provided in the response, that means commission is unspecified, when set to true it means the the commission is included in the rate and false means the commission in not included in the rate.",
+      "nullable": true
+    },
+    "Commission": {
+      "type": "number",
+      "description": "Commission of the travel agency.",
+      "format": "double",
+      "nullable": true
+    },
+    "ChannelManagerAbsoluteAdjustment": {
+      "type": "number",
+      "description": "Flat fee added to (or subtracted from) the reservation price when coming from Channel Managers.",
+      "format": "double",
+      "nullable": true
+    },
+    "ChannelManagerRelativeAdjustment": {
+      "type": "number",
+      "description": "Percentage of the reservation price added to (or subtracted from) price when coming from Channel Managers.",
+      "format": "double",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Travel agency contract options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TravelAgencyContractOptions"
+        }
+      ],
+      "description": "Options of the travel agency contract."
+    },
+    "AccountingCode": {
+      "type": "string",
+      "description": "Accounting code of the travel agency contract.",
+      "nullable": true
+    },
+    "InvoiceDueInterval": {
+      "type": "string",
+      "description": "The maximum time, when the invoice has to be be paid in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "ChannelManagerBusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the `BusinessSegment` used for incoming reservations originating from Channel Managers, for this particular contract.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ContactPerson": {
+      "type": "string",
+      "description": "Contact person of the travel agency.",
+      "nullable": true
+    },
+    "ContactEmail": {
+      "type": "string",
+      "description": "Contact email of the travel agency.",
+      "format": "email",
+      "nullable": true
+    },
+    "AdditionalContactInfo": {
+      "type": "string",
+      "description": "Additional contact info of the travel agency.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes of the travel agency contract.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the travel agency contract in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the travel agency contract in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TravelAgencyContract"
+}

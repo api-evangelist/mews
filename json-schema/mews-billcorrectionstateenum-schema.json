@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillCorrectionStateEnum",
+  "title": "Bill correction state",
+  "enum": [
+    "Bill",
+    "CorrectiveBill"
+  ],
+  "type": "string",
+  "description": "\n\nBill (Regular bill.)\n\nCorrectiveBill (Corrective bill, i.e. the `CorrectionType` is either `Edit`, `Cancellation`, or `ReceivablePaymentsBalance`.)",
+  "x-enumNames": [
+    "Bill",
+    "CorrectiveBill"
+  ],
+  "x-enumDescriptions": [
+    "Regular bill.",
+    "Corrective bill, i.e. the `CorrectionType` is either `Edit`, `Cancellation`, or `ReceivablePaymentsBalance`."
+  ]
+}

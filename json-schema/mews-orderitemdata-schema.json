@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemData",
+  "title": "Order item data",
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Order item data discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemDataDiscriminatorEnum"
+        }
+      ],
+      "description": "Discriminator pointing to the fields within this object that contains additional data.\n\nRebate (Rebate.)\n\nProduct (Product.)\n\nAllowanceDiscount (Allowance discount.)\n\nAllowanceProfits (Allowance profits.)",
+      "x-enumNames": [
+        "Rebate",
+        "Product",
+        "AllowanceDiscount",
+        "AllowanceProfits"
+      ],
+      "x-enumDescriptions": [
+        "Rebate.",
+        "Product.",
+        "Allowance discount.",
+        "Allowance profits."
+      ]
+    },
+    "Rebate": {
+      "title": "Rebate data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemRebateData"
+        }
+      ],
+      "description": "Contains additional data in the case of rebate item.",
+      "nullable": true
+    },
+    "Product": {
+      "title": "Product data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemProductData"
+        }
+      ],
+      "description": "Contains additional data in the case of product item.",
+      "nullable": true
+    },
+    "AllowanceDiscount": {
+      "title": "Allowance discount data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemAllowanceDiscountData"
+        }
+      ],
+      "description": "Contains additional data in the case of allowance discount item.",
+      "nullable": true
+    },
+    "AllowanceProfits": {
+      "title": "Allowance profits data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderItemAllowanceProfitsData"
+        }
+      ],
+      "description": "Contains additional data in the case of allowance profits item.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Additional order item data.",
+  "x-schema-id": "OrderItemData"
+}

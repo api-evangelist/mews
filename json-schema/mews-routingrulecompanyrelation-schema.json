@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleCompanyRelation",
+  "title": "Company relation",
+  "enum": [
+    "PartnerCompany",
+    "TravelAgency"
+  ],
+  "type": "string",
+  "description": "Relation of the company to the routing rule."
+}

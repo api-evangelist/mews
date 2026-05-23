@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CostParameters",
+  "title": "CostParameters",
+  "required": [
+    "Amount",
+    "Currency",
+    "Tax"
+  ],
+  "type": "object",
+  "properties": {
+    "Amount": {
+      "type": "number",
+      "format": "double"
+    },
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "format": "currency"
+    },
+    "Tax": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CostParameters"
+}

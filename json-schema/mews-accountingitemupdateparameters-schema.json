@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingItemUpdateParameters",
+  "title": "Accounting item update",
+  "required": [
+    "AccountingItemId",
+    "BillId"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountingItemId": {
+      "type": "string",
+      "description": "Unique identifier of the `AccountingItem`.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the account (for example `Customer`) the item is assigned to (or `null` if the assigned account should not be updated). If defined, valid account identifier must be provided.",
+      "nullable": true
+    },
+    "BillId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the `Bill` the items is assigned to. It's possible to assign item to bill belonging to another account, in that case both `AccountId` and `BillId` must be provided."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingItemUpdateParameters"
+}

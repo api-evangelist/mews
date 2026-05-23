@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddedReservation",
+  "title": "Added reservation",
+  "required": [
+    "Reservation"
+  ],
+  "type": "object",
+  "properties": {
+    "Identifier": {
+      "type": "string",
+      "description": "Identifier of the reservation within the transaction.",
+      "nullable": true
+    },
+    "Reservation": {
+      "title": "Reservation (ver 2017-04-12)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationOld"
+        }
+      ],
+      "description": "The added reservation."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddedReservation"
+}

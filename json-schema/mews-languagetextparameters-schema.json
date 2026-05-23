@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LanguageTextParameters",
+  "title": "LanguageTextParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "LanguageCodes",
+    "Scope"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "LanguageCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Language-culture codes of the `Languages` whose texts to return."
+    },
+    "Scope": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Scope of texts to return."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LanguageTextParameters"
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditCardParameters",
+  "title": "Credit card parameters",
+  "required": [
+    "Name",
+    "Number",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Type": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Type of the credit card, one of: `Visa`, `MasterCard`, `Amex`, `Discover`, `DinersClub`, `Jcb`, `EnRoute`, `Maestro`, `UnionPay`."
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Obfuscated credit card number. At most first six digits and last four digits can be specified, the digits in between should be replaced with `*`. It is possible to provide even more obfuscated number or just last four digits. **Never provide full credit card number**. For example `411111******1111`."
+    },
+    "Expiration": {
+      "type": "string",
+      "description": "Expiration of the credit card in format `MM/YYYY`, e.g. `12/2016` or `04/2017`.",
+      "nullable": true
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the card holder."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "CreditCardParameters"
+}

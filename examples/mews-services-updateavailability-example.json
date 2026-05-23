@@ -1,0 +1,35 @@
+{
+  "operationId": "services_updateAvailability",
+  "method": "POST",
+  "path": "/api/connector/v1/services/updateAvailability",
+  "summary": "Update service availability",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "AvailabilityUpdates": [
+          {
+            "FirstTimeUnitStartUtc": "2020-10-05T23:00:00Z",
+            "LastTimeUnitStartUtc": "2020-10-05T23:00:00Z",
+            "AvailabilityBlockId": "23e85a44-d95a-4dcf-9f36-acb000b10abe",
+            "ResourceCategoryId": "46bc1498-38cf-4d03-b144-aa69012f5d50",
+            "UnitCountAdjustment": {
+              "Value": 6
+            }
+          },
+          {
+            "FirstTimeUnitStartUtc": "2020-10-07T23:00:00Z",
+            "LastTimeUnitStartUtc": "2020-10-08T23:00:00Z",
+            "ResourceCategoryId": "46bc1498-38cf-4d03-b144-aa69012f5d50",
+            "UnitCountAdjustment": {}
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

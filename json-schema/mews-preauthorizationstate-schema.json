@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PreauthorizationState",
+  "title": "Preauthorization state",
+  "enum": [
+    "Chargeable",
+    "Expired",
+    "Cancelled",
+    "Charged",
+    "Pending",
+    "Failed"
+  ],
+  "type": "string",
+  "description": "State of the preauthorization.",
+  "x-enumDescriptions": [
+    "Created and prepared for the charging.",
+    "A preauthorization that is not charged and expired.",
+    "A preauthorization that was canceled before charging.",
+    "Charged preauthorization.",
+    "A preauthorization that is waiting for the charge to be processed.",
+    "A preauthorization that failed to be charged."
+  ]
+}

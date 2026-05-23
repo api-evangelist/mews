@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlock",
+  "title": "Availability block",
+  "required": [
+    "AvailabilityBlockNumber",
+    "BusinessSegmentId",
+    "CreatedUtc",
+    "FirstTimeUnitStartUtc",
+    "IsActive",
+    "LastTimeUnitStartUtc",
+    "PickupDistribution",
+    "ReleaseStrategy",
+    "State",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the availability block.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises#enterprise).",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` the block is assigned to.",
+      "format": "uuid"
+    },
+    "RateId": {
+      "type": "string",
+      "description": "Unique identifier of the `Rate` the block is assigned to.",
+      "format": "uuid"
+    },
+    "VoucherId": {
+      "type": "string",
+      "description": "Unique identifier of the `Voucher` used to access specified private `Rate`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BookerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` on whose behalf the block was made.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the `Company` linked to the block.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "TravelAgencyId": {
+      "type": "string",
+      "description": "Unique identifier of `Company`with `Travel agency contract` the Availability Block is related to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Budget": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "The tentative budget for the total price of reservations in the block.",
+      "nullable": true
+    },
+    "State": {
+      "title": "Availability block state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AvailabilityBlockStateEnum"
+        }
+      ],
+      "description": "State of the availability block.\n\nConfirmed (The block deducts availability and can have reservations assigned.)\n\nOptional (The block deducts availability and cannot have reservations assigned.)\n\nInquired (The block does not deduct availability and cannot have reservations assigned (waitlist).)\n\nCanceled (The block does not deduct availability and cannot have reservations assigned (waitlist).)",
+      "x-enumNames": [
+        "Confirmed",
+        "Optional",
+        "Inquired",
+        "Canceled"
+      ],
+      "x-enumDescriptions": [
+        "The block deducts availability and can have reservations assigned.",
+        "The block deducts availability and cannot have reservations assigned.",
+        "The block does not deduct availability and cannot have reservations assigned (waitlist).",
+        "The block does not deduct availability and cannot have reservations assigned (waitlist)."
+      ]
+    },
+    "ReservationPurpose": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationPurposeEnum"
+        }
+      ],
+      "description": "The purpose of the block.\n\nLeisure\n\nBusiness\n\nStudent",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the block in UTC timezone in ISO 8601 format."
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the block in UTC timezone in ISO 8601 format."
+    },
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first time unit, in UTC timezone ISO 8601 format. See [Time units](https://mews-systems.gitbook.io/connector-api/concepts/time-units)."
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last time unit, in UTC timezone ISO 8601 format. See [Time units](https://mews-systems.gitbook.io/connector-api/concepts/time-units)."
+    },
+    "ReleasedUtc": {
+      "type": "string",
+      "description": "The moment when the block and its availability is released in UTC timezone in ISO 8601 format. Mutually exclusive with `RollingReleaseOffset`; the block will not be automatically released if neither `ReleasedUtc` nor `RollingReleaseOffsetUtc` is specified.",
+      "nullable": true
+    },
+    "RollingReleaseOffset": {
+      "type": "string",
+      "description": "Exact offset from the start of availability adjustments to the moment the individual days in the adjustment should be released, in ISO 8601 duration format. Mutually exclusive with `ReleasedUtc`; the block will not be automatically released if neither `ReleasedUtc` nor `RollingReleaseOffsetUtc` is specified.",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the block from external system.",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the block in Mews.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes of the block.",
+      "nullable": true
+    },
+    "PickupDistribution": {
+      "title": "Pickup distribution",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PickupDistributionEnum"
+        }
+      ],
+      "description": "Whether assigning spaces to reservations within an availability block is done as a single group or divided into individual groups.\n\nAllInOneGroup (All created reservations in the block are added to the same reservation group.)\n\nIndividualGroups (Reservations can be picked up in multiple groups, with up to 750 reservations per group.)",
+      "x-enumNames": [
+        "AllInOneGroup",
+        "IndividualGroups"
+      ],
+      "x-enumDescriptions": [
+        "All created reservations in the block are added to the same reservation group.",
+        "Reservations can be picked up in multiple groups, with up to 750 reservations per group."
+      ]
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the `Availability Block` is still active."
+    },
+    "QuoteId": {
+      "type": "string",
+      "description": "Unique identifier of the Mews Events quote associated with the availability block.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AvailabilityBlockNumber": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique number for a specific availability block within the Mews system."
+    },
+    "ReleaseStrategy": {
+      "title": "Release strategy",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReleaseStrategyEnum"
+        }
+      ],
+      "description": "The strategy for automatic release of the availability block.\n\nFixedRelease (The availability block is released at a fixed time.)\n\nRollingRelease (Each availability adjustment is released at a fixed offset from its start.)\n\nNone (The availability block is not automatically released.)",
+      "x-enumNames": [
+        "FixedRelease",
+        "RollingRelease",
+        "None"
+      ],
+      "x-enumDescriptions": [
+        "The availability block is released at a fixed time.",
+        "Each availability adjustment is released at a fixed offset from its start.",
+        "The availability block is not automatically released."
+      ]
+    },
+    "PurchaseOrderNumber": {
+      "type": "string",
+      "description": "Unique number of the purchase order. This number is propagated to any newly picked up `Reservation` within the block.",
+      "nullable": true
+    },
+    "BusinessSegmentId": {
+      "type": "string",
+      "description": "Unique identifier of the associated `Business segment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CanceledUtc": {
+      "type": "string",
+      "description": "Date and time of the block cancellation in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "CancellationReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceOrderCancellationReasonEnum"
+        }
+      ],
+      "description": "Cancellation reason of the availability block.\n\nOther\n\nConfirmationMissed\n\nBookedElsewhere\n\nForceMajeure\n\nGuestComplaint\n\nNoShow\n\nPriceTooHigh\n\nServiceNotAvailable\n\nInputError\n\nInvalidPayment\n\nTravelAgency\n\nRequestedByGuest\n\nUpdate\n\nBookingAbandoned\n\nRequestedByBooker",
+      "nullable": true
+    },
+    "CancellationReasonDetail": {
+      "type": "string",
+      "description": "Additional details of availability block cancellation.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityBlock"
+}

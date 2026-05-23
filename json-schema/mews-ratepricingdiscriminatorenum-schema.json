@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RatePricingDiscriminatorEnum",
+  "title": "Rate pricing discriminator",
+  "enum": [
+    "BaseRatePricing",
+    "DependentRatePricing"
+  ],
+  "type": "string",
+  "description": "\n\nBaseRatePricing\n\nDependentRatePricing",
+  "x-enumNames": [
+    "BaseRatePricing",
+    "DependentRatePricing"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

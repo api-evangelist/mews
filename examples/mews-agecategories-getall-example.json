@@ -1,0 +1,88 @@
+{
+  "operationId": "ageCategories_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/ageCategories/getAll",
+  "summary": "Get all age categories",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "ServiceIds": [
+          "bd26d8db-86da-4f96-9efc-e5a4654a4a94"
+        ],
+        "AgeCategoryIds": [
+          "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+          "ab58c939-be30-4a60-8f75-ae1600c60c9f"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2023-10-01T00:00:00Z",
+          "EndUtc": "2023-10-31T00:00:00Z"
+        },
+        "ActivityStates": [
+          "Active"
+        ],
+        "Limitation": {
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "AgeCategories": [
+          {
+            "Id": "ab58c939-be30-4a60-8f75-ae1600c60c9f",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "MinimalAge": null,
+            "MaximalAge": null,
+            "Names": {
+              "cs-CZ": "Dosp\u011bl\u00ed",
+              "da-DK": "Voksne",
+              "de-CH": "Erwachsene",
+              "de-DE": "Erwachsene",
+              "el-GR": "\u0395\u03bd\u03ae\u03bb\u03b9\u03ba\u03bf\u03b9",
+              "en-GB": "Adults"
+            },
+            "ShortNames": null,
+            "CreatedUtc": "2023-10-01T11:48:57Z",
+            "UpdatedUtc": "2023-10-28T11:48:57Z",
+            "Classification": "Adult",
+            "IsActive": false,
+            "ExternalIdentifier": "Adult"
+          },
+          {
+            "Id": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "MinimalAge": 0,
+            "MaximalAge": 18,
+            "Names": {
+              "cs-CZ": "D\u011bti",
+              "da-DK": "B\u00f8rn",
+              "de-CH": "Kinder",
+              "de-DE": "Kinder",
+              "el-GR": "\u03a0\u03b1\u03b9\u03b4\u03b9\u03ac",
+              "en-GB": "Children"
+            },
+            "ShortNames": null,
+            "CreatedUtc": "2023-10-01T11:48:57Z",
+            "UpdatedUtc": "2023-10-28T11:48:57Z",
+            "Classification": "Child",
+            "IsActive": false,
+            "ExternalIdentifier": null
+          }
+        ],
+        "Cursor": "0b9560fb-055d-47d3-a6d4-e579c44ca558"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationPersonCount",
+  "title": "Age category parameters",
+  "required": [
+    "AgeCategoryId",
+    "Count"
+  ],
+  "type": "object",
+  "properties": {
+    "AgeCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Age category](https://mews-systems.gitbook.io/connector-api/operations/agecategories#age-category).",
+      "format": "uuid"
+    },
+    "Count": {
+      "type": "integer",
+      "description": "Number of people of a given age category. Only positive value is accepted.",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationPersonCount"
+}

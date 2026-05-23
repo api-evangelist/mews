@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAssignmentUpdateParameters",
+  "title": "Billing automation assignment update parameters",
+  "required": [
+    "BillingAutomationAssignmentId"
+  ],
+  "type": "object",
+  "properties": {
+    "BillingAutomationAssignmentId": {
+      "type": "string",
+      "description": "Unique identifier of the billing automation assignment.",
+      "format": "uuid"
+    },
+    "RoutedItemTypes": {
+      "title": "Billing automation item types update parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationItemTypesUpdateParameters"
+        }
+      ],
+      "description": "Type of items that are going to be routed (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "RateIds": {
+      "title": "Guid array update value",
+      "maxLength": 100,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidIEnumerableUpdateValue"
+        }
+      ],
+      "description": "Unique identifiers of `Rates` that will be applied as billing automation condition (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "ProductCategoryIds": {
+      "title": "Guid array update value",
+      "maxLength": 100,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidIEnumerableUpdateValue"
+        }
+      ],
+      "description": "Unique identifiers of `Product Categories` that will be applied as billing automation condition (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "ProductIds": {
+      "title": "Guid array update value",
+      "maxLength": 100,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidIEnumerableUpdateValue"
+        }
+      ],
+      "description": "Unique identifiers of `Products` that will be applied as billing automation condition (or `null` should it not be updated).",
+      "nullable": true
+    },
+    "AccountingCategories": {
+      "title": "Billing automation accounting category assignment array update value",
+      "maxLength": 100,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationAccountingCategoryAssignmentIEnumerableUpdateValue"
+        }
+      ],
+      "description": "List of `Accounting Categories` with their `ItemTypes` that will be applied as billing automation condition (or `null` should it not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAssignmentUpdateParameters"
+}

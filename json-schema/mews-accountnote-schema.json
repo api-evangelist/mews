@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNote",
+  "title": "Account note",
+  "required": [
+    "AccountId",
+    "AccountType",
+    "Classifications",
+    "Content",
+    "CreatorProfile",
+    "Id",
+    "IsActive",
+    "UpdaterProfile"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the account note.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account.",
+      "format": "uuid"
+    },
+    "Content": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The content of the account note."
+    },
+    "AccountType": {
+      "title": "Account type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountTypeEnum"
+        }
+      ],
+      "description": "Specifying type of associated account.\n\nCompany\n\nCustomer",
+      "x-enumNames": [
+        "Company",
+        "Customer"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "Classifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountNoteClassificationEnum"
+      },
+      "description": "Specifying the classifications of the note based on account type."
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the account note is still active."
+    },
+    "CreatorProfile": {
+      "title": "Profile data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileData"
+        }
+      ],
+      "description": "The profile data of the user who created the account note."
+    },
+    "UpdaterProfile": {
+      "title": "Profile data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileData"
+        }
+      ],
+      "description": "The profile data of the user who updated the account note."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountNote"
+}

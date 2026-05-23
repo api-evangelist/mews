@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleResult",
+  "title": "RuleResult",
+  "required": [
+    "Rules"
+  ],
+  "type": "object",
+  "properties": {
+    "Rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Rule"
+      },
+      "description": "Rules used with reservation creations and modifications."
+    },
+    "RuleActions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RuleAction"
+      },
+      "description": "Rule actions applied in rules.",
+      "nullable": true
+    },
+    "Rates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RateForExtent"
+      },
+      "description": "Rates used in conditions.",
+      "nullable": true
+    },
+    "RateGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RateGroupOld"
+      },
+      "description": "Rate groups used in conditions.",
+      "nullable": true
+    },
+    "ResourceCategories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategory"
+      },
+      "description": "Resource categories used in conditions.",
+      "nullable": true
+    },
+    "BusinessSegments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BusinessSegment"
+      },
+      "description": "Business segments used in conditions.",
+      "nullable": true
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RuleResult"
+}

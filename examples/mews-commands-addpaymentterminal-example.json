@@ -1,0 +1,33 @@
+{
+  "operationId": "commands_addPaymentTerminal",
+  "method": "POST",
+  "path": "/api/connector/v1/commands/addPaymentTerminal",
+  "summary": "Add payment command",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "7059D2C25BF64EA681ACAB3A00B859CC-D91BFF2B1E3047A3E0DEC1D57BE1382",
+        "Client": "MyPOS 1.0",
+        "Type": "Payment",
+        "TerminalId": "be35b39e-ad7e-460a-8de9-4c7581e016a2",
+        "CustomerId": "35d4b117-4e60-44a3-9580-c582117eff98",
+        "BillId": null,
+        "Amount": {
+          "Currency": "EUR",
+          "Value": 230
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "CommandId": "2391a3df-1c61-4131-b6f8-c85b4234adcb"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationOptions",
+  "title": "Reservation options",
+  "required": [
+    "AllCompanionsCheckedIn",
+    "AnyCompanionCheckedIn",
+    "OwnerCheckedIn"
+  ],
+  "type": "object",
+  "properties": {
+    "OwnerCheckedIn": {
+      "type": "boolean",
+      "description": "Owner of the reservation checked in."
+    },
+    "AllCompanionsCheckedIn": {
+      "type": "boolean",
+      "description": "All companions of the reservation checked in."
+    },
+    "AnyCompanionCheckedIn": {
+      "type": "boolean",
+      "description": "Any companion of the reservation checked in."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationOptions"
+}

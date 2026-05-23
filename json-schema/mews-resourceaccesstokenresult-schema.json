@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessTokenResult",
+  "title": "ResourceAccessTokenResult",
+  "required": [
+    "ResourceAccessTokens"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceAccessTokens": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceAccessToken"
+      },
+      "description": "Resource access tokens."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last and hence oldest item returned. This can be used in `Limitation` in a subsequent request to fetch the next batch of older tokens. If `Limitation` is specified in the request message, then `Cursor` will always be included in the response message.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceAccessTokenResult"
+}

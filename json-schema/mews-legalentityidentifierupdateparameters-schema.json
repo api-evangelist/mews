@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LegalEntityIdentifierUpdateParameters",
+  "title": "Customer update legal entity identifiers",
+  "type": "object",
+  "properties": {
+    "ItDestinationCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Italian destination code (or `null` if the Italian destination code should not be updated).",
+      "nullable": true
+    },
+    "ItFiscalCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Italian fiscal code (or `null` if the Italian fiscal code should not be updated).",
+      "nullable": true
+    },
+    "ItLotteryCode": {
+      "title": "String update value",
+      "maxLength": 15,
+      "minLength": 2,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Italian lottery code (or `null` if the Italian lottery code should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LegalEntityIdentifierUpdateParameters"
+}

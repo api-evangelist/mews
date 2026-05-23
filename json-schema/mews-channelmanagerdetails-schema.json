@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChannelManagerDetails",
+  "title": "Reservation channel manager details",
+  "required": [
+    "CreatedUtc",
+    "RequestedRateCode",
+    "ReservationId"
+  ],
+  "type": "object",
+  "properties": {
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation`.",
+      "format": "uuid"
+    },
+    "RequestedRateCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Rate code requested by the channel manager for this reservation."
+    },
+    "ChannelManagerName": {
+      "type": "string",
+      "description": "Name of the Channel Manager associated with this reservation.",
+      "nullable": true
+    },
+    "ChannelNumber": {
+      "type": "string",
+      "description": "Number of the reservation within the Channel (i.e. OTA, GDS, CRS, etc) in case the reservation group originates there (e.g. Booking.com confirmation number).",
+      "nullable": true
+    },
+    "ChannelManagerGroupNumber": {
+      "type": "string",
+      "description": "Number of the reservation group within a Channel Manager.",
+      "nullable": true
+    },
+    "ChannelManagerNumber": {
+      "type": "string",
+      "description": "Unique number of the reservation within the reservation group.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The timestamp when the Channel Manager reservation was created.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ChannelManagerDetails"
+}

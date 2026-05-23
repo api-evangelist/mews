@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillsUpdateResult",
+  "title": "BillsUpdateResult",
+  "required": [
+    "Bills"
+  ],
+  "type": "object",
+  "properties": {
+    "Bills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Bill"
+      },
+      "description": "Updated bills."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillsUpdateResult"
+}

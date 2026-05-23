@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddExternalPaymentResult",
+  "title": "AddExternalPaymentResult",
+  "type": "object",
+  "properties": {
+    "ExternalPaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the [Payment item](https://mews-systems.gitbook.io/connector-api/operations/accountingitems/#payment-item).",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddExternalPaymentResult"
+}

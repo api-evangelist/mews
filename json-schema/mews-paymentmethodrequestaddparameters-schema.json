@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentMethodRequestAddParameters",
+  "title": "Payment method request parameters",
+  "required": [
+    "AccessToken",
+    "AccountId",
+    "Client",
+    "ClientToken",
+    "Description",
+    "ExpirationUtc",
+    "PaymentMethods"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (`Customer` or `Company`) to which the payment method request is issued.",
+      "format": "uuid"
+    },
+    "ExpirationUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the payment method request's expiration in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Description": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "type": "string",
+      "description": "Description of the payment method request displayed to the customer."
+    },
+    "Notes": {
+      "maxLength": 1000,
+      "type": "string",
+      "description": "Payment method request's internal notes.",
+      "nullable": true
+    },
+    "PaymentMethods": {
+      "minItems": 1,
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentMethodRequestPaymentMethodsEnum"
+      },
+      "description": "Collectable payment methods."
+    },
+    "Email": {
+      "maxLength": 500,
+      "type": "string",
+      "description": "Account email address for sending the payment method request. If not provided, uses the email from the customer profile.",
+      "format": "email",
+      "nullable": true
+    },
+    "EmailsToSend": {
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentMethodRequestEmailTypesEnum"
+      },
+      "description": "Email notifications to send. If not specified, all emails will be sent. To disable all emails send an empty list. Additional email types may be added in the future.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentMethodRequestAddParameters"
+}

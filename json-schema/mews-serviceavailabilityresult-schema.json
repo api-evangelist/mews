@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceAvailabilityResult",
+  "title": "ServiceAvailabilityResult",
+  "required": [
+    "CategoryAvailabilities",
+    "TimeUnitStartsUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "DatesUtc": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "nullable": true,
+      "deprecated": true
+    },
+    "TimeUnitStartsUtc": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Set of all time units covered by the time interval; expressed in UTC timezone ISO 8601 format."
+    },
+    "CategoryAvailabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CategoryAvailability"
+      },
+      "description": "Resource category availabilities."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceAvailabilityResult"
+}

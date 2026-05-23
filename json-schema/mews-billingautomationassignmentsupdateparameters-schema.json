@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAssignmentsUpdateParameters",
+  "title": "Billing automation assignments update parameters",
+  "required": [
+    "AccessToken",
+    "BillingAutomationId",
+    "Client",
+    "ClientToken"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "BillingAutomationId": {
+      "type": "string",
+      "description": "Unique identifier of the billing automation.",
+      "format": "uuid"
+    },
+    "AssignmentsToAdd": {
+      "maxItems": 20,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillingAutomationAssignmentAddParameters"
+      },
+      "description": "Parameters for adding new assignments (or null if not being updated).",
+      "nullable": true
+    },
+    "AssignmentsToUpdate": {
+      "maxItems": 20,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillingAutomationAssignmentUpdateParameters"
+      },
+      "description": "List of parameters for updating existing assignments (or null if not being updated).",
+      "nullable": true
+    },
+    "AssignmentIdsToRemove": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "List of unique identifiers for assignments to be removed (or null if not being updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAssignmentsUpdateParameters"
+}

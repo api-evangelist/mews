@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentInvoiceData",
+  "title": "Invoice payment data",
+  "required": [
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "InvoiceId": {
+      "type": "string",
+      "description": "Unique identifier of the invoice `Bill`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Type": {
+      "title": "Invoice payment type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InvoicePaymentTypeEnum"
+        }
+      ],
+      "description": "Type of the invoice payment.\n\nReceivable\n\nBalancing\n\nUnderpaymentBalancingReceivable\n\nOverpaymentBalancingReceivable\n\nOverpayment",
+      "x-enumNames": [
+        "Receivable",
+        "Balancing",
+        "UnderpaymentBalancingReceivable",
+        "OverpaymentBalancingReceivable",
+        "Overpayment"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentInvoiceData"
+}

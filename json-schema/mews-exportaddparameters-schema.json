@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportAddParameters",
+  "title": "ExportAddParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "EntityType"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EntityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportEntityTypeEnum"
+        }
+      ],
+      "description": "Specifies the type of entity which should be exported.\n\nOrderItem\n\nPayment\n\nReservation\n\nCustomer\n\nCompany\n\nBill\n\nAvailabilityAdjustment\n\nAvailabilityBlock\n\nResourceBlock\n\nLedgerEntry (**Beta testing - subject to change.** See [Ledger entry type](https://docs.mews.com/connector-api/operations/_export-types#ledger-entry).)"
+    },
+    "Scope": {
+      "title": "Export scope parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportScopeParameters"
+        }
+      ],
+      "description": "Selects enterprises or chains for which the data should be exported. Which one is used depends on `EntityType`. If not specified, the export will include all enterprises or chains the client has access to.",
+      "nullable": true
+    },
+    "Filters": {
+      "title": "Export data filters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportDataFilters"
+        }
+      ],
+      "description": "Specifies filters to apply on the exported data set. If omitted, the export will include all available data.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportAddParameters"
+}

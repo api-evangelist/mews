@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceCategoryAvailabilityV20240122",
+  "title": "Resource category availability (ver 2024-01-22)",
+  "required": [
+    "Metrics",
+    "ResourceCategoryId"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Resource category](https://mews-systems.gitbook.io/connector-api/operations/resources#resource-category).",
+      "format": "uuid"
+    },
+    "Metrics": {
+      "title": "ResourceAvailabilityMetricTypeInt32IEnumerableIDictionary",
+      "type": "object",
+      "properties": {
+        "OutOfOrderBlocks": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "PublicAvailabilityAdjustment": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "OtherServiceReservationCount": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "Occupied": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "ConfirmedReservations": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "OptionalReservations": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "BlockAvailability": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "AllocatedBlockAvailability": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "UsableResources": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "ActiveResources": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "HouseUse": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "description": "Dictionary keys are names of [Service availability metrics](https://mews-systems.gitbook.io/connector-api/operations/services#service-availability-metrics), values are arrays of integers with metric values for corresponding time unit in `TimeUnitStartsUtc`.",
+      "x-schema-id": "ResourceAvailabilityMetricTypeInt32IEnumerableIDictionary"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceCategoryAvailabilityV20240122"
+}

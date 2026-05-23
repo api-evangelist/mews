@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanionshipResult",
+  "title": "CompanionshipResult",
+  "type": "object",
+  "properties": {
+    "Companionships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Companionship"
+      },
+      "description": "Companionships.",
+      "nullable": true
+    },
+    "Reservations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationOld"
+      },
+      "description": "The accompanied reservations.",
+      "nullable": true
+    },
+    "ReservationGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationGroupOld"
+      },
+      "description": "The accompanied reservation groups.",
+      "nullable": true
+    },
+    "Customers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Customer"
+      },
+      "description": "Customers that belong to the companionships.",
+      "nullable": true
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanionshipResult"
+}

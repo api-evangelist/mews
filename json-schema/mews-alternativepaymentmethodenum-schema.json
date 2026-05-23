@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AlternativePaymentMethodEnum",
+  "title": "Alternative payment method data discriminator",
+  "enum": [
+    "Ideal",
+    "ApplePay",
+    "GooglePay",
+    "SepaDirectDebit"
+  ],
+  "type": "string",
+  "description": "\n\nIdeal (iDEAL data.)\n\nApplePay (No additional data.)\n\nGooglePay (No additional data.)\n\nSepaDirectDebit (SEPA Direct Debit data.)",
+  "x-enumNames": [
+    "Ideal",
+    "ApplePay",
+    "GooglePay",
+    "SepaDirectDebit"
+  ],
+  "x-enumDescriptions": [
+    "iDEAL data.",
+    "No additional data.",
+    "No additional data.",
+    "SEPA Direct Debit data."
+  ],
+  "x-extensible": true
+}

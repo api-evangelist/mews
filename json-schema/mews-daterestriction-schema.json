@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DateRestriction",
+  "title": "Date restriction",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the rate restriction.",
+      "format": "uuid"
+    },
+    "RateId": {
+      "type": "string",
+      "description": "Unique identifier of the rate.",
+      "format": "uuid"
+    },
+    "IsInherited": {
+      "type": "boolean",
+      "description": "Whether the rate restriction is inherited from the parent rate."
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Start of the rate restriction in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "description": "End of the rate restriction in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "Days": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The restricted days of week.",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "Identifiers of from external systems.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DateRestriction"
+}

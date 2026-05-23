@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RelativeTaxRateStrategy",
+  "title": "Relative tax rate strategy data",
+  "required": [
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "number",
+      "description": "Tax rate, e.g. `0.21` in case of 21% tax rate.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RelativeTaxRateStrategy"
+}

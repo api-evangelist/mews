@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditCard",
+  "title": "Credit card",
+  "required": [
+    "CreatedUtc",
+    "CustomerId",
+    "EnterpriseId",
+    "Format",
+    "Id",
+    "IsActive",
+    "Kind",
+    "State",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the credit card.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the credit card owner (`Customer`).",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the credit card is still active."
+    },
+    "State": {
+      "$ref": "#/components/schemas/CreditCardState"
+    },
+    "Kind": {
+      "$ref": "#/components/schemas/CreditCardKind"
+    },
+    "Format": {
+      "$ref": "#/components/schemas/CreditCardFormat"
+    },
+    "Type": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/CreditCardType"
+        }
+      ],
+      "description": "Type of the credit card.",
+      "nullable": true
+    },
+    "ObfuscatedNumber": {
+      "type": "string",
+      "description": "Obfuscated credit card number. At most first six digits and last four digits can be specified, otherwise the digits are replaced with `*`.",
+      "nullable": true
+    },
+    "Expiration": {
+      "type": "string",
+      "description": "Expiration of the credit card in format `MM/YYYY`.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the credit card in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the credit card in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CreditCard"
+}

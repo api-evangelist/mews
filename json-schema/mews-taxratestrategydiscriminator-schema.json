@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxRateStrategyDiscriminator",
+  "title": "Tax rate strategy discriminator",
+  "enum": [
+    "Relative",
+    "Flat",
+    "Dependent"
+  ],
+  "type": "string",
+  "description": "",
+  "x-enumDescriptions": [
+    "Used with Relative tax rate strategy (e.g. 21%). Relative tax is calculated only from net base value.",
+    "Used with Flat tax rate strategy (e.g. 5.00 EUR).",
+    "Used with Dependent tax rate strategy (e.g. 10%). Dependent tax is calculated from net base value and all taxes it depends on."
+  ]
+}

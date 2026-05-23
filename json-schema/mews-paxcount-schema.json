@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaxCount",
+  "title": "PaxCount",
+  "required": [
+    "PersonCount",
+    "UnitCount"
+  ],
+  "type": "object",
+  "properties": {
+    "PersonCount": {
+      "type": "integer",
+      "description": "Predicted guest count that will be assigned to the Resource. The guest count must fit within the Resource Category maximum capacity.",
+      "format": "int32"
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Positive number of adjustments that are assigned to `PersonCount`. The sum of all `UnitCount` in `PaxCounts` should match the adjustment value applied to the interval.",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaxCount"
+}

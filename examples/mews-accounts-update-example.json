@@ -1,0 +1,380 @@
+{
+  "operationId": "accounts_update",
+  "method": "POST",
+  "path": "/api/connector/v1/accounts/update",
+  "summary": "Update accounts",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "AccountUpdates": [
+          {
+            "Id": "3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c",
+            "Discriminator": "Company",
+            "Customer": null,
+            "Company": {
+              "Email": {
+                "Value": "example@example.com"
+              },
+              "TaxIdentifier": {
+                "Value": "CZ8810310963"
+              },
+              "BillingCode": {
+                "Value": null
+              },
+              "AccountingCode": {
+                "Value": null
+              },
+              "Notes": {
+                "Value": "Example notes"
+              },
+              "Name": {
+                "Value": "Example company"
+              },
+              "MotherCompanyId": {
+                "Value": "839e9d92-aa8b-48bf-8384-b0ec0081bb34"
+              },
+              "WebsiteUrl": {
+                "Value": "https://www.example.com"
+              },
+              "InvoiceDueInterval": {
+                "Value": null
+              },
+              "CreditRatingBasic": {
+                "Value": "CreditOk"
+              },
+              "Department": {
+                "Value": "Accounting"
+              },
+              "DunsNumber": {
+                "Value": "987654321"
+              },
+              "ReferenceId": {
+                "Value": null
+              },
+              "ExternalIdentifier": {
+                "Value": "COM-123"
+              },
+              "AdditionalTaxIdentifier": {
+                "Value": "XY00112233445"
+              },
+              "Contact": {
+                "Value": "Sample contact"
+              },
+              "ContactPerson": {
+                "Value": "Sample person"
+              },
+              "FiscalIdentifier": {
+                "Value": "FiscalIdentifier"
+              },
+              "Iata": {
+                "Value": "PAO"
+              },
+              "Telephone": {
+                "Value": "111-222-333"
+              },
+              "SourceId": {
+                "Value": "F42098A0-8507-4963-ACC9-B0EC00821949"
+              },
+              "Classifications": {
+                "Corporate": {
+                  "Value": true
+                },
+                "Internal": {
+                  "Value": true
+                },
+                "Private": {
+                  "Value": true
+                },
+                "OnlineTravelAgency": {
+                  "Value": true
+                },
+                "GlobalDistributionSystem": {
+                  "Value": true
+                },
+                "Marketing": {
+                  "Value": true
+                },
+                "Inactive": {
+                  "Value": true
+                }
+              },
+              "Options": {
+                "Invoiceable": {
+                  "Value": "true"
+                },
+                "AddFeesToInvoices": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          {
+            "Id": "71db411f-c1d6-4e1c-9cd7-44e8bf45f936",
+            "Discriminator": "Customer",
+            "Company": null,
+            "Customer": {
+              "Email": {
+                "Value": "example@example.com"
+              },
+              "TaxIdentifier": {
+                "Value": "CZ8810310963"
+              },
+              "BillingCode": {
+                "Value": null
+              },
+              "AccountingCode": {
+                "Value": null
+              },
+              "Notes": {
+                "Value": "Example notes"
+              },
+              "LastName": {
+                "Value": "Sample"
+              },
+              "FirstName": {
+                "Value": "Sample"
+              },
+              "SecondLastName": {
+                "Value": null
+              },
+              "BirthPlace": {
+                "Value": "Sample place"
+              },
+              "Telephone": {
+                "Value": "111-222-333"
+              },
+              "Occupation": {
+                "Value": null
+              },
+              "CarRegistrationNumber": {
+                "Value": null
+              },
+              "LoyaltyCode": {
+                "Value": null
+              },
+              "NationalityCode": {
+                "Value": "US"
+              },
+              "CompanyId": {
+                "Value": "839e9d92-aa8b-48bf-8384-b0ec0081bb34"
+              },
+              "BirthDate": {
+                "Value": "2000-01-01"
+              },
+              "Sex": {
+                "Value": "Male"
+              },
+              "Title": {
+                "Value": "Mister"
+              },
+              "PreferredLanguageCode": {
+                "Value": null
+              },
+              "Options": {
+                "SendMarketingEmails": {
+                  "Value": true
+                },
+                "Invoiceable": {
+                  "Value": true
+                },
+                "BillAddressObjection": {
+                  "Value": true
+                }
+              },
+              "Classifications": {
+                "PaymasterAccount": {
+                  "Value": true
+                },
+                "Blacklist": {
+                  "Value": true
+                },
+                "Media": {
+                  "Value": true
+                },
+                "LoyaltyProgram": {
+                  "Value": true
+                },
+                "PreviousComplaint": {
+                  "Value": true
+                },
+                "Returning": {
+                  "Value": true
+                },
+                "Staff": {
+                  "Value": true
+                },
+                "FriendOrFamily": {
+                  "Value": true
+                },
+                "TopManagement": {
+                  "Value": true
+                },
+                "Important": {
+                  "Value": true
+                },
+                "VeryImportant": {
+                  "Value": true
+                },
+                "Problematic": {
+                  "Value": true
+                },
+                "Cashlist": {
+                  "Value": true
+                },
+                "DisabledPerson": {
+                  "Value": true
+                },
+                "Military": {
+                  "Value": true
+                },
+                "Airline": {
+                  "Value": true
+                },
+                "HealthCompliant": {
+                  "Value": true
+                },
+                "InRoom": {
+                  "Value": true
+                },
+                "WaitingForRoom": {
+                  "Value": true
+                },
+                "Student": {
+                  "Value": true
+                }
+              },
+              "LegalEntityIdentifiers": {
+                "ItDestinationCode": {
+                  "Value": null
+                },
+                "ItFiscalCode": {
+                  "Value": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Accounts": [
+          {
+            "Id": "3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c",
+            "Discriminator": "Company",
+            "Customer": null,
+            "Company": {
+              "ChainId": "79fa3c17-bec6-454f-b3be-b0ec00818acd",
+              "CreatedUtc": "2024-01-03T07:52:20Z",
+              "UpdatedUtc": "2024-01-18T10:20:31Z",
+              "UpdaterProfileId": "93f03906-ed13-4a26-b8dc-b0ec0082194f",
+              "Email": "example@example.com",
+              "TaxIdentifier": "CZ8810310963",
+              "BillingCode": null,
+              "AccountingCode": null,
+              "Notes": "Example notes",
+              "Name": "Example company",
+              "MotherCompanyId": "839e9d92-aa8b-48bf-8384-b0ec0081bb34",
+              "WebsiteUrl": "https://www.example.com",
+              "InvoiceDueInterval": null,
+              "CreditRatingBasic": "CreditOk",
+              "Department": "Accounting",
+              "DunsNumber": "987654321",
+              "ReferenceId": null,
+              "ExternalIdentifier": "COM-123",
+              "AdditionalTaxIdentifier": "XY00112233445",
+              "Contact": "Sample contact",
+              "ContactPerson": "Sample person",
+              "FiscalIdentifier": "FiscalIdentifier",
+              "Iata": "PAO",
+              "Telephone": "111-222-333",
+              "SourceId": "F42098A0-8507-4963-ACC9-B0EC00821949",
+              "Classifications": {
+                "Corporate": true,
+                "Internal": true,
+                "Private": true,
+                "OnlineTravelAgency": true,
+                "GlobalDistributionSystem": true,
+                "Marketing": true,
+                "Inactive": true
+              },
+              "Options": {
+                "Invoiceable": true,
+                "AddFeesToInvoices": true
+              }
+            }
+          },
+          {
+            "Id": "71db411f-c1d6-4e1c-9cd7-44e8bf45f936",
+            "Discriminator": "Customer",
+            "Customer": {
+              "ChainId": "79fa3c17-bec6-454f-b3be-b0ec00818acd",
+              "CreatedUtc": "2024-01-03T07:52:19Z",
+              "UpdatedUtc": "2024-01-18T10:25:41Z",
+              "UpdaterProfileId": "93f03906-ed13-4a26-b8dc-b0ec0082194f",
+              "Email": "example@example.com",
+              "TaxIdentifier": "CZ8810310963",
+              "BillingCode": null,
+              "AccountingCode": null,
+              "Notes": "Example notes",
+              "LastName": "Sample",
+              "FirstName": "Sample",
+              "SecondLastName": null,
+              "BirthPlace": "Sample place",
+              "Telephone": "111-222-333",
+              "Occupation": null,
+              "CarRegistrationNumber": null,
+              "LoyaltyCode": null,
+              "NationalityCode": "US",
+              "CompanyId": "839e9d92-aa8b-48bf-8384-b0ec0081bb34",
+              "BirthDate": "2000-01-01T00:00:00Z",
+              "Sex": "Male",
+              "Title": "Mister",
+              "PreferredLanguageCode": null,
+              "Options": {
+                "SendMarketingEmails": true,
+                "Invoiceable": true,
+                "BillAddressObjection": true
+              },
+              "Classifications": {
+                "PaymasterAccount": true,
+                "Blacklist": true,
+                "Media": true,
+                "LoyaltyProgram": true,
+                "PreviousComplaint": true,
+                "Returning": true,
+                "Staff": true,
+                "FriendOrFamily": true,
+                "TopManagement": true,
+                "Important": true,
+                "VeryImportant": true,
+                "Problematic": true,
+                "Cashlist": true,
+                "DisabledPerson": true,
+                "Military": true,
+                "Airline": true,
+                "HealthCompliant": true,
+                "InRoom": true,
+                "WaitingForRoom": true,
+                "Student": true
+              },
+              "LegalEntityIdentifiers": {
+                "ItDestinationCode": null,
+                "ItFiscalCode": null
+              }
+            },
+            "Company": null
+          }
+        ]
+      }
+    }
+  ]
+}

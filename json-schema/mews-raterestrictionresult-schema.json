@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateRestrictionResult",
+  "title": "Rate restriction result",
+  "required": [
+    "DateRestrictions",
+    "EarlinessRestrictions",
+    "LengthRestrictions"
+  ],
+  "type": "object",
+  "properties": {
+    "DateRestrictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DateRestriction"
+      },
+      "description": "Date restrictions for the rate."
+    },
+    "EarlinessRestrictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EarlinessRestriction"
+      },
+      "description": "Earliness restrictions for the rates that are only available up to before arrival."
+    },
+    "LengthRestrictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LengthRestriction"
+      },
+      "description": "Length restrictions for the rate."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateRestrictionResult"
+}

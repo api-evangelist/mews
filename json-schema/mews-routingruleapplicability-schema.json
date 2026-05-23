@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleApplicability",
+  "title": "Applicability",
+  "enum": [
+    "Always",
+    "PrepaidOnly"
+  ],
+  "type": "string",
+  "description": "Determines if routing rule applies to all future reservations with this company or travel agency, or only future reservations that are prepaid."
+}

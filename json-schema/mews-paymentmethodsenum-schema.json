@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentMethodsEnum",
+  "title": "Available payment plan payment methods",
+  "enum": [
+    "Ideal",
+    "PaymentCard",
+    "ApplePay",
+    "GooglePay",
+    "SepaDirectDebit",
+    "All"
+  ],
+  "type": "string",
+  "description": "\n\nIdeal (iDEAL)\n\nPaymentCard (Payment card)\n\nApplePay (Apple Pay)\n\nGooglePay (Google Pay)\n\nSepaDirectDebit (SEPA Direct Debit)\n\nAll",
+  "x-enumNames": [
+    "Ideal",
+    "PaymentCard",
+    "ApplePay",
+    "GooglePay",
+    "SepaDirectDebit",
+    "All"
+  ],
+  "x-enumDescriptions": [
+    "iDEAL",
+    "Payment card",
+    "Apple Pay",
+    "Google Pay",
+    "SEPA Direct Debit",
+    ""
+  ]
+}

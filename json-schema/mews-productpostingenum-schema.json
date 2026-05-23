@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductPostingEnum",
+  "title": "Product posting",
+  "enum": [
+    "Once",
+    "Daily"
+  ],
+  "type": "string",
+  "description": "\n\nOnce\n\nDaily",
+  "x-enumNames": [
+    "Once",
+    "Daily"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdealData",
+  "title": "iDEAL data",
+  "required": [
+    "RedirectUrl"
+  ],
+  "type": "object",
+  "properties": {
+    "RedirectUrl": {
+      "minLength": 1,
+      "type": "string",
+      "description": "URL where the customer will be redirected after completing their iDEAL payment.",
+      "format": "uri"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "IdealData"
+}

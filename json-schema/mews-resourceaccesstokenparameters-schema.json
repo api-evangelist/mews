@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessTokenParameters",
+  "title": "Resource access token parameter",
+  "required": [
+    "Permissions",
+    "ServiceOrderId",
+    "Type",
+    "ValidityEndUtc",
+    "ValidityStartUtc",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceOrderId": {
+      "type": "string",
+      "description": "Unique identifier of a reservation.",
+      "format": "uuid"
+    },
+    "CompanionshipId": {
+      "type": "string",
+      "description": "Unique identifier of `Companionship`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ResourceId": {
+      "type": "string",
+      "description": "Unique identifier of `Resource`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Value": {
+      "maxLength": 255,
+      "minLength": 1,
+      "type": "string",
+      "description": "Value of the resource access token."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/ResourceAccessTokenType"
+    },
+    "SerialNumber": {
+      "type": "string",
+      "description": "Serial number of the resource access token.",
+      "nullable": true
+    },
+    "ValidityStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Marks the start of interval in which the resource access token can be used."
+    },
+    "ValidityEndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Marks the end of interval in which the resource access token can be used."
+    },
+    "Permissions": {
+      "title": "Resource access token permission parameter",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceAccessTokenPermissionsParameters"
+        }
+      ],
+      "description": "Specify permissions of the resource access token."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceAccessTokenParameters"
+}

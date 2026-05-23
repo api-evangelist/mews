@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentDataDiscriminatorEnum",
+  "title": "Payment data discriminator",
+  "enum": [
+    "CreditCard",
+    "Invoice",
+    "External",
+    "Ghost",
+    "Alternative"
+  ],
+  "type": "string",
+  "description": "\n\nCreditCard\n\nInvoice\n\nExternal\n\nGhost\n\nAlternative",
+  "x-enumNames": [
+    "CreditCard",
+    "Invoice",
+    "External",
+    "Ghost",
+    "Alternative"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

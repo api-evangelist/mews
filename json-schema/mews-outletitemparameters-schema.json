@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OutletItemParameters",
+  "title": "Outlet item parameters",
+  "required": [
+    "ConsumedUtc",
+    "Name",
+    "Type",
+    "UnitAmount",
+    "UnitCount"
+  ],
+  "type": "object",
+  "properties": {
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the item."
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Unit count of the item.",
+      "format": "int32"
+    },
+    "UnitAmount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Unit amount of the item."
+    },
+    "ConsumedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the item consumption in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Type": {
+      "$ref": "#/components/schemas/OutletItemType"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "An identifier of this item from another system.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes of the item.",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of an `AccountingCategory` to be assigned to the item.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OutletItemParameters"
+}

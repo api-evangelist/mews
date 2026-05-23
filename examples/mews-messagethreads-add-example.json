@@ -1,0 +1,36 @@
+{
+  "operationId": "messageThreads_add",
+  "method": "POST",
+  "path": "/api/connector/v1/messageThreads/add",
+  "summary": "Add message thread",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "OriginalSender": "John Doe",
+        "Subject": "Example subject"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "MessageThreads": [
+          {
+            "Id": "7f9325f6-ef44-4911-89a8-ae51010a5aa4",
+            "OriginalSender": "John Doe",
+            "Subject": "Example subject",
+            "CreatedUtc": "2022-03-08T12:06:50Z",
+            "UpdatedUtc": "2022-03-08T12:06:50Z",
+            "IsResolved": false
+          }
+        ]
+      }
+    }
+  ]
+}

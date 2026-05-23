@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnterpriseProfileData",
+  "title": "Enterprise profile data",
+  "required": [
+    "ProfileId"
+  ],
+  "type": "object",
+  "properties": {
+    "ProfileId": {
+      "type": "string",
+      "description": "Unique identifier of the profile.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "EnterpriseProfileData"
+}

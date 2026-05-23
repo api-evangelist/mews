@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OldTaxation",
+  "title": "OldTaxation",
+  "type": "object",
+  "properties": {
+    "Code": {
+      "type": "string",
+      "nullable": true
+    },
+    "TaxEnvironmentCode": {
+      "type": "string",
+      "nullable": true,
+      "deprecated": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    },
+    "LocalName": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OldTaxation"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderStateOld",
+  "title": "Service order state (ver 2017-04-12)",
+  "enum": [
+    "Enquired",
+    "Confirmed",
+    "Started",
+    "Processed",
+    "Canceled",
+    "Optional",
+    "Requested"
+  ],
+  "type": "string"
+}

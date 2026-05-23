@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationsChannelManagerDetailsResult",
+  "title": "Reservation channel manager details result",
+  "required": [
+    "ChannelManagerDetails"
+  ],
+  "type": "object",
+  "properties": {
+    "ChannelManagerDetails": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ChannelManagerDetails"
+      },
+      "description": "List of reservation channel manager details."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationsChannelManagerDetailsResult"
+}

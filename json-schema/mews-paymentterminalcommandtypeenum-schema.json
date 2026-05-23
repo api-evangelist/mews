@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentTerminalCommandTypeEnum",
+  "title": "Payment type",
+  "enum": [
+    "Payment",
+    "Preauthorization"
+  ],
+  "type": "string",
+  "description": "\n\nPayment\n\nPreauthorization",
+  "x-enumNames": [
+    "Payment",
+    "Preauthorization"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillCustomerData",
+  "title": "Bill customer data",
+  "required": [
+    "Id",
+    "LastName"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ID of the `Customer` to whom the bill was assigned."
+    },
+    "Address": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        }
+      ],
+      "description": "Address of the customer.",
+      "nullable": true
+    },
+    "LegalIdentifiers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The set of `LegalIdentifiers` for the customer.",
+      "nullable": true
+    },
+    "BillingCode": {
+      "type": "string",
+      "description": "A unique code for Mews to list on invoices it sends to the customer.",
+      "nullable": true
+    },
+    "LastName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last name of the customer."
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name of the customer.",
+      "nullable": true
+    },
+    "SecondLastName": {
+      "type": "string",
+      "description": "Second last name of the customer.",
+      "nullable": true
+    },
+    "TitlePrefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Title"
+        }
+      ],
+      "description": "Title prefix of the customer.\n\nMister (Mr.)\n\nMiss (Ms.)\n\nMisses (Mrs.)",
+      "nullable": true
+    },
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identifier of the customer.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillCustomerData"
+}

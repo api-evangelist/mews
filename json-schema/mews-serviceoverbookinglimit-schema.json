@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOverbookingLimit",
+  "title": "Service overbooking limit",
+  "required": [
+    "CreatedUtc",
+    "FirstTimeUnitStartUtc",
+    "Id",
+    "IsActive",
+    "LastTimeUnitStartUtc",
+    "Limit",
+    "ServiceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the service overbooking limit.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service`.",
+      "format": "uuid"
+    },
+    "FirstTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "LastTimeUnitStartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/), in UTC timezone ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Limit": {
+      "type": "integer",
+      "description": "Number of overbookings allowed for the `Service`.",
+      "format": "int32"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Timestamp in UTC timezone ISO 8601 format when the service overbooking was created.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Timestamp in UTC timezone ISO 8601 format when the service overbooking was updated.",
+      "format": "date-time"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the service overbooking limit is still active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOverbookingLimit"
+}

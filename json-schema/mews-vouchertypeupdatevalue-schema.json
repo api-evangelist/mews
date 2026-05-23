@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherTypeUpdateValue",
+  "title": "Voucher Type update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Voucher Type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VoucherTypeEnum"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "Public",
+        "PartnerCompany",
+        "TravelAgency"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "VoucherTypeUpdateValue"
+}

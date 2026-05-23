@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductCategory",
+  "title": "Product category",
+  "required": [
+    "CreatedUtc",
+    "Descriptions",
+    "EnterpriseId",
+    "Id",
+    "Names",
+    "Ordering",
+    "ServiceId",
+    "ShortNames",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the product category.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise to which the product category belongs.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` of the resource category.",
+      "format": "uuid"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the short name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Descriptions": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the description.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ParentProductCategory": {
+      "title": "Parent product category",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ParentProductCategory"
+        }
+      ],
+      "description": "Parent product category, if set.",
+      "nullable": true
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the product category update in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the product category creation in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Ordering": {
+      "type": "integer",
+      "description": "Ordering of the category, lower number corresponds to lower category (note that neither uniqueness nor continuous sequence is guaranteed).",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ProductCategory"
+}

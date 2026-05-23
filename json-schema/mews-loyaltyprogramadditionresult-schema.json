@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramAdditionResult",
+  "title": "LoyaltyProgramAdditionResult",
+  "required": [
+    "LoyaltyPrograms"
+  ],
+  "type": "object",
+  "properties": {
+    "LoyaltyPrograms": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LoyaltyProgram"
+      },
+      "description": "Added loyalty programs."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgramAdditionResult"
+}

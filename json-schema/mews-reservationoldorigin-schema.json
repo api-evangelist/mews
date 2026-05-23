@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationOldOrigin",
+  "title": "Reservation origin (ver 2017-04-12)",
+  "enum": [
+    "Distributor",
+    "ChannelManager",
+    "Import",
+    "Connector",
+    "Navigator",
+    "CommanderInPerson",
+    "CommanderChannel",
+    "CommanderPhone",
+    "CommanderEmail",
+    "CommanderWebsite",
+    "CommanderMessage",
+    "CommanderCallCenter",
+    "CommanderRoomingList"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "From the Mews Booking Engine or Booking Engine API.",
+    "From a channel manager.",
+    "From an import process.",
+    "From the Mews Connector API.",
+    "From Mews Guest Services.",
+    "From Mews Operations, in person.",
+    "From Mews Operations, via channel.",
+    "From Mews Operations, via telephone.",
+    "From Mews Operations, via email.",
+    "From Mews Operations, via website.",
+    "From Mews Operations, via message person.",
+    "From Mews Operations, via call center.",
+    "From Mews Operations, via rooming list."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditRatingBasicUpdateValue",
+  "title": "Credit rating basic update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Credit rating basic",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreditRatingBasicEnum"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "CreditOk",
+        "PaymentRequiredUpfront",
+        "LocalDecisionRequired"
+      ],
+      "x-enumDescriptions": [
+        "Company can book services.",
+        "Company must pay upfront.",
+        "Requires local approval."
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CreditRatingBasicUpdateValue"
+}

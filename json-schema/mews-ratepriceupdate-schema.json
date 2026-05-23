@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RatePriceUpdate",
+  "title": "Rate price update",
+  "type": "object",
+  "properties": {
+    "CategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the Resource category whose prices to update. If not specified, base price is updated.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Value": {
+      "type": "number",
+      "description": "New value of the rate on the interval. If not specified, removes all adjustments within the interval.",
+      "format": "double",
+      "nullable": true
+    },
+    "FirstTimeUnitStartUtc": {
+      "type": "string",
+      "description": "Start of the time interval, expressed as the timestamp for the start of the first [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units), in UTC timezone ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "LastTimeUnitStartUtc": {
+      "type": "string",
+      "description": "End of the time interval, expressed as the timestamp for the start of the last [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units), in UTC timezone ISO 8601 format. The maximum size of time interval depends on the service's time unit: 367 hours if hours, 367 days if days, or 24 months if months.",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RatePriceUpdate"
+}

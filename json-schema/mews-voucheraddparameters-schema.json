@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherAddParameters",
+  "title": "Voucher Parameters",
+  "required": [
+    "Name",
+    "ServiceId",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of Service.",
+      "format": "uuid"
+    },
+    "Name": {
+      "maxLength": 128,
+      "minLength": 1,
+      "type": "string",
+      "description": "Internal name of the voucher."
+    },
+    "Type": {
+      "title": "Voucher Type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VoucherTypeEnum"
+        }
+      ],
+      "description": "Type of the voucher.\n\nPublic\n\nPartnerCompany\n\nTravelAgency",
+      "x-enumNames": [
+        "Public",
+        "PartnerCompany",
+        "TravelAgency"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of Company.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AssignedRateIds": {
+      "maxItems": 10,
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of Rates.",
+      "nullable": true
+    },
+    "OccupiableIntervalStartUtc": {
+      "type": "string",
+      "description": "Start of the interval in which the voucher can be applied.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "OccupiableIntervalEndUtc": {
+      "type": "string",
+      "description": "End of the interval in which the voucher can be applied.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the voucher from external system.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "VoucherAddParameters"
+}

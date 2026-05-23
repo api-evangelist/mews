@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateSetPricingDataParameters",
+  "title": "Rate set pricing data parameters",
+  "type": "object",
+  "properties": {
+    "BaseRatePricing": {
+      "title": "Base rate pricing parameters (without occupancy adjustments)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BaseRatePricingWithoutAdjustmentsParameters"
+        }
+      ],
+      "description": "Additional data for rates with base rate pricing. Used when `PricingType` is `BaseRatePricing`. Defaults are applied if not specified: amount is set to 10000 in default Enterprise's currency and with its default accommodation tax rate code.",
+      "nullable": true
+    },
+    "DependentRatePricing": {
+      "title": "Dependent rate pricing parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DependentRatePricingParameters"
+        }
+      ],
+      "description": "Additional data for rate with dependent rate pricing. Required when `PricingType` is `DependentRatePricing`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateSetPricingDataParameters"
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IdentityDocumentsAddParameters",
+  "title": "Identity document add parameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "IdentityDocuments"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "IdentityDocuments": {
+      "maxItems": 10,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/IdentityDocumentsAddData"
+      },
+      "description": "Identity documents to be added."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "IdentityDocumentsAddParameters"
+}

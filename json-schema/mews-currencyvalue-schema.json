@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CurrencyValue",
+  "title": "Currency value (ver 2023-02-02)",
+  "required": [
+    "Currency",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "description": "ISO-4217 code of the `Currency`.",
+      "format": "currency"
+    },
+    "Value": {
+      "type": "number",
+      "description": "Amount in the currency.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Absolute value of the fee.",
+  "x-schema-id": "CurrencyValue"
+}

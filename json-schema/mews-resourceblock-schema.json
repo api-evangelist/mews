@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceBlock",
+  "title": "Resource block",
+  "required": [
+    "AssignedResourceId",
+    "CreatedUtc",
+    "EndUtc",
+    "EnterpriseId",
+    "Id",
+    "IsActive",
+    "Name",
+    "StartUtc",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the resource block.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise` the resource block belongs to.",
+      "format": "uuid"
+    },
+    "AssignedResourceId": {
+      "type": "string",
+      "description": "Unique identifier of the assigned `Resource`.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the resource block is still active."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/ResourceBlockType"
+    },
+    "StartUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Start of the resource block in UTC timezone in ISO 8601 format."
+    },
+    "EndUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "End of the resource block in UTC timezone in ISO 8601 format."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the resource block in UTC timezone in ISO 8601 format."
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the resource block in UTC timezone in ISO 8601 format."
+    },
+    "DeletedUtc": {
+      "type": "string",
+      "description": "Date and time when the resource block was deleted (for inactive ones) in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the resource block."
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Note describing the resource block.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceBlock"
+}

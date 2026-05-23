@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportEntityTypeEnum",
+  "title": "Exported entity type",
+  "enum": [
+    "OrderItem",
+    "Payment",
+    "Reservation",
+    "Customer",
+    "Company",
+    "Bill",
+    "AvailabilityAdjustment",
+    "AvailabilityBlock",
+    "ResourceBlock",
+    "LedgerEntry"
+  ],
+  "type": "string",
+  "description": "Type of exported entities\n\nOrderItem\n\nPayment\n\nReservation\n\nCustomer\n\nCompany\n\nBill\n\nAvailabilityAdjustment\n\nAvailabilityBlock\n\nResourceBlock\n\nLedgerEntry (**Beta testing - subject to change.** See [Ledger entry type](https://docs.mews.com/connector-api/operations/_export-types#ledger-entry).)",
+  "x-enumNames": [
+    "OrderItem",
+    "Payment",
+    "Reservation",
+    "Customer",
+    "Company",
+    "Bill",
+    "AvailabilityAdjustment",
+    "AvailabilityBlock",
+    "ResourceBlock",
+    "LedgerEntry"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "**Beta testing - subject to change.** See [Ledger entry type](https://docs.mews.com/connector-api/operations/_export-types#ledger-entry)."
+  ]
+}

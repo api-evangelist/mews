@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateAddResult",
+  "title": "Rate add result",
+  "type": "object",
+  "properties": {
+    "Rates": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Rate"
+      },
+      "description": "Rates that have been added.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateAddResult"
+}

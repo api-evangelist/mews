@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FlatTaxRateStrategy",
+  "title": "Flat tax rate strategy data",
+  "required": [
+    "CurrencyCode",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "CurrencyCode": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of `Currency`."
+    },
+    "Value": {
+      "type": "number",
+      "description": "Absolute value of tax.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "FlatTaxRateStrategy"
+}

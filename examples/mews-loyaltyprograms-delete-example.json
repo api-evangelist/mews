@@ -1,0 +1,21 @@
+{
+  "operationId": "loyaltyPrograms_delete",
+  "method": "POST",
+  "path": "/api/connector/v1/loyaltyPrograms/delete",
+  "summary": "Delete loyalty programs",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "LoyaltyProgramIds": [
+          "f701dafb-5765-4cf4-b1dd-1f602a740ae5",
+          "da34b396-41f7-47f6-8847-aecf00a3f19e"
+        ]
+      }
+    }
+  ],
+  "responseExamples": []
+}

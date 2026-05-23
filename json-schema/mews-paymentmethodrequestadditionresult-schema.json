@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentMethodRequestAdditionResult",
+  "title": "Payment method request addition result",
+  "required": [
+    "PaymentMethodRequestId"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentMethodRequestId": {
+      "type": "string",
+      "description": "Unique identifier of the created payment method request.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentMethodRequestAdditionResult"
+}

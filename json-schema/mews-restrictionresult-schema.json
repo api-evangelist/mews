@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionResult",
+  "title": "RestrictionResult",
+  "required": [
+    "Restrictions"
+  ],
+  "type": "object",
+  "properties": {
+    "Restrictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Restriction"
+      },
+      "description": "Restrictions of the default service."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. null, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RestrictionResult"
+}

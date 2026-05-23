@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Device",
+  "title": "Device",
+  "required": [
+    "Id",
+    "Name",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the device.",
+      "format": "uuid"
+    },
+    "Type": {
+      "title": "Device type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeviceTypeEnum"
+        }
+      ],
+      "description": "Type of the device.\n\nPrinter ([Printer command data](https://mews-systems.gitbook.io/connector-api/operations/commands#printer-command-data))\n\nPaymentTerminal ([Payment terminal command data](https://mews-systems.gitbook.io/connector-api/operations/commands#payment-terminal-command-data))\n\nKeyCutter ([Key cutter command data](https://mews-systems.gitbook.io/connector-api/operations/commands#key-cutter-command-data))\n\nFiscalMachine ([Fiscal machine command data](https://mews-systems.gitbook.io/connector-api/operations/commands#fiscal-machine-command-data))\n\nPassportScanner ([Passport scanner command data](https://mews-systems.gitbook.io/connector-api/operations/commands#passport-scanner-command-data))",
+      "x-enumNames": [
+        "Printer",
+        "PaymentTerminal",
+        "KeyCutter",
+        "FiscalMachine",
+        "PassportScanner"
+      ],
+      "x-enumDescriptions": [
+        "[Printer command data](https://mews-systems.gitbook.io/connector-api/operations/commands#printer-command-data)",
+        "[Payment terminal command data](https://mews-systems.gitbook.io/connector-api/operations/commands#payment-terminal-command-data)",
+        "[Key cutter command data](https://mews-systems.gitbook.io/connector-api/operations/commands#key-cutter-command-data)",
+        "[Fiscal machine command data](https://mews-systems.gitbook.io/connector-api/operations/commands#fiscal-machine-command-data)",
+        "[Passport scanner command data](https://mews-systems.gitbook.io/connector-api/operations/commands#passport-scanner-command-data)"
+      ]
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the device."
+    },
+    "Identifier": {
+      "type": "string",
+      "description": "Device identifier (for internal purposes).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Device"
+}

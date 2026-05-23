@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicyByReservation",
+  "title": "Cancellation policy data grouped by reservation",
+  "required": [
+    "Policies",
+    "ReservationId"
+  ],
+  "type": "object",
+  "properties": {
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "Policies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CancellationPolicyData"
+      },
+      "description": "Collection of cancellation policy data."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CancellationPolicyByReservation"
+}

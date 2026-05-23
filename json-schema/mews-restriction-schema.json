@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Restriction",
+  "title": "Restriction",
+  "required": [
+    "Conditions",
+    "Id",
+    "Origin",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the restriction.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service`.",
+      "format": "uuid"
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "External identifier of the restriction.",
+      "nullable": true
+    },
+    "Origin": {
+      "title": "Restriction origin",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RestrictionOriginEnum"
+        }
+      ],
+      "description": "Restriction origin\n\nUser (Restriction was created by a user in Mews.)\n\nIntegration (Restriction was created by a 3rd-party integration.)",
+      "x-enumNames": [
+        "User",
+        "Integration"
+      ],
+      "x-enumDescriptions": [
+        "Restriction was created by a user in Mews.",
+        "Restriction was created by a 3rd-party integration."
+      ]
+    },
+    "Conditions": {
+      "title": "Restriction condition",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RestrictionConditions"
+        }
+      ],
+      "description": "The conditions or rules that must be met by a reservation for the restriction to apply."
+    },
+    "Exceptions": {
+      "title": "Restriction exception",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RestrictionExceptions"
+        }
+      ],
+      "description": "The rules that prevent the restriction from applying to a reservation, even when all conditions have been met.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "The added restriction.",
+  "x-schema-id": "Restriction"
+}

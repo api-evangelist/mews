@@ -1,0 +1,52 @@
+{
+  "operationId": "commands_getAllByIds",
+  "method": "POST",
+  "path": "/api/connector/v1/commands/getAllByIds",
+  "summary": "Get all commands by ids",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "CommandIds": [
+          "aa20961f-6d9e-4b35-ad25-071213530aec"
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Commands": [
+          {
+            "Id": "aa20961f-6d9e-4b35-ad25-071213530aec",
+            "State": "Pending",
+            "CreatedUtc": "2015-09-02T19:25:44Z",
+            "Creator": {
+              "FirstName": "Sample",
+              "LastName": "User",
+              "ImageUrl": "..."
+            },
+            "Device": {
+              "Id": "63efb573-fc58-4065-b687-9bdd51568529",
+              "Name": "Test Printer",
+              "Type": "Printer"
+            },
+            "Data": {
+              "CopyCount": 1,
+              "FileType": "application/pdf",
+              "FileData": "...",
+              "PrinterName": "Printer",
+              "PrinterDriverName": "",
+              "PrinterPortName": ""
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

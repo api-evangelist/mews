@@ -1,0 +1,22 @@
+{
+  "operationId": "reservations_updateInterval",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/updateInterval",
+  "summary": "Update reservation interval",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "ReservationId": "209d984d-4985-4efb-96ec-f6591fc597bf",
+        "StartUtc": "2017-08-12T15:00:00Z",
+        "EndUtc": "2017-08-15T12:00:00Z",
+        "ChargeCancellationFee": false
+      }
+    }
+  ],
+  "responseExamples": []
+}

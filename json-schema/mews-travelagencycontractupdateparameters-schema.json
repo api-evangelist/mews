@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TravelAgencyContractUpdateParameters",
+  "title": "Travel agency contract update parameters",
+  "required": [
+    "TravelAgencyContractId"
+  ],
+  "type": "object",
+  "properties": {
+    "TravelAgencyContractId": {
+      "type": "string",
+      "description": "Unique identifier of the Travel agency contract.",
+      "format": "uuid"
+    },
+    "CommissionIncluded": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanNullableUpdateValue"
+        }
+      ],
+      "description": "Whether commission of the travel agency is included in the rate.",
+      "nullable": true
+    },
+    "Commission": {
+      "title": "Decimal update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecimalNullableUpdateValue"
+        }
+      ],
+      "description": "Commission of the travel agency.",
+      "nullable": true
+    },
+    "ChannelManagerBusinessSegmentId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the `BusinessSegment` used for incoming reservations originating from Channel Managers, for this particular contract.",
+      "nullable": true
+    },
+    "ChannelManagerAbsoluteAdjustment": {
+      "title": "Decimal update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecimalNullableUpdateValue"
+        }
+      ],
+      "description": "Flat fee added to (or subtracted from) the reservation price when coming from Channel Managers.",
+      "nullable": true
+    },
+    "ChannelManagerRelativeAdjustment": {
+      "title": "Decimal update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecimalNullableUpdateValue"
+        }
+      ],
+      "description": "Percentage of the reservation price added to (or subtracted from) price when coming from Channel Managers.",
+      "nullable": true
+    },
+    "Options": {
+      "title": "Travel agency contract update options",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TravelAgencyContractOptionsParameters"
+        }
+      ],
+      "description": "Options of the travel agency contract.",
+      "nullable": true
+    },
+    "AccountingCode": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Accounting code of the travel agency contract.",
+      "nullable": true
+    },
+    "InvoiceDueInterval": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "The maximum time, when the invoice has to be be paid in ISO 8601 duration format.",
+      "nullable": true
+    },
+    "ContactPerson": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Contact person of the travel agency.",
+      "nullable": true
+    },
+    "ContactEmail": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Contact email of the travel agency.",
+      "format": "email",
+      "nullable": true
+    },
+    "AdditionalContactInfo": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Additional contact info of the travel agency.",
+      "nullable": true
+    },
+    "Notes": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Additional notes of the travel agency contract.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TravelAgencyContractUpdateParameters"
+}

@@ -1,0 +1,122 @@
+{
+  "operationId": "reservations_add",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/add",
+  "summary": "Add reservations",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+        "GroupId": null,
+        "GroupName": null,
+        "SendConfirmationEmail": true,
+        "Reservations": [
+          {
+            "Identifier": "1234",
+            "State": "Confirmed",
+            "StartUtc": "2021-01-01T14:00:00Z",
+            "EndUtc": "2021-01-03T10:00:00Z",
+            "ReleasedUtc": null,
+            "CustomerId": "e465c031-fd99-4546-8c70-abcf0029c249",
+            "BookerId": "e465c031-fd99-4546-8c70-abcf0029c249",
+            "RequestedCategoryId": "0a5da171-3663-4496-a61e-35ecbd78b9b1",
+            "RateId": "a39a59fa-3a08-4822-bdd4-ab0b00e3d21f",
+            "TravelAgencyId": null,
+            "CompanyId": null,
+            "Notes": "Test reservation",
+            "TimeUnitAmount": null,
+            "PersonCounts": [
+              {
+                "AgeCategoryId": "1f67644f-052d-4863-acdf-ae1600c60ca0",
+                "Count": 2
+              },
+              {
+                "AgeCategoryId": "ab58c939-be30-4a60-8f75-ae1600c60c9f",
+                "Count": 2
+              }
+            ],
+            "TimeUnitPrices": [
+              {
+                "Index": 0,
+                "Amount": {
+                  "Currency": "GBP",
+                  "GrossValue": 20,
+                  "TaxCodes": [
+                    "UK-S"
+                  ]
+                }
+              },
+              {
+                "Index": 1,
+                "Amount": {
+                  "Currency": "GBP",
+                  "GrossValue": 30,
+                  "TaxCodes": [
+                    "UK-S"
+                  ]
+                }
+              }
+            ],
+            "ProductOrders": [
+              {
+                "ProductId": "2e9eb3fc-8a77-466a-9cd9-abcf002a2a01",
+                "StartUtc": "2021-01-02T00:00:00Z",
+                "EndUtc": "2021-01-03T00:00:00Z"
+              }
+            ],
+            "AvailabilityBlockId": null,
+            "VoucherCode": "SpringSale2021"
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Reservations": [
+          {
+            "Identifier": "1234",
+            "Reservation": {
+              "Id": "bfee2c44-1f84-4326-a862-5289598f6e2d",
+              "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+              "GroupId": "94843f6f-3be3-481b-a1c7-06458774c3df",
+              "Number": "52",
+              "ChannelManager": "",
+              "ChannelManagerGroupNumber": null,
+              "ChannelManagerNumber": null,
+              "ChannelNumber": null,
+              "State": "Processed",
+              "Origin": "Connector",
+              "CreatedUtc": "2016-02-20T14:58:02Z",
+              "UpdatedUtc": "2016-02-20T14:58:02Z",
+              "CancelledUtc": null,
+              "StartUtc": "2016-02-20T13:00:00Z",
+              "EndUtc": "2016-02-22T11:00:00Z",
+              "ReleasedUtc": null,
+              "RequestedCategoryId": "773d5e42-de1e-43a0-9ce6-f940faf2303f",
+              "AssignedResourceId": "20e00c32-d561-4008-8609-82d8aa525714",
+              "AssignedResourceLocked": false,
+              "BusinessSegmentId": null,
+              "CompanyId": null,
+              "TravelAgencyId": null,
+              "AvailabilityBlockId": null,
+              "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+              "VoucherId": null,
+              "CustomerId": "35d4b117-4e60-44a3-9580-c582117eff98",
+              "CompanionIds": [
+                "b22bf671-ccdf-40aa-a7e6-b20a4f91d79a"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

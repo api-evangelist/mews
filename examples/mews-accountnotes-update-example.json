@@ -1,0 +1,62 @@
+{
+  "operationId": "accountNotes_update",
+  "method": "POST",
+  "path": "/api/connector/v1/accountNotes/update",
+  "summary": "Update account notes",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "AccountNoteUpdates": [
+          {
+            "AccountNoteId": "a58ff7cb-77e3-495a-bd61-aecf00a3f19d",
+            "Content": {
+              "Value": "The AC in the room doesn't work anymore"
+            },
+            "Classifications": {
+              "Maintenance": {
+                "Value": true
+              },
+              "Housekeeping": {
+                "Value": false
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "AccountNotes": [
+          {
+            "Id": "a58ff7cb-77e3-495a-bd61-aecf00a3f19d",
+            "AccountId": "1df21f06-0cfc-4960-9c58-a3bf1261663e",
+            "Content": "The AC in the room doesn't work anymore",
+            "AccountType": "Customer",
+            "Classifications": [
+              "Maintenance"
+            ],
+            "IsActive": true,
+            "CreatorProfile": {
+              "Discriminator": "Enterprise",
+              "EnterpriseProfile": {
+                "ProfileId": "52d19c34-b0aa-4635-905d-1326fa8b8e13"
+              }
+            },
+            "UpdaterProfile": {
+              "Discriminator": "Integration",
+              "EnterpriseProfile": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

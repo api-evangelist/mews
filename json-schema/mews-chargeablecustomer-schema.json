@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChargeableCustomer",
+  "title": "Customer search result",
+  "required": [
+    "Customer"
+  ],
+  "type": "object",
+  "properties": {
+    "Customer": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Customer"
+        }
+      ],
+      "description": "The found customer."
+    },
+    "Reservation": {
+      "title": "Reservation (ver 2017-04-12)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationOld"
+        }
+      ],
+      "description": "Reservation of the customer in case they are currently staying in the property.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ChargeableCustomer"
+}

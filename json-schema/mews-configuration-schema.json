@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Configuration",
+  "title": "Configuration",
+  "required": [
+    "Enterprise",
+    "NowUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "NowUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Current server date and time in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Enterprise": {
+      "title": "Enterprise",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Enterprise"
+        }
+      ],
+      "description": "The enterprise (e.g. hotel, hostel) associated with the access token."
+    },
+    "Service": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Service"
+        }
+      ],
+      "description": "The reservable service (e.g. accommodation, parking) associated with the access token of the service scoped integration.",
+      "nullable": true
+    },
+    "PaymentCardStorage": {
+      "title": "Payment card storage",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentCardStorage"
+        }
+      ],
+      "description": "Contains information about payment card storage.",
+      "nullable": true
+    },
+    "IsIdentityDocumentNumberRequired": {
+      "type": "boolean",
+      "description": "Whether the identity documents for this enterprise include the value of identity document number as required by the legal environment. When `false`, the number is not required, and an empty string can be used in write operations. In read operations, an empty string is returned when an empty string was provided for the number."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Configuration"
+}

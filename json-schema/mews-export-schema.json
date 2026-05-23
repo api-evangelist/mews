@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Export",
+  "title": "Export",
+  "required": [
+    "EntityType",
+    "Files",
+    "Id",
+    "Scope",
+    "Status"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the export.",
+      "format": "uuid"
+    },
+    "Status": {
+      "title": "Export status",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportStatusEnum"
+        }
+      ],
+      "description": "Export status.\n\nPending\n\nProcessing\n\nSuccess\n\nFailed\n\nExpired",
+      "x-enumNames": [
+        "Pending",
+        "Processing",
+        "Success",
+        "Failed",
+        "Expired"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "EntityType": {
+      "title": "Exported entity type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportEntityTypeEnum"
+        }
+      ],
+      "description": "Exported entity type.\n\nOrderItem\n\nPayment\n\nReservation\n\nCustomer\n\nCompany\n\nBill\n\nAvailabilityAdjustment\n\nAvailabilityBlock\n\nResourceBlock\n\nLedgerEntry (**Beta testing - subject to change.** See [Ledger entry type](https://docs.mews.com/connector-api/operations/_export-types#ledger-entry).)",
+      "x-enumNames": [
+        "OrderItem",
+        "Payment",
+        "Reservation",
+        "Customer",
+        "Company",
+        "Bill",
+        "AvailabilityAdjustment",
+        "AvailabilityBlock",
+        "ResourceBlock",
+        "LedgerEntry"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "**Beta testing - subject to change.** See [Ledger entry type](https://docs.mews.com/connector-api/operations/_export-types#ledger-entry)."
+      ]
+    },
+    "Scope": {
+      "title": "Export scope",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportScope"
+        }
+      ],
+      "description": "The scope of the export, i.e. which enterprises or chains the data is exported for."
+    },
+    "Files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ExportFileEntry"
+      },
+      "description": "Files with exported data. Empty if no files are available or the export is expired."
+    },
+    "ExpiresUtc": {
+      "type": "string",
+      "description": "Expiration date and time of the export in UTC timezone in ISO 8601 format. After this time the Exported files may no longer be available for download.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Filters": {
+      "title": "Export data filters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportDataFilters"
+        }
+      ],
+      "description": "Filters applied to the exported data set. If omitted, all available data is included in the export.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Export"
+}

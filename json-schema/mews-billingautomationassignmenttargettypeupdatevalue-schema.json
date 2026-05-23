@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAssignmentTargetTypeUpdateValue",
+  "title": "Billing automation assignment target type update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Billing automation assignment target type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationAssignmentTargetTypeEnum"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "CompanyAsDetails",
+        "CompanyAsOwner",
+        "NoCompany"
+      ],
+      "x-enumDescriptions": [
+        "The company will be the associated account in the resulting routed bill, and the customer is the owner.",
+        "The company will be the owner in the resulting routed bill, and the customer might be the associated account.",
+        "The customer will be owner of the bill."
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAssignmentTargetTypeUpdateValue"
+}

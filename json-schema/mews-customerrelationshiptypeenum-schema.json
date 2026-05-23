@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerRelationshipTypeEnum",
+  "title": "Customer relationship type",
+  "enum": [
+    "Spouse",
+    "Child",
+    "Parent",
+    "OtherFamily",
+    "Friend",
+    "Colleague",
+    "Other"
+  ],
+  "type": "string",
+  "description": "\n\nSpouse\n\nChild\n\nParent\n\nOtherFamily (Any familial relationship that doesn't fit for the options provided)\n\nFriend\n\nColleague\n\nOther",
+  "x-enumNames": [
+    "Spouse",
+    "Child",
+    "Parent",
+    "OtherFamily",
+    "Friend",
+    "Colleague",
+    "Other"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "Any familial relationship that doesn't fit for the options provided",
+    "",
+    "",
+    ""
+  ],
+  "x-extensible": true
+}

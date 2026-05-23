@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRequestType",
+  "title": "Payment request type",
+  "enum": [
+    "Payment",
+    "Preauthorization"
+  ],
+  "type": "string",
+  "description": "A payment request type.",
+  "x-enumDescriptions": [
+    "Indicates that a payment is requested.",
+    "Indicates that a `Preauthorization` is requested."
+  ]
+}

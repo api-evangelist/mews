@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationBillAggregationTypeUpdateValue",
+  "title": "Billing automation bill aggregation type update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Billing automation bill aggregation type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationBillAggregationTypeEnum"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "OnePerReservation",
+        "AggregateByCustomer",
+        "AggregateAll",
+        "AggregatePerReservationGroup"
+      ],
+      "x-enumDescriptions": [
+        "Create a separate bill for each reservation.",
+        "Create a separate bill for each reservation owner.",
+        "Group all moved items on one bill.",
+        "Create a separate bill for each reservation group."
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationBillAggregationTypeUpdateValue"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramTypeUpdateValue",
+  "title": "Loyalty program type update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Loyalty program type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoyaltyProgramType"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "Hotel",
+        "ExternalPartner",
+        "SoftBrand",
+        "Unknown"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "x-schema-id": "LoyaltyProgramType"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgramTypeUpdateValue"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductConsumptionMomentEnum",
+  "title": "Product consumption moment",
+  "enum": [
+    "ServiceOrderEnd",
+    "ServiceOrderStart",
+    "PostingTimeUnit",
+    "NextTimeUnit"
+  ],
+  "type": "string",
+  "description": "\n\nServiceOrderEnd\n\nServiceOrderStart\n\nPostingTimeUnit\n\nNextTimeUnit",
+  "x-enumNames": [
+    "ServiceOrderEnd",
+    "ServiceOrderStart",
+    "PostingTimeUnit",
+    "NextTimeUnit"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    ""
+  ]
+}

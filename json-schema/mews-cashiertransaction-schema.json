@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CashierTransaction",
+  "title": "Cashier transaction",
+  "required": [
+    "Amount",
+    "CashierId",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "Number"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the transaction.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "CashierId": {
+      "type": "string",
+      "description": "Unique identifier of the [Cashier](https://mews-systems.gitbook.io/connector-api/operations/cashiers/#cashier).",
+      "format": "uuid"
+    },
+    "PaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the corresponding payment [Payment item](https://mews-systems.gitbook.io/connector-api/operations/accountingitems/#payment-item).",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the transaction."
+    },
+    "Number": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Number of the transaction."
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes of the transaction.",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Total price of the transaction"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CashierTransaction"
+}

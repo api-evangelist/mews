@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOrderNoteAddParameters",
+  "title": "Service order note parameters",
+  "required": [
+    "ServiceOrderId",
+    "Text"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceOrderId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service order` to which note will be added.",
+      "format": "uuid"
+    },
+    "Text": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Content of the service order note."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOrderNoteAddParameters"
+}

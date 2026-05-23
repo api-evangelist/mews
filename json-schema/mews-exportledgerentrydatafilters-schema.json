@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportLedgerEntryDataFilters",
+  "title": "Export ledger entry data filters",
+  "required": [
+    "Posting"
+  ],
+  "type": "object",
+  "properties": {
+    "Posting": {
+      "title": "Date filter interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateFilterInterval"
+        }
+      ],
+      "description": "Filters ledger entries by their posting date within the specified date interval, inclusive of both the start and end dates."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportLedgerEntryDataFilters"
+}

@@ -1,0 +1,86 @@
+{
+  "operationId": "rates_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/rates/getAll",
+  "summary": "Get all rates",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "ServiceIds": [
+          "bd26d8db-86da-4f96-9efc-e5a4654a4a94"
+        ],
+        "RateIds": [
+          "ed4b660b-19d0-434b-9360-a4de2ea42eda"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2022-10-15T00:00:00Z",
+          "EndUtc": "2022-10-20T00:00:00Z"
+        },
+        "ExternalIdentifiers": [
+          "Rate-001",
+          "Rate-002"
+        ],
+        "ActivityStates": [
+          "Active"
+        ],
+        "Extent": {
+          "Rates": true,
+          "RateGroups": true,
+          "AvailabilityBlockAssignments": true
+        },
+        "Limitation": {
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Rates": [
+          {
+            "BaseRateId": null,
+            "BusinessSegmentId": null,
+            "GroupId": "c8b866b3-be2e-4a47-9486-034318e9f393",
+            "Id": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "IsActive": true,
+            "IsEnabled": true,
+            "IsPublic": true,
+            "Name": "Fully Flexible",
+            "ShortName": "FF",
+            "ExternalNames": {
+              "en-US": "Long Stay Flexible Rate"
+            },
+            "ExternalIdentifier": "D001"
+          }
+        ],
+        "RateGroups": [
+          {
+            "Id": "c8b866b3-be2e-4a47-9486-034318e9f393",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "IsActive": true,
+            "Name": "Default",
+            "ExternalIdentifier": "RG001"
+          }
+        ],
+        "AvailabilityBlockAssignments": [
+          {
+            "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+            "AvailabilityBlockId": "12806ae8-9c15-44c7-9a44-afae01289928"
+          }
+        ]
+      }
+    }
+  ]
+}

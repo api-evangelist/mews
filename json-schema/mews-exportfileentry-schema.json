@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportFileEntry",
+  "title": "Export file entry",
+  "required": [
+    "SizeInBytes",
+    "Url"
+  ],
+  "type": "object",
+  "properties": {
+    "Url": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Download URL for the exported file in JSON Lines format. The link remains valid for 10 minutes after it is returned.",
+      "format": "uri"
+    },
+    "SizeInBytes": {
+      "type": "integer",
+      "description": "Total size of the exported file in bytes.",
+      "format": "int64"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ExportFileEntry"
+}

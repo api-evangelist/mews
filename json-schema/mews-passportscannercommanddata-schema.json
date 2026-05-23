@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PassportScannerCommandData",
+  "title": "Passport scanner command data",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/DeviceCommandData"
+    }
+  ],
+  "properties": {
+    "PassportScannerId": {
+      "type": "string",
+      "description": "Identifier of the passport scanner.",
+      "nullable": true
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` who should be processed.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation whose companions should be processed.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PassportScannerCommandData"
+}

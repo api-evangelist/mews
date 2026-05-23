@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MultipleReservationResult",
+  "title": "MultipleReservationResult",
+  "required": [
+    "ReservationIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ReservationIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Identifiers of the affected `Reservation` entities."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "MultipleReservationResult"
+}

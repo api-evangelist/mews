@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramSubscriptionUpdateValue",
+  "title": "Loyalty program subscription update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Loyalty program subscription",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoyaltyProgramSubscription"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "Free",
+        "Paid"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ],
+      "x-schema-id": "LoyaltyProgramSubscription"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgramSubscriptionUpdateValue"
+}

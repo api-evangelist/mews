@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/StringUpdateValue",
+  "title": "String update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "string",
+      "description": "Value which is to be updated.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "StringUpdateValue"
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentPlanAddParameters",
+  "title": "PaymentPlanAddParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Name",
+    "PaymentRequest",
+    "ReservationId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Reservation Id associated with the payment plan.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the payment plan."
+    },
+    "PaymentRequest": {
+      "title": "Payment plan payment request",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentPlanPaymentRequest"
+        }
+      ],
+      "description": "Data related to the payment request associated with the payment plan created."
+    },
+    "StartMonth": {
+      "type": "string",
+      "description": "Specifies the month when the payment plan begins collecting payments, in the 'YYYY-MM' format. The month must be in the future and fall within the reservation period.",
+      "format": "date-time",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentPlanAddParameters"
+}

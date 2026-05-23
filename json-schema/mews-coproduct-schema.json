@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Coproduct",
+  "title": "Coproduct",
+  "required": [
+    "Discriminator",
+    "Value"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "Value": {}
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Coproduct"
+}

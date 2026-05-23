@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RuleAction",
+  "title": "Rule action",
+  "required": [
+    "Id",
+    "RuleId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the rule action.",
+      "format": "uuid"
+    },
+    "RuleId": {
+      "type": "string",
+      "description": "Unique identifier of the rule.",
+      "format": "uuid"
+    },
+    "Data": {
+      "title": "Rule action data",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/RuleActionDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/RuleActionProductData"
+            }
+          ]
+        }
+      },
+      "description": "Additional information about action.",
+      "nullable": true,
+      "x-coproduct": true,
+      "x-schema-id": "RuleActionDataCoproductOfRuleActionDiscriminator"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RuleAction"
+}

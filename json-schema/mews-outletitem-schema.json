@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OutletItem",
+  "title": "Outlet item",
+  "required": [
+    "BillId",
+    "ConsumedUtc",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "Type",
+    "UnitAmount",
+    "UnitCount",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the item.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the [Enterprise](https://mews-systems.gitbook.io/connector-api/operations/enterprises/#enterprise).",
+      "format": "uuid"
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the [Outlet bill](https://mews-systems.gitbook.io/connector-api/operations/#outlet-bill) the item belongs to.",
+      "format": "uuid"
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the [Accounting category](https://mews-systems.gitbook.io/connector-api/operations/accountingcategories/#accounting-category) the item belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Type": {
+      "$ref": "#/components/schemas/OutletItemType"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the item.",
+      "nullable": true
+    },
+    "UnitCount": {
+      "type": "integer",
+      "description": "Unit count of the item.",
+      "format": "int32"
+    },
+    "UnitAmount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Unit amount of the item."
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the item creation in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the item in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ConsumedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the item consumption in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "ExternalIdentifier": {
+      "type": "string",
+      "description": "An identifier of this item from another system.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "PaymentCardPaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the payment card `Payment` this item is linked to. This is only applicable to items where `Type` is `Payment`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "UnitCost": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Total price of the reservation.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `UnitAmount` instead."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OutletItem"
+}

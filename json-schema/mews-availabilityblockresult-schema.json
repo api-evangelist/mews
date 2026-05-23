@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockResult",
+  "title": "AvailabilityBlockResult",
+  "type": "object",
+  "properties": {
+    "AvailabilityBlocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AvailabilityBlock"
+      },
+      "description": "Availability blocks.",
+      "nullable": true
+    },
+    "ServiceOrders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReservationOld"
+      },
+      "description": "Service orders (for example reservations) linked to availability blocks.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all reservations (ver 2023-06-06)](https://mews-systems.gitbook.io/connector-api/operations/reservations#get-all-reservations-ver-2023-06-06) instead."
+    },
+    "Adjustments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AvailabilityAdjustment"
+      },
+      "description": "Availability adjustments of availability blocks.",
+      "nullable": true
+    },
+    "Rates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RateForExtent"
+      },
+      "description": "`Rates` assigned to the block.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all rates](https://mews-systems.gitbook.io/connector-api/operations/rates#get-all-rates) instead."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last returned availability block. This can be used in Limitation in a subsequent request to fetch the next batch of availability block.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityBlockResult"
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CounterResult",
+  "title": "CounterResult",
+  "required": [
+    "BillCounters",
+    "BillPreviewCounters",
+    "Counters",
+    "ProformaCounters",
+    "RegistrationCardCounters",
+    "ServiceOrderCounters"
+  ],
+  "type": "object",
+  "properties": {
+    "Counters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Counter"
+      },
+      "description": "All types of counters."
+    },
+    "BillCounters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Counter"
+      },
+      "description": "The counters used to count closed `Bills`.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Counters` instead."
+    },
+    "ProformaCounters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Counter"
+      },
+      "description": "The counters used to count Pro Forma invoices for `Bills`.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Counters` instead."
+    },
+    "BillPreviewCounters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Counter"
+      },
+      "description": "The counters used to count bill previews for `Bills`.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Counters` instead."
+    },
+    "ServiceOrderCounters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Counter"
+      },
+      "description": "The counters used to count service orders (for example reservations).",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Counters` instead."
+    },
+    "RegistrationCardCounters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Counter"
+      },
+      "description": "The counters used to count registration cards.",
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `Counters` instead."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last returned counter in `Counters`. This can be used in Limitation in a subsequent request to fetch the next batch of counters.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CounterResult"
+}

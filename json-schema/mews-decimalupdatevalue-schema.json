@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DecimalUpdateValue",
+  "title": "Decimal update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "number",
+      "description": "Value which is to be updated.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DecimalUpdateValue"
+}

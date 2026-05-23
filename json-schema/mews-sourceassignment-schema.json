@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SourceAssignment",
+  "title": "Source assignment",
+  "required": [
+    "Id",
+    "IsPrimary",
+    "ReservationGroupId",
+    "SourceId"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the source assignement.",
+      "format": "uuid"
+    },
+    "ReservationGroupId": {
+      "type": "string",
+      "description": "Unique identifier of the [Reservation group](https://mews-systems.gitbook.io/connector-api/operations/reservations/#reservation-group).",
+      "format": "uuid"
+    },
+    "SourceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Source](https://mews-systems.gitbook.io/connector-api/operations/sources/#source).",
+      "format": "uuid"
+    },
+    "IsPrimary": {
+      "type": "boolean",
+      "description": "Specifies the primary source for the [Reservation group](https://mews-systems.gitbook.io/connector-api/operations/reservations/#reservation-group)."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "SourceAssignment"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingState",
+  "title": "Order item accounting state",
+  "enum": [
+    "Open",
+    "Closed",
+    "Inactive",
+    "Canceled"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "Order items which carry a non-zero value, are open, and have not been closed on a bill or invoice.",
+    "Order items which carry a non-zero value and have been closed on a bill or invoice.",
+    "Order items which are either of zero value and have not been canceled, if the state of the payment item is Pending or Failed, or items of optional reservations. Until the reservation is confirmed, all its accounting items are Inactive.",
+    "Order items which have been canceled, regardless of whether the item is of zero value."
+  ]
+}

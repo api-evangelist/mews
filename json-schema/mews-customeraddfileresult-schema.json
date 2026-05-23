@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CustomerAddFileResult",
+  "title": "CustomerAddFileResult",
+  "required": [
+    "FileId"
+  ],
+  "type": "object",
+  "properties": {
+    "FileId": {
+      "type": "string",
+      "description": "Unique identifier of the uploaded file.",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CustomerAddFileResult"
+}

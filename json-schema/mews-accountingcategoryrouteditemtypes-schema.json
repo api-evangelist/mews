@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingCategoryRoutedItemTypes",
+  "title": "Accounting category routed item types",
+  "required": [
+    "CustomItems",
+    "Products"
+  ],
+  "type": "object",
+  "properties": {
+    "Products": {
+      "type": "boolean",
+      "description": "Specifies whether products under the given accounting category are routed."
+    },
+    "CustomItems": {
+      "type": "boolean",
+      "description": "Specifies whether custom items under the given accounting category are routed."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingCategoryRoutedItemTypes"
+}

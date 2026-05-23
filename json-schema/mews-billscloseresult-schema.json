@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillsCloseResult",
+  "title": "BillsCloseResult",
+  "required": [
+    "Bills"
+  ],
+  "type": "object",
+  "properties": {
+    "Bills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Bill"
+      },
+      "description": "The closed bills."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillsCloseResult"
+}

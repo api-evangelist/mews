@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PersonData",
+  "title": "Person resource data",
+  "type": "object",
+  "additionalProperties": false
+}

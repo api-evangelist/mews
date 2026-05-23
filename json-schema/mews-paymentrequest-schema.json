@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRequest",
+  "title": "Payment request",
+  "required": [
+    "AccountId",
+    "Amount",
+    "CreatedUtc",
+    "Description",
+    "EnterpriseId",
+    "ExpirationUtc",
+    "Id",
+    "Reason",
+    "State",
+    "Type",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the payment request.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` to which the payment request was issued.",
+      "format": "uuid"
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the `Customer` to which the payment request was issued.",
+      "format": "uuid",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `AccountId`"
+    },
+    "ReservationGroupId": {
+      "type": "string",
+      "description": "Unique identifier of the `ReservationGroup`.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation` the payment request belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "State": {
+      "$ref": "#/components/schemas/PaymentRequestState"
+    },
+    "Amount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Amount of the payment request."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/PaymentRequestType"
+    },
+    "Reason": {
+      "$ref": "#/components/schemas/PaymentRequestReason"
+    },
+    "ExpirationUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the payment request's expiration in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Description": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "type": "string",
+      "description": "Description of the payment request."
+    },
+    "Notes": {
+      "maxLength": 1000,
+      "type": "string",
+      "description": "Payment request's notes.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the payment request in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the payment request in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentRequest"
+}

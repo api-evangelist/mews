@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceUpdateParameters",
+  "title": "Resource update",
+  "required": [
+    "ResourceId"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Resource` which is updated.",
+      "format": "uuid"
+    },
+    "Name": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New name of the resource (e.g. room number).",
+      "nullable": true
+    },
+    "ParentResourceId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidNullableUpdateValue"
+        }
+      ],
+      "description": "Identifier of the new parent `Resource`.",
+      "nullable": true
+    },
+    "Data": {
+      "title": "Resource data update",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/ResourceDataDiscriminator"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/SpaceDataUpdateParameters"
+            },
+            {
+              "title": "Object resource data update",
+              "type": "object",
+              "additionalProperties": false
+            },
+            {
+              "title": "Person resource data update",
+              "type": "object",
+              "additionalProperties": false
+            }
+          ],
+          "description": "Based on `Discriminator`. Currently supported only for `Space` resources with [Space resource data update](https://mews-systems.gitbook.io/connector-api/operations/resources#space-resource-data-update)."
+        }
+      },
+      "description": "New additional data of the resource.",
+      "nullable": true,
+      "x-coproduct": true,
+      "x-schema-id": "ResourceUpdateParametersDataCoproductOfResourceDataDiscriminator"
+    },
+    "State": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New `ResourceState` except `OutOfOrder`.",
+      "nullable": true
+    },
+    "StateReason": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "New reason for the state of the resource.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceUpdateParameters"
+}

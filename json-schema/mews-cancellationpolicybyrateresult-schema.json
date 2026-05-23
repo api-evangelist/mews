@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CancellationPolicyByRateResult",
+  "title": "CancellationPolicyByRateResult",
+  "required": [
+    "CancellationPolicies"
+  ],
+  "type": "object",
+  "properties": {
+    "CancellationPolicies": {
+      "maxItems": 1300,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CancellationPolicyByRate"
+      },
+      "description": "List of cancellation policies data grouped by rate."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CancellationPolicyByRateResult"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleStayItemsUpdateParameters",
+  "title": "Selected stay items update parameters",
+  "type": "object",
+  "properties": {
+    "Nights": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Whether the routing rule applies to nights (or null should it not be updated).",
+      "nullable": true
+    },
+    "CityTax": {
+      "title": "Boolean update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanUpdateValue"
+        }
+      ],
+      "description": "Whether the routing rule applies to city tax (or null should it not be updated).",
+      "nullable": true
+    },
+    "ProductCategoryIds": {
+      "title": "Guid array update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidIEnumerableUpdateValue"
+        }
+      ],
+      "description": "Product categories to which the routing rule applies to (or null should it not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "RoutingRuleStayItemsUpdateParameters"
+}

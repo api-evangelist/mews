@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyTierUpdateParameters",
+  "title": "Loyalty tier update parameters",
+  "required": [
+    "LoyaltyTierId"
+  ],
+  "type": "object",
+  "properties": {
+    "LoyaltyTierId": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty tier.",
+      "format": "uuid"
+    },
+    "Name": {
+      "title": "String update value",
+      "maxLength": 50,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Name of the loyalty tier \\(or `null` if the name should not be updated\\).",
+      "nullable": true
+    },
+    "Code": {
+      "title": "String update value",
+      "maxLength": 50,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Code of the loyalty tier, \\(or `null` if the code should not be updated\\).",
+      "nullable": true
+    },
+    "Ordering": {
+      "title": "Int32 update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Int32UpdateValue"
+        }
+      ],
+      "description": "Ordering of the loyalty tier, \\(or `null` if the ordering should not be updated\\).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyTierUpdateParameters"
+}

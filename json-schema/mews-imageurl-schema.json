@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ImageUrl",
+  "title": "Image URL",
+  "required": [
+    "ImageId",
+    "Url"
+  ],
+  "type": "object",
+  "properties": {
+    "ImageId": {
+      "type": "string",
+      "description": "Unique identifier of the image.",
+      "format": "uuid"
+    },
+    "Url": {
+      "minLength": 1,
+      "type": "string",
+      "description": "URL of the image."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ImageUrl"
+}

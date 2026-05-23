@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Language",
+  "title": "Language",
+  "required": [
+    "Code",
+    "EnglishName",
+    "LocalName"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Language-culture code of the language."
+    },
+    "FallbackLanguageCode": {
+      "type": "string",
+      "description": "Language-culture code of the fallback language.",
+      "nullable": true
+    },
+    "EnglishName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "English name of the language."
+    },
+    "LocalName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Local name of the language."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Language"
+}

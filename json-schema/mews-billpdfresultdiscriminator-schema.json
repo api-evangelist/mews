@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillPdfResultDiscriminator",
+  "title": "Bill PDF result discriminator",
+  "enum": [
+    "BillPdfFile",
+    "BillPrintEvent"
+  ],
+  "type": "string",
+  "description": "",
+  "x-enumDescriptions": [
+    "PDF version of a `Bill` was successfully created, `Value` is `BillPdfFile`.",
+    "PDF version of a `Bill` couldn't be created at this moment (for example bill haven't been reported to authorities yet), `Value` is `BillPrintEvent`"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeviceCommand",
+  "title": "Command",
+  "required": [
+    "CreatedUtc",
+    "Data",
+    "Device",
+    "Id",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the command.",
+      "format": "uuid"
+    },
+    "State": {
+      "title": "Command state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeviceCommandStateEnum"
+        }
+      ],
+      "description": "State of the command.\n\nPending (Created in Mews, but not yet received by the client application.)\n\nReceived (Received by the client application.)\n\nProcessing (Being processed by the client application.)\n\nProcessed (Successfully processed command.)\n\nCancelled (A command whose execution has been canceled before (or during) processing.)\n\nError (A command whose execution or processing was terminated by an error.)",
+      "x-enumNames": [
+        "Pending",
+        "Received",
+        "Processing",
+        "Processed",
+        "Cancelled",
+        "Error"
+      ],
+      "x-enumDescriptions": [
+        "Created in Mews, but not yet received by the client application.",
+        "Received by the client application.",
+        "Being processed by the client application.",
+        "Successfully processed command.",
+        "A command whose execution has been canceled before (or during) processing.",
+        "A command whose execution or processing was terminated by an error."
+      ]
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the command.",
+      "format": "date-time"
+    },
+    "Creator": {
+      "title": "User",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeviceCommandCreator"
+        }
+      ],
+      "description": "Creator of the command.",
+      "nullable": true
+    },
+    "Device": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Device"
+        }
+      ],
+      "description": "Device that the command should be executed on."
+    },
+    "Data": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerminalCommandData"
+        },
+        {
+          "$ref": "#/components/schemas/PrinterCommandData"
+        },
+        {
+          "$ref": "#/components/schemas/KeyCutterCommandData"
+        },
+        {
+          "$ref": "#/components/schemas/FiscalMachineCommandData"
+        },
+        {
+          "$ref": "#/components/schemas/PassportScannerCommandData"
+        }
+      ],
+      "description": "Structure of the object depends on [Device type](https://mews-systems.gitbook.io/connector-api/operations/devices#device-type)."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DeviceCommand"
+}

@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillFilterParameters",
+  "title": "BillFilterParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "Limitation"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "Limitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Limitation"
+        }
+      ],
+      "description": "Limitation on the quantity of data returned and optional Cursor for the starting point of data."
+    },
+    "EnterpriseIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the Enterprises. If not specified, the operation returns data for all enterprises within scope of the Access Token.",
+      "nullable": true
+    },
+    "Extent": {
+      "title": "Bill extent",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillExtent"
+        }
+      ],
+      "description": "Extent of data to be returned. E.g. it is possible to specify that together with the bills, payments and revenue items should be also returned.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `orderItems/getAll` and `payments/getAll` with `BillIds` filter instead."
+    },
+    "ClosedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Bill` was closed.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `IssuedUtc` instead.",
+      "x-max-interval-in-months": 3
+    },
+    "IssuedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Bill` was issued.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "PaidUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Bill` was paid.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "DueUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Bill` is due to be paid.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "CreatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Bill` was created.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "UpdatedUtc": {
+      "title": "Time interval",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeFilterInterval"
+        }
+      ],
+      "description": "Interval in which the `Bill` was updated.",
+      "nullable": true,
+      "x-max-interval-in-months": 3
+    },
+    "BillIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Bills`. Required if no other filter is provided.",
+      "nullable": true
+    },
+    "CustomerIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of the `Customers`.",
+      "nullable": true
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillStateEnum"
+        }
+      ],
+      "description": "State the bills should be in. If not specified, `Open` and `Closed` bills are returned.\n\nOpen\n\nClosed",
+      "nullable": true
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillTypeEnum"
+        }
+      ],
+      "description": "Type of the bills. If not specified, all types are returned.\n\nReceipt (Default; the bill has been paid in full; only applicable after the bill is closed.)\n\nInvoice (Bill has not been paid in full but an invoice has been issued to request payment.)",
+      "nullable": true
+    },
+    "CorrectionState": {
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillCorrectionStateEnum"
+      },
+      "description": "Whether to return regular bills, corrective bills, or both. If `BillIds` are specified, defaults to both, otherwise defaults to `Bill`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillFilterParameters"
+}

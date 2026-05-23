@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BaseRatePricingParametersWithOccupancyAdjustments",
+  "title": "Base rate pricing parameters (with occupancy adjustments)",
+  "required": [
+    "Amount"
+  ],
+  "type": "object",
+  "properties": {
+    "Amount": {
+      "title": "Amount parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmountParameters"
+        }
+      ],
+      "description": "Price of the product that overrides the price defined in Mews."
+    },
+    "NegativeOccupancyAdjustment": {
+      "type": "number",
+      "description": "This is the amount added to the price when occupancy of the space is less than the Space Category Capacity. To provide a discount price for under-occupancy, simply use a negative value.",
+      "format": "double"
+    },
+    "ExtraOccupancyAdjustment": {
+      "type": "number",
+      "description": "This is the amount added to the price when the Space Category Capacity is exceeded.",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BaseRatePricingParametersWithOccupancyAdjustments"
+}

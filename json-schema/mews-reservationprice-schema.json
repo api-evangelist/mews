@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationPrice",
+  "title": "Reservation price",
+  "required": [
+    "TotalAmount"
+  ],
+  "type": "object",
+  "properties": {
+    "Identifier": {
+      "type": "string",
+      "description": "Identifier of the reservation within the transaction.",
+      "nullable": true
+    },
+    "TotalAmount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Total price of the reservation."
+    },
+    "Total": {
+      "title": "Currency value (ver 2018-06-07)",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CurrencyValueOld"
+        }
+      ],
+      "description": "Total price of the reservation.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `TotalAmount` instead."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationPrice"
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionClearData",
+  "title": "Restriction clear data",
+  "required": [
+    "Days",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Type": {
+      "title": "Restriction type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RestrictionTypeEnum"
+        }
+      ],
+      "description": "Restriction type.\n\nStay (Guests can't stay within specified dates.)\n\nStart (Guests can't check in within specified dates.)\n\nEnd (Guests can't check out within specified dates.)",
+      "x-enumNames": [
+        "Stay",
+        "Start",
+        "End"
+      ],
+      "x-enumDescriptions": [
+        "Guests can't stay within specified dates.",
+        "Guests can't check in within specified dates.",
+        "Guests can't check out within specified dates."
+      ]
+    },
+    "ExactRateId": {
+      "type": "string",
+      "description": "Unique identifier of the exact `Rate` to which the restriction applies.",
+      "nullable": true,
+      "x-schema-id": "HybridIdentifier"
+    },
+    "BaseRateId": {
+      "type": "string",
+      "description": "Unique identifier of the base `Rate` to which the restriction applies.",
+      "nullable": true,
+      "x-schema-id": "HybridIdentifier"
+    },
+    "RateGroupId": {
+      "type": "string",
+      "description": "Unique identifier of the `Rate group` to which the restriction applies.",
+      "nullable": true,
+      "x-schema-id": "HybridIdentifier"
+    },
+    "ResourceCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the `Resource category` to which the restriction applies.",
+      "nullable": true,
+      "x-schema-id": "HybridIdentifier"
+    },
+    "ResourceCategoryType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceCategoryTypeEnum"
+        }
+      ],
+      "description": "Name of the `Resource category type` to which the restriction applies.\n\nRoom\n\nBed\n\nDorm\n\nApartment\n\nSuite\n\nVilla\n\nSite\n\nOffice\n\nMeetingRoom\n\nParkingSpot\n\nDesk\n\nTeamArea\n\nMembership\n\nTent\n\nCaravanOrRV\n\nUnequippedCampsite\n\nBike\n\nExtraBed\n\nCot\n\nCrib\n\nConferenceRoom\n\nRooftop\n\nGarden\n\nRestaurant\n\nAmphitheater\n\nPrivateSpaces",
+      "nullable": true
+    },
+    "StartUtc": {
+      "type": "string",
+      "description": "Start date of the time interval for which the restriction conditions should be applied. This must be in UTC timezone in ISO 8601 format - see [Datetimes](https://mews-systems.gitbook.io/connector-api/guidelines/serialization#datetimes).",
+      "format": "date-time",
+      "nullable": true
+    },
+    "EndUtc": {
+      "type": "string",
+      "description": "End date of the time interval for which the restriction conditions should be applied. This must be in UTC timezone in ISO 8601 format - see [Datetimes](https://mews-systems.gitbook.io/connector-api/guidelines/serialization#datetimes).",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Days": {
+      "title": "Days parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DaysParameters"
+        }
+      ],
+      "description": "The days of week to which the restriction applies."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RestrictionClearData"
+}

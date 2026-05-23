@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillStateEnum",
+  "title": "Bill state",
+  "enum": [
+    "Open",
+    "Closed"
+  ],
+  "type": "string",
+  "description": "Whether the bill is `Open` or `Closed`.\n\nOpen\n\nClosed",
+  "x-enumNames": [
+    "Open",
+    "Closed"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

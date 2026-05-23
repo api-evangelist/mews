@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgram",
+  "title": "Loyalty program",
+  "required": [
+    "ChainId",
+    "Code",
+    "Id",
+    "Name",
+    "Subscription",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty program.",
+      "format": "uuid"
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain.",
+      "format": "uuid"
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the loyalty program."
+    },
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the loyalty program."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/LoyaltyProgramType"
+    },
+    "Subscription": {
+      "$ref": "#/components/schemas/LoyaltyProgramSubscription"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgram"
+}

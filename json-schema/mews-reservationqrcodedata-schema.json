@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationQrCodeData",
+  "title": "Reservation QR code data",
+  "type": "object",
+  "properties": {
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation.",
+      "format": "uuid"
+    },
+    "Data": {
+      "type": "string",
+      "description": "Reservation data for QR code generation.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationQrCodeData"
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CurrencyValueOld",
+  "title": "Currency value (ver 2018-06-07)",
+  "required": [
+    "Currency"
+  ],
+  "type": "object",
+  "properties": {
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "format": "currency"
+    },
+    "Value": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "Net": {
+      "type": "number",
+      "format": "double",
+      "nullable": true,
+      "deprecated": true
+    },
+    "Tax": {
+      "type": "number",
+      "format": "double",
+      "nullable": true,
+      "deprecated": true
+    },
+    "TaxRate": {
+      "type": "number",
+      "format": "double",
+      "nullable": true,
+      "deprecated": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Total price of the reservation.",
+  "x-schema-id": "CurrencyValueOld"
+}

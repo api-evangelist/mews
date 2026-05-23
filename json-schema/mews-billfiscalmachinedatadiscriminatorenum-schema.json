@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillFiscalMachineDataDiscriminatorEnum",
+  "title": "Fiscal machine data discriminator",
+  "enum": [
+    "ItalianFiscalMachineData"
+  ],
+  "type": "string",
+  "description": "\n\nItalianFiscalMachineData",
+  "x-enumNames": [
+    "ItalianFiscalMachineData"
+  ],
+  "x-enumDescriptions": [
+    ""
+  ]
+}

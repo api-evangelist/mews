@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaskAddParameters",
+  "title": "TaskAddParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "DeadlineUtc",
+    "Name"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "DepartmentId": {
+      "type": "string",
+      "description": "Unique identifier of the [Department](https://mews-systems.gitbook.io/connector-api/operations/departments/#department) the task is addressed to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ServiceOrderId": {
+      "type": "string",
+      "description": "Unique identifier of the service order (reservation or product service order) the task is linked with.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Name": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name (or title) of the task."
+    },
+    "Description": {
+      "type": "string",
+      "description": "Further decription of the task.",
+      "nullable": true
+    },
+    "DeadlineUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Deadline of the task in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TaskAddParameters"
+}

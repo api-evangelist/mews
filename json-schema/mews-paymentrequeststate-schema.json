@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentRequestState",
+  "title": "Payment request state",
+  "enum": [
+    "Pending",
+    "Completed",
+    "Canceled",
+    "Expired"
+  ],
+  "type": "string",
+  "description": "A payment request state.",
+  "x-enumDescriptions": [
+    "Payment request is active and waiting for completion.",
+    "Payment request was fulfilled.",
+    "Payment request was canceled.",
+    "Payment request is past its expiration date and no longer active."
+  ]
+}

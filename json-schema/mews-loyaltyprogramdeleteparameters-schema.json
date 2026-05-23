@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramDeleteParameters",
+  "title": "LoyaltyProgramDeleteParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "LoyaltyProgramIds"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "LoyaltyProgramIds": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifier of the loyalty programs to be deleted."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgramDeleteParameters"
+}

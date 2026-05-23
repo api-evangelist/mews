@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingCategoryClassificationEnum",
+  "title": "Accounting category classification",
+  "enum": [
+    "Accommodation",
+    "FoodAndBeverage",
+    "Taxes",
+    "Payments",
+    "ExternalRevenue",
+    "SundryIncome",
+    "Wellness",
+    "Sport",
+    "Technology",
+    "Facilities",
+    "Events",
+    "Tourism"
+  ],
+  "type": "string",
+  "description": "\n\nAccommodation\n\nFoodAndBeverage\n\nTaxes\n\nPayments\n\nExternalRevenue\n\nSundryIncome\n\nWellness\n\nSport\n\nTechnology\n\nFacilities\n\nEvents\n\nTourism",
+  "x-enumNames": [
+    "Accommodation",
+    "FoodAndBeverage",
+    "Taxes",
+    "Payments",
+    "ExternalRevenue",
+    "SundryIncome",
+    "Wellness",
+    "Sport",
+    "Technology",
+    "Facilities",
+    "Events",
+    "Tourism"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

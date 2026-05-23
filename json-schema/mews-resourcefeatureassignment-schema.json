@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceFeatureAssignment",
+  "title": "Resource feature assignment",
+  "required": [
+    "CreatedUtc",
+    "FeatureId",
+    "Id",
+    "IsActive",
+    "ResourceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the assignment.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the assignment is still active."
+    },
+    "ResourceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Resource](https://mews-systems.gitbook.io/connector-api/operations/resources/#resource).",
+      "format": "uuid"
+    },
+    "FeatureId": {
+      "type": "string",
+      "description": "Unique identifier of the [Resource feature](https://mews-systems.gitbook.io/connector-api/operations/#resource-feature) assigned to the Resource.",
+      "format": "uuid"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the assignment in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the assignment in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceFeatureAssignment"
+}

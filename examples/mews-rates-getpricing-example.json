@@ -1,0 +1,136 @@
+{
+  "operationId": "rates_getPricing",
+  "method": "POST",
+  "path": "/api/connector/v1/rates/getPricing",
+  "summary": "Get rate pricing",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda",
+        "FirstTimeUnitStartUtc": "2022-01-01T23:00:00.000Z",
+        "LastTimeUnitStartUtc": "2022-01-03T23:00:00.000Z"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Currency": "EUR",
+        "BaseAmountPrices": [
+          {
+            "Currency": "EUR",
+            "NetValue": 93.46,
+            "GrossValue": 100,
+            "TaxValues": [
+              {
+                "Code": "DE-2020-1-L",
+                "Value": 6.54
+              }
+            ],
+            "Breakdown": {
+              "Items": [
+                {
+                  "TaxRateCode": "DE-2020-1-L",
+                  "NetValue": 93.46,
+                  "TaxValue": 6.54
+                }
+              ]
+            }
+          },
+          {
+            "Currency": "EUR",
+            "NetValue": 93.46,
+            "GrossValue": 100,
+            "TaxValues": [
+              {
+                "Code": "DE-2020-1-L",
+                "Value": 6.54
+              }
+            ],
+            "Breakdown": {
+              "Items": [
+                {
+                  "TaxRateCode": "DE-2020-1-L",
+                  "NetValue": 93.46,
+                  "TaxValue": 6.54
+                }
+              ]
+            }
+          }
+        ],
+        "CategoryAdjustments": [
+          {
+            "AbsoluteValue": 0,
+            "CategoryId": "34c29e73-c8db-4e93-b51b-981e42655e03",
+            "ParentCategoryId": null,
+            "RelativeValue": 0.2
+          },
+          {
+            "AbsoluteValue": 50,
+            "CategoryId": "a0a7a5c5-c4ef-494a-8b34-6cca97629076",
+            "ParentCategoryId": "34c29e73-c8db-4e93-b51b-981e42655e03",
+            "RelativeValue": 0
+          }
+        ],
+        "CategoryPrices": [
+          {
+            "CategoryId": "e3aa3117-dff0-46b7-b49a-2c0391e70ff9",
+            "AmountPrices": [
+              {
+                "Currency": "EUR",
+                "NetValue": 93.46,
+                "GrossValue": 100,
+                "TaxValues": [
+                  {
+                    "Code": "DE-2020-1-L",
+                    "Value": 6.54
+                  }
+                ],
+                "Breakdown": {
+                  "Items": [
+                    {
+                      "TaxRateCode": "DE-2020-1-L",
+                      "NetValue": 93.46,
+                      "TaxValue": 6.54
+                    }
+                  ]
+                }
+              },
+              {
+                "Currency": "EUR",
+                "NetValue": 93.46,
+                "GrossValue": 100,
+                "TaxValues": [
+                  {
+                    "Code": "DE-2020-1-L",
+                    "Value": 6.54
+                  }
+                ],
+                "Breakdown": {
+                  "Items": [
+                    {
+                      "TaxRateCode": "DE-2020-1-L",
+                      "NetValue": 93.46,
+                      "TaxValue": 6.54
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "TimeUnitStartsUtc": [
+          "2022-01-01T23:00:00Z",
+          "2022-01-02T23:00:00Z",
+          "2022-01-03T23:00:00Z"
+        ]
+      }
+    }
+  ]
+}

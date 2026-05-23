@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceExtent",
+  "title": "Resource extent",
+  "type": "object",
+  "properties": {
+    "Resources": {
+      "type": "boolean",
+      "description": "Whether the response should contain resources.",
+      "nullable": true
+    },
+    "ResourceCategories": {
+      "type": "boolean",
+      "description": "Whether the response should contain categories.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all resource categories](https://mews-systems.gitbook.io/connector-api/operations/resourcecategories#get-all-resource-categories)"
+    },
+    "ResourceCategoryAssignments": {
+      "type": "boolean",
+      "description": "Whether the response should contain assignments of the resources to categories.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all resource category assignments](https://mews-systems.gitbook.io/connector-api/operations/resourcecategories#get-all-resource-category-assignments)"
+    },
+    "ResourceCategoryImageAssignments": {
+      "type": "boolean",
+      "description": "Whether the response should contain assignments of the images to categories.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all resource category image assignments](https://mews-systems.gitbook.io/connector-api/operations/resourcecategories#get-all-resource-category-image-assignments)"
+    },
+    "ResourceFeatures": {
+      "type": "boolean",
+      "description": "Whether the response should contain resource features.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all resource features](https://mews-systems.gitbook.io/connector-api/operations/resourcefeatures#get-all-resource-features)"
+    },
+    "ResourceFeatureAssignments": {
+      "type": "boolean",
+      "description": "Whether the response should contain assignments of the resources to features.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use [Get all resource feature assignments](https://mews-systems.gitbook.io/connector-api/operations/resourcefeatures#get-all-resource-feature-assignments)"
+    },
+    "Inactive": {
+      "type": "boolean",
+      "description": "Whether the response should contain inactive entities.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "ResourceExtent"
+}

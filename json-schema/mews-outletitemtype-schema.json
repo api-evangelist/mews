@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OutletItemType",
+  "title": "Outlet item type",
+  "enum": [
+    "Revenue",
+    "NonRevenue",
+    "Payment"
+  ],
+  "type": "string",
+  "description": "Type of the outlet item."
+}

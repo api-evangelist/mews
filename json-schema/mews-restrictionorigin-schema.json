@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestrictionOrigin",
+  "title": "Restriction origin",
+  "enum": [
+    "User",
+    "Integration"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "Restriction was created by a user in Mews.",
+    "Restriction was created by a 3rd-party integration."
+  ]
+}

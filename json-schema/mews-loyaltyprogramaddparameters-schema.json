@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyProgramAddParameters",
+  "title": "Loyalty program parameters",
+  "required": [
+    "Code",
+    "Name",
+    "Subscription",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Name": {
+      "maxLength": 100,
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the loyalty program."
+    },
+    "Code": {
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string",
+      "description": "Code of the loyalty program."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/LoyaltyProgramType"
+    },
+    "Subscription": {
+      "$ref": "#/components/schemas/LoyaltyProgramSubscription"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyProgramAddParameters"
+}

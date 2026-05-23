@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleUpdateParameters",
+  "title": "Routing rule update parameters",
+  "required": [
+    "RoutingRuleId"
+  ],
+  "type": "object",
+  "properties": {
+    "RoutingRuleId": {
+      "type": "string",
+      "description": "Unique identifier of the routing rule.",
+      "format": "uuid"
+    },
+    "CompanyId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the Company (or null should it not be updated).",
+      "nullable": true
+    },
+    "ServiceId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the Service routing rule is assigned to (or null should it not be updated).",
+      "nullable": true
+    },
+    "CompanyRelation": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleCompanyRelation"
+        }
+      ],
+      "description": "Company relation to the routing rule (or null should it not be updated).",
+      "nullable": true
+    },
+    "Applicability": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleApplicability"
+        }
+      ],
+      "description": "Applicability that determines if routing rule apply to all future reservations with this company or travel agency attached or only future reservations that are prepaid in online travel agency (OTA) (or null should it not be updated).",
+      "nullable": true
+    },
+    "RouteType": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleRouteType"
+        }
+      ],
+      "description": "What should be routed Route type (or null should it not be updated).",
+      "nullable": true
+    },
+    "AssignmentTargetType": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleAssignmentTargetType"
+        }
+      ],
+      "description": "Relation of company to the bill Assignment target type (or null should it not be updated).",
+      "nullable": true
+    },
+    "SelectedStayItems": {
+      "title": "Selected stay items update parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleStayItemsUpdateParameters"
+        }
+      ],
+      "description": "To which stay items routing rule applies to. Required only if `RouteType` value is `SelectedStayItems`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RoutingRuleUpdateParameters"
+}

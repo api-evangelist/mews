@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AlternativePaymentMethodDeprecated",
+  "title": "Alternative payment methods",
+  "enum": [
+    "Ideal",
+    "ApplePay",
+    "GooglePay"
+  ],
+  "type": "string"
+}

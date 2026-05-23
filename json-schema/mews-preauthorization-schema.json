@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Preauthorization",
+  "title": "Preauthorization",
+  "required": [
+    "Amount",
+    "CreditCardId",
+    "Id",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the preauthorization.",
+      "format": "uuid"
+    },
+    "CreditCardId": {
+      "type": "string",
+      "description": "Unique identifier of the credit card.",
+      "format": "uuid"
+    },
+    "Amount": {
+      "title": "Amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Amount"
+        }
+      ],
+      "description": "Value of the preauthorization."
+    },
+    "State": {
+      "$ref": "#/components/schemas/PreauthorizationState"
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the `Reservation` the preauthorization belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Code": {
+      "type": "string",
+      "description": "Code of the preauthorization.",
+      "nullable": true
+    },
+    "CustomerId": {
+      "type": "string",
+      "description": "Unique identifier of the customer.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the preauthorization is active."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "Preauthorization"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRuleUpdateResult",
+  "title": "RoutingRuleUpdateResult",
+  "required": [
+    "RoutingRules"
+  ],
+  "type": "object",
+  "properties": {
+    "RoutingRules": {
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RoutingRule"
+      },
+      "description": "Updated routing rules."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RoutingRuleUpdateResult"
+}

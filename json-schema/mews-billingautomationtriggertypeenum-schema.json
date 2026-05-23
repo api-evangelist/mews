@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationTriggerTypeEnum",
+  "title": "Billing automation trigger type",
+  "enum": [
+    "Continuous",
+    "Recurring",
+    "Legacy"
+  ],
+  "type": "string",
+  "description": "\n\nContinuous (Billing automation is continuously triggered by reservation actions, such as creation, updates, and rebates.)\n\nRecurring (Billing automation is executed monthly.)\n\nLegacy (Billing automation is executed on reservation creation only. Items added later are not transfered to any bill.)",
+  "x-enumNames": [
+    "Continuous",
+    "Recurring",
+    "Legacy"
+  ],
+  "x-enumDescriptions": [
+    "Billing automation is continuously triggered by reservation actions, such as creation, updates, and rebates.",
+    "Billing automation is executed monthly.",
+    "Billing automation is executed on reservation creation only. Items added later are not transfered to any bill."
+  ]
+}

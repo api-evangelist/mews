@@ -1,0 +1,75 @@
+{
+  "operationId": "paymentRequests_add",
+  "method": "POST",
+  "path": "/api/connector/v1/paymentRequests/add",
+  "summary": "Add payment requests",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "PaymentRequests": [
+          {
+            "AccountId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+            "Amount": {
+              "Currency": "EUR",
+              "Value": 10.4
+            },
+            "Type": "Payment",
+            "Reason": "PaymentCardMissing",
+            "ExpirationUtc": "2023-02-20T12:00:00Z",
+            "Description": "Payment required",
+            "Notes": "Internal notes.",
+            "ReservationId": "0f515589-99b4-423d-b83a-b237009f0509",
+            "BillId": "ea087d64-3901-4eee-b0b7-9fce4c58a005"
+          }
+        ],
+        "SendPaymentRequestEmails": true,
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "PaymentRequests": [
+          {
+            "Id": "6282d17b-a068-4a9f-83d3-afae00c39bfb",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "AccountId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+            "CustomerId": "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+            "ReservationGroupId": null,
+            "ReservationId": "0f515589-99b4-423d-b83a-b237009f0509",
+            "State": "Pending",
+            "Amount": {
+              "Currency": "EUR",
+              "NetValue": 10.04,
+              "GrossValue": 10.4,
+              "TaxValues": [],
+              "Breakdown": {
+                "Items": [
+                  {
+                    "TaxRateCode": null,
+                    "NetValue": 10.05,
+                    "TaxValue": 0.0
+                  }
+                ]
+              }
+            },
+            "Type": "Payment",
+            "Reason": "PaymentCardMissing",
+            "ExpirationUtc": "2023-02-20T12:00:00Z",
+            "Description": "Payment required",
+            "Notes": "Internal notes.",
+            "CreatedUtc": "2023-10-01T11:48:57Z",
+            "UpdatedUtc": "2023-10-28T11:48:57Z"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationOrderItemConsumptionPeriodTypeEnum",
+  "title": "Billing automation order item consumption period type",
+  "enum": [
+    "MonthBefore",
+    "SameMonthAndMonthBefore",
+    "SameMonth",
+    "SameMonthAndMonthAfter",
+    "MonthAfter"
+  ],
+  "type": "string",
+  "description": "\n\nMonthBefore (Only items with a consumption date within the previous month will be routed.)\n\nSameMonthAndMonthBefore (Only items with a consumption date within this and the previous month will be routed.)\n\nSameMonth (Only items with a consumption date within this month will be routed.)\n\nSameMonthAndMonthAfter (Only items with a consumption date within this and the next month will be routed.)\n\nMonthAfter (Only items with a consumption date within the next month will be routed.)",
+  "x-enumNames": [
+    "MonthBefore",
+    "SameMonthAndMonthBefore",
+    "SameMonth",
+    "SameMonthAndMonthAfter",
+    "MonthAfter"
+  ],
+  "x-enumDescriptions": [
+    "Only items with a consumption date within the previous month will be routed.",
+    "Only items with a consumption date within this and the previous month will be routed.",
+    "Only items with a consumption date within this month will be routed.",
+    "Only items with a consumption date within this and the next month will be routed.",
+    "Only items with a consumption date within the next month will be routed."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaxationResult",
+  "title": "TaxationResult",
+  "required": [
+    "Taxations",
+    "TaxRates"
+  ],
+  "type": "object",
+  "properties": {
+    "Taxations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Taxation"
+      },
+      "description": "The supported taxations."
+    },
+    "TaxRates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaxRate"
+      },
+      "description": "The supported tax rates."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "TaxationResult"
+}

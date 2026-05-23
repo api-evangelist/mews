@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderAdditionOptions",
+  "title": "Order addition options",
+  "type": "object",
+  "properties": {
+    "DisableItemGrouping": {
+      "type": "boolean",
+      "description": "Whether to disable item grouping. Defaults to `false` (item grouping is enabled by default).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderAdditionOptions"
+}

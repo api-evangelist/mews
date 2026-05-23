@@ -1,0 +1,33 @@
+{
+  "operationId": "reservations_cancel",
+  "method": "POST",
+  "path": "/api/connector/v1/reservations/cancel",
+  "summary": "Cancel reservation",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "ReservationIds": [
+          "5ca70705-cbb7-48c4-8cc4-abb900aa278c"
+        ],
+        "PostCancellationFee": true,
+        "Notes": "Cancellation through Connector API"
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "ReservationIds": [
+          "5ca70705-cbb7-48c4-8cc4-abb900aa278c"
+        ]
+      }
+    }
+  ]
+}

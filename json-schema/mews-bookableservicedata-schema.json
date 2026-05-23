@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BookableServiceData",
+  "title": "Bookable service data",
+  "required": [
+    "EndOffset",
+    "OccupancyEndOffset",
+    "OccupancyStartOffset",
+    "StartOffset",
+    "TimeUnit",
+    "TimeUnitPeriod"
+  ],
+  "type": "object",
+  "properties": {
+    "StartOffset": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Offset from the start of the [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/) which defines the default start of the service; expressed in ISO 8601 duration format."
+    },
+    "EndOffset": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Offset from the end of the [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/) which defines the default end of the service; expressed in ISO 8601 duration format."
+    },
+    "OccupancyStartOffset": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Offset from the start of the [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/) which defines the occupancy start of the service; expressed in ISO 8601 duration format. 'Occupancy start' is used for availability and reporting purposes, it implies the time at which the booked resource is considered occupied."
+    },
+    "OccupancyEndOffset": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Offset from the end of the [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/) which defines the occupancy end of the service; expressed in ISO 8601 duration format. 'Occupancy end' is used for availability and reporting purposes, it implies the time at which the booked resource is no longer considered occupied."
+    },
+    "TimeUnit": {
+      "title": "Time unit period",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeUnitPeriodEnum"
+        }
+      ],
+      "description": "\n\nDay\n\nMonth\n\nHour",
+      "deprecated": true,
+      "x-enumNames": [
+        "Day",
+        "Month",
+        "Hour"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ],
+      "x-deprecatedMessage": "Use `TimeUnitPeriod` instead."
+    },
+    "TimeUnitPeriod": {
+      "title": "Time unit period",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeUnitPeriodEnum"
+        }
+      ],
+      "description": "The length of time or period represented by a [time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units/), for which the service can be booked.\n\nDay\n\nMonth\n\nHour",
+      "x-enumNames": [
+        "Day",
+        "Month",
+        "Hour"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BookableServiceData"
+}

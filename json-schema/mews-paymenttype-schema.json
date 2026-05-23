@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentType",
+  "title": "Payment item data discriminator",
+  "enum": [
+    "CreditCard",
+    "Invoice",
+    "Cash",
+    "Unspecified",
+    "BadDebts",
+    "WireTransfer",
+    "ExchangeRateDifference",
+    "ExchangeRoundingDifference",
+    "BankCharges",
+    "Cheque",
+    "Other"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "[Credit card payment item data](https://mews-systems.gitbook.io/connector-api/operations/accountingitems#credit-card-payment-item-data)",
+    "[Invoice payment item data](https://mews-systems.gitbook.io/connector-api/operations/accountingitems#invoice-payment-item-data)",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data."
+  ]
+}

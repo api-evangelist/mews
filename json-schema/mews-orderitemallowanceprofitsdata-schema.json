@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemAllowanceProfitsData",
+  "title": "Allowance profits data",
+  "required": [
+    "AllowanceProductOrderItemId",
+    "AllowanceProfitType"
+  ],
+  "type": "object",
+  "properties": {
+    "AllowanceProductOrderItemId": {
+      "type": "string",
+      "description": "Unique identifier of the allowance product [Order item](https://mews-systems.gitbook.io/connector-api/operations/orderitems/#order-item) which credit has been consumed by current item.",
+      "format": "uuid"
+    },
+    "AllowanceProfitType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AllowanceProfitTypeEnum"
+        }
+      ],
+      "description": "Type of allowance profit.\n\nAllowanceBreakage (Profit of the allowance product.)\n\nAllowanceContraBreakage (Accounting balance for profit of the allowance product.)\n\nAllowanceLoss (Loss of the allowance product.)\n\nAllowanceContraLoss (Accounting balance for loss of the allowance product.)"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "OrderItemAllowanceProfitsData"
+}

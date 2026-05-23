@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationAdditionResult",
+  "title": "ReservationAdditionResult",
+  "required": [
+    "Reservations"
+  ],
+  "type": "object",
+  "properties": {
+    "Reservations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AddedReservation"
+      },
+      "description": "The added reservations."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationAdditionResult"
+}

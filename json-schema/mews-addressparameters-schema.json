@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddressParameters",
+  "title": "Address parameters",
+  "type": "object",
+  "properties": {
+    "Line1": {
+      "type": "string",
+      "description": "First line of the address.",
+      "nullable": true
+    },
+    "Line2": {
+      "type": "string",
+      "description": "Second line of the address.",
+      "nullable": true
+    },
+    "City": {
+      "type": "string",
+      "description": "The city.",
+      "nullable": true
+    },
+    "PostalCode": {
+      "type": "string",
+      "description": "Postal code.",
+      "format": "postal-code",
+      "nullable": true
+    },
+    "CountryCode": {
+      "type": "string",
+      "description": "ISO 3166-1 code of the Country.",
+      "nullable": true
+    },
+    "CountrySubdivisionCode": {
+      "type": "string",
+      "description": "ISO 3166-2 code of the administrative division, e.g. DE-BW",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "New address details.",
+  "x-schema-id": "AddressParameters"
+}

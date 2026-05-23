@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceResult",
+  "title": "ResourceResult",
+  "type": "object",
+  "properties": {
+    "Resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Resource"
+      },
+      "description": "The resources of the enterprise.",
+      "nullable": true
+    },
+    "ResourceCategories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategory"
+      },
+      "description": "Categories of resources in the enterprise.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "ResourceCategoryAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategoryAssignment"
+      },
+      "description": "Assignments of resources to categories.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "ResourceCategoryImageAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceCategoryImageAssignment"
+      },
+      "description": "Assignments of images to categories.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "ResourceFeatures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceFeature"
+      },
+      "description": "Features of resources in the enterprise.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "ResourceFeatureAssignments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ResourceFeatureAssignment"
+      },
+      "description": "Assignments of resource features to resources.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the item one newer in time order than the items to be returned. If Cursor is not specified, i.e. `null`, then the latest or most recent items will be returned.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceResult"
+}

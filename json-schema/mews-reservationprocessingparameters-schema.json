@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationProcessingParameters",
+  "title": "ReservationProcessingParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "ReservationId"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ReservationId": {
+      "type": "string",
+      "description": "Unique identifier of the reservation to process.",
+      "format": "uuid"
+    },
+    "CloseBills": {
+      "type": "boolean",
+      "description": "Whether closable bills of the reservation members should be automatically closed.",
+      "nullable": true
+    },
+    "AllowOpenBalance": {
+      "type": "boolean",
+      "description": "Whether non-zero consumed balance of all reservation members is allowed.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Required if AllowOpenBalance set to true. Used to provide reason for closing with unbalanced bill.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ReservationProcessingParameters"
+}

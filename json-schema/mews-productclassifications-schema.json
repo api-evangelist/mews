@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProductClassifications",
+  "title": "Product classifications",
+  "type": "object",
+  "properties": {
+    "Food": {
+      "type": "boolean",
+      "description": "Product is classified as food."
+    },
+    "Beverage": {
+      "type": "boolean",
+      "description": "Product is classified as beverage."
+    },
+    "Wellness": {
+      "type": "boolean",
+      "description": "Product is classified as wellness."
+    },
+    "CityTax": {
+      "type": "boolean",
+      "description": "Product is classified as city tax."
+    },
+    "Fee": {
+      "type": "boolean",
+      "description": "Product is classified as fee."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "ProductClassifications"
+}

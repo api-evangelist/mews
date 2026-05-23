@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ItalianFiscalMachineData",
+  "title": "Fiscal machine data for Italian fiscal machine",
+  "type": "object",
+  "properties": {
+    "IsRefund": {
+      "type": "boolean",
+      "description": "Indicates if the transaction is a refund."
+    },
+    "RebatedReceiptNumber": {
+      "type": "string",
+      "description": "Number of the rebated receipt.",
+      "nullable": true
+    },
+    "RebatedReceiptSequence": {
+      "type": "string",
+      "description": "Sequence of the rebated receipt.",
+      "nullable": true
+    },
+    "RebatedReceiptDateTimeUtc": {
+      "type": "string",
+      "description": "Date and time of the rebated receipt in UTC.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "PrinterSerialNumber": {
+      "type": "string",
+      "description": "Serial number of the printer.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ItalianFiscalMachineData"
+}

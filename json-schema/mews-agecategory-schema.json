@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AgeCategory",
+  "title": "Age category",
+  "required": [
+    "Classification",
+    "CreatedUtc",
+    "Id",
+    "IsActive",
+    "Names",
+    "ServiceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of age category.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of [Service](https://mews-systems.gitbook.io/connector-api/operations/services/#service) the age category belongs to.",
+      "format": "uuid"
+    },
+    "MinimalAge": {
+      "type": "integer",
+      "description": "Minimal age for the age category.",
+      "format": "int32",
+      "nullable": true
+    },
+    "MaximalAge": {
+      "type": "integer",
+      "description": "Maximal age for the age category.",
+      "format": "int32",
+      "nullable": true
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name of the age category.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the short name of the age category.",
+      "nullable": true,
+      "x-schema-id": "LocalizedStrings"
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the age category in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the age category in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "Classification": {
+      "title": "Age category classification",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgeCategoryClassificationEnum"
+        }
+      ],
+      "description": "The classification of the age category.\n\nAdult\n\nChild",
+      "x-enumNames": [
+        "Adult",
+        "Child"
+      ],
+      "x-enumDescriptions": [
+        "",
+        ""
+      ]
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the age category is still active."
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the age category from external system.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AgeCategory"
+}

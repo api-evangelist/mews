@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditCardTransaction",
+  "title": "Credit card transaction",
+  "required": [
+    "ChargedAmount",
+    "PaymentId"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the `PaymentItem`.",
+      "format": "uuid"
+    },
+    "SettlementId": {
+      "type": "string",
+      "description": "Identifier of the settlement.",
+      "nullable": true
+    },
+    "SettledUtc": {
+      "type": "string",
+      "description": "Settlement date and time in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Fee": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Transaction fee - this includes an estimate of bank charges.",
+      "nullable": true
+    },
+    "AdjustedFee": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Transaction fee (adjusted) - this is the final confirmed transaction fee, including confirmed bank charges.",
+      "nullable": true
+    },
+    "ChargedAmount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Charged amount of the transaction."
+    },
+    "SettledAmount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Settled amount of the transaction.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CreditCardTransaction"
+}

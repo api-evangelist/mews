@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationTimeFilter",
+  "title": "Reservation time filter",
+  "enum": [
+    "Colliding",
+    "Created",
+    "Updated",
+    "Start",
+    "End",
+    "Overlapping",
+    "Canceled"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "Reservations whose intervals collide with the specified interval.",
+    "Reservations created within the specified interval.",
+    "Reservations updated within the specified interval.",
+    "Reservations starting (arriving) within the specified interval.",
+    "Reservations ending (departing) within the specified interval.",
+    "Reservations whose intervals contain the specified interval.",
+    "Reservations canceled within the specified interval."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AlternativePaymentResult",
+  "title": "AlternativePaymentResult",
+  "required": [
+    "PaymentId"
+  ],
+  "type": "object",
+  "properties": {
+    "PaymentId": {
+      "type": "string",
+      "description": "Unique identifier of the created payment.",
+      "format": "uuid"
+    },
+    "NextAction": {
+      "title": "Alternative payment next action",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextAction"
+        }
+      ],
+      "description": "Next action to take in order to complete the payment.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AlternativePaymentResult"
+}

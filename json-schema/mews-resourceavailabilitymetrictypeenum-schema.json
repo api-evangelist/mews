@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAvailabilityMetricTypeEnum",
+  "title": "Service availability metrics",
+  "enum": [
+    "OutOfOrderBlocks",
+    "PublicAvailabilityAdjustment",
+    "OtherServiceReservationCount",
+    "Occupied",
+    "ConfirmedReservations",
+    "OptionalReservations",
+    "BlockAvailability",
+    "AllocatedBlockAvailability",
+    "UsableResources",
+    "ActiveResources",
+    "HouseUse"
+  ],
+  "type": "string",
+  "description": "\n\nOutOfOrderBlocks (Number of resources that are out of order for the resource category (see `Resource Block`).)\n\nPublicAvailabilityAdjustment (Number of resources marked as manual availability adjustments.)\n\nOtherServiceReservationCount (Number of resources occupied by another service.)\n\nOccupied (Number of bookings that have been assigned to the resource category (i.e. reservations and blocks).)\n\nConfirmedReservations (Number of confirmed reservations that have been assigned to the resource category.)\n\nOptionalReservations (Number of optional reservations that have been assigned to the resource category.)\n\nBlockAvailability (Number of blocked resources (from an availability block / allotment).)\n\nAllocatedBlockAvailability (Number of blocked resources that are in a deducting state (from an availability block / allotment).)\n\nUsableResources (Number of usable resources (i.e. which are not out of order).)\n\nActiveResources (Number of active resources.)\n\nHouseUse (Number of resources marked as house use (internal use).)",
+  "x-enumNames": [
+    "OutOfOrderBlocks",
+    "PublicAvailabilityAdjustment",
+    "OtherServiceReservationCount",
+    "Occupied",
+    "ConfirmedReservations",
+    "OptionalReservations",
+    "BlockAvailability",
+    "AllocatedBlockAvailability",
+    "UsableResources",
+    "ActiveResources",
+    "HouseUse"
+  ],
+  "x-enumDescriptions": [
+    "Number of resources that are out of order for the resource category (see `Resource Block`).",
+    "Number of resources marked as manual availability adjustments.",
+    "Number of resources occupied by another service.",
+    "Number of bookings that have been assigned to the resource category (i.e. reservations and blocks).",
+    "Number of confirmed reservations that have been assigned to the resource category.",
+    "Number of optional reservations that have been assigned to the resource category.",
+    "Number of blocked resources (from an availability block / allotment).",
+    "Number of blocked resources that are in a deducting state (from an availability block / allotment).",
+    "Number of usable resources (i.e. which are not out of order).",
+    "Number of active resources.",
+    "Number of resources marked as house use (internal use)."
+  ]
+}

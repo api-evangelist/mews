@@ -1,0 +1,84 @@
+{
+  "operationId": "bills_close",
+  "method": "POST",
+  "path": "/api/connector/v1/bills/close",
+  "summary": "Close bill",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "BillId": "44eba542-193e-47c7-8077-abd7008eb206",
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "Type": "Receipt",
+        "BillCounterId": "84b25778-c1dd-48dc-8c00-ab3a00b6df14",
+        "FiscalMachineId": null,
+        "Options": {
+          "DisplayCustomer": {
+            "Value": false
+          },
+          "DisplayTaxation": null
+        },
+        "TaxedDate": {
+          "Value": "2020-07-07"
+        },
+        "DueDate": {
+          "Value": "2020-07-14"
+        },
+        "VariableSymbol": {
+          "Value": "5343"
+        },
+        "AccountTaxIdentifier": {
+          "Value": "446768"
+        },
+        "AccountAddress": {
+          "Line1": "Astronaut\u016f 2",
+          "Line2": "",
+          "City": "Hav\u00ed\u0159ov",
+          "PostalCode": "736 01",
+          "CountryCode": "CZ",
+          "CountrySubdivisionCode": null
+        },
+        "PurchaseOrderNumber": {
+          "Value": "XX-123"
+        },
+        "Notes": {
+          "Value": "Bill closing note"
+        },
+        "AssociatedAccountData": [
+          {
+            "Id": "84b25778-c1dd-48dc-8c00-ab3a00b6df14",
+            "TaxIdentifier": {
+              "Value": "123459"
+            },
+            "Address": {
+              "Line1": "Astronaut\u016f 2",
+              "Line2": "",
+              "City": "Hav\u00ed\u0159ov",
+              "PostalCode": "736 01",
+              "CountryCode": "CZ",
+              "CountrySubdivisionCode": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "BillId": "44eba542-193e-47c7-8077-abd7008eb206",
+        "Result": {
+          "Discriminator": "BillPdfFile",
+          "Value": {
+            "Base64Data": "JVBER....."
+          }
+        }
+      }
+    }
+  ]
+}

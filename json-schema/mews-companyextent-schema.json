@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyExtent",
+  "title": "Company Extent",
+  "type": "object",
+  "properties": {
+    "Inactive": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyExtent"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderNoteTypeEnum",
+  "title": "Service order note type",
+  "enum": [
+    "General",
+    "ChannelManager",
+    "SpecialRequest"
+  ],
+  "type": "string",
+  "description": "\n\nGeneral\n\nChannelManager\n\nSpecialRequest",
+  "x-enumNames": [
+    "General",
+    "ChannelManager",
+    "SpecialRequest"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    ""
+  ]
+}

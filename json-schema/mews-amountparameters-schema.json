@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AmountParameters",
+  "title": "Amount parameters",
+  "required": [
+    "Currency",
+    "TaxCodes"
+  ],
+  "type": "object",
+  "properties": {
+    "Currency": {
+      "minLength": 1,
+      "type": "string",
+      "format": "currency"
+    },
+    "TaxCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "NetValue": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    },
+    "GrossValue": {
+      "type": "number",
+      "format": "double",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Price of the product that overrides the price defined in Mews.",
+  "x-schema-id": "AmountParameters"
+}

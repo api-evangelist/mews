@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillUpdateParameters",
+  "title": "Bill update parameters",
+  "required": [
+    "BillId"
+  ],
+  "type": "object",
+  "properties": {
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the bill to update.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "title": "Guid update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GuidUpdateValue"
+        }
+      ],
+      "description": "Unique identifier of the account (`Customer` or `Company`) the bill is issued to (or null if the account should not be updated).",
+      "nullable": true
+    },
+    "AssociatedAccountIds": {
+      "title": "Associated account IDs update parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssociatedAccountIdsUpdate"
+        }
+      ],
+      "description": "Unique identifiers of the `Customer` or `Company` that are associated to the bill (or null if the account should not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillUpdateParameters"
+}

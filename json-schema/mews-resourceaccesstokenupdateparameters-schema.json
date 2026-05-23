@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceAccessTokenUpdateParameters",
+  "title": "Resource access token update",
+  "required": [
+    "ResourceAccessTokenId"
+  ],
+  "type": "object",
+  "properties": {
+    "ResourceAccessTokenId": {
+      "type": "string",
+      "description": "Unique identifier of the resource access token to update.",
+      "format": "uuid"
+    },
+    "ValidityStartUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Marks the start of interval in which the resource access token can be used (or null if not being updated).",
+      "nullable": true
+    },
+    "ValidityEndUtc": {
+      "title": "String update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Marks the end of interval in which the resource access token can be used (or null if not being updated).",
+      "nullable": true
+    },
+    "Value": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Value of the resource access token (or null if not being updated).",
+      "nullable": true
+    },
+    "Permissions": {
+      "title": "Resource access token permission parameter",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceAccessTokenPermissionsParameters"
+        }
+      ],
+      "description": "Specify permissions of the resource access token (or null if not being updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceAccessTokenUpdateParameters"
+}

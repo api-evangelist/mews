@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReservationExtent",
+  "title": "Reservation extent",
+  "type": "object",
+  "properties": {
+    "Reservations": {
+      "type": "boolean",
+      "description": "Whether the response should contain reservations.",
+      "nullable": true
+    },
+    "ReservationGroups": {
+      "type": "boolean",
+      "description": "Whether the response should contain groups of the reservations.",
+      "nullable": true
+    },
+    "Customers": {
+      "type": "boolean",
+      "description": "Whether the response should contain customers of the reservations.",
+      "nullable": true
+    },
+    "CustomerAdresses": {
+      "type": "boolean",
+      "description": "Whether the response should contain addresses of the customers.",
+      "nullable": true
+    },
+    "CustomerIdentityDocuments": {
+      "type": "boolean",
+      "description": "Whether the response should contain identity documents of the customers.",
+      "nullable": true
+    },
+    "Services": {
+      "type": "boolean",
+      "description": "Whether the response should contain services reserved by the reservations.",
+      "nullable": true
+    },
+    "Products": {
+      "type": "boolean",
+      "description": "Whether the response should contain products orderable with the reservations.",
+      "nullable": true
+    },
+    "BusinessSegments": {
+      "type": "boolean",
+      "description": "Whether the response should contain business segmentation.",
+      "nullable": true
+    },
+    "Resources": {
+      "type": "boolean",
+      "description": "Whether the response should contain resources.",
+      "nullable": true
+    },
+    "ResourceCategories": {
+      "type": "boolean",
+      "description": "Whether the response should contain resource categories.",
+      "nullable": true
+    },
+    "ResourceCategoryAssignments": {
+      "type": "boolean",
+      "description": "Whether the response should contain assignments of the resources to categories.",
+      "nullable": true
+    },
+    "Rates": {
+      "type": "boolean",
+      "description": "Whether the response should contain rates and rate groups.",
+      "nullable": true
+    },
+    "Items": {
+      "type": "boolean",
+      "description": "Whether the response should contain accounting items.",
+      "nullable": true
+    },
+    "OrderItems": {
+      "type": "boolean",
+      "description": "Whether the response should contain reservation items.",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "boolean",
+      "description": "Whether the response should contain notes.",
+      "nullable": true
+    },
+    "QrCodeData": {
+      "type": "boolean",
+      "description": "Whether the response should contain QR code data.",
+      "nullable": true
+    },
+    "Companies": {
+      "type": "boolean",
+      "description": "Whether the response should contain companies.",
+      "nullable": true
+    },
+    "AccountingStates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountingState"
+      },
+      "description": "States the items should be in. If not specified, items in `Open` or `Closed` states are returned.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Extent of data to be returned. E.g. it is possible to specify that together with the reservations, customers, groups and rates should be also returned.",
+  "x-schema-id": "ReservationExtent"
+}

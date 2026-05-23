@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PrinterCommandData",
+  "title": "Printer command data",
+  "required": [
+    "CopyCount",
+    "FileData",
+    "FileType",
+    "PrinterDriverName",
+    "PrinterName",
+    "PrinterPortName"
+  ],
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/DeviceCommandData"
+    }
+  ],
+  "properties": {
+    "CopyCount": {
+      "type": "integer",
+      "description": "Number of copies to be printed.",
+      "format": "int32"
+    },
+    "FileType": {
+      "minLength": 1,
+      "type": "string",
+      "description": "MIME type of the file to be printed (e.g. `application/pdf`)."
+    },
+    "FileData": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Base64-encoded data of the file to be printed."
+    },
+    "PrinterName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the printer."
+    },
+    "PrinterDriverName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the printer driver."
+    },
+    "PrinterPortName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name of the printer port."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PrinterCommandData"
+}

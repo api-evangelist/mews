@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillPdfFile",
+  "title": "Bill PDF file",
+  "required": [
+    "Base64Data"
+  ],
+  "type": "object",
+  "properties": {
+    "Base64Data": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Base64 encoded PDF file."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillPdfFile"
+}

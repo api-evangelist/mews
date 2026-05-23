@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AlternativePaymentsData",
+  "title": "Alternative payment method data",
+  "required": [
+    "Discriminator"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "title": "Alternative payment method data discriminator",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlternativePaymentMethodEnum"
+        }
+      ],
+      "description": "Type of alternative payment method (e.g. `Ideal`).\n\nIdeal (iDEAL data.)\n\nApplePay (No additional data.)\n\nGooglePay (No additional data.)\n\nSepaDirectDebit (SEPA Direct Debit data.)",
+      "x-enumNames": [
+        "Ideal",
+        "ApplePay",
+        "GooglePay",
+        "SepaDirectDebit"
+      ],
+      "x-enumDescriptions": [
+        "iDEAL data.",
+        "No additional data.",
+        "No additional data.",
+        "SEPA Direct Debit data."
+      ],
+      "x-extensible": true
+    },
+    "SepaDirectDebit": {
+      "title": "SEPA Direct Debit data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SepaDirectDebitData"
+        }
+      ],
+      "description": "SEPA Direct Debit payment method data. Required when `Discriminator` is `SepaDirectDebit`.",
+      "nullable": true
+    },
+    "Ideal": {
+      "title": "iDEAL data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdealData"
+        }
+      ],
+      "description": "iDEAL payment method data. Required when `Discriminator` is `Ideal`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AlternativePaymentsData"
+}

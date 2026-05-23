@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OrderItemTypeOld",
+  "title": "Order item data discriminator",
+  "enum": [
+    "CancellationFee",
+    "Rebate",
+    "Deposit",
+    "ExchangeRateDifference",
+    "CustomItem",
+    "Surcharge",
+    "SurchargeDiscount",
+    "SpaceOrder",
+    "ProductOrder",
+    "Other",
+    "TaxCorrection",
+    "ResourceUpgradeFee",
+    "InvoiceFee"
+  ],
+  "type": "string",
+  "x-enumDescriptions": [
+    "No additional data.",
+    "[Rebate order item data](https://mews-systems.gitbook.io/connector-api/operations/accountingitems#rebate-order-item-data)",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "[Product order item data](https://mews-systems.gitbook.io/connector-api/operations/accountingitems#product-order-item-data)",
+    "No additional data.",
+    "No additional data.",
+    "No additional data.",
+    "No additional data."
+  ]
+}

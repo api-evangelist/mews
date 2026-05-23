@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillEnterpriseData",
+  "title": "Bill enterprise data",
+  "type": "object",
+  "properties": {
+    "AdditionalTaxIdentifier": {
+      "type": "string",
+      "description": "Enterprise additional tax identifier.",
+      "nullable": true
+    },
+    "CompanyName": {
+      "type": "string",
+      "description": "Enterprise company name.",
+      "nullable": true
+    },
+    "BankAccount": {
+      "type": "string",
+      "description": "Enterprise bank account.",
+      "nullable": true
+    },
+    "BankName": {
+      "type": "string",
+      "description": "Enterprise bank name.",
+      "nullable": true
+    },
+    "Iban": {
+      "type": "string",
+      "description": "Enterprise IBAN (International Bank Account Number).",
+      "nullable": true
+    },
+    "Bic": {
+      "type": "string",
+      "description": "Enterprise BIC (Bank Identifier Code).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "Additional information about the enterprise issuing the bill, including bank account details. Persisted at the time of closing of the bill.",
+  "x-schema-id": "BillEnterpriseData"
+}

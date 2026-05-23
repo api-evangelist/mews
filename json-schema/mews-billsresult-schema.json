@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillsResult",
+  "title": "BillsResult",
+  "required": [
+    "Bills"
+  ],
+  "type": "object",
+  "properties": {
+    "Bills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Bill"
+      },
+      "description": "The filtered bills."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Unique identifier of the last and hence oldest bill returned. This can be used in `Limitation` in a subsequent request to fetch the next batch of older bills.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillsResult"
+}

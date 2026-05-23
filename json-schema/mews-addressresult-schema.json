@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddressResult",
+  "title": "AddressResult",
+  "required": [
+    "Addresses"
+  ],
+  "type": "object",
+  "properties": {
+    "Addresses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountAddress"
+      },
+      "description": "The collection of added or modified Account addresses, containing address and account information."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AddressResult"
+}

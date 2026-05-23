@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RateAddOptions",
+  "title": "RateAddOptions",
+  "type": "object",
+  "properties": {
+    "HidePriceFromGuest": {
+      "type": "boolean"
+    },
+    "IsBonusPointsEligible": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RateAddOptions"
+}

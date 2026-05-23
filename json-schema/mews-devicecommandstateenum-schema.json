@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeviceCommandStateEnum",
+  "title": "Command state",
+  "enum": [
+    "Pending",
+    "Received",
+    "Processing",
+    "Processed",
+    "Cancelled",
+    "Error"
+  ],
+  "type": "string",
+  "description": "\n\nPending (Created in Mews, but not yet received by the client application.)\n\nReceived (Received by the client application.)\n\nProcessing (Being processed by the client application.)\n\nProcessed (Successfully processed command.)\n\nCancelled (A command whose execution has been canceled before (or during) processing.)\n\nError (A command whose execution or processing was terminated by an error.)",
+  "x-enumNames": [
+    "Pending",
+    "Received",
+    "Processing",
+    "Processed",
+    "Cancelled",
+    "Error"
+  ],
+  "x-enumDescriptions": [
+    "Created in Mews, but not yet received by the client application.",
+    "Received by the client application.",
+    "Being processed by the client application.",
+    "Successfully processed command.",
+    "A command whose execution has been canceled before (or during) processing.",
+    "A command whose execution or processing was terminated by an error."
+  ]
+}

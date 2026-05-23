@@ -1,0 +1,114 @@
+{
+  "operationId": "vouchers_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/vouchers/getAll",
+  "summary": "Get all vouchers",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "Extent": {
+          "Vouchers": true,
+          "VoucherCodes": true,
+          "VoucherAssignments": true,
+          "Companies": false,
+          "Rates": false
+        },
+        "ServiceIds": [
+          "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+          "8c1bd738-a505-4b29-aa71-9ecc2982b843"
+        ],
+        "VoucherIds": [
+          "fe568bbd-1ecb-4bb2-bf77-96c3698de20d"
+        ],
+        "VoucherCodeValues": [
+          "TEST-VOUCHER-CODE"
+        ],
+        "ActivityStates": [
+          "Active"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2023-10-10T00:00:00Z",
+          "EndUtc": "2023-10-17T00:00:00Z"
+        },
+        "ExternalIdentifiers": [
+          "Voucher-001",
+          "Voucher-002"
+        ],
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "Limitation": {
+          "Count": 100
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "Vouchers": [
+          {
+            "Id": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+            "ServiceId": "bd26d8db-86da-4f96-9efc-e5a4654a4a94",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Name": "Weekend Voucher",
+            "CreatedUtc": "2018-11-29T08:17:05Z",
+            "UpdatedUtc": "2020-10-30T13:38:49Z",
+            "Type": "Public",
+            "ActivityState": "Active",
+            "CompanyId": "c6f5c82d-621a-4c8a-903b-1b0a9a23b71f",
+            "TravelAgencyId": null,
+            "OccupiableIntervalStartUtc": null,
+            "OccupiableIntervalEndUtc": null,
+            "ExternalIdentifier": "VCHR-278",
+            "IsActive": true
+          }
+        ],
+        "VoucherCodes": [
+          {
+            "Id": "11111111-1111-1111-1111-111111111111",
+            "VoucherId": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+            "Value": "TEST-VOUCHER-CODE",
+            "ValidityStartUtc": null,
+            "ValidityEndUtc": null,
+            "CreatedUtc": "2020-10-30T13:37:16Z",
+            "UpdatedUtc": "2020-10-30T13:37:16Z",
+            "ActivityState": "Active",
+            "IsActive": true
+          },
+          {
+            "Id": "22222222-2222-2222-2222-222222222222",
+            "VoucherId": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+            "Value": "05400269B23A59C649E4",
+            "ValidityStartUtc": "2020-10-09T22:00:00Z",
+            "ValidityEndUtc": "2020-10-09T22:00:00Z",
+            "CreatedUtc": "2020-10-09T15:08:14Z",
+            "UpdatedUtc": "2020-10-09T15:08:14Z",
+            "ActivityState": "Active",
+            "IsActive": true
+          }
+        ],
+        "VoucherAssignments": [
+          {
+            "VoucherId": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+            "RateId": "ed4b660b-19d0-434b-9360-a4de2ea42eda"
+          },
+          {
+            "VoucherId": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d",
+            "RateId": "b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f"
+          }
+        ],
+        "Rates": null,
+        "Companies": null,
+        "Cursor": "fe568bbd-1ecb-4bb2-bf77-96c3698de20d"
+      }
+    }
+  ]
+}

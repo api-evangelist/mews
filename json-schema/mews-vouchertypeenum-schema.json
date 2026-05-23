@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VoucherTypeEnum",
+  "title": "Voucher Type",
+  "enum": [
+    "Public",
+    "PartnerCompany",
+    "TravelAgency"
+  ],
+  "type": "string",
+  "description": "\n\nPublic\n\nPartnerCompany\n\nTravelAgency",
+  "x-enumNames": [
+    "Public",
+    "PartnerCompany",
+    "TravelAgency"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    ""
+  ]
+}

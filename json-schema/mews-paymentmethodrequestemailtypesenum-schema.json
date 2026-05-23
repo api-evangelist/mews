@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentMethodRequestEmailTypesEnum",
+  "title": "Supported email types",
+  "enum": [
+    "PaymentMethodRequestAdded"
+  ],
+  "type": "string",
+  "description": "\n\nPaymentMethodRequestAdded",
+  "x-enumNames": [
+    "PaymentMethodRequestAdded"
+  ],
+  "x-enumDescriptions": [
+    ""
+  ]
+}

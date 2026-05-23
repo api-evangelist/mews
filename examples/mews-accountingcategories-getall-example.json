@@ -1,0 +1,73 @@
+{
+  "operationId": "accountingCategories_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/accountingCategories/getAll",
+  "summary": "Get all accounting categories",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "AccountingCategoryIds": [
+          "0cf7aa90-736f-43e9-a7dc-787704548d86",
+          "0b9560fb-055d-47d3-a6d4-e579c44ca558"
+        ],
+        "UpdatedUtc": {
+          "StartUtc": "2023-10-01T00:00:00Z",
+          "EndUtc": "2023-10-31T00:00:00Z"
+        },
+        "ActivityStates": [
+          "Active"
+        ],
+        "Limitation": {
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "AccountingCategories": [
+          {
+            "Classification": "Accommodation",
+            "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Code": "345",
+            "CostCenterCode": "2589",
+            "ExternalCode": "3010",
+            "Id": "0cf7aa90-736f-43e9-a7dc-787704548d86",
+            "IsActive": true,
+            "LedgerAccountCode": "311100",
+            "Name": "Accommodation",
+            "PostingAccountCode": "602020",
+            "CreatedUtc": "2023-10-01T11:48:57Z",
+            "UpdatedUtc": "2023-10-28T11:48:57Z"
+          },
+          {
+            "Classification": null,
+            "EnterpriseId": "4d0201db-36f5-428b-8d11-4f0a65e960cc",
+            "Code": "100",
+            "CostCenterCode": "2589",
+            "ExternalCode": "ABVG",
+            "Id": "0b9560fb-055d-47d3-a6d4-e579c44ca558",
+            "IsActive": true,
+            "LedgerAccountCode": "311100",
+            "Name": "Alcoholic Beverage",
+            "PostingAccountCode": "602020",
+            "CreatedUtc": "2023-10-01T11:48:57Z",
+            "UpdatedUtc": "2023-10-28T11:48:57Z"
+          }
+        ],
+        "Cursor": "0b9560fb-055d-47d3-a6d4-e579c44ca558"
+      }
+    }
+  ]
+}

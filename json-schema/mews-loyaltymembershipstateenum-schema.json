@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyMembershipStateEnum",
+  "title": "Loyalty membership state",
+  "enum": [
+    "New",
+    "Pending",
+    "Enrolled",
+    "Canceled",
+    "Declined"
+  ],
+  "type": "string",
+  "description": "State of the loyalty membership.\n\nNew\n\nPending\n\nEnrolled\n\nCanceled\n\nDeclined",
+  "x-enumNames": [
+    "New",
+    "Pending",
+    "Enrolled",
+    "Canceled",
+    "Declined"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

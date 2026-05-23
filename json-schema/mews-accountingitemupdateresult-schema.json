@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingItemUpdateResult",
+  "title": "AccountingItemUpdateResult",
+  "type": "object",
+  "properties": {
+    "OrderItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrderItemOld"
+      },
+      "description": "Updated order items.",
+      "nullable": true
+    },
+    "PaymentItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentItemOld"
+      },
+      "description": "Updated payment items.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountingItemUpdateResult"
+}

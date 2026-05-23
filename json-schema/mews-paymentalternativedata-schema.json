@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentAlternativeData",
+  "title": "Alternative payment data",
+  "required": [
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Type": {
+      "title": "Alternative payment method type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlternativePaymentMethodTypeEnum"
+        }
+      ],
+      "description": "Type of the alternative payment method.\n\nIdeal (iDEAL)\n\nApplePay (Apple Pay)\n\nGooglePay (Google Pay)\n\nSepaDirectDebit (SEPA Direct Debit)\n\nPayPal (PayPal)\n\nWireTransfer (Wire transfer)",
+      "x-enumNames": [
+        "Ideal",
+        "ApplePay",
+        "GooglePay",
+        "SepaDirectDebit",
+        "PayPal",
+        "WireTransfer"
+      ],
+      "x-enumDescriptions": [
+        "iDEAL",
+        "Apple Pay",
+        "Google Pay",
+        "SEPA Direct Debit",
+        "PayPal",
+        "Wire transfer"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "PaymentAlternativeData"
+}

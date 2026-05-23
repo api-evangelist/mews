@@ -1,0 +1,31 @@
+{
+  "operationId": "products_updatePrice",
+  "method": "POST",
+  "path": "/api/connector/v1/products/updatePrice",
+  "summary": "Update product pricing",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "ProductId": "6b97a38b-0043-41e0-afbd-3f083bdbc0d2",
+        "PriceUpdates": [
+          {
+            "Value": 100.0,
+            "FirstTimeUnitStartUtc": "2024-03-01T23:00:00.000Z",
+            "LastTimeUnitStartUtc": "2024-03-03T23:00:00.000Z"
+          },
+          {
+            "Value": 200.0,
+            "FirstTimeUnitStartUtc": "2024-03-06T23:00:00.000Z",
+            "LastTimeUnitStartUtc": "2024-03-08T23:00:00.000Z"
+          }
+        ],
+        "EnterpriseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    }
+  ],
+  "responseExamples": []
+}

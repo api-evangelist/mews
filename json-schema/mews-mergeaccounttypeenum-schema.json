@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MergeAccountTypeEnum",
+  "title": "Account merge type",
+  "enum": [
+    "Customer",
+    "Company"
+  ],
+  "type": "string",
+  "description": "\n\nCustomer\n\nCompany",
+  "x-enumNames": [
+    "Customer",
+    "Company"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

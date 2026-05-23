@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountNoteUpdateResult",
+  "title": "AccountNoteUpdateResult",
+  "required": [
+    "AccountNotes"
+  ],
+  "type": "object",
+  "properties": {
+    "AccountNotes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountNote"
+      },
+      "description": "Updated account notes."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AccountNoteUpdateResult"
+}

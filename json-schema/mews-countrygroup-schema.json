@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CountryGroup",
+  "title": "Country group",
+  "required": [
+    "Code",
+    "CountryCodes",
+    "EnglishName"
+  ],
+  "type": "object",
+  "properties": {
+    "Code": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Group code, e.g. `EU`, `SCHENGEN`, `NORDIC`..."
+    },
+    "EnglishName": {
+      "minLength": 1,
+      "type": "string",
+      "description": "English name of the country group."
+    },
+    "CountryCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Codes of countries included in the group, in ISO 3166-1 alpha-2 format."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CountryGroup"
+}

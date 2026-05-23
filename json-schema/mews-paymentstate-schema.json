@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentState",
+  "title": "Payment state",
+  "enum": [
+    "Charged",
+    "Canceled",
+    "Pending",
+    "Failed",
+    "Verifying"
+  ],
+  "type": "string"
+}

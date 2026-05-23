@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeviceCommandUpdateParameters",
+  "title": "DeviceCommandUpdateParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "CommandId",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "CommandId": {
+      "type": "string",
+      "description": "Identifier of the `Command` to be updated.",
+      "format": "uuid"
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeviceCommandStateEnum"
+        }
+      ],
+      "description": "New state of the command.\n\nPending (Created in Mews, but not yet received by the client application.)\n\nReceived (Received by the client application.)\n\nProcessing (Being processed by the client application.)\n\nProcessed (Successfully processed command.)\n\nCancelled (A command whose execution has been canceled before (or during) processing.)\n\nError (A command whose execution or processing was terminated by an error.)"
+    },
+    "Progress": {
+      "type": "number",
+      "description": "Progress of the command processing. Only used if the `State` is `Processing`, otherwise ignored.",
+      "format": "double",
+      "nullable": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Notes about command execution. Only used if the `State` is `Processed`, `Cancelled` or `Error`, otherwise ignored.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "DeviceCommandUpdateParameters"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreditCardData",
+  "title": "Credit card data",
+  "required": [
+    "Expiration",
+    "StorageData"
+  ],
+  "type": "object",
+  "properties": {
+    "StorageData": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Identifier of credit card data in PCI storage (`transactionId`)."
+    },
+    "Expiration": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Expiration of the credit card in format `yyyy-MM`."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "CreditCardData"
+}

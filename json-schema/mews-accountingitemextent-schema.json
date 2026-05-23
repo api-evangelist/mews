@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountingItemExtent",
+  "title": "Accounting item extent",
+  "type": "object",
+  "properties": {
+    "OrderItems": {
+      "type": "boolean",
+      "description": "Whether the response should contain order items (consumed items such as nights or products)."
+    },
+    "PaymentItems": {
+      "type": "boolean",
+      "description": "Whether the response should contain payment items (such as cash, credit card payments or invoices)."
+    },
+    "CreditCardTransactions": {
+      "type": "boolean",
+      "description": "Whether the response should contain credit card transactions of the payment items."
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "AccountingItemExtent"
+}

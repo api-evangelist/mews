@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AgeCategoryClassificationEnum",
+  "title": "Age category classification",
+  "enum": [
+    "Adult",
+    "Child"
+  ],
+  "type": "string",
+  "description": "\n\nAdult\n\nChild",
+  "x-enumNames": [
+    "Adult",
+    "Child"
+  ],
+  "x-enumDescriptions": [
+    "",
+    ""
+  ]
+}

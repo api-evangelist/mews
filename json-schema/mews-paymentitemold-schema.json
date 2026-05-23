@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PaymentItemOld",
+  "title": "Payment item",
+  "required": [
+    "AccountId",
+    "AccountingState",
+    "Amount",
+    "ConsumedUtc",
+    "Data",
+    "Id",
+    "OriginalAmount",
+    "State"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the item.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account (for example `Customer`) the item belongs to.",
+      "format": "uuid"
+    },
+    "BillId": {
+      "type": "string",
+      "description": "Unique identifier of the `Bill` the item is assigned to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the `AccountingCategory` the item belongs to.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "Amount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Item's amount, negative amount represents either rebate or a payment."
+    },
+    "OriginalAmount": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Amount of item; note a negative amount represents a rebate or payment. Contains the earliest known value in conversion chain."
+    },
+    "AmountDefault": {
+      "title": "Extended amount",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExtendedAmount"
+        }
+      ],
+      "description": "Item's amount in property's default currency, negative amount represents either rebate or a payment.",
+      "nullable": true,
+      "deprecated": true
+    },
+    "Notes": {
+      "type": "string",
+      "description": "Additional notes.",
+      "nullable": true
+    },
+    "SettlementId": {
+      "type": "string",
+      "description": "Identifier of the settled payment from the external system (ApplePay/GooglePay).",
+      "nullable": true
+    },
+    "ConsumedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Date and time of the item consumption in UTC timezone in ISO 8601 format."
+    },
+    "ClosedUtc": {
+      "type": "string",
+      "description": "Date and time of the item bill closure in UTC timezone in ISO 8601 format.",
+      "nullable": true
+    },
+    "AccountingState": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Accounting state of the item."
+    },
+    "State": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Payment state of the item."
+    },
+    "Identifier": {
+      "type": "string",
+      "description": "External payment identifier.",
+      "nullable": true
+    },
+    "Data": {
+      "title": "Payment item data",
+      "type": "object",
+      "properties": {
+        "Discriminator": {
+          "$ref": "#/components/schemas/PaymentType"
+        },
+        "Value": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/PaymentCardPaymentData"
+            },
+            {
+              "$ref": "#/components/schemas/InvoicePaymentData"
+            }
+          ],
+          "description": "Based on payment item data discriminator or `null` for types without any additional data.",
+          "nullable": true
+        }
+      },
+      "description": "Additional data specific to particular payment item.",
+      "x-coproduct": true,
+      "x-schema-id": "PaymentItemOldDataCoproductOfPaymentType"
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "PaymentItemOld"
+}

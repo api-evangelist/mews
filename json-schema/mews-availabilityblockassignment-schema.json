@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AvailabilityBlockAssignment",
+  "title": "AvailabilityBlockAssignment",
+  "type": "object",
+  "properties": {
+    "RateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "AvailabilityBlockId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "AvailabilityBlockAssignment"
+}

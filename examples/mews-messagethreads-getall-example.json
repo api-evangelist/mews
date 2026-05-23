@@ -1,0 +1,46 @@
+{
+  "operationId": "messageThreads_getAll",
+  "method": "POST",
+  "path": "/api/connector/v1/messageThreads/getAll",
+  "summary": "Get all message threads",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "EnterpriseIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "4d0201db-36f5-428b-8d11-4f0a65e960cc"
+        ],
+        "CreatedUtc": {
+          "StartUtc": "2022-03-03T00:00:00Z",
+          "EndUtc": "2022-03-14T00:00:00Z"
+        },
+        "Limitation": {
+          "Cursor": "e7f26210-10e7-462e-9da8-ae8300be8ab7",
+          "Count": 10
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "MessageThreads": [
+          {
+            "Id": "7f9325f6-ef44-4911-89a8-ae51010a5aa4",
+            "OriginalSender": "John Doe",
+            "Subject": "Example subject",
+            "CreatedUtc": "2022-03-07T16:09:45Z",
+            "UpdatedUtc": "2022-03-07T16:09:45Z"
+          }
+        ],
+        "Cursor": "7f9325f6-ef44-4911-89a8-ae51010a5aa4"
+      }
+    }
+  ]
+}

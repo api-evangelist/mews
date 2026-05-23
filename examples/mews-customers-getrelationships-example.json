@@ -1,0 +1,48 @@
+{
+  "operationId": "customers_getRelationships",
+  "method": "POST",
+  "path": "/api/connector/v1/customers/getRelationships",
+  "summary": "Get customers relationships",
+  "requestExamples": [
+    {
+      "contentType": "application/json",
+      "example": {
+        "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
+        "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D",
+        "Client": "Sample Client 1.0.0",
+        "CustomerIds": [
+          "fadd5bb6-b428-45d5-94f8-fd0d89fece6d",
+          "bccdafd1-3e44-439d-861f-341526b597a9"
+        ],
+        "ChainIds": [
+          "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "5fcd1933-22f2-40b9-84da-7db04cbecec2"
+        ],
+        "Limitation": {
+          "Count": 100
+        }
+      }
+    }
+  ],
+  "responseExamples": [
+    {
+      "status": "200",
+      "contentType": "application/json",
+      "example": {
+        "CustomerRelationships": [
+          {
+            "CustomerId": "cbe8a32e-3eb7-4226-baf4-69455a0eeaf5",
+            "RelatedCustomerId": "cbe8a32e-3eb7-4226-baf4-69455a0eeaf6",
+            "Relationship": "Other"
+          },
+          {
+            "CustomerId": "cbe8a32e-3eb7-4226-baf4-69455a0eeaf6",
+            "RelatedCustomerId": "cbe8a32e-3eb7-4226-baf4-69455a0eeaf5",
+            "Relationship": "Other"
+          }
+        ],
+        "Cursor": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationUpdateParameters",
+  "title": "Billing automation update parameters",
+  "required": [
+    "BillingAutomationId"
+  ],
+  "type": "object",
+  "properties": {
+    "BillingAutomationId": {
+      "type": "string",
+      "description": "Unique identifier of the billing automation.",
+      "format": "uuid"
+    },
+    "Name": {
+      "title": "String update value",
+      "maxLength": 255,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Name of the billing automation (or null should it not be updated).",
+      "nullable": true
+    },
+    "Description": {
+      "title": "String update value",
+      "maxLength": 1000,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Description of the billing automation (or null should it not be updated).",
+      "nullable": true
+    },
+    "Companies": {
+      "title": "Company with billing automation relation array update value",
+      "maxLength": 1000,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompanyWithBillingAutomationRelationIEnumerableUpdateValue"
+        }
+      ],
+      "description": "List of companies with relations indicating whether the company should be considered as a travel agency or a company in the reservation. This list can only be empty if the `AssignmentTargetType` is `CompanyAsDetails` or `NoCompany`. Set to null if the value is not updated.",
+      "nullable": true
+    },
+    "Prepayment": {
+      "title": "Billing automation prepayment type update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationPrepaymentUpdateValue"
+        }
+      ],
+      "description": "Type of prepayment (or null should it not be updated).",
+      "nullable": true
+    },
+    "AssignmentTargetType": {
+      "title": "Billing automation assignment target type update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationAssignmentTargetTypeUpdateValue"
+        }
+      ],
+      "description": "Specifies the type of company assignment to the bill. If set to `NoCompany`, the `BillAggregationType` must be `AggregateByCustomer`. Set to null if the value is not updated.",
+      "nullable": true
+    },
+    "BillAggregationType": {
+      "title": "Billing automation bill aggregation type update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationBillAggregationTypeUpdateValue"
+        }
+      ],
+      "description": "Defines the aggregation target type for billing automation. If not `AggregateByCustomer`, the `AssignmentTargetType` must be `CompanyAsOwner`. Set to null if the value is not updated.",
+      "nullable": true
+    },
+    "OrderItemConsumptionPeriod": {
+      "title": "Billing automation order item consumption period type update value",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationOrderItemConsumptionPeriodTypeUpdateValue"
+        }
+      ],
+      "description": "Specifies the order item consumption period type for the billing automation. Required if the `TriggerType` is recurring. Can be null if the value is not updated.",
+      "nullable": true
+    },
+    "ProcessingStartOffset": {
+      "title": "String update value",
+      "maxLength": 20,
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringUpdateValue"
+        }
+      ],
+      "description": "Processing start offset. Required if the billing automation `TriggerType` is recurring (or null should it not be updated).",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationUpdateParameters"
+}

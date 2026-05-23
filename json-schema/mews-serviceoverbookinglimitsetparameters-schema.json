@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceOverbookingLimitSetParameters",
+  "title": "ServiceOverbookingLimitSetParameters",
+  "required": [
+    "AccessToken",
+    "Client",
+    "ClientToken",
+    "ServiceId",
+    "SetServiceOverbookingLimits"
+  ],
+  "type": "object",
+  "properties": {
+    "ClientToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Token identifying the client application."
+    },
+    "AccessToken": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Access token of the client application."
+    },
+    "Client": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Name and version of the client application."
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the enterprise. Required when using [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property), ignored otherwise.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the [Service](https://mews-systems.gitbook.io/connector-api/operations/services#service) overbooking limits will be set in.",
+      "format": "uuid"
+    },
+    "SetServiceOverbookingLimits": {
+      "maxItems": 1000,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceOverbookingLimitSetData"
+      },
+      "description": "Collection of service overbooking limits to be set."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ServiceOverbookingLimitSetParameters"
+}

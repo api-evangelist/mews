@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoyaltyMembership",
+  "title": "Loyalty membership",
+  "required": [
+    "AccountId",
+    "ChainId",
+    "CreatorProfile",
+    "Id",
+    "IsPrimary",
+    "LoyaltyProgramId",
+    "State",
+    "UpdaterProfile"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty membership.",
+      "format": "uuid"
+    },
+    "ChainId": {
+      "type": "string",
+      "description": "Unique identifier of the chain.",
+      "format": "uuid"
+    },
+    "AccountId": {
+      "type": "string",
+      "description": "Unique identifier of the account.",
+      "format": "uuid"
+    },
+    "LoyaltyProgramId": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty program.",
+      "format": "uuid"
+    },
+    "State": {
+      "title": "Loyalty membership state",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoyaltyMembershipStateEnum"
+        }
+      ],
+      "description": "State of the loyalty membership.\n\nNew\n\nPending\n\nEnrolled\n\nCanceled\n\nDeclined",
+      "x-enumNames": [
+        "New",
+        "Pending",
+        "Enrolled",
+        "Canceled",
+        "Declined"
+      ],
+      "x-enumDescriptions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "IsPrimary": {
+      "type": "boolean",
+      "description": "Defines the primary loyalty membership."
+    },
+    "ProviderMembershipId": {
+      "type": "string",
+      "description": "Unique identifier for the loyalty membership in the loyalty provider's system.",
+      "nullable": true
+    },
+    "Code": {
+      "type": "string",
+      "description": "Code of the loyalty membership.",
+      "nullable": true,
+      "deprecated": true,
+      "x-deprecatedMessage": "Use `MembershipNumber` instead."
+    },
+    "MembershipNumber": {
+      "type": "string",
+      "description": "Customer-facing membership numbers, e.g., printed on a loyalty card.",
+      "nullable": true
+    },
+    "Points": {
+      "type": "integer",
+      "description": "The loyalty points for the account in that membership.",
+      "format": "int32",
+      "nullable": true
+    },
+    "ExpirationDate": {
+      "type": "string",
+      "description": "Expiration date of the loyalty membership in UTC timezone in ISO 8601 format.",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Url": {
+      "type": "string",
+      "description": "Url of the loyalty membership.",
+      "nullable": true
+    },
+    "LoyaltyTierId": {
+      "type": "string",
+      "description": "Unique identifier of the loyalty tier.",
+      "format": "uuid",
+      "nullable": true
+    },
+    "CreatorProfile": {
+      "title": "Profile data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileData"
+        }
+      ],
+      "description": "The profile data of the user who created or last updated the record."
+    },
+    "UpdaterProfile": {
+      "title": "Profile data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileData"
+        }
+      ],
+      "description": "The profile data of the user who created or last updated the record."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "LoyaltyMembership"
+}

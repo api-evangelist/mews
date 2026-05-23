@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProfileData",
+  "title": "Profile data",
+  "required": [
+    "Discriminator"
+  ],
+  "type": "object",
+  "properties": {
+    "Discriminator": {
+      "$ref": "#/components/schemas/ProfileDataDiscriminator"
+    },
+    "EnterpriseProfile": {
+      "title": "Enterprise profile data",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnterpriseProfileData"
+        }
+      ],
+      "description": "Enterprise profile data.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "The profile data of the user who created or last updated the record.",
+  "x-schema-id": "ProfileData"
+}

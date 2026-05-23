@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnterpriseSubscription",
+  "title": "Enterprise subscription",
+  "type": "object",
+  "properties": {
+    "TaxIdentifier": {
+      "type": "string",
+      "description": "Tax identifier of the `Enterprise`.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "description": "",
+  "x-schema-id": "EnterpriseSubscription"
+}

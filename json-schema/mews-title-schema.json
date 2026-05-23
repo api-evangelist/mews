@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Title",
+  "title": "Title",
+  "enum": [
+    "Mister",
+    "Miss",
+    "Misses"
+  ],
+  "type": "string",
+  "description": "Type of the title prefix of the customer.\r\n\r\nNote that the value should not be used as-is, but localized. For example, the value `Misses` should be displayed as `Mrs.` in English and `Fr.` in German.\n\nMister (Mr.)\n\nMiss (Ms.)\n\nMisses (Mrs.)",
+  "x-enumNames": [
+    "Mister",
+    "Miss",
+    "Misses"
+  ],
+  "x-enumDescriptions": [
+    "Mr.",
+    "Ms.",
+    "Mrs."
+  ],
+  "x-schema-id": "Title",
+  "x-showDescription": true
+}

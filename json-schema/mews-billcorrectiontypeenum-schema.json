@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillCorrectionTypeEnum",
+  "title": "Bill correction type",
+  "enum": [
+    "Cancellation",
+    "Edit",
+    "CreditNote",
+    "Reinstatement",
+    "ReceivablePaymentsBalance"
+  ],
+  "type": "string",
+  "description": "\n\nCancellation\n\nEdit\n\nCreditNote\n\nReinstatement\n\nReceivablePaymentsBalance",
+  "x-enumNames": [
+    "Cancellation",
+    "Edit",
+    "CreditNote",
+    "Reinstatement",
+    "ReceivablePaymentsBalance"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

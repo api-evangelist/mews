@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoutingRule",
+  "title": "Routing rule",
+  "required": [
+    "Applicability",
+    "CompanyId",
+    "CompanyRelation",
+    "CreatedUtc",
+    "EnterpriseId",
+    "Id",
+    "RouteType",
+    "ServiceId",
+    "UpdatedUtc"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the routing rule.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the Enterprise.",
+      "format": "uuid"
+    },
+    "CompanyId": {
+      "type": "string",
+      "description": "Unique identifier of the Company routing rule is assigned to.",
+      "format": "uuid"
+    },
+    "CompanyRelation": {
+      "$ref": "#/components/schemas/RoutingRuleCompanyRelation"
+    },
+    "Applicability": {
+      "$ref": "#/components/schemas/RoutingRuleApplicability"
+    },
+    "RouteType": {
+      "$ref": "#/components/schemas/RoutingRuleRouteType"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the Service routing rule is assigned to.",
+      "format": "uuid"
+    },
+    "SelectedStayItems": {
+      "title": "Selected stay items",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoutingRuleStayItems"
+        }
+      ],
+      "description": "Specific items to which the routing rule applies. Returns only if `RouteType` value is `SelectedStayItems`.",
+      "nullable": true
+    },
+    "CreatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Creation date and time of the routing rule in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    },
+    "UpdatedUtc": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Last update date and time of the routing rule in UTC timezone in ISO 8601 format.",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "RoutingRule"
+}

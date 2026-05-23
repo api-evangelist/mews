@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationOrderItemConsumptionPeriodTypeUpdateValue",
+  "title": "Billing automation order item consumption period type update value",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "title": "Billing automation order item consumption period type",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationOrderItemConsumptionPeriodTypeEnum"
+        }
+      ],
+      "description": "Value which is to be updated.",
+      "x-enumNames": [
+        "MonthBefore",
+        "SameMonthAndMonthBefore",
+        "SameMonth",
+        "SameMonthAndMonthAfter",
+        "MonthAfter"
+      ],
+      "x-enumDescriptions": [
+        "Only items with a consumption date within the previous month will be routed.",
+        "Only items with a consumption date within this and the previous month will be routed.",
+        "Only items with a consumption date within this month will be routed.",
+        "Only items with a consumption date within this and the next month will be routed.",
+        "Only items with a consumption date within the next month will be routed."
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationOrderItemConsumptionPeriodTypeUpdateValue"
+}

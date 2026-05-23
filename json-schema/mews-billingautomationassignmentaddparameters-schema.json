@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingAutomationAssignmentAddParameters",
+  "title": "Billing automation assignment add parameters",
+  "required": [
+    "RoutedItemTypes",
+    "ServiceId"
+  ],
+  "type": "object",
+  "properties": {
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the related service.",
+      "format": "uuid"
+    },
+    "RoutedItemTypes": {
+      "title": "Billing automation item types parameters",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BillingAutomationItemTypesParameters"
+        }
+      ],
+      "description": "Type of items that are going to be routed."
+    },
+    "RateIds": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Rates` that will be applied as billing automation condition.",
+      "nullable": true
+    },
+    "ProductCategoryIds": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Product Categories` that will be applied as billing automation condition.",
+      "nullable": true
+    },
+    "ProductIds": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Unique identifiers of `Products` that will be applied as billing automation condition.",
+      "nullable": true
+    },
+    "AccountingCategories": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BillingAutomationAccountingCategoryAssignment"
+      },
+      "description": "List of accounting categories that will be applied as billing automation condition.",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "BillingAutomationAssignmentAddParameters"
+}

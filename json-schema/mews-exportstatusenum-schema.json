@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExportStatusEnum",
+  "title": "Export status",
+  "enum": [
+    "Pending",
+    "Processing",
+    "Success",
+    "Failed",
+    "Expired"
+  ],
+  "type": "string",
+  "description": "Current status of the export.\n\nPending\n\nProcessing\n\nSuccess\n\nFailed\n\nExpired",
+  "x-enumNames": [
+    "Pending",
+    "Processing",
+    "Success",
+    "Failed",
+    "Expired"
+  ],
+  "x-enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}

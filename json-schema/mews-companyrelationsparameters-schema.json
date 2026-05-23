@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CompanyRelationsParameters",
+  "title": "Company with relations parameters",
+  "type": "object",
+  "properties": {
+    "PartnerCompany": {
+      "type": "boolean",
+      "description": "Indicates whether the billing automation will apply if the company added to a reservation is a partner company."
+    },
+    "TravelAgency": {
+      "type": "boolean",
+      "description": "Indicates whether the billing automation will apply if the company added to a reservation is a travel agency."
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "CompanyRelationsParameters"
+}

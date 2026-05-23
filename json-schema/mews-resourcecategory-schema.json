@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceCategory",
+  "title": "Resource category",
+  "required": [
+    "Capacity",
+    "Classification",
+    "Descriptions",
+    "EnterpriseId",
+    "ExtraCapacity",
+    "Id",
+    "IsActive",
+    "Names",
+    "Ordering",
+    "ServiceId",
+    "ShortNames",
+    "Type"
+  ],
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Unique identifier of the category.",
+      "format": "uuid"
+    },
+    "EnterpriseId": {
+      "type": "string",
+      "description": "Unique identifier of the `Enterprise`.",
+      "format": "uuid"
+    },
+    "ServiceId": {
+      "type": "string",
+      "description": "Unique identifier of the `Service` of the resource category.",
+      "format": "uuid"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "description": "Whether the category is still active."
+    },
+    "Type": {
+      "$ref": "#/components/schemas/ResourceCategoryType"
+    },
+    "Classification": {
+      "$ref": "#/components/schemas/ResourceClassification"
+    },
+    "Names": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "ShortNames": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the short name.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Descriptions": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "All translations of the description.",
+      "x-schema-id": "LocalizedStrings"
+    },
+    "Ordering": {
+      "type": "integer",
+      "description": "Ordering of the category, lower number corresponds to lower category (note that neither uniqueness nor continuous sequence is guaranteed).",
+      "format": "int32"
+    },
+    "Capacity": {
+      "type": "integer",
+      "description": "Capacity that can be served (e.g. bed count).",
+      "format": "int32"
+    },
+    "ExtraCapacity": {
+      "type": "integer",
+      "description": "Extra capacity that can be served (e.g. extra bed count).",
+      "format": "int32"
+    },
+    "ExternalIdentifier": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Identifier of the resource category from external system.",
+      "nullable": true
+    },
+    "AccountingCategoryId": {
+      "type": "string",
+      "description": "Unique identifier of the accounting category.",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false,
+  "x-schema-id": "ResourceCategory"
+}
