@@ -5,7 +5,7 @@ kind: company
 description: Mews is a cloud property management system (PMS) for hotels, hostels, and apartments. Mews
   exposes a comprehensive Connector API, a Distributor API for booking, and a Channel Manager API. The
   Connector API publishes a full OpenAPI 3.0.4 spec covering operations, events, and webhooks for partners.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Hospitality
   - Hotels
