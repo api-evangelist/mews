@@ -58,6 +58,10 @@ apis:
     - type: Documentation
       url: https://mews-systems.gitbook.io/channel-manager-api/
 common:
+  - type: TrustCenter
+    url: security/mews-trust-center.yml
+  - type: DomainSecurity
+    url: security/mews-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/MewsSystems
   - type: LinkedIn
@@ -76,6 +80,8 @@ common:
     url: https://www.mews.com/en/products/marketplace
   - type: LlmsText
     url: https://docs.mews.com/llms.txt
+  - url: https://www.mews.com/en/blog
+    type: Blog
 integrations:
   - name: Frame 2147231403a.svg
   - name: Flexible Financing with
