@@ -58,6 +58,8 @@ apis:
     - type: Documentation
       url: https://mews-systems.gitbook.io/channel-manager-api/
 common:
+  - type: AgenticAccess
+    url: agentic-access/mews-agentic-access.yml
   - type: TrustCenter
     url: security/mews-trust-center.yml
   - type: DomainSecurity
