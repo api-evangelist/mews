@@ -1,0 +1,3456 @@
+{
+  "item": [
+    {
+      "id": "b68af22c-b9d5-4a50-8bee-6542155f89e1",
+      "name": "Customers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df63c0ae-0eed-4da1-9831-206bba22a10a",
+          "name": "Get all customers",
+          "request": {
+            "name": "Get all customers",
+            "description": {
+              "content": "Returns all customers filtered by identifiers, emails, names and other filters.\nNote this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Extent\": {\n    \"Customers\": \"<boolean>\",\n    \"Documents\": \"<boolean>\",\n    \"Addresses\": \"<boolean>\"\n  },\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"ChainIds\": [\n    \"<uuid>\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"DeletedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CustomerIds\": [\n    \"<uuid>\"\n  ],\n  \"CompanyIds\": [\n    \"<uuid>\"\n  ],\n  \"Emails\": [\n    \"<string>\"\n  ],\n  \"FirstNames\": [\n    \"<string>\"\n  ],\n  \"LastNames\": [\n    \"<string>\"\n  ],\n  \"LoyaltyCodes\": [\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5130c5ee-3704-4778-97e3-19dbe244afc0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Customers\": [\n    {\n      \"Id\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"Number\": \"12345\",\n      \"Title\": \"Mister\",\n      \"Sex\": \"Male\",\n      \"FirstName\": \"John\",\n      \"LastName\": \"Smith\",\n      \"SecondLastName\": \"Williams\",\n      \"NationalityCode\": \"US\",\n      \"PreferredLanguageCode\": \"en-GB\",\n      \"LanguageCode\": \"en-US\",\n      \"BirthDate\": \"1983-12-31\",\n      \"BirthCountryCode\": null,\n      \"BirthCountrySubdivisionCode\": null,\n      \"BirthPlace\": \"New York City, NY\",\n      \"Occupation\": \"Carpenter\",\n      \"Email\": \"j.smith@example.com\",\n      \"HasOtaEmail\": false,\n      \"Phone\": 420123456789,\n      \"TaxIdentificationNumber\": \"123456789\",\n      \"LoyaltyCode\": \"LL810213\",\n      \"AccountingCode\": \"AC123\",\n      \"BillingCode\": null,\n      \"Notes\": \"\",\n      \"CarRegistrationNumber\": \"1A2 3456\",\n      \"DietaryRequirements\": null,\n      \"CreatedUtc\": \"2018-01-01T00:00:00Z\",\n      \"UpdatedUtc\": \"2018-01-02T00:00:00Z\",\n      \"Passport\": null,\n      \"IdentityCard\": null,\n      \"Visa\": null,\n      \"DriversLicense\": null,\n      \"Address\": {\n        \"Id\": \"f8495413-bf49-45dd-843c-44be7f365569\",\n        \"Line1\": \"Somerford Road Hello House/135\",\n        \"Line2\": null,\n        \"City\": \"Christchurch\",\n        \"PostalCode\": \"BH23 3PY\",\n        \"CountryCode\": \"GB\",\n        \"CountrySubdivisionCode\": \"GB-ENG\",\n        \"Latitude\": null,\n        \"Longitude\": null\n      },\n      \"AddressId\": \"f8495413-bf49-45dd-843c-44be7f365569\",\n      \"Classifications\": [\n        \"Returning\"\n      ],\n      \"Options\": [\n        \"SendMarketingEmails\"\n      ],\n      \"ItalianDestinationCode\": null,\n      \"ItalianFiscalCode\": null,\n      \"ItalianLotteryCode\": null,\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"MergeTargetId\": null,\n      \"ActivityState\": \"Active\",\n      \"IsActive\": true,\n      \"PreferredSpaceFeatures\": [\n        \"OceanView\"\n      ],\n      \"CreatorProfileId\": \"3cd637ef-4728-47f9-8fb1-afb900c9cdcf\",\n      \"UpdaterProfileId\": \"122fc063-ec6e-4198-b8db-6b168a59ffae\"\n    }\n  ],\n  \"Documents\": null,\n  \"Cursor\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f5836a0-4f91-4848-aeb4-7b6e834a31f5",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb15f58a-c41c-4b7a-b916-b718b25dd3f4",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6fabc4d-c92a-4ac8-aa16-8e701409c65b",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d95d6155-73c2-4927-8132-40b74704dcad",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a42ca5f-d13d-4f8f-8abf-46155f6cd955",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6733e3a-3c69-48cf-83b8-0713dab9c370",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a5df756-3139-48e4-baea-5ae48498f61a",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2018-01-01T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2018-01-02T00:00:00Z\",\n    \"EndUtc\": \"2018-01-30T00:00:00Z\"\n  },\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n  ],\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n  ],\n  \"Emails\": [\n    \"j.smith@example.com\"\n  ],\n  \"FirstNames\": [\n    \"John\",\n    \"Jane\"\n  ],\n  \"LastNames\": [\n    \"Doe\",\n    \"Smith\"\n  ],\n  \"LoyaltyCodes\": [\n    \"LL810213\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0016cfaf-ec6a-464b-8e34-044e5dddfcf5",
+          "name": "Search customers",
+          "request": {
+            "name": "Search customers",
+            "description": {
+              "content": "Searches for customers that are active at the moment in the enterprise (e.g. companions of checked-in reservations or paymasters).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"ResourceId\": \"<uuid>\",\n  \"Extent\": {\n    \"Customers\": \"<boolean>\",\n    \"Documents\": \"<boolean>\",\n    \"Addresses\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "641980be-0af1-43d8-9798-5e7afb6cd6e9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Customers\": [\n    {\n      \"Customer\": {\n        \"Id\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n        \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n        \"Number\": \"12345\",\n        \"Title\": \"Mister\",\n        \"Sex\": \"Male\",\n        \"FirstName\": \"John\",\n        \"LastName\": \"Smith\",\n        \"SecondLastName\": \"Williams\",\n        \"NationalityCode\": \"US\",\n        \"PreferredLanguageCode\": \"en-GB\",\n        \"LanguageCode\": \"en-US\",\n        \"BirthDate\": \"1983-12-31\",\n        \"BirthCountryCode\": null,\n        \"BirthCountrySubdivisionCode\": null,\n        \"BirthPlace\": \"New York City, NY\",\n        \"Occupation\": \"Carpenter\",\n        \"Email\": \"j.smith@example.com\",\n        \"HasOtaEmail\": false,\n        \"Phone\": 420123456789,\n        \"TaxIdentificationNumber\": \"123456789\",\n        \"LoyaltyCode\": \"LL810213\",\n        \"AccountingCode\": \"AC123\",\n        \"BillingCode\": null,\n        \"Notes\": \"\",\n        \"CarRegistrationNumber\": \"1A2 3456\",\n        \"DietaryRequirements\": null,\n        \"CreatedUtc\": \"2018-01-01T00:00:00Z\",\n        \"UpdatedUtc\": \"2018-01-02T00:00:00Z\",\n        \"Passport\": null,\n        \"IdentityCard\": null,\n        \"Visa\": null,\n        \"DriversLicense\": null,\n        \"Address\": {\n          \"Id\": \"f8495413-bf49-45dd-843c-44be7f365569\",\n          \"Line1\": \"Somerford Road Hello House/135\",\n          \"Line2\": null,\n          \"City\": \"Christchurch\",\n          \"PostalCode\": \"BH23 3PY\",\n          \"CountryCode\": \"GB\",\n          \"CountrySubdivisionCode\": \"GB-ENG\",\n          \"Latitude\": null,\n          \"Longitude\": null\n        },\n        \"AddressId\": \"f8495413-bf49-45dd-843c-44be7f365569\",\n        \"Classifications\": [\n          \"Returning\"\n        ],\n        \"Options\": [\n          \"SendMarketingEmails\"\n        ],\n        \"ItalianDestinationCode\": null,\n        \"ItalianFiscalCode\": null,\n        \"ItalianLotteryCode\": null,\n        \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n        \"MergeTargetId\": null,\n        \"ActivityState\": \"Active\",\n        \"IsActive\": true,\n        \"PreferredSpaceFeatures\": [\n          \"OceanView\"\n        ],\n        \"CreatorProfileId\": \"3cd637ef-4728-47f9-8fb1-afb900c9cdcf\",\n        \"UpdaterProfileId\": \"122fc063-ec6e-4198-b8db-6b168a59ffae\"\n      },\n      \"Reservation\": null\n    }\n  ],\n  \"Documents\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "20741fef-7055-4e84-920f-288b82acb172",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1887929d-7a49-4477-b422-6d3ebbdd8ba7",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4680b5c-4fba-4b73-b1ff-22f0994488b3",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21faa309-85e9-4019-99df-441113fefa83",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "413b8240-26bc-4c86-8220-5e53b7db0f2e",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6c537e8-bb98-43cd-98dc-3ecd18606f31",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64867a44-a107-4796-9b63-a6ceaa5d7723",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Name\": \"Smith\",\n  \"ResourceId\": null,\n  \"Extent\": {\n    \"Customers\": true,\n    \"Documents\": false,\n    \"Addresses\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "174f3c77-33a4-4e32-83f0-81616ed4ef97",
+          "name": "Get customers open items",
+          "request": {
+            "name": "Get customers open items",
+            "description": {
+              "content": "Use [Get all payments](https://mews-systems.gitbook.io/connector-api/operations/payments#get-all-payments) and [Get all order items](https://mews-systems.gitbook.io/connector-api/operations/orderitems#get-all-order-items) instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "getOpenItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"CustomerIds\": [\n    \"<uuid>\"\n  ],\n  \"Currency\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9d01858b-eb3a-4d21-9a68-41ece51ebec2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Customers\": [\n    {\n      \"CustomerId\": \"2a1a4315-7e6f-4131-af21-402cec59b8b9\",\n      \"OrderItems\": [\n        {\n          \"Id\": \"35820535-b988-4d6f-80cf-ecb19cdc3e58\",\n          \"AccountId\": \"2a1a4315-7e6f-4131-af21-402cec59b8b9\",\n          \"OrderId\": \"6645113e-72cc-4f99-ab77-e4452911bf20\",\n          \"BillId\": null,\n          \"AccountingCategoryId\": \"d250149e-a29d-4c70-b607-a1759faf7320\",\n          \"Amount\": {\n            \"Currency\": \"GBP\",\n            \"NetValue\": -5,\n            \"GrossValue\": -5,\n            \"TaxValues\": [\n              {\n                \"Code\": \"UK-Z\",\n                \"Value\": 0\n              }\n            ],\n            \"Breakdown\": {\n              \"Items\": [\n                {\n                  \"TaxRateCode\": \"UK-Z\",\n                  \"NetValue\": -5,\n                  \"TaxValue\": 0\n                }\n              ]\n            }\n          },\n          \"RevenueType\": \"Additional\",\n          \"ConsumedUtc\": \"2017-04-04T15:13:39Z\",\n          \"ClosedUtc\": null,\n          \"AccountingState\": \"Open\",\n          \"Data\": {\n            \"Discriminator\": \"Rebate\",\n            \"Value\": {\n              \"RebatedItemId\": null\n            }\n          }\n        }\n      ],\n      \"PaymentItems\": []\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa4564de-385f-4c01-8ac5-87d564bd5ac7",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90fca6d2-e02d-4f0f-a72e-46adf18e3a7d",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fcf252f6-b5ba-4357-87a4-2418dbc29adc",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5d5252e-0b5e-4b27-84bf-37db5d5c7a62",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1f37dae-334d-4297-b528-c8722f2be39b",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f852d9c1-e129-4f67-94a9-a5b431981d73",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "efcb5456-3c88-4d38-8758-7f78246bcf2b",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getOpenItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"2a1a4315-7e6f-4131-af21-402cec59b8b9\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57b30345-c1e3-4c0f-8677-d2d33cef717b",
+          "name": "Add customer",
+          "request": {
+            "name": "Add customer",
+            "description": {
+              "content": "Adds a new customer to the system and returns details of the added customer. If a customer with the specified email already exists, and `OverwriteExisting` is set to `true`, then the existing customer profile information is overwritten and the existing customer data returned. If `OverwriteExisting` is set to `false`, an error response is returned. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"OverwriteExisting\": \"<boolean>\",\n  \"Title\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"SecondLastName\": \"<string>\",\n  \"NationalityCode\": \"<string>\",\n  \"PreferredLanguageCode\": \"<string>\",\n  \"Sex\": \"<string>\",\n  \"BirthDate\": \"<date>\",\n  \"BirthCountryCode\": \"<string>\",\n  \"BirthCountrySubdivisionCode\": \"<string>\",\n  \"BirthPlace\": \"<string>\",\n  \"Occupation\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"Phone\": \"<tel>\",\n  \"LoyaltyCode\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"CarRegistrationNumber\": \"<string>\",\n  \"DietaryRequirements\": \"<string>\",\n  \"TaxIdentificationNumber\": \"<string>\",\n  \"CompanyId\": \"<uuid>\",\n  \"Address\": {\n    \"Line1\": \"<string>\",\n    \"Line2\": \"<string>\",\n    \"City\": \"<string>\",\n    \"PostalCode\": \"<postal-code>\",\n    \"CountryCode\": \"<string>\",\n    \"CountrySubdivisionCode\": \"<string>\"\n  },\n  \"IdentityCard\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"Passport\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"Visa\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"DriversLicense\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"Classifications\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Options\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ChainId\": \"<uuid>\",\n  \"ItalianDestinationCode\": \"<string>\",\n  \"ItalianFiscalCode\": \"<string>\",\n  \"ItalianLotteryCode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ca66cb3-ea30-46ea-8ca8-31c8548c0c14",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Id\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Number\": \"390881\",\n  \"Title\": \"Miss\",\n  \"Sex\": null,\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"SecondLastName\": null,\n  \"NationalityCode\": null,\n  \"PreferredLanguageCode\": null,\n  \"LanguageCode\": null,\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthCountryCode\": null,\n  \"BirthCountrySubdivisionCode\": null,\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"HasOtaEmail\": false,\n  \"Phone\": \"+39 06 555 5555\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"LoyaltyCode\": null,\n  \"AccountingCode\": null,\n  \"BillingCode\": null,\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"DietaryRequirements\": null,\n  \"CreatedUtc\": \"2024-09-17T12:22:33Z\",\n  \"UpdatedUtc\": \"2024-10-12T09:45:00Z\",\n  \"Passport\": null,\n  \"IdentityCard\": null,\n  \"Visa\": null,\n  \"DriversLicense\": null,\n  \"Address\": {\n    \"Id\": \"81f62f08-26d5-408f-9b0d-d030957dc799\",\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"Line2\": null,\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\",\n    \"Latitude\": 28.56333,\n    \"Longitude\": -121.243143\n  },\n  \"AddressId\": \"81f62f08-26d5-408f-9b0d-d030957dc799\",\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [],\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"MergeTargetId\": null,\n  \"ActivityState\": null,\n  \"IsActive\": true,\n  \"PreferredSpaceFeatures\": [\n    \"LowerBed\"\n  ],\n  \"CreatorProfileId\": \"3cd637ef-4728-47f9-8fb1-afb900c9cdcf\",\n  \"UpdaterProfileId\": \"122fc063-ec6e-4198-b8db-6b168a59ffae\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e92aff7c-bbf0-45dc-87c8-29583b4112cf",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e5b4638d-bab0-49f5-bccd-189cb3111635",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56c3c09f-6a73-44c4-8951-c0eeda0591b7",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6901170d-5889-4e65-9010-b7c6b56c02a1",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "916a52c1-27d8-448b-a40b-1d7ca3acdb49",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "756c289e-8b44-4667-afaa-ed3ffa14e5f3",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03306439-d64d-44c7-a240-7dfaadc7e43e",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"OverwriteExisting\": false,\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f395e26-5293-4187-8902-4c705e59e8fc",
+          "name": "Update customer",
+          "request": {
+            "name": "Update customer",
+            "description": {
+              "content": "Updates personal information of a customer. Note that if any of the fields is left blank, it won't clear the field in Mews. The field will be left intact. In case of email update, the email will change in Mews only if there is no other customer profile in the hotel with such email. Otherwise an error response is returned. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"CustomerId\": \"<uuid>\",\n  \"ChainId\": \"<uuid>\",\n  \"Title\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"SecondLastName\": \"<string>\",\n  \"NationalityCode\": \"<string>\",\n  \"PreferredLanguageCode\": \"<string>\",\n  \"Sex\": \"<string>\",\n  \"BirthDate\": \"<date>\",\n  \"BirthCountryCode\": \"<string>\",\n  \"BirthCountrySubdivisionCode\": \"<string>\",\n  \"BirthPlace\": \"<string>\",\n  \"Occupation\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"Phone\": \"<tel>\",\n  \"LoyaltyCode\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"CarRegistrationNumber\": \"<string>\",\n  \"DietaryRequirements\": \"<string>\",\n  \"TaxIdentificationNumber\": \"<string>\",\n  \"CompanyId\": \"<uuid>\",\n  \"Address\": {\n    \"Line1\": \"<string>\",\n    \"Line2\": \"<string>\",\n    \"City\": \"<string>\",\n    \"PostalCode\": \"<postal-code>\",\n    \"CountryCode\": \"<string>\",\n    \"CountrySubdivisionCode\": \"<string>\"\n  },\n  \"IdentityCard\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"Passport\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"Visa\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"DriversLicense\": {\n    \"Number\": \"<string>\",\n    \"Expiration\": \"<date>\",\n    \"Issuance\": \"<date>\",\n    \"IssuingCountryCode\": \"<string>\",\n    \"IssuingCountrySubdivisionCode\": \"<string>\",\n    \"IssuingCity\": \"<string>\"\n  },\n  \"Classifications\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Options\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"<string>\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"<string>\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dff09d63-3b22-476c-9de7-91d0f87b57d4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Id\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Number\": \"390881\",\n  \"Title\": \"Miss\",\n  \"Sex\": null,\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"SecondLastName\": null,\n  \"NationalityCode\": null,\n  \"PreferredLanguageCode\": null,\n  \"LanguageCode\": null,\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthCountryCode\": null,\n  \"BirthCountrySubdivisionCode\": null,\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"HasOtaEmail\": false,\n  \"Phone\": \"+39 06 555 5555\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"LoyaltyCode\": null,\n  \"AccountingCode\": null,\n  \"BillingCode\": null,\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"DietaryRequirements\": null,\n  \"CreatedUtc\": \"2024-09-17T12:22:33Z\",\n  \"UpdatedUtc\": \"2024-10-12T09:45:00Z\",\n  \"Passport\": null,\n  \"IdentityCard\": null,\n  \"Visa\": null,\n  \"DriversLicense\": null,\n  \"Address\": {\n    \"Id\": \"81f62f08-26d5-408f-9b0d-d030957dc799\",\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"Line2\": null,\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\",\n    \"Latitude\": 28.56333,\n    \"Longitude\": -121.243143\n  },\n  \"AddressId\": \"81f62f08-26d5-408f-9b0d-d030957dc799\",\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [],\n  \"ItalianDestinationCode\": \"7654321\",\n  \"ItalianFiscalCode\": \"ZGNZLR17U72P554F\",\n  \"ItalianLotteryCode\": \"AB12345\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"MergeTargetId\": null,\n  \"ActivityState\": null,\n  \"IsActive\": true,\n  \"PreferredSpaceFeatures\": [\n    \"LowerBed\"\n  ],\n  \"CreatorProfileId\": \"3cd637ef-4728-47f9-8fb1-afb900c9cdcf\",\n  \"UpdaterProfileId\": \"122fc063-ec6e-4198-b8db-6b168a59ffae\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a07b97bc-2c86-42ba-952a-0ff7b75d3e53",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89aea523-d14c-47d4-b9ab-1fd9ff36667b",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7fe2c09e-28b7-436f-85e1-02fe03a0a701",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "085ed2a0-1ef6-4a31-ba42-9f652d92015d",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "858b512b-ca8d-4c3b-b867-27f34712b4e4",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a74c25e-72b9-4c4a-819d-c0064ad815b4",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c7aac92-e36c-426f-b194-e3d46aa6008e",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"CustomerId\": \"99b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Title\": \"Miss\",\n  \"FirstName\": \"Thea\",\n  \"LastName\": \"Carbone\",\n  \"BirthDate\": \"1985-09-30\",\n  \"BirthPlace\": \"Pescara (BI)\",\n  \"Occupation\": \"Giornalista\",\n  \"Email\": \"thea@quotidiano.example\",\n  \"Phone\": \"+39 06 555 5555\",\n  \"Notes\": \"Check-in notturno.\",\n  \"CarRegistrationNumber\": \"AA 111AA\",\n  \"TaxIdentificationNumber\": \"ZGNZLR17U72P554F\",\n  \"CompanyId\": \"f3b4f0af-9558-463b-8452-07a9bc414708\",\n  \"Address\": {\n    \"Line1\": \"Via Antimo 474 Piano 5\",\n    \"City\": \"Liborio laziale\",\n    \"PostalCode\": \"30228\",\n    \"CountryCode\": \"IT\",\n    \"CountrySubdivisionCode\": \"IT-65\"\n  },\n  \"Classifications\": [\n    \"Media\",\n    \"FriendOrFamily\"\n  ],\n  \"Options\": [\n    \"SendMarketingEmails\"\n  ],\n  \"ItalianDestinationCode\": {\n    \"Value\": \"7654321\"\n  },\n  \"ItalianFiscalCode\": {\n    \"Value\": \"ZGNZLR17U72P554F\"\n  },\n  \"ItalianLotteryCode\": {\n    \"Value\": \"AB12345\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e287075-296e-40cf-98d4-6fa20cc66bd2",
+          "name": "Merge customers",
+          "request": {
+            "name": "Merge customers",
+            "description": {
+              "content": "Use [Merge accounts](https://mews-systems.gitbook.io/connector-api/operations/accounts#merge-accounts) instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "merge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"SourceCustomerId\": \"<uuid>\",\n  \"TargetCustomerId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "929f5c0f-7221-4217-bfa3-eb108ca9a8a7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03a7d9f7-ae1f-4243-b983-225b9991b389",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3947412b-041c-43c8-86a9-a87514f110bf",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7fe56e8-9c6c-4f0a-b6d3-6d143c9c92e5",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f69e539-8e06-4190-a749-d11f69ea9c0c",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a387a62-e338-4b13-953d-3e7c7b50015c",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51ce6143-36d4-4f08-8b09-e40e34f69c3a",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9200b1c3-d421-4ea6-8271-754705b999a4",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"SourceCustomerId\": \"e11801ff-4148-4010-87f3-0d111e2893e3\",\n  \"TargetCustomerId\": \"35d4b117-4e60-44a3-9580-c582117eff98\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31ae6b9b-b4de-4e80-b007-b5dad48215c9",
+          "name": "Add customer file",
+          "request": {
+            "name": "Add customer file",
+            "description": {
+              "content": "Attaches the specified file to the customer profile. \r\n\r\nAllowed MIME types: `application/pdf`, `image/bmp`, `image/gif`, `image/jpeg`, `image/png`, `image/tiff`.\r\n\r\nNote this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/guidelines/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "addFile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"CustomerId\": \"<uuid>\",\n  \"Data\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2474556d-060f-478a-b054-d33cc690a647",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FileId\": \"f039f5b4-ff18-4510-9086-92b14a68ed78\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12b36a86-9f65-4233-9657-17b3cff17483",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c74b344-565d-48ce-86c3-c29e2593c45b",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ed1ae61-8351-4d57-87fc-91cde3f996f6",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d8e751e-778f-45fd-9f0c-b9399f4f4149",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adbb3119-b664-425d-a982-c2883bea2562",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0b80e6b-b588-4ba0-ac07-b210c656bd89",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c17f6e2-21be-40b7-8cfd-79c3b4aa51f0",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"Data\": \"JVBERi0xLjAKMSAwIG9iajw8L1BhZ2VzIDIgMCBSPj5lbmRvYmogMiAwIG9iajw8L0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iaiAzIDAgb2JqPDwvTWVkaWFCb3hbMCAwIDMgM10+PmVuZG9iagp0cmFpbGVyPDwvUm9vdCAxIDAgUj4+Cg==\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98c4abda-7387-446b-869d-89413d52d6cf",
+          "name": "Get customers relationships",
+          "request": {
+            "name": "Get customers relationships",
+            "description": {
+              "content": "Returns relationships between customers (e.g. Spouse, Friend) for the provided unique identifiers of customers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "customers",
+                "getRelationships"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"CustomerIds\": [\n    \"<uuid>\"\n  ],\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"ChainIds\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e038478-20be-4d95-a5e3-8ad367f96408",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"CustomerRelationships\": [\n    {\n      \"CustomerId\": \"cbe8a32e-3eb7-4226-baf4-69455a0eeaf5\",\n      \"RelatedCustomerId\": \"cbe8a32e-3eb7-4226-baf4-69455a0eeaf6\",\n      \"Relationship\": \"Other\"\n    },\n    {\n      \"CustomerId\": \"cbe8a32e-3eb7-4226-baf4-69455a0eeaf6\",\n      \"RelatedCustomerId\": \"cbe8a32e-3eb7-4226-baf4-69455a0eeaf5\",\n      \"Relationship\": \"Other\"\n    }\n  ],\n  \"Cursor\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4ee2b3c-61d9-48fb-ac2d-3f4dfaed7b20",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "618152b8-43d7-47a2-936d-3cd6716fae25",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f12b3cb2-3d32-4dcd-a288-5bd103bdbcd7",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f936221e-c6df-4ad7-a0b0-090e684ab85e",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3dbf704e-b84f-4849-8d68-610681665440",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4680e67-a4c9-48ff-83dd-fe18348fb631",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70dbe412-a4a1-4db2-b1d9-dbb0025aa978",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "customers",
+                    "getRelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CustomerIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1c38abdd-97c8-4ca7-acf3-49aad4c9a215",
+    "name": "Connector Account notes Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

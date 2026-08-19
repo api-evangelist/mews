@@ -1,0 +1,460 @@
+{
+  "item": [
+    {
+      "id": "d505e95d-4493-44ce-8fa0-79860973797a",
+      "name": "Images",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "77ac7bec-156a-40eb-b43c-3875794a8b0d",
+          "name": "Get image URLs",
+          "request": {
+            "name": "Get image URLs",
+            "description": {
+              "content": "Returns URLs of the specified images.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "images",
+                "getUrls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Images\": [\n    {\n      \"ImageId\": \"<uuid>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\",\n      \"ResizeMode\": \"<string>\"\n    },\n    {\n      \"ImageId\": \"<uuid>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\",\n      \"ResizeMode\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "29518559-98fb-4836-9ddc-c130995e2963",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImageUrls\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Url\": \"https://cdn.demo.mews.li/Media/Image/57a971a5-a335-48f4-8cd1-595245d1a876?Mode=Fit&Width=200&Height=150\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ac181e6-0470-4206-af29-a595b64bc67c",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aeee70e3-bcb6-4d6c-89e9-312c8d9a428b",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f7c30a3-9b5a-440a-aa01-5fcb3eb3b6e7",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fae15729-6fdc-4d8a-b264-10cc56e4a5f2",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7e93306-560d-47c9-bc53-53fafc0fecbc",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fc61630-ded2-4494-abba-dfb29c39dc72",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f7ae637-4cc3-4228-bd3c-d79915d5b4c4",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "images",
+                    "getUrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Images\": [\n    {\n      \"ImageId\": \"57a971a5-a335-48f4-8cd1-595245d1a876\",\n      \"Width\": 200,\n      \"Height\": 150,\n      \"ResizeMode\": \"Fit\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "92d72383-f209-4e50-8b0e-0d5ccbb11399",
+    "name": "Connector Account notes Images API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

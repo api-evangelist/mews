@@ -1,0 +1,888 @@
+{
+  "item": [
+    {
+      "id": "1db9920e-1d2e-4b4d-bb62-768535546495",
+      "name": "Payment plans",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "759b1330-534d-4ebb-83bc-51aa356c8354",
+          "name": "Add payment plan",
+          "request": {
+            "name": "Add payment plan",
+            "description": {
+              "content": "Adds a payment plan connected to a `Reservation` and returns the payment request URL associated with the created payment plan. The fulfillment of the payment request will initiate the payment plan.\r\nNote this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "paymentPlans",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"PaymentRequest\": {\n    \"Message\": \"<string>\",\n    \"PaymentMethods\": [\n      \"<string>\"\n    ],\n    \"Note\": \"<string>\",\n    \"PaymentRequestType\": \"<string>\",\n    \"PaymentRequestExpirationOffsetDays\": \"<integer>\",\n    \"SendEmail\": \"<boolean>\"\n  },\n  \"ReservationId\": \"<uuid>\",\n  \"EnterpriseId\": \"<uuid>\",\n  \"StartMonth\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "02ef196b-a689-4fe0-b5cd-62e9e1ae40d8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"PaymentRequestUrl\": \"https://example.com/payment-request-url\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb3e7379-117c-49da-aceb-95b96a0b6ade",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85193725-986b-4f46-b226-e47bd508e332",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bf7eaa7-731c-46cf-8735-c0b92b373cb1",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "099b6a89-c094-4c0b-955d-d5e8a322512c",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e30a0d20-6e13-4260-9664-5401936fce82",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dfdf5848-3244-4df4-a71f-d727c066f0a2",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "263ed950-54e7-4fed-91ff-f934975d6332",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "paymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ReservationId\": \"0f515589-99b4-423d-b83a-b237009f0509\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Payment request message\",\n    \"Note\": \"Internal Note\",\n    \"PaymentRequestType\": \"Payment\",\n    \"PaymentRequestExpirationOffsetDays\": 30,\n    \"SendEmail\": false\n  },\n  \"StartMonth\": \"2023-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d307cf1f-f168-4de5-a06a-e3a077a213dc",
+          "name": "Add billing automation payment plan",
+          "request": {
+            "name": "Add billing automation payment plan",
+            "description": {
+              "content": "Adds a payment plan connected to a `Billing automation` and returns the payment request URL associated with the created payment plan. The fulfillment of the payment request will activate the payment plan.\r\nNote this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "billingAutomationPaymentPlans",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"BillingAutomationId\": \"<uuid>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"CustomerId\": \"<uuid>\",\n  \"Name\": \"<string>\",\n  \"PaymentOffsetDays\": \"<integer>\",\n  \"PaymentRequest\": {\n    \"ExpirationDateUtc\": \"<dateTime>\",\n    \"Message\": \"<string>\",\n    \"PaymentMethods\": [\n      \"<string>\"\n    ],\n    \"SendEmail\": \"<boolean>\",\n    \"Note\": \"<string>\"\n  },\n  \"EnterpriseId\": \"<uuid>\",\n  \"StartMonth\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2386db8f-2ae0-42e0-92e7-148a0e16129d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"PaymentRequestUrl\": \"https://example.com/payment-request-url\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3afdfa8-ebbc-43d6-ac1c-d61324959f0c",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6ff37bd-8ab3-4bf1-af55-1d76bad29111",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a61cadf6-886a-4eb3-b093-f91d19dad4bb",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3651afc-59a7-4a49-8442-8905116de926",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4af4a8ac-ff58-4db7-b755-57bfc3d8f0fb",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f14dac84-f0b9-4b34-859d-38ec282ac9a7",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b99fef4a-d16c-4741-92ba-49451cc5a52d",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "billingAutomationPaymentPlans",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillingAutomationId\": \"ecd64eec-4423-4c65-b844-814b9199856d\",\n  \"CustomerId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n  \"Name\": \"Payment Plan Name\",\n  \"PaymentRequest\": {\n    \"PaymentMethods\": [\n      \"PaymentCard\",\n      \"SepaDirectDebit\"\n    ],\n    \"Message\": \"Your scheduled payments will be collected automatically based on your selected plan and timing.\",\n    \"Note\": \"Bill for previous month included\",\n    \"ExpirationDateUtc\": \"2026-10-01T12:00:00Z\",\n    \"SendEmail\": false\n  },\n  \"PaymentOffsetDays\": 5,\n  \"StartMonth\": \"2026-10\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "22eeb2d5-8ca8-4031-bddd-317781600a87",
+    "name": "Connector Account notes Payment plans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

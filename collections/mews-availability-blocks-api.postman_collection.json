@@ -1,0 +1,1744 @@
+{
+  "item": [
+    {
+      "id": "78e5409b-c9ce-4748-806f-66dce8874cb8",
+      "name": "Availability blocks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c07ca729-580c-434e-8a1c-00ee306403cd",
+          "name": "Delete availability blocks",
+          "request": {
+            "name": "Delete availability blocks",
+            "description": {
+              "content": "Delete availability blocks. Note that an availability block containing active reservations (reservations which are not Canceled) cannot be deleted. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "availabilityBlocks",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AvailabilityBlockIds\": [\n    \"<uuid>\"\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b687aeaa-1b6e-4ae9-a1e3-4969e757a209",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6e17e75-f80d-4bf8-9412-ecf552a7f084",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99755206-683a-43fe-b45f-f6baf49a653d",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9b20432-a99a-4702-91bd-5ea7e5c8712c",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d85f5864-f43a-4c74-993b-ddaab50000f8",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd8e9c4d-7135-46dc-bdcd-52474da7da7c",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a025485f-d864-48a8-9342-8144d6d370ee",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1af1b44b-45f0-441a-95ad-49c043b16314",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n    \"c32386aa-1cd2-414a-a823-489325842fbe\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc94d477-661d-4f7b-9b17-d77aed02ffea",
+          "name": "Get all availability blocks",
+          "request": {
+            "name": "Get all availability blocks",
+            "description": {
+              "content": "Returns all availability blocks filtered by services, unique identifiers and other filters. Note this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "availabilityBlocks",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": \"<boolean>\",\n    \"Adjustments\": \"<boolean>\",\n    \"ServiceOrders\": \"<boolean>\",\n    \"Rates\": \"<boolean>\"\n  },\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"ServiceIds\": [\n    \"<uuid>\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"<uuid>\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"ExternalIdentifiers\": [\n    \"<string>\"\n  ],\n  \"States\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dd9f08b2-1669-4999-aced-bbaf91adc892",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"Id\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"VoucherId\": null,\n      \"BookerId\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\",\n      \"CompanyId\": null,\n      \"TravelAgencyId\": null,\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48,\n        \"Net\": null,\n        \"Tax\": null,\n        \"TaxRate\": null\n      },\n      \"State\": \"Confirmed\",\n      \"ReservationPurpose\": \"Leisure\",\n      \"CreatedUtc\": \"2020-11-04T13:00:00Z\",\n      \"UpdatedUtc\": \"2020-11-04T13:00:00Z\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-04T13:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-04T13:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T13:00:00Z\",\n      \"RollingReleaseOffset\": null,\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"Name\": \"Wedding group\",\n      \"Notes\": \"Have a nice stay\",\n      \"PickupDistribution\": \"AllInOneGroup\",\n      \"IsActive\": false,\n      \"QuoteId\": null,\n      \"AvailabilityBlockNumber\": \"478\",\n      \"ReleaseStrategy\": \"FixedRelease\",\n      \"PurchaseOrderNumber\": \"XX-123\",\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"CanceledUtc\": null,\n      \"CancellationReason\": null,\n      \"CancellationReasonDetail\": null\n    },\n    {\n      \"Id\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"VoucherId\": null,\n      \"BookerId\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\",\n      \"CompanyId\": null,\n      \"TravelAgencyId\": null,\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48,\n        \"Net\": null,\n        \"Tax\": null,\n        \"TaxRate\": null\n      },\n      \"State\": \"Confirmed\",\n      \"ReservationPurpose\": \"Leisure\",\n      \"CreatedUtc\": \"2022-10-11T13:32:32Z\",\n      \"UpdatedUtc\": \"2022-10-11T13:32:32Z\",\n      \"FirstTimeUnitStartUtc\": \"2022-10-14T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2022-11-17T00:00:00Z\",\n      \"ReleasedUtc\": null,\n      \"RollingReleaseOffset\": \"P-3DT4H\",\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"Name\": \"Rolling release\",\n      \"Notes\": null,\n      \"PickupDistribution\": \"AllInOneGroup\",\n      \"IsActive\": false,\n      \"QuoteId\": \"67eaf3c8-81e0-4ffb-b5f2-2b61803feb9c\",\n      \"AvailabilityBlockNumber\": \"479\",\n      \"ReleaseStrategy\": \"RollingRelease\",\n      \"PurchaseOrderNumber\": null,\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"CanceledUtc\": null,\n      \"CancellationReason\": null,\n      \"CancellationReasonDetail\": null\n    }\n  ],\n  \"ServiceOrders\": null,\n  \"Adjustments\": [\n    {\n      \"Id\": \"e19297af-373e-4701-b4ea-afae0129bded\",\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"ResourceCategoryId\": \"773d5e42-de1e-43a0-9ce6-f940faf2303f\",\n      \"StartUtc\": null,\n      \"EndUtc\": null,\n      \"FirstTimeUnitStartUtc\": \"2021-10-14T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-10-17T00:00:00Z\",\n      \"UnitCount\": 6,\n      \"ActivityState\": \"Active\",\n      \"ReleaseOverrideUtc\": \"2021-10-13T00:00:00Z\",\n      \"UpdatedUtc\": \"2021-10-21T13:32:32Z\",\n      \"IsActive\": false,\n      \"PaxCounts\": null,\n      \"FirstTimeUnitReleaseUtc\": \"2021-10-13T00:00:00Z\"\n    }\n  ],\n  \"Rates\": null,\n  \"Cursor\": \"c32386aa-1cd2-414a-a823-489325842fbe\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6599107-cc5d-4d27-8521-3dd8fbe5c898",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b7368c7-0341-45a9-9752-2c037ffb954e",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eed437e2-0ba5-4823-8eeb-45f9aa00a1fe",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8e5ffcc-2296-4f8c-85e3-fec61aa4804c",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1fcd99b8-35be-445a-8da6-9d3053ea5e7c",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "321fcbfd-9edc-4b3e-ae4d-9e6ece5eae8a",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10f35db2-d6ff-4d3f-b222-bd9f08b799fa",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"AvailabilityBlocks\": true,\n    \"Adjustments\": true,\n    \"ServiceOrders\": false,\n    \"Rates\": false\n  },\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"AvailabilityBlockIds\": [\n    \"5ee074b1-6c86-48e8-915f-c7aa4702086f\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ReleasedUtc\": {\n    \"StartUtc\": \"2020-11-04T00:00:00Z\",\n    \"EndUtc\": \"2020-11-05T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Block-0001\"\n  ],\n  \"States\": [\n    \"Confirmed\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01c756f7-5c8b-4ff5-baee-9c4b6f5d0a3f",
+          "name": "Add availability blocks",
+          "request": {
+            "name": "Add availability blocks",
+            "description": {
+              "content": "Adds availability blocks which are used to group related `Availability updates`. This makes limiting public availability easier and more organized. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "availabilityBlocks",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AvailabilityBlocks\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"<string>\",\n      \"LastTimeUnitStartUtc\": \"<string>\",\n      \"RateId\": \"<uuid>\",\n      \"ServiceId\": \"<uuid>\",\n      \"State\": \"<string>\",\n      \"ReleasedUtc\": \"<dateTime>\",\n      \"RollingReleaseOffset\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"VoucherCode\": \"<string>\",\n      \"BookerId\": \"<uuid>\",\n      \"CompanyId\": \"<uuid>\",\n      \"TravelAgencyId\": \"<uuid>\",\n      \"Budget\": {\n        \"Currency\": \"<currency>\",\n        \"Value\": \"<double>\",\n        \"Net\": \"<double>\",\n        \"Tax\": \"<double>\",\n        \"TaxRate\": \"<double>\"\n      },\n      \"ReservationPurpose\": \"<string>\",\n      \"ExternalIdentifier\": \"<string>\",\n      \"Notes\": \"<string>\",\n      \"QuoteId\": \"<uuid>\",\n      \"PurchaseOrderNumber\": \"<string>\",\n      \"BusinessSegmentId\": \"<uuid>\",\n      \"PickupDistribution\": \"<string>\"\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f31cccc-f6e8-48cc-bad7-51320ab6d60b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"Id\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"VoucherId\": null,\n      \"BookerId\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\",\n      \"CompanyId\": null,\n      \"TravelAgencyId\": null,\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48,\n        \"Net\": null,\n        \"Tax\": null,\n        \"TaxRate\": null\n      },\n      \"State\": \"Confirmed\",\n      \"ReservationPurpose\": \"Leisure\",\n      \"CreatedUtc\": \"2020-11-04T13:00:00Z\",\n      \"UpdatedUtc\": \"2020-11-04T13:00:00Z\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-04T13:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-04T13:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T13:00:00Z\",\n      \"RollingReleaseOffset\": null,\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"Name\": \"Wedding group\",\n      \"Notes\": \"Have a nice stay\",\n      \"PickupDistribution\": \"AllInOneGroup\",\n      \"IsActive\": false,\n      \"QuoteId\": null,\n      \"AvailabilityBlockNumber\": \"478\",\n      \"ReleaseStrategy\": \"FixedRelease\",\n      \"PurchaseOrderNumber\": \"XX-123\",\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"CanceledUtc\": null,\n      \"CancellationReason\": null,\n      \"CancellationReasonDetail\": null\n    },\n    {\n      \"Id\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"VoucherId\": null,\n      \"BookerId\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\",\n      \"CompanyId\": null,\n      \"TravelAgencyId\": null,\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48,\n        \"Net\": null,\n        \"Tax\": null,\n        \"TaxRate\": null\n      },\n      \"State\": \"Confirmed\",\n      \"ReservationPurpose\": \"Leisure\",\n      \"CreatedUtc\": \"2022-10-11T13:32:32Z\",\n      \"UpdatedUtc\": \"2022-10-11T13:32:32Z\",\n      \"FirstTimeUnitStartUtc\": \"2022-10-14T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2022-11-17T00:00:00Z\",\n      \"ReleasedUtc\": null,\n      \"RollingReleaseOffset\": \"P-3DT4H\",\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"Name\": \"Rolling release\",\n      \"Notes\": null,\n      \"PickupDistribution\": \"AllInOneGroup\",\n      \"IsActive\": false,\n      \"QuoteId\": \"67eaf3c8-81e0-4ffb-b5f2-2b61803feb9c\",\n      \"AvailabilityBlockNumber\": \"479\",\n      \"ReleaseStrategy\": \"RollingRelease\",\n      \"PurchaseOrderNumber\": null,\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"CanceledUtc\": null,\n      \"CancellationReason\": null,\n      \"CancellationReasonDetail\": null\n    }\n  ],\n  \"ServiceOrders\": null,\n  \"Adjustments\": [\n    {\n      \"Id\": \"e19297af-373e-4701-b4ea-afae0129bded\",\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"ResourceCategoryId\": \"773d5e42-de1e-43a0-9ce6-f940faf2303f\",\n      \"StartUtc\": null,\n      \"EndUtc\": null,\n      \"FirstTimeUnitStartUtc\": \"2021-10-14T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-10-17T00:00:00Z\",\n      \"UnitCount\": 6,\n      \"ActivityState\": \"Active\",\n      \"ReleaseOverrideUtc\": \"2021-10-13T00:00:00Z\",\n      \"UpdatedUtc\": \"2021-10-21T13:32:32Z\",\n      \"IsActive\": false,\n      \"PaxCounts\": null,\n      \"FirstTimeUnitReleaseUtc\": \"2021-10-13T00:00:00Z\"\n    }\n  ],\n  \"Rates\": null,\n  \"Cursor\": \"c32386aa-1cd2-414a-a823-489325842fbe\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d2ffc37-8849-4852-b8ad-956cb5d44ceb",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e50694d4-8da6-4a43-94b0-666b696d4a0f",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88a37b62-c62e-44db-9a43-e6d446dd0951",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6a60b4a-0ac5-40c1-81b5-5487ec77f1e1",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "49f1c9fc-e8fc-404f-b6cb-6fa8cd9e5a35",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "889cad8f-ed3b-4b04-8ff2-ad6c8d97b061",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f11eab3-ea6a-401c-903e-b7770d76cd90",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AvailabilityBlocks\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2020-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-11-06T00:00:00Z\",\n      \"ReleasedUtc\": \"2020-11-04T00:00:00Z\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0001\",\n      \"State\": \"Confirmed\"\n    },\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"FirstTimeUnitStartUtc\": \"2021-11-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-11-06T00:00:00Z\",\n      \"Name\": \"Rolling release block\",\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48\n      },\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"State\": \"Confirmed\"\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae120c8f-f2c9-4f54-ae1a-6efce922777e",
+          "name": "Update availability blocks",
+          "request": {
+            "name": "Update availability blocks",
+            "description": {
+              "content": "Updates information about the specified `Availability block`. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "availabilityBlocks",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"<uuid>\",\n      \"Name\": {\n        \"Value\": \"<string>\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"<string>\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"<string>\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"<string>\"\n      },\n      \"State\": {\n        \"Value\": \"<string>\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"<string>\"\n      },\n      \"CompanyId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"TravelAgencyId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"BookerId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"Notes\": {\n        \"Value\": \"<string>\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Net\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Tax\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"TaxRate\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"CancellationReason\": {\n        \"Value\": \"<string>\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"<string>\"\n      },\n      \"RollingReleaseOffset\": {\n        \"Value\": \"<string>\"\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"<string>\"\n      },\n      \"ReleaseStrategy\": {\n        \"Value\": \"<string>\"\n      },\n      \"QuoteId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"PurchaseOrderNumber\": {\n        \"Value\": \"<string>\"\n      },\n      \"BusinessSegmentId\": {\n        \"Value\": \"<uuid>\"\n      }\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cf06d7d9-4754-4762-b6dd-9d6662f472f1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"Id\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"VoucherId\": null,\n      \"BookerId\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\",\n      \"CompanyId\": null,\n      \"TravelAgencyId\": null,\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48,\n        \"Net\": null,\n        \"Tax\": null,\n        \"TaxRate\": null\n      },\n      \"State\": \"Confirmed\",\n      \"ReservationPurpose\": \"Business\",\n      \"CreatedUtc\": \"2020-11-04T13:00:00Z\",\n      \"UpdatedUtc\": \"2020-11-05T16:11:38Z\",\n      \"FirstTimeUnitStartUtc\": \"2021-07-05T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-07-15T00:00:00Z\",\n      \"ReleasedUtc\": \"2021-07-04T00:00:00Z\",\n      \"RollingReleaseOffset\": null,\n      \"ExternalIdentifier\": \"Block-1002\",\n      \"Name\": \"Mr. Smith's block\",\n      \"Notes\": \"Welcome to Washington\",\n      \"PickupDistribution\": \"AllInOneGroup\",\n      \"IsActive\": false,\n      \"QuoteId\": null,\n      \"AvailabilityBlockNumber\": \"478\",\n      \"ReleaseStrategy\": \"FixedRelease\",\n      \"PurchaseOrderNumber\": \"XX-123\",\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"CanceledUtc\": null,\n      \"CancellationReason\": null,\n      \"CancellationReasonDetail\": null\n    },\n    {\n      \"Id\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"VoucherId\": null,\n      \"BookerId\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\",\n      \"CompanyId\": null,\n      \"TravelAgencyId\": null,\n      \"Budget\": {\n        \"Currency\": \"USD\",\n        \"Value\": 48,\n        \"Net\": null,\n        \"Tax\": null,\n        \"TaxRate\": null\n      },\n      \"State\": \"Canceled\",\n      \"ReservationPurpose\": \"Leisure\",\n      \"CreatedUtc\": \"2022-10-11T13:32:32Z\",\n      \"UpdatedUtc\": \"2022-10-11T13:32:32Z\",\n      \"FirstTimeUnitStartUtc\": \"2022-10-14T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2022-11-17T00:00:00Z\",\n      \"ReleasedUtc\": null,\n      \"RollingReleaseOffset\": \"P-3DT4H\",\n      \"ExternalIdentifier\": \"Block-0002\",\n      \"Name\": \"Rolling release\",\n      \"Notes\": null,\n      \"PickupDistribution\": \"AllInOneGroup\",\n      \"IsActive\": false,\n      \"QuoteId\": \"67eaf3c8-81e0-4ffb-b5f2-2b61803feb9c\",\n      \"AvailabilityBlockNumber\": \"479\",\n      \"ReleaseStrategy\": \"RollingRelease\",\n      \"PurchaseOrderNumber\": null,\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"CanceledUtc\": \"2022-10-12T15:12:49Z\",\n      \"CancellationReason\": \"ForceMajeure\",\n      \"CancellationReasonDetail\": \"Event was canceled due to rain.\"\n    }\n  ],\n  \"ServiceOrders\": null,\n  \"Adjustments\": [\n    {\n      \"Id\": \"e19297af-373e-4701-b4ea-afae0129bded\",\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"ResourceCategoryId\": \"773d5e42-de1e-43a0-9ce6-f940faf2303f\",\n      \"StartUtc\": null,\n      \"EndUtc\": null,\n      \"FirstTimeUnitStartUtc\": \"2021-10-14T00:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2021-10-17T00:00:00Z\",\n      \"UnitCount\": 6,\n      \"ActivityState\": \"Active\",\n      \"ReleaseOverrideUtc\": \"2021-10-13T00:00:00Z\",\n      \"UpdatedUtc\": \"2021-10-21T13:32:32Z\",\n      \"IsActive\": false,\n      \"PaxCounts\": null,\n      \"FirstTimeUnitReleaseUtc\": \"2021-10-13T00:00:00Z\"\n    }\n  ],\n  \"Rates\": null,\n  \"Cursor\": \"c32386aa-1cd2-414a-a823-489325842fbe\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55963151-2630-401b-9398-1319fb265bd6",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cca41e53-4dfb-4247-824f-337d05364637",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55d2e1ca-92f7-491a-808a-726f93ae7fb4",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e995c76d-3936-471b-88fb-fa18c03d6a64",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77783004-99ed-4ee9-a6d8-19f656625457",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9a107ca-81c7-47d8-baa6-187f02d3d835",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10c59e23-34f9-4ee3-af76-ffa2b73dc05e",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "availabilityBlocks",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AvailabilityBlocks\": [\n    {\n      \"AvailabilityBlockId\": \"5ee074b1-6c86-48e8-915f-c7aa4702086f\",\n      \"Name\": {\n        \"Value\": \"Mr. Smith's block\"\n      },\n      \"FirstTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-05T00:00:00Z\"\n      },\n      \"LastTimeUnitStartUtc\": {\n        \"Value\": \"2021-07-15T00:00:00Z\"\n      },\n      \"ExternalIdentifier\": {\n        \"Value\": \"Block-1002\"\n      },\n      \"State\": {\n        \"Value\": \"Confirmed\"\n      },\n      \"ReservationPurpose\": {\n        \"Value\": \"Business\"\n      },\n      \"BookerId\": {\n        \"Value\": \"ebd507c5-6bfd-4ca9-96aa-ffed6fa94f72\"\n      },\n      \"Notes\": {\n        \"Value\": \"Welcome to Washington\"\n      },\n      \"Budget\": {\n        \"Value\": {\n          \"Currency\": \"USD\",\n          \"Value\": 48\n        }\n      },\n      \"ReleasedUtc\": {\n        \"Value\": \"2021-07-04T00:00:00Z\"\n      },\n      \"QuoteId\": {},\n      \"BusinessSegmentId\": {\n        \"Value\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\"\n      }\n    },\n    {\n      \"AvailabilityBlockId\": \"c32386aa-1cd2-414a-a823-489325842fbe\",\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"CancellationReason\": {\n        \"Value\": \"ForceMajeure\"\n      },\n      \"CancellationReasonDetail\": {\n        \"Value\": \"Event was canceled due to rain.\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "608ee941-8a3f-4e0d-b41f-4414c0599a01",
+    "name": "Connector Account notes Availability blocks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

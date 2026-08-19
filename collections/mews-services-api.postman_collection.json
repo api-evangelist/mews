@@ -1,0 +1,1753 @@
+{
+  "item": [
+    {
+      "id": "37c1cab6-b05b-4bee-aec5-f04892a8fe6c",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "47e40673-31a9-493f-b9a2-4d85311908a2",
+          "name": "Get all services",
+          "request": {
+            "name": "Get all services",
+            "description": {
+              "content": "Returns all services offered by the enterprise.\nNote this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "services",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"ServiceIds\": [\n    \"<uuid>\"\n  ],\n  \"ServiceType\": \"<string>\",\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f61978e-90be-42bc-85b8-e5c7442592a8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Services\": [\n    {\n      \"Id\": \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\",\n      \"IsActive\": true,\n      \"Name\": \"Restaurant\",\n      \"Options\": {\n        \"BillAsPackage\": false\n      },\n      \"Data\": {\n        \"Discriminator\": \"Additional\",\n        \"Value\": {\n          \"Promotions\": {\n            \"BeforeCheckIn\": false,\n            \"AfterCheckIn\": false,\n            \"DuringStay\": false,\n            \"BeforeCheckOut\": false,\n            \"AfterCheckOut\": false,\n            \"DuringCheckOut\": false\n          }\n        }\n      },\n      \"ExternalIdentifier\": \"SVCE-Restaurant\"\n    },\n    {\n      \"Id\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"EnterpriseId\": \"4d0201db-36f5-428b-8d11-4f0a65e960cc\",\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\",\n      \"IsActive\": true,\n      \"Name\": \"Accommodation\",\n      \"Options\": {\n        \"BillAsPackage\": true\n      },\n      \"Data\": {\n        \"Discriminator\": \"Bookable\",\n        \"Value\": {\n          \"StartOffset\": \"P0M0DT15H0M0S\",\n          \"EndOffset\": \"P0M0DT12H0M0S\",\n          \"OccupancyStartOffset\": \"P0M0DT15H0M0S\",\n          \"OccupancyEndOffset\": \"P0M0DT12H0M0S\",\n          \"TimeUnitPeriod\": \"Day\"\n        }\n      },\n      \"ExternalIdentifier\": \"SVCE-Accomm\"\n    }\n  ],\n  \"Cursor\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5cc4294-d357-4b65-af47-5dd02c25ca96",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29762b5b-2f16-49d6-9156-cd4cf78d3b5c",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "055b5250-409c-46ee-aa2c-262a0369f013",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d2023dc0-ddc7-4dcb-9b17-3dd316c77dd7",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b897b691-13cc-44c1-a245-962e0b282a57",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c596dda-1121-48a5-8536-cbf884cb307c",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56a903bf-a43a-4b00-a66d-f3c767c5cd13",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"fc79a518-bc69-45b8-93bd-83326201bd14\",\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-01-05T00:00:00Z\",\n    \"EndUtc\": \"2020-01-10T00:00:00Z\"\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2b217d2-060b-4d22-bd10-0996e2c12f17",
+          "name": "Update service availability",
+          "request": {
+            "name": "Update service availability",
+            "description": {
+              "content": "Updates the number of available resources in [Resource category](https://mews-systems.gitbook.io/connector-api/operations/resources/#resource-category) by a certain amount (relative adjustment). Note that availabilities are defined per time unit, so when the server receives the UTC interval, it first converts it to enterprise timezone and updates the availability on all time units that the interval intersects. It's not allowed to update past availabilities outside of `EditableHistoryInterval`, future updates are allowed for up to 5 years.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "services",
+                "updateAvailability"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"<dateTime>\",\n      \"LastTimeUnitStartUtc\": \"<dateTime>\",\n      \"ResourceCategoryId\": \"<uuid>\",\n      \"UnitCountAdjustment\": {\n        \"Value\": \"<integer>\"\n      },\n      \"StartUtc\": \"<dateTime>\",\n      \"EndUtc\": \"<dateTime>\",\n      \"AvailabilityBlockId\": \"<uuid>\",\n      \"PaxCounts\": [\n        {\n          \"PersonCount\": \"<integer>\",\n          \"UnitCount\": \"<integer>\"\n        },\n        {\n          \"PersonCount\": \"<integer>\",\n          \"UnitCount\": \"<integer>\"\n        }\n      ]\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ServiceId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "687e2653-51b6-40da-a28c-e79a236a0b38",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eba1cdd2-a182-4a67-bd95-b8d6eeadff23",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "252bd6b5-88aa-4e37-9f6a-1ac0c6649260",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91c0268e-208f-4e8f-9712-beb4f6e69760",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53f3b526-994a-4664-b945-aec8c6727764",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce6db8c5-10b6-4831-b29e-fb96d3082970",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aaaefc17-236e-4968-9ccf-8f644ff29364",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f0843f0-098c-4d35-92ac-14dfe82b5a30",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "updateAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"AvailabilityUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-05T23:00:00Z\",\n      \"AvailabilityBlockId\": \"23e85a44-d95a-4dcf-9f36-acb000b10abe\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {\n        \"Value\": 6\n      }\n    },\n    {\n      \"FirstTimeUnitStartUtc\": \"2020-10-07T23:00:00Z\",\n      \"LastTimeUnitStartUtc\": \"2020-10-08T23:00:00Z\",\n      \"ResourceCategoryId\": \"46bc1498-38cf-4d03-b144-aa69012f5d50\",\n      \"UnitCountAdjustment\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "853358de-a19c-48fa-a7c6-6c765a716f5f",
+          "name": "Get service availability",
+          "request": {
+            "name": "Get service availability",
+            "description": {
+              "content": "Returns availability of a bookable service for a specified time interval including applied availability adjustments. Availability will be returned for all service time units that the specified time interval intersects. So, for example, an interval `1st Jan 23:00 UTC - 1st Jan 23:00 UTC` will result in one price for `2nd Jan`, while Interval `1st Jan 23:00 UTC - 2nd Jan 23:00 UTC` will result in two prices for `2nd Jan` and `3rd Jan` (assuming a time unit period of \"Day\"). UTC timestamps must correspond to the start boundary of a time unit, e.g. 00:00 converted to UTC for a time unit of \"Day\". Other timestamps are not permitted. The __maximum size of time interval__ depends on the service's time unit: 367 hours if hours, 367 days if days, or 60 months if months. For more information about time units, see [Time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "services",
+                "getAvailability"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"FirstTimeUnitStartUtc\": \"<dateTime>\",\n  \"LastTimeUnitStartUtc\": \"<dateTime>\",\n  \"ServiceId\": \"<uuid>\",\n  \"StartUtc\": \"<dateTime>\",\n  \"EndUtc\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f2670474-229d-4150-a594-93c2d27aa3da",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"CategoryAvailabilities\": [\n    {\n      \"Availabilities\": [\n        6,\n        7,\n        5\n      ],\n      \"Adjustments \": [\n        0,\n        1,\n        -1\n      ],\n      \"CategoryId\": \"773d5e42-de1e-43a0-9ce6-f940faf2303f\"\n    },\n    {\n      \"Availabilities\": [\n        7,\n        7,\n        7\n      ],\n      \"Adjustments \": [\n        1,\n        0,\n        -1\n      ],\n      \"CategoryId\": \"a0a7a5c5-c4ef-494a-8b34-6cca97629076\"\n    }\n  ],\n  \"TimeUnitStartsUtc\": [\n    \"2017-01-01T23:00:00Z\",\n    \"2017-01-02T23:00:00Z\",\n    \"2017-01-03T23:00:00Z\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e2e81b9-bc14-49c7-8cb8-a91775c503a5",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2ede8d4-ce6b-4ec3-86a5-65585141a8e1",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a97a3fb-c9f1-4bc1-a88d-25fe2c0c2b5e",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5151f000-b975-42fb-bbe0-ee88b5579691",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f38f9b7-83f3-4316-a8bc-1618bcbb260b",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cbd2530e-bb0f-4a94-b61e-741c69e8d98e",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be6f42bd-0cd8-4548-a288-1fa7031acc4a",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2017-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2017-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7268962b-1e16-461c-b12d-d09589e3b7b7",
+          "name": "Get service availability (ver 2024-01-22)",
+          "request": {
+            "name": "Get service availability (ver 2024-01-22)",
+            "description": {
+              "content": "Returns selected availability and occupancy metrics of a bookable service for a specified time interval, similar to [the availability & occupancy report](https://help.mews.com/s/article/Availability-Occupancy-report). Availability will be returned for all service time units that the specified time interval intersects. So, for example, an interval `1st Jan 23:00 UTC - 1st Jan 23:00 UTC` will result in one time unit for `2nd Jan`, while Interval `1st Jan 23:00 UTC - 2nd Jan 23:00 UTC` will result in two time units for `2nd Jan` and `3rd Jan` (assuming a time unit period of \"Day\"). UTC timestamps must correspond to the start boundary of a time unit, e.g. 00:00 converted to UTC for a time unit of \"Day\". Other timestamps are not permitted. The __maximum size of time interval__ depends on the service's time unit: 367 hours if hours, 367 days if days, or 60 months if months. For more information about time units, see [Time unit](https://mews-systems.gitbook.io/connector-api/concepts/time-units).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "services",
+                "getAvailability",
+                "2024-01-22"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"FirstTimeUnitStartUtc\": \"<dateTime>\",\n  \"LastTimeUnitStartUtc\": \"<dateTime>\",\n  \"Metrics\": [\n    \"<string>\"\n  ],\n  \"ServiceId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "615fc3af-7ed1-4d88-aaac-9e50849aae00",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TimeUnitStartsUtc\": [\n    \"2024-01-31T23:00:00Z\",\n    \"2024-02-01T23:00:00Z\",\n    \"2024-02-02T23:00:00Z\",\n    \"2024-02-03T23:00:00Z\",\n    \"2024-02-04T23:00:00Z\"\n  ],\n  \"ResourceCategoryAvailabilities\": [\n    {\n      \"ResourceCategoryId\": \"d1801d11-fe8d-404b-a26f-af170189605a\",\n      \"Metrics\": {\n        \"OutOfOrderBlocks\": [\n          0,\n          1,\n          0,\n          0,\n          1\n        ],\n        \"PublicAvailabilityAdjustment\": [\n          7,\n          5,\n          4,\n          3,\n          4\n        ],\n        \"OtherServiceReservationCount\": [\n          0,\n          0,\n          1,\n          0,\n          0\n        ],\n        \"Occupied\": [\n          7,\n          5,\n          4,\n          3,\n          4\n        ],\n        \"ConfirmedReservations\": [\n          7,\n          5,\n          4,\n          3,\n          4\n        ],\n        \"OptionalReservations\": [\n          0,\n          2,\n          0,\n          0,\n          1\n        ],\n        \"BlockAvailability\": [\n          0,\n          0,\n          1,\n          0,\n          0\n        ],\n        \"AllocatedBlockAvailability\": [\n          0,\n          0,\n          0,\n          1,\n          0\n        ],\n        \"UsableResources\": [\n          8,\n          8,\n          8,\n          8,\n          8\n        ],\n        \"ActiveResources\": [\n          8,\n          8,\n          8,\n          8,\n          8\n        ],\n        \"HouseUse\": [\n          1,\n          0,\n          1,\n          0,\n          0\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75d877b9-7f3d-4e7f-8036-db7db9c895fb",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bdd85874-ae69-4d09-a5a7-2aedc915da9b",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b27e9f11-3804-4045-a04d-3226e9cd7899",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18f23cf0-b74f-49c3-8bbe-5d229b986dff",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c0527ee-4bc6-451e-9762-1e4c395d9550",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2901e043-d28c-40fd-aa54-6323b8b16249",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9eda8ae-7469-4650-b0b2-445156f7f117",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "services",
+                    "getAvailability",
+                    "2024-01-22"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n  \"FirstTimeUnitStartUtc\": \"2024-02-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2024-02-05T23:00:00.000Z\",\n  \"Metrics\": [\n    \"OutOfOrderBlocks\",\n    \"PublicAvailabilityAdjustment\",\n    \"OtherServiceReservationCount\",\n    \"Occupied\",\n    \"ConfirmedReservations\",\n    \"OptionalReservations\",\n    \"BlockAvailability\",\n    \"AllocatedBlockAvailability\",\n    \"UsableResources\",\n    \"ActiveResources\",\n    \"HouseUse\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f24dc5f5-8567-4b86-976e-c373d2ae2acf",
+    "name": "Connector Account notes Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

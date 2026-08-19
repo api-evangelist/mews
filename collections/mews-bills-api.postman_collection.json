@@ -1,0 +1,2600 @@
+{
+  "item": [
+    {
+      "id": "f7b8f11a-57f1-41fb-80ec-e1417be0cb0a",
+      "name": "Bills",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eab42243-8f59-4716-8b12-ac4207648a5b",
+          "name": "Update bills",
+          "request": {
+            "name": "Update bills",
+            "description": {
+              "content": "Updates one or more existing bills in the system. Closed bills cannot be updated. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "bills",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"<uuid>\",\n      \"AccountId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"<uuid>\"\n        ]\n      }\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ce185846-7bb9-4dcf-acd6-03bad69a4e61",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Bills\": [\n    {\n      \"Id\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"Name\": \"Accommodation Charges\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AccountId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"AccountType\": \"Company\",\n      \"CustomerId\": null,\n      \"CompanyId\": null,\n      \"AssociatedAccountIds\": [\n        \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n      ],\n      \"CounterId\": null,\n      \"State\": \"Closed\",\n      \"Type\": \"Invoice\",\n      \"Number\": \"29\",\n      \"VariableSymbol\": null,\n      \"CreatedUtc\": \"2017-01-31T10:48:06Z\",\n      \"IssuedUtc\": \"2017-01-31T10:58:06Z\",\n      \"TaxedUtc\": null,\n      \"PaidUtc\": null,\n      \"DueUtc\": null,\n      \"LastReminderDateUtc\": null,\n      \"UpdatedUtc\": \"2017-01-31T10:58:06Z\",\n      \"PurchaseOrderNumber\": \"XX-123\",\n      \"Notes\": \"\",\n      \"Options\": {\n        \"DisplayCustomer\": true,\n        \"DisplayTaxation\": true,\n        \"TrackReceivable\": true,\n        \"DisplayCid\": false,\n        \"Rebated\": false\n      },\n      \"Revenue\": [],\n      \"Payments\": [],\n      \"OrderItems\": [],\n      \"PaymentItems\": [],\n      \"AssigneeData\": null,\n      \"OwnerData\": {\n        \"Discriminator\": \"BillCompanyData\",\n        \"Value\": {\n          \"Id\": \"26afba60-06c3-455b-92db-0e3983be0b1d\",\n          \"Address\": {\n            \"Line1\": \"I.P. Pavlova 5\",\n            \"Line2\": null,\n            \"City\": \"Prague\",\n            \"PostalCode\": \"12000\",\n            \"SubdivisionCode\": \"CZ-PR\",\n            \"CountryCode\": \"CZ\"\n          },\n          \"LegalIdentifiers\": {\n            \"TaxIdentifier\": \"CZ24227781\",\n            \"CityOfRegistration\": \"Prague\"\n          },\n          \"BillingCode\": \"Billing code value\",\n          \"Name\": \"Acme, Inc.\",\n          \"FiscalIdentifier\": \"Fiscal identifier\",\n          \"AdditionalTaxIdentifier\": \"Additional tax identifier\",\n          \"DUNS\": \"150483782\",\n          \"Telephone\": \"+420123456789\",\n          \"TaxIdentifier\": \"CZ24227781\",\n          \"InvoicingEmail\": \"billing@acme.example\",\n          \"Department\": \"Billing\"\n        }\n      },\n      \"CompanyDetails\": null,\n      \"AssociatedAccountData\": [\n        {\n          \"Discriminator\": \"BillCompanyData\",\n          \"BillCustomerData\": null,\n          \"BillCompanyData\": {\n            \"Id\": \"26afba60-06c3-455b-92db-0e3983be0b1d\",\n            \"Address\": {\n              \"Line1\": \"I.P. Pavlova 5\",\n              \"Line2\": null,\n              \"City\": \"Prague\",\n              \"PostalCode\": \"12000\",\n              \"SubdivisionCode\": \"CZ-PR\",\n              \"CountryCode\": \"CZ\"\n            },\n            \"LegalIdentifiers\": {\n              \"TaxIdentifier\": \"CZ24227781\",\n              \"CityOfRegistration\": \"Prague\"\n            },\n            \"BillingCode\": \"Billing code value\",\n            \"Name\": \"Acme, Inc.\",\n            \"FiscalIdentifier\": \"Fiscal identifier\",\n            \"AdditionalTaxIdentifier\": \"Additional tax identifier\",\n            \"DUNS\": \"150483782\",\n            \"Telephone\": \"+420123456789\",\n            \"TaxIdentifier\": \"CZ24227781\",\n            \"InvoicingEmail\": \"billing@acme.example\",\n            \"Department\": \"Billing\"\n          }\n        }\n      ],\n      \"EnterpriseData\": {\n        \"AdditionalTaxIdentifier\": \"XY00112233445\",\n        \"CompanyName\": \"The Sample Hotel Group AS\",\n        \"BankAccount\": \"CZ3808000000000012345678\",\n        \"BankName\": \"CESKA SPORITELNA A.S.\",\n        \"Iban\": \"CZ6508000000192000145399\",\n        \"Bic\": \"GIBACZPX\"\n      },\n      \"CorrectionState\": \"Bill\",\n      \"CorrectionType\": null,\n      \"CorrectedBillId\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5cd0e90-905d-457a-ab99-750626d3a673",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68e7f4f7-5df3-4e48-a4f7-ef23ac4ae0c2",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "931d6e4e-516f-4b69-aa4b-3eddd2b7ac18",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ec82121-b398-4731-9efe-af183387f493",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07e2097f-d71a-4c13-b239-f8e5a45575f3",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ecadcb4-2a7a-474e-b565-80c40f85eab6",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2152a31-e499-4975-ae7b-6e07d1184fda",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillsUpdates\": [\n    {\n      \"BillId\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"AccountId\": {\n        \"Value\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\"\n      },\n      \"AssociatedAccountIds\": {\n        \"Value\": [\n          \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n        ]\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ddd38bb7-98fa-4d22-91b1-dea651d1a3fc",
+          "name": "Get all bills",
+          "request": {
+            "name": "Get all bills",
+            "description": {
+              "content": "Returns all bills, optionally filtered by customers, identifiers and other filters. Note this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "bills",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"Extent\": {\n    \"Items\": \"<boolean>\"\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"IssuedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"PaidUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"DueUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"BillIds\": [\n    \"<uuid>\"\n  ],\n  \"CustomerIds\": [\n    \"<uuid>\"\n  ],\n  \"State\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"CorrectionState\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1091d89-14c8-4197-a17e-d25b1cfa2a8f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Bills\": [\n    {\n      \"Id\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\",\n      \"Name\": \"Accommodation Charges\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AccountId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"AccountType\": \"Company\",\n      \"CustomerId\": null,\n      \"CompanyId\": null,\n      \"AssociatedAccountIds\": [\n        \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\"\n      ],\n      \"CounterId\": null,\n      \"State\": \"Closed\",\n      \"Type\": \"Invoice\",\n      \"Number\": \"29\",\n      \"VariableSymbol\": null,\n      \"CreatedUtc\": \"2017-01-31T10:48:06Z\",\n      \"IssuedUtc\": \"2017-01-31T10:58:06Z\",\n      \"TaxedUtc\": null,\n      \"PaidUtc\": null,\n      \"DueUtc\": null,\n      \"LastReminderDateUtc\": null,\n      \"UpdatedUtc\": \"2017-01-31T10:58:06Z\",\n      \"PurchaseOrderNumber\": \"XX-123\",\n      \"Notes\": \"\",\n      \"Options\": {\n        \"DisplayCustomer\": true,\n        \"DisplayTaxation\": true,\n        \"TrackReceivable\": true,\n        \"DisplayCid\": false,\n        \"Rebated\": false\n      },\n      \"Revenue\": [],\n      \"Payments\": [],\n      \"OrderItems\": [],\n      \"PaymentItems\": [],\n      \"AssigneeData\": null,\n      \"OwnerData\": {\n        \"Discriminator\": \"BillCompanyData\",\n        \"Value\": {\n          \"Id\": \"26afba60-06c3-455b-92db-0e3983be0b1d\",\n          \"Address\": {\n            \"Line1\": \"I.P. Pavlova 5\",\n            \"Line2\": null,\n            \"City\": \"Prague\",\n            \"PostalCode\": \"12000\",\n            \"SubdivisionCode\": \"CZ-PR\",\n            \"CountryCode\": \"CZ\"\n          },\n          \"LegalIdentifiers\": {\n            \"TaxIdentifier\": \"CZ24227781\",\n            \"CityOfRegistration\": \"Prague\"\n          },\n          \"BillingCode\": \"Billing code value\",\n          \"Name\": \"Acme, Inc.\",\n          \"FiscalIdentifier\": \"Fiscal identifier\",\n          \"AdditionalTaxIdentifier\": \"Additional tax identifier\",\n          \"DUNS\": \"150483782\",\n          \"Telephone\": \"+420123456789\",\n          \"TaxIdentifier\": \"CZ24227781\",\n          \"InvoicingEmail\": \"billing@acme.example\",\n          \"Department\": \"Billing\"\n        }\n      },\n      \"CompanyDetails\": null,\n      \"AssociatedAccountData\": [\n        {\n          \"Discriminator\": \"BillCompanyData\",\n          \"BillCustomerData\": null,\n          \"BillCompanyData\": {\n            \"Id\": \"26afba60-06c3-455b-92db-0e3983be0b1d\",\n            \"Address\": {\n              \"Line1\": \"I.P. Pavlova 5\",\n              \"Line2\": null,\n              \"City\": \"Prague\",\n              \"PostalCode\": \"12000\",\n              \"SubdivisionCode\": \"CZ-PR\",\n              \"CountryCode\": \"CZ\"\n            },\n            \"LegalIdentifiers\": {\n              \"TaxIdentifier\": \"CZ24227781\",\n              \"CityOfRegistration\": \"Prague\"\n            },\n            \"BillingCode\": \"Billing code value\",\n            \"Name\": \"Acme, Inc.\",\n            \"FiscalIdentifier\": \"Fiscal identifier\",\n            \"AdditionalTaxIdentifier\": \"Additional tax identifier\",\n            \"DUNS\": \"150483782\",\n            \"Telephone\": \"+420123456789\",\n            \"TaxIdentifier\": \"CZ24227781\",\n            \"InvoicingEmail\": \"billing@acme.example\",\n            \"Department\": \"Billing\"\n          }\n        }\n      ],\n      \"EnterpriseData\": {\n        \"AdditionalTaxIdentifier\": \"XY00112233445\",\n        \"CompanyName\": \"The Sample Hotel Group AS\",\n        \"BankAccount\": \"CZ3808000000000012345678\",\n        \"BankName\": \"CESKA SPORITELNA A.S.\",\n        \"Iban\": \"CZ6508000000192000145399\",\n        \"Bic\": \"GIBACZPX\"\n      },\n      \"CorrectionState\": \"Bill\",\n      \"CorrectionType\": null,\n      \"CorrectedBillId\": null\n    }\n  ],\n  \"Cursor\": \"ea087d64-3901-4eee-b0b7-9fce4c58a005\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c918dec3-8e16-422a-82a5-e19340eeaeb3",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e1424e9-98f7-4e9e-a350-6fa2c0298ad7",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "257ce206-bc9f-4122-a10d-73d2c6df4019",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f743e0e4-a7fc-4d32-a9bf-10a0cdc1b50b",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16d61aac-5a74-4eea-9175-dbbd74abe191",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f9cc869-06ef-47ed-bc02-26831c33529f",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "678d96e8-144b-4a99-9aff-cd7cbbb8d72e",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Extent\": {\n    \"Items\": false\n  },\n  \"ClosedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2020-02-05T00:00:00Z\",\n    \"EndUtc\": \"2020-02-10T00:00:00Z\"\n  },\n  \"BillIds\": [\n    \"e654f217-d1b5-46be-a820-e93ba568dfac\"\n  ],\n  \"CustomerIds\": [\n    \"fe795f96-0b64-445b-89ed-c032563f2bac\"\n  ],\n  \"State\": \"Closed\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100,\n    \"Cursor\": \"e7f26210-10e7-462e-9da8-ae8300be8ab7\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d0b26c1-7890-4a03-92bc-06739dac5462",
+          "name": "Get bill PDF",
+          "request": {
+            "name": "Get bill PDF",
+            "description": {
+              "content": "Creates a PDF version of the specified bill. In case it's not possible to return PDF immediately, you must retry the call later while providing the unique event identifier that is returned from the first invocation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "bills",
+                "getPdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"BillId\": \"<uuid>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"BillPrintEventId\": \"<uuid>\",\n  \"PdfTemplate\": \"<string>\",\n  \"PrintReason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "085a1061-b8fb-4143-a9bb-1c36afad65b7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"Result\": {\n    \"Discriminator\": \"BillPdfFile\",\n    \"Value\": {\n      \"Base64Data\": \"JVBERi0xLj...\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d804f22d-6887-4b55-bad1-01cd7e7012e0",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92e453c2-f214-48ae-bdec-5182a8507379",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34654790-6df0-419e-8aa6-4e4a526a7270",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd711cf2-b5d2-4c53-ab4e-d0f2d929a45f",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c45dc0d9-ea25-494b-aaf9-3f0f5781ea40",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "775f1e9b-3c90-43d8-ad3b-68c52c092f8f",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd802b37-f291-436d-bd3c-e5bed88b176a",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "getPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"PdfTemplate\": \"Detailed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2e58136-3e32-4c85-9fe3-6654c8a1bbba",
+          "name": "Add bill",
+          "request": {
+            "name": "Add bill",
+            "description": {
+              "content": "Creates new empty bill assigned to specified account. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "bills",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"<uuid>\",\n      \"AssociatedAccountId\": \"<uuid>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5544efc2-6558-440f-8eb4-f62e1bf9ceb0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"Result\": {\n    \"Discriminator\": \"BillPdfFile\",\n    \"Value\": {\n      \"Base64Data\": \"JVBER.....\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3f71de4-d405-40df-ba9e-9410a27ca72e",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a375a6b-dbf2-444d-ab0d-571d7f801925",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "426bf5e8-01fb-4bb9-8be7-4fdedeb54828",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ead06ec-768d-4bd5-81ad-5ea0c7a8d8e0",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f62505d-e7aa-4a63-8ba5-f047450b5623",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "486a6f7f-1f95-44b3-aa7a-71e8f2280296",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f1e3461e-1509-46a6-9c50-0c9feeffa657",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Bills\": [\n    {\n      \"AccountId\": \"a5786a7b-a388-43cc-a838-abd7007b5ff7\",\n      \"Name\": \"Bill of Joe Doe\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07a9578e-0c7d-46d0-9244-1bc208a639f0",
+          "name": "Delete bill",
+          "request": {
+            "name": "Delete bill",
+            "description": {
+              "content": "Removes selected bills. Bill must be empty, otherwise it's not possible to delete it. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "bills",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"BillIds\": [\n    \"<uuid>\"\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "247a1765-1660-4891-acc5-8b09ce666d71",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0692e55f-9c82-4f1f-89a4-23df8a3ba6e9",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b36caba4-ccf2-4739-b286-46002d049d20",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9c231af-b146-4126-80f0-dbf7f9d06907",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a3eb3d2-93c4-4c83-8fa5-996bde1c41df",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "00763cb1-6e09-44a7-9b58-c75f53fb4099",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77213820-65a2-4b87-8451-23ef7798562e",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "36e24785-788e-445b-a361-c9f67e91ac65",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillIds\": [\n    \"177966b7-f3d9-42b7-ba49-abd80057329b\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3b06aae-5be8-4095-84f4-bc90b1f3f02e",
+          "name": "Close bill",
+          "request": {
+            "name": "Close bill",
+            "description": {
+              "content": "Closes a bill so no further modification to it is possible. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "bills",
+                "close"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"BillId\": \"<uuid>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\",\n  \"BillCounterId\": \"<uuid>\",\n  \"FiscalMachineId\": \"<uuid>\",\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": \"<boolean>\"\n    },\n    \"DisplayTaxation\": {\n      \"Value\": \"<boolean>\"\n    }\n  },\n  \"TaxedDate\": {\n    \"Value\": \"<string>\"\n  },\n  \"DueDate\": {\n    \"Value\": \"<string>\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"<string>\"\n  },\n  \"TaxIdentifier\": {\n    \"Value\": \"<string>\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"<string>\"\n  },\n  \"CompanyTaxIdentifier\": {\n    \"Value\": \"<string>\"\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"<string>\"\n  },\n  \"Notes\": {\n    \"Value\": \"<string>\"\n  },\n  \"Address\": {\n    \"Line1\": \"<string>\",\n    \"Line2\": \"<string>\",\n    \"City\": \"<string>\",\n    \"PostalCode\": \"<postal-code>\",\n    \"CountryCode\": \"<string>\",\n    \"CountrySubdivisionCode\": \"<string>\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"<string>\",\n    \"Line2\": \"<string>\",\n    \"City\": \"<string>\",\n    \"PostalCode\": \"<postal-code>\",\n    \"CountryCode\": \"<string>\",\n    \"CountrySubdivisionCode\": \"<string>\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"<uuid>\",\n      \"TaxIdentifier\": {\n        \"Value\": \"<string>\"\n      },\n      \"Address\": {\n        \"Line1\": \"<string>\",\n        \"Line2\": \"<string>\",\n        \"City\": \"<string>\",\n        \"PostalCode\": \"<postal-code>\",\n        \"CountryCode\": \"<string>\",\n        \"CountrySubdivisionCode\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "667828d3-a59f-4e24-bebc-808a6fe054ad",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"Result\": {\n    \"Discriminator\": \"BillPdfFile\",\n    \"Value\": {\n      \"Base64Data\": \"JVBER.....\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f36dfebc-5d2f-47d8-aca9-c20628e6d4dd",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "189ea1e9-5011-4ff0-ae59-5126f33b8409",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2f62777-3400-42e5-919f-b96e2b70cd94",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d413e632-ffc0-482d-8063-466d6166256d",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cd7953f-2f0f-4eec-a7f6-3c39d7880e13",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de2f0991-4f21-4e1e-9389-4ddc9ad583a4",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35ee9be9-8a84-4c75-b85c-e67063b20e1f",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "bills",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"BillId\": \"44eba542-193e-47c7-8077-abd7008eb206\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Type\": \"Receipt\",\n  \"BillCounterId\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n  \"FiscalMachineId\": null,\n  \"Options\": {\n    \"DisplayCustomer\": {\n      \"Value\": false\n    },\n    \"DisplayTaxation\": null\n  },\n  \"TaxedDate\": {\n    \"Value\": \"2020-07-07\"\n  },\n  \"DueDate\": {\n    \"Value\": \"2020-07-14\"\n  },\n  \"VariableSymbol\": {\n    \"Value\": \"5343\"\n  },\n  \"AccountTaxIdentifier\": {\n    \"Value\": \"446768\"\n  },\n  \"AccountAddress\": {\n    \"Line1\": \"Astronautů 2\",\n    \"Line2\": \"\",\n    \"City\": \"Havířov\",\n    \"PostalCode\": \"736 01\",\n    \"CountryCode\": \"CZ\",\n    \"CountrySubdivisionCode\": null\n  },\n  \"PurchaseOrderNumber\": {\n    \"Value\": \"XX-123\"\n  },\n  \"Notes\": {\n    \"Value\": \"Bill closing note\"\n  },\n  \"AssociatedAccountData\": [\n    {\n      \"Id\": \"84b25778-c1dd-48dc-8c00-ab3a00b6df14\",\n      \"TaxIdentifier\": {\n        \"Value\": \"123459\"\n      },\n      \"Address\": {\n        \"Line1\": \"Astronautů 2\",\n        \"Line2\": \"\",\n        \"City\": \"Havířov\",\n        \"PostalCode\": \"736 01\",\n        \"CountryCode\": \"CZ\",\n        \"CountrySubdivisionCode\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a8a31570-7bd7-4246-a32c-15f1af5479a0",
+    "name": "Connector Account notes Bills API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

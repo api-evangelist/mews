@@ -1,0 +1,1744 @@
+{
+  "item": [
+    {
+      "id": "93afb8c1-2d80-4cd5-9a7b-c5b98f2523ef",
+      "name": "Company contracts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b3ab08f9-d264-4dfe-bfd0-ce807edadbcb",
+          "name": "Get all company contracts",
+          "request": {
+            "name": "Get all company contracts",
+            "description": {
+              "content": "Returns all contracts between the enterprise and other companies.\nNote this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "companyContracts",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"CompanyContractIds\": [\n    \"<uuid>\"\n  ],\n  \"CompanyIds\": [\n    \"<uuid>\"\n  ],\n  \"ServiceIds\": [\n    \"<uuid>\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "944edbf2-bf24-4faa-86a9-d6736e850455",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TravelAgencyContracts\": [\n    {\n      \"Id\": \"0078f370-3787-43dc-a615-af150066bb88\",\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"bfd5667b-533f-424f-860d-af150065f4d6\",\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\",\n      \"IsActive\": true,\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": true,\n        \"SkipAutomaticSettlement\": true\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2378d937-a65c-43a2-9bf3-b9f7fcd7ffed",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68cf2d6a-2135-47ed-b7eb-c4f9c7690b47",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16464761-f3a4-42e8-a072-1dd331479e5a",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff4f83d4-13b5-4392-8520-b3e90dfb1ce7",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4116eebc-eb30-4211-97d8-5a67eaabf349",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9748b2f-264c-4684-b5af-bafc17c0a348",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a2d16d7-7c3b-42d3-b661-fc7450f7e23b",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyContractIds\": [\n    \"3396f6f3-6733-443b-92e0-b2a0009a05a7\"\n  ],\n  \"CompanyIds\": [\n    \"bfd5667b-533f-424f-860d-af150065f4d6\"\n  ],\n  \"ServiceIds\": [\n    \"c8f88563-dc60-47f3-aca3-af150065d951\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6db1bf7f-6d68-4874-b928-4fb308bf7a7f",
+          "name": "Add company contracts",
+          "request": {
+            "name": "Add company contracts",
+            "description": {
+              "content": "Adds one or more company contracts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "companyContracts",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"TravelAgencyContracts\": [\n    {\n      \"CompanyId\": \"<uuid>\",\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": \"<boolean>\",\n        \"SkipAutomaticSettlement\": \"<boolean>\"\n      },\n      \"ServiceId\": \"<uuid>\",\n      \"CommissionIncluded\": \"<boolean>\",\n      \"Commission\": \"<double>\",\n      \"ChannelManagerBusinessSegmentId\": \"<uuid>\",\n      \"ChannelManagerAbsoluteAdjustment\": \"<double>\",\n      \"ChannelManagerRelativeAdjustment\": \"<double>\",\n      \"AccountingCode\": \"<string>\",\n      \"InvoiceDueInterval\": \"<string>\",\n      \"ContactPerson\": \"<string>\",\n      \"ContactEmail\": \"<email>\",\n      \"AdditionalContactInfo\": \"<string>\",\n      \"Notes\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4fb356ef-05cf-4eda-823e-344d177779ec",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TravelAgencyContracts\": [\n    {\n      \"Id\": \"0078f370-3787-43dc-a615-af150066bb88\",\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"bfd5667b-533f-424f-860d-af150065f4d6\",\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\",\n      \"IsActive\": true,\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": true,\n        \"SkipAutomaticSettlement\": true\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c554761-afcf-40f5-b2e0-33acf1c6df27",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b40d9cd-3780-4aa3-a2d2-ce943ad183b4",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8e499a2-5af3-4cdc-8d65-31373e9a62c6",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72521fc6-e5eb-4422-a9f4-28b6b1385e17",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a8d3418-9616-4d61-8f30-bfd94894709e",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40b544de-fa54-46af-b9d5-b361250a0499",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e390b10-fe24-4694-9575-c00d4b88dd9b",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContracts\": [\n    {\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"896e9313-477d-4306-9d37-af150065f4d6\",\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": false,\n        \"SkipAutomaticSettlement\": false\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a8b0c10-86df-4a8f-84bd-27f48d4ebc8c",
+          "name": "Update company contracts",
+          "request": {
+            "name": "Update company contracts",
+            "description": {
+              "content": "Updates one or more company contracts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "companyContracts",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"<uuid>\",\n      \"CommissionIncluded\": {\n        \"Value\": \"<boolean>\"\n      },\n      \"Commission\": {\n        \"Value\": \"<double>\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": \"<double>\"\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": \"<double>\"\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"<string>\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"<string>\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"<string>\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"<string>\"\n      },\n      \"AdditionalContactInfo\": {\n        \"Value\": \"<string>\"\n      },\n      \"Notes\": {\n        \"Value\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80f66de6-3257-4f42-bf08-48a2fb0bad49",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TravelAgencyContracts\": [\n    {\n      \"Id\": \"0078f370-3787-43dc-a615-af150066bb88\",\n      \"ServiceId\": \"c8f88563-dc60-47f3-aca3-af150065d951\",\n      \"CompanyId\": \"bfd5667b-533f-424f-860d-af150065f4d6\",\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\",\n      \"IsActive\": true,\n      \"CommissionIncluded\": true,\n      \"Commission\": 0.1,\n      \"ChannelManagerAbsoluteAdjustment\": 10,\n      \"ChannelManagerRelativeAdjustment\": 0.15,\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": true,\n        \"SkipAutomaticSettlement\": true\n      },\n      \"AccountingCode\": \"P2DT23H\",\n      \"InvoiceDueInterval\": \"P0M15DT0H0M0S\",\n      \"ChannelManagerBusinessSegmentId\": \"1289d3c8-3c83-4169-b756-af150066bb87\",\n      \"ContactPerson\": \"Sample person\",\n      \"ContactEmail\": \"sample-person@email.com\",\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f551fd1d-0e2b-42d6-b1a2-5f4faa8787ec",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f123567b-076c-4f09-a9d4-297bf5758178",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "60c90d97-6d02-4af2-8060-a16001e287f9",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c23344e-0bf5-4bd6-ad40-ad691b819724",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ba68afa-68b5-4294-b415-942582683ccc",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3a4981b-652d-4e52-9d14-8dca0776a5ec",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7af66f8-5a42-42dc-88d3-50aec9b82615",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractUpdates\": [\n    {\n      \"TravelAgencyContractId\": \"652d4a22-ac33-42b7-abe7-af1f00820023\",\n      \"CommissionIncluded\": {\n        \"Value\": true\n      },\n      \"Commission\": {\n        \"Value\": 0.1\n      },\n      \"ChannelManagerAbsoluteAdjustment\": {\n        \"Value\": 10\n      },\n      \"ChannelManagerRelativeAdjustment\": {\n        \"Value\": 0.15\n      },\n      \"Options\": {\n        \"IncludeCancellationFeeInCommissionEstimate\": {\n          \"Value\": true\n        },\n        \"SkipAutomaticSettlement\": {\n          \"Value\": true\n        }\n      },\n      \"AccountingCode\": {\n        \"Value\": \"P2DT23H\"\n      },\n      \"InvoiceDueInterval\": {\n        \"Value\": \"P0M15DT0H0M0S\"\n      },\n      \"ChannelManagerBusinessSegmentId\": {\n        \"Value\": \"1289D3C8-3C83-4169-B756-AF150066BB87\"\n      },\n      \"ContactPerson\": {\n        \"Value\": \"Sample person\"\n      },\n      \"ContactEmail\": {\n        \"Value\": \"sample-person@email.com\"\n      },\n      \"AdditionalContactInfo\": null,\n      \"Notes\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb889a9d-41f9-4852-901b-4ae540346419",
+          "name": "Delete company contracts",
+          "request": {
+            "name": "Delete company contracts",
+            "description": {
+              "content": "Deletes one or more company contracts. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "companyContracts",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ServiceIds\": [\n    \"<uuid>\"\n  ],\n  \"TravelAgencyContractIds\": [\n    \"<uuid>\"\n  ],\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ca13206-3ae2-4301-85fb-beb4f84d5b10",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "882a3fc0-867f-4d31-b12e-fe2493731afd",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa44e1ca-67ab-45a9-8740-4b9a5a4c8683",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58475c44-6c5a-4ea4-aede-6c8a7c45920a",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18d8290e-26c9-4c29-932f-bdf4663ec032",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ad3b794-be83-4335-a259-25f778526b6e",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe4c71c6-4394-4b14-954d-d3d51b43920b",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb2faec4-a621-4b71-9025-61636677e2db",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "companyContracts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"TravelAgencyContractIds\": [\n    \"0078f370-3787-43dc-a615-af150066bb88\",\n    \"652d4a22-ac33-42b7-abe7-af1f00820023\"\n  ],\n  \"ServiceIds\": [\n    \"a1d6dee8-355b-44c3-b6be-faef1a7eb6c0\",\n    \"d5a2aac3-5194-479b-ba05-6c073398e0fd\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e201145b-9664-48f5-b18c-58ad1d5f8488",
+    "name": "Connector Account notes Company contracts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,1744 @@
+{
+  "item": [
+    {
+      "id": "27e9f970-98b5-4a48-ae73-e7e635d55efe",
+      "name": "Addresses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "173174d1-0142-4961-aa90-83438d0e1001",
+          "name": "Get all addresses",
+          "request": {
+            "name": "Get all addresses",
+            "description": {
+              "content": "Returns all addresses associated with the specified accounts within the enterprise. \nNote this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "addresses",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"ChainIds\": [\n    \"<uuid>\"\n  ],\n  \"AccountIds\": [\n    \"<uuid>\"\n  ],\n  \"AddressIds\": [\n    \"<uuid>\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6544c17b-6306-4799-aab4-3891833b5cec",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Addresses\": [\n    {\n      \"Id\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"AccountType\": \"Customer\",\n      \"Line1\": \"I.P. Pavlova 5\",\n      \"Line2\": null,\n      \"City\": \"Prague\",\n      \"PostalCode\": \"12000\",\n      \"CountryCode\": \"CZ\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null,\n      \"UpdatedUtc\": \"2023-11-29T14:49:29.982Z\",\n      \"IsActive\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd76db48-8f1c-4bfd-b29d-09f094f3e4a1",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b0c0096-e0d3-4897-81fd-7730ab7e9725",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33d40d01-5632-4db2-a461-6928077c07e7",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df97c719-bc80-4723-866a-3e256c85aa52",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "021db3c8-5f7d-4b94-89a5-81aa3306b4b0",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfe3f162-5eb8-4821-ba7e-7afdfdc3f2bc",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e5ebc27-9711-4537-8c69-65c53e527e0a",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"AccountIds\": [\n    \"3db2c989-7d95-42b4-a502-a9f246db1634\"\n  ],\n  \"AddressIds\": [\n    \"fc7b2df3-de66-48a6-907d-af4600ecd892\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-12-10T00:00:00Z\",\n    \"EndUtc\": \"2022-12-17T00:00:00Z\"\n  },\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9e4517c-c8a0-4c13-9ec4-6abaeee2c0eb",
+          "name": "Add addresses",
+          "request": {
+            "name": "Add addresses",
+            "description": {
+              "content": "Adds one or more new addresses to the system and assigns them to specified accounts. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "addresses",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"<uuid>\",\n      \"Line1\": \"<string>\",\n      \"Line2\": \"<string>\",\n      \"City\": \"<string>\",\n      \"PostalCode\": \"<postal-code>\",\n      \"CountryCode\": \"<string>\",\n      \"CountrySubdivisionCode\": \"<string>\",\n      \"Latitude\": \"<double>\",\n      \"Longitude\": \"<double>\"\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7653dbbf-ad4d-4560-b763-78e8e6c31e81",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Addresses\": [\n    {\n      \"Id\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"AccountType\": \"Customer\",\n      \"Line1\": \"I.P. Pavlova 5\",\n      \"Line2\": null,\n      \"City\": \"Prague\",\n      \"PostalCode\": \"12000\",\n      \"CountryCode\": \"CZ\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null,\n      \"UpdatedUtc\": \"2023-11-29T14:49:29.982Z\",\n      \"IsActive\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ad24030-d91a-4754-bb94-d9665d4d0ad2",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11edd8b2-1ed4-4f29-bef1-c840c35f1b03",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ca5dd8e-5813-47a0-bc30-3884d01dcfd2",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adeaa9a8-33ea-4b4c-af8b-31e99b8e4ccc",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81912bb4-a733-447d-90a4-6061a1694f28",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3bd16eba-3c41-4814-8b9a-1d7021501a0e",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c50e3672-6451-461c-822c-adb41a578bfe",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"Addresses\": [\n    {\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": \"Rheinlanddamm 207-209\",\n      \"Line2\": null,\n      \"City\": \"Dortmund\",\n      \"PostalCode\": \"44137\",\n      \"CountryCode\": \"DE\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d52b1629-7480-4eee-b86b-3010d7294c90",
+          "name": "Update addresses",
+          "request": {
+            "name": "Update addresses",
+            "description": {
+              "content": "Updates one or more existing addresses in the system, assigned to specified accounts. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "addresses",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"<uuid>\",\n      \"Line1\": {\n        \"Value\": \"<string>\"\n      },\n      \"Line2\": {\n        \"Value\": \"<string>\"\n      },\n      \"City\": {\n        \"Value\": \"<string>\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"<string>\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"<string>\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": \"<string>\"\n      }\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e56b51e0-0f03-4de1-957f-d35cd9989334",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Addresses\": [\n    {\n      \"Id\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"AccountType\": \"Customer\",\n      \"Line1\": \"I.P. Pavlova 5\",\n      \"Line2\": null,\n      \"City\": \"Prague\",\n      \"PostalCode\": \"12000\",\n      \"CountryCode\": \"CZ\",\n      \"CountrySubdivisionCode\": null,\n      \"Latitude\": null,\n      \"Longitude\": null,\n      \"UpdatedUtc\": \"2023-11-29T14:49:29.982Z\",\n      \"IsActive\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47d5b141-49ef-4ce6-846d-5a2dcef01ee5",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcdcb116-69d3-4a6f-86ae-00ab5ea921d4",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be0df198-5d5d-468a-a212-fd1e711eec3c",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1773e90-8387-4d08-9189-edd80493c11d",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5cabd4f1-c8ed-4e46-957e-bc34afa55e68",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d74e353a-414c-40e0-8ac2-80129db9e301",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "591d43b6-8fcd-437d-93f8-51294e3db16c",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressUpdates\": [\n    {\n      \"AddressId\": \"fc7b2df3-de66-48a6-907d-af4600ecd892\",\n      \"AccountId\": \"3db2c989-7d95-42b4-a502-a9f246db1634\",\n      \"Line1\": {\n        \"Value\": \"I.P. Pavlova 5\"\n      },\n      \"Line2\": {\n        \"Value\": null\n      },\n      \"City\": {\n        \"Value\": \"Prague\"\n      },\n      \"PostalCode\": {\n        \"Value\": \"12000\"\n      },\n      \"CountryCode\": {\n        \"Value\": \"CZ\"\n      },\n      \"CountrySubdivisionCode\": {\n        \"Value\": null\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53311800-0f68-44d3-a461-0a43e818fa59",
+          "name": "Delete addresses",
+          "request": {
+            "name": "Delete addresses",
+            "description": {
+              "content": "Deletes one or more addresses in the system. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "addresses",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AddressIds\": [\n    \"<uuid>\"\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d67bb427-b9d0-447f-aef8-1270c41f23df",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c9e73b5b-1b48-4d8f-9c48-a0c410eb8b7a",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8aa9c701-737b-493a-af42-a9d61697b5e4",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37977e71-245a-4b73-8966-67888cd9da09",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "447f1eaa-5693-4334-a62b-0f2208af5072",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16d351b6-344e-4f18-84ed-7d86af6e62cc",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "337d9a30-1a96-4d9d-a064-d916c3d6ab4f",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8db4e808-6e72-49be-8f45-dabb7b2d7a46",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "addresses",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainId\": \"1df21f06-0cfc-4960-9c58-a3bf1261663e\",\n  \"AddressIds\": [\n    \"cefa640f-43fa-4a02-8d20-f97f68e19ed5\",\n    \"44108366-8e9b-4007-844b-8ebcca4ac009\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9cf39009-522c-44eb-999b-d701a5d8ab23",
+    "name": "Connector Account notes Addresses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

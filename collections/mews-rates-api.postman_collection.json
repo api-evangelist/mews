@@ -1,0 +1,3028 @@
+{
+  "item": [
+    {
+      "id": "e21feb51-3ce5-491f-a7d6-5d5dee0152c9",
+      "name": "Rates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3ab08d23-1386-4bbc-a507-960348e2ca27",
+          "name": "Update rate capacity offset pricing",
+          "request": {
+            "name": "Update rate capacity offset pricing",
+            "description": {
+              "content": "Updates capacity offset based pricing for specified rates. This operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "updateCapacityOffset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"<uuid>\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": \"<double>\"\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": \"<double>\"\n      }\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95cd40d8-664b-41ef-bb6f-afb2cc566279",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b8b3c9e-9968-42f4-94da-86b54d1423d7",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c29a1635-1718-4b1f-8bf5-ab1e1512365b",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d611994-afe7-455d-bc7d-b04a84fed0e7",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ecf9e6e-b1d8-4d8c-be5c-a8438a4954e9",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e14ec40-be63-4760-a4cd-98e16cc79102",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7006c6ad-40fb-4e65-96a8-1ef9171a0636",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77454f59-dd79-4e35-baf1-073ff0ead6d2",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updateCapacityOffset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CapacityOffsetUpdates\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"NegativeOccupancyAdjustment\": {\n        \"Value\": 10\n      },\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 20\n      }\n    },\n    {\n      \"RateId\": \"b7e6a1c2-4f3a-4e2b-9c1d-2a5e7b8c9d0f\",\n      \"ExtraOccupancyAdjustment\": {\n        \"Value\": 15\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c6aa6c9-f357-4de1-8f2a-0dfbe0db179f",
+          "name": "Get all rates",
+          "request": {
+            "name": "Get all rates",
+            "description": {
+              "content": "Returns all rates (pricing setups) of the default service provided by the enterprise. Note this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"ServiceIds\": [\n    \"<uuid>\"\n  ],\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"Extent\": {\n    \"Rates\": \"<boolean>\",\n    \"RateGroups\": \"<boolean>\",\n    \"AvailabilityBlockAssignments\": \"<boolean>\"\n  },\n  \"RateIds\": [\n    \"<uuid>\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"ExternalIdentifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5f1f8a4-2ecc-428f-acdb-3bed0dd4eff4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Rates\": [\n    {\n      \"BaseRateId\": null,\n      \"BusinessSegmentId\": null,\n      \"GroupId\": \"c8b866b3-be2e-4a47-9486-034318e9f393\",\n      \"Id\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"IsActive\": true,\n      \"IsEnabled\": true,\n      \"IsPublic\": true,\n      \"Name\": \"Fully Flexible\",\n      \"ShortName\": \"FF\",\n      \"ExternalNames\": {\n        \"en-US\": \"Long Stay Flexible Rate\"\n      },\n      \"ExternalIdentifier\": \"D001\"\n    }\n  ],\n  \"RateGroups\": [\n    {\n      \"Id\": \"c8b866b3-be2e-4a47-9486-034318e9f393\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"IsActive\": true,\n      \"Name\": \"Default\",\n      \"ExternalIdentifier\": \"RG001\"\n    }\n  ],\n  \"AvailabilityBlockAssignments\": [\n    {\n      \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"AvailabilityBlockId\": \"12806ae8-9c15-44c7-9a44-afae01289928\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d40077d3-89d1-439b-b2a2-10c60e455314",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae2e1fa1-8dae-4682-81d4-b82825a91139",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1929384-27ce-44f5-bb60-bd71c89a13c3",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d27a4aa7-0377-4368-acc2-a6012a754542",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29db5c04-9c75-49bc-8915-8a95d11bef6a",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5049a59-9695-4b08-8e91-955041b4e927",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b013441-08d7-4c78-86aa-7122833994a7",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"ServiceIds\": [\n    \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n  ],\n  \"RateIds\": [\n    \"ed4b660b-19d0-434b-9360-a4de2ea42eda\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"ExternalIdentifiers\": [\n    \"Rate-001\",\n    \"Rate-002\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"Extent\": {\n    \"Rates\": true,\n    \"RateGroups\": true,\n    \"AvailabilityBlockAssignments\": true\n  },\n  \"Limitation\": {\n    \"Count\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "148fbdc6-81dc-4cda-8a0d-c5b96c7fe39f",
+          "name": "Add rates",
+          "request": {
+            "name": "Add rates",
+            "description": {
+              "content": "Adds rates to the enterprise. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property). Rate type of `AvailabilityBlock` cannot be created via this operation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Rates\": [\n    {\n      \"Names\": {\n        \"key_0\": \"<string>\"\n      },\n      \"PricingType\": \"<string>\",\n      \"RateGroupId\": \"<string>\",\n      \"ServiceId\": \"<string>\",\n      \"IsEnabled\": \"<boolean>\",\n      \"Type\": \"<string>\",\n      \"AccountingCategoryId\": \"<uuid>\",\n      \"BusinessSegmentId\": \"<uuid>\",\n      \"ShortNames\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"ExternalNames\": {\n        \"key_0\": \"<string>\"\n      },\n      \"Descriptions\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"ExternalIdentifier\": \"<string>\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"NegativeOccupancyAdjustment\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ExtraOccupancyAdjustment\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"DependentRatePricing\": {\n          \"BaseRateId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"RelativeAdjustment\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"AbsoluteAdjustment\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a70c20cb-6a4b-401b-970d-77b009daf0a9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Rates\": [\n    {\n      \"Id\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n      \"GroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n      \"BusinessSegmentId\": null,\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"IsActive\": true,\n      \"IsEnabled\": true,\n      \"IsPublic\": true,\n      \"Type\": \"Public\",\n      \"Name\": \"My rate\",\n      \"ShortName\": \"FF\",\n      \"ExternalNames\": {\n        \"en-US\": \"Long Stay Flexible Rate\"\n      },\n      \"ExternalIdentifier\": \"D001\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6063f22-bbf5-4040-8021-9b7c2fbe0776",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3354345b-0007-4ce1-a523-fc34bf6b51e7",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "959bcef2-6ed1-4a92-b6bf-471634a98b4c",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03235329-1531-405a-845f-2fafc0ec9908",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d8aa743-e4f3-47b1-ab42-bc39e2a87dc4",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e22b1a3-f6f6-480d-8435-870c3d84acee",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c097962e-fff2-4dfa-8cc8-6a6b1b44a295",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Rates\": [\n    {\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"RateGroupId\": \"b9f25a45-9b9a-4b33-99bd-b06f008eb6f5\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"AccountingCategoryId\": \"3620c660-a4ec-4e0f-a0bc-b06f008eb8bf\",\n      \"Names\": {\n        \"EN\": \"My rate\"\n      },\n      \"ExternalIdentifier\": \"D001\",\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"1a1ddd3b-e106-4a70-aef1-54a75b483943\",\n          \"RelativeAdjustment\": 0.15,\n          \"AbsoluteAdjustment\": 10\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "377424c5-d2c8-46af-ae3d-4fa53aa7f246",
+          "name": "Set rates",
+          "request": {
+            "name": "Set rates",
+            "description": {
+              "content": "Adds new Rates or updates existing ones if they are matched by `Id` or `ExternalIdentifier` property. This operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "set"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Rates\": [\n    {\n      \"Names\": {\n        \"key_0\": \"<string>\"\n      },\n      \"PricingType\": \"<string>\",\n      \"ServiceId\": \"<string>\",\n      \"Type\": \"<string>\",\n      \"Id\": \"<uuid>\",\n      \"ExternalIdentifier\": \"<string>\",\n      \"RateGroupId\": \"<string>\",\n      \"IsEnabled\": \"<boolean>\",\n      \"Descriptions\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"DependentRatePricing\": {\n          \"BaseRateId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"RelativeAdjustment\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"AbsoluteAdjustment\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "50600ba1-f6c6-4009-8e5a-648928f63b1c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"GroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"BaseRateId\": null,\n      \"IsBaseRate\": true,\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"IsActive\": true,\n      \"IsEnabled\": true,\n      \"IsPublic\": true,\n      \"IsDefault\": false,\n      \"Type\": \"Public\",\n      \"Name\": null,\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"ShortName\": \"BR\",\n      \"UpdatedUtc\": \"2024-11-20T00:00:00Z\",\n      \"ExternalNames\": {\n        \"en-US\": \"External base rate\"\n      },\n      \"Description\": {\n        \"en-US\": \"Base rate description.\"\n      },\n      \"ExternalIdentifier\": null,\n      \"TaxExemptionReason\": null,\n      \"TaxExemptionLegalReference\": null\n    },\n    {\n      \"Id\": \"8eb1f163-bce7-49ca-a62c-c9261951c85f\",\n      \"GroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n      \"IsBaseRate\": false,\n      \"BusinessSegmentId\": \"dc9188f6-fb61-412c-b3fd-af32dab082ed\",\n      \"IsActive\": true,\n      \"IsEnabled\": false,\n      \"IsPublic\": false,\n      \"IsDefault\": false,\n      \"Type\": \"Private\",\n      \"Name\": null,\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"ShortName\": \"DR\",\n      \"UpdatedUtc\": \"2024-11-20T00:00:00Z\",\n      \"ExternalNames\": {\n        \"en-US\": \"External dependent rate\"\n      },\n      \"Description\": {\n        \"en-US\": \"Dependent rate description.\"\n      },\n      \"ExternalIdentifier\": \"55698\",\n      \"TaxExemptionReason\": null,\n      \"TaxExemptionLegalReference\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "749ac8ab-fe30-4f2b-bd4a-4a667bb5b2a2",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9173440-e30d-45f0-9e0e-c520f09300be",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21356a7c-a565-4f95-87e7-830757f93007",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11d6015a-add7-4562-beec-0db1fe4caace",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f109daac-0bff-4591-adfc-dccb0c4a1005",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2c4a706-454b-4c4b-b910-cfb7c8c74e15",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be6743e2-c39b-420d-9b90-08d39d689db5",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"Rates\": [\n    {\n      \"Id\": \"e1b0bf46-32a3-4f7c-99c1-1ff78447d55d\",\n      \"ServiceId\": \"956176af-e10b-4f3c-beb7-274801bce328\",\n      \"RateGroupId\": \"d7adfddc-c2dc-4798-ace2-28de7b25408f\",\n      \"IsEnabled\": true,\n      \"Type\": \"Public\",\n      \"Names\": {\n        \"en-US\": \"Base rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Base rate with all fields specified using GUID identifiers.\"\n      },\n      \"PricingType\": \"BaseRatePricing\",\n      \"Pricing\": {\n        \"BaseRatePricing\": {\n          \"Amount\": {\n            \"Currency\": \"EUR\",\n            \"NetValue\": 100\n          }\n        }\n      }\n    },\n    {\n      \"ExternalIdentifier\": \"55698\",\n      \"ServiceId\": \"eid:Stay\",\n      \"RateGroupId\": \"eid:RG10\",\n      \"IsEnabled\": false,\n      \"Type\": \"Private\",\n      \"Names\": {\n        \"en-US\": \"Dependent rate\"\n      },\n      \"Descriptions\": {\n        \"en-US\": \"Dependent rate with all field specified using eid identifiers.\"\n      },\n      \"PricingType\": \"DependentRatePricing\",\n      \"Pricing\": {\n        \"DependentRatePricing\": {\n          \"BaseRateId\": \"00392166-3869-4174-b491-cf0162524a38\",\n          \"RelativeAdjustment\": 0,\n          \"AbsoluteAdjustment\": 0\n        }\n      }\n    }\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51977eda-6ad0-4e7e-89e5-5deb5fd4e041",
+          "name": "Delete rates",
+          "request": {
+            "name": "Delete rates",
+            "description": {
+              "content": "Deletes specified rates. This operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"RateIds\": [\n    \"<string>\"\n  ],\n  \"EnterpriseId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4cfad777-e027-4636-8650-19f27930cf19",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63c75e35-5ea8-483c-aa99-2c3312a39fe1",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0d72164-d327-42a0-bd2b-347857c87fd3",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b8d535eb-1605-4506-bbfd-0915ebb8acd6",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dce3f58a-3175-486c-85d5-a9e1d5b700c5",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29e7515d-fd2c-4d51-927c-f03a0646e387",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87ad8ad6-591f-4228-87ef-a62996b2b4f6",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90ef01d7-17a4-46a0-8e29-fa92fd7e06ef",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateIds\": [\n    \"7e89ee8e-11a0-4d9d-8880-f8d8494824b5\",\n    \"eid:BasicRate\"\n  ],\n  \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "107e04a0-1015-45c4-b0f0-cafdb5d85e89",
+          "name": "Get rate pricing",
+          "request": {
+            "name": "Get rate pricing",
+            "description": {
+              "content": "Returns prices for a given rate for a specified time interval. Prices will be returned for all service time units that the specified time interval intersects. So, for example, an interval `1st Jan 23:00 UTC - 1st Jan 23:00 UTC` will result in one price for `2nd Jan`, while Interval `1st Jan 23:00 UTC - 2nd Jan 23:00 UTC` will result in two prices for `2nd Jan` and `3rd Jan` (assuming a time unit period of \"Day\"). UTC timestamps must correspond to the start boundary of a time unit, e.g. 00:00 converted to UTC for a time unit of \"Day\". Other timestamps are not permitted. The __maximum size of time interval__ depends on the service's time unit: 367 hours if hours, 367 days if days, or 60 months if months. For more information about time units, see [Time units](https://mews-systems.gitbook.io/connector-api/concepts/time-units).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "getPricing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"FirstTimeUnitStartUtc\": \"<dateTime>\",\n  \"LastTimeUnitStartUtc\": \"<dateTime>\",\n  \"RateId\": \"<uuid>\",\n  \"ProductId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b3def8e-6547-49f4-8c41-daaa09768260",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Currency\": \"EUR\",\n  \"BaseAmountPrices\": [\n    {\n      \"Currency\": \"EUR\",\n      \"NetValue\": 93.46,\n      \"GrossValue\": 100,\n      \"TaxValues\": [\n        {\n          \"Code\": \"DE-2020-1-L\",\n          \"Value\": 6.54\n        }\n      ],\n      \"Breakdown\": {\n        \"Items\": [\n          {\n            \"TaxRateCode\": \"DE-2020-1-L\",\n            \"NetValue\": 93.46,\n            \"TaxValue\": 6.54\n          }\n        ]\n      }\n    },\n    {\n      \"Currency\": \"EUR\",\n      \"NetValue\": 93.46,\n      \"GrossValue\": 100,\n      \"TaxValues\": [\n        {\n          \"Code\": \"DE-2020-1-L\",\n          \"Value\": 6.54\n        }\n      ],\n      \"Breakdown\": {\n        \"Items\": [\n          {\n            \"TaxRateCode\": \"DE-2020-1-L\",\n            \"NetValue\": 93.46,\n            \"TaxValue\": 6.54\n          }\n        ]\n      }\n    }\n  ],\n  \"CategoryAdjustments\": [\n    {\n      \"AbsoluteValue\": 0,\n      \"CategoryId\": \"34c29e73-c8db-4e93-b51b-981e42655e03\",\n      \"ParentCategoryId\": null,\n      \"RelativeValue\": 0.2\n    },\n    {\n      \"AbsoluteValue\": 50,\n      \"CategoryId\": \"a0a7a5c5-c4ef-494a-8b34-6cca97629076\",\n      \"ParentCategoryId\": \"34c29e73-c8db-4e93-b51b-981e42655e03\",\n      \"RelativeValue\": 0\n    }\n  ],\n  \"CategoryPrices\": [\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"AmountPrices\": [\n        {\n          \"Currency\": \"EUR\",\n          \"NetValue\": 93.46,\n          \"GrossValue\": 100,\n          \"TaxValues\": [\n            {\n              \"Code\": \"DE-2020-1-L\",\n              \"Value\": 6.54\n            }\n          ],\n          \"Breakdown\": {\n            \"Items\": [\n              {\n                \"TaxRateCode\": \"DE-2020-1-L\",\n                \"NetValue\": 93.46,\n                \"TaxValue\": 6.54\n              }\n            ]\n          }\n        },\n        {\n          \"Currency\": \"EUR\",\n          \"NetValue\": 93.46,\n          \"GrossValue\": 100,\n          \"TaxValues\": [\n            {\n              \"Code\": \"DE-2020-1-L\",\n              \"Value\": 6.54\n            }\n          ],\n          \"Breakdown\": {\n            \"Items\": [\n              {\n                \"TaxRateCode\": \"DE-2020-1-L\",\n                \"NetValue\": 93.46,\n                \"TaxValue\": 6.54\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ],\n  \"TimeUnitStartsUtc\": [\n    \"2022-01-01T23:00:00Z\",\n    \"2022-01-02T23:00:00Z\",\n    \"2022-01-03T23:00:00Z\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e4d108d1-f554-4a6f-ac81-ed18d840e189",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e7c7632-db0e-40ed-9088-fcb173ad9b41",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a478588-dc4f-4e1c-9cf8-0c3577a40ff8",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e3f9b01-62f4-49e4-bf04-98162e79be98",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54f0c1c8-bc32-46d4-a0d3-56a06378ac92",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0c0573c-491b-4b9e-8730-d234fa7bd772",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2d4c692-53ad-4d55-a37c-94e779fed004",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "getPricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n  \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63d22053-4668-42c0-adce-0e415214a89d",
+          "name": "Update rate price",
+          "request": {
+            "name": "Update rate price",
+            "description": {
+              "content": "Updates the prices for a given rate. You can make multiple price updates with one API call, and for each one specify the time interval for which the update applies, the price value and the applicable [resource category](https://mews-systems.gitbook.io/connector-api/operations/resources/#resource-category). The price will be updated for all service [time units](https://mews-systems.gitbook.io/connector-api/operations/services/#time-unit) that the specified time interval intersects. The price is per time unit, e.g. per day or per month. If the resource category `CategoryId` is not specified, the updated price will apply to the base price for all resource categories.\nNote that prices are defined daily, so when the server receives the UTC interval, it first converts it to the enterprise timezone and updates the price on all dates that the interval intersects. Only root rates can be updated (the rates that have no base rate, that have `BaseRateId` set to `null`). It is not permitted to update historical prices older than specified by `EditableHistoryInterval`. Future prices may be updated up to 5 years in the future. The __maximum size of time interval__ is 100 time units or 2 years, whichever is the shorter amount of time.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "rates",
+                "updatePrice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"PriceUpdates\": [\n    {\n      \"CategoryId\": \"<uuid>\",\n      \"Value\": \"<double>\",\n      \"FirstTimeUnitStartUtc\": \"<dateTime>\",\n      \"LastTimeUnitStartUtc\": \"<dateTime>\"\n    }\n  ],\n  \"RateId\": \"<string>\",\n  \"ProductId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1ea4762-acd1-4cf9-ab1d-03fceca9cdf0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5aa7a165-7daa-4f2e-8b4f-7b0054796849",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc9417c8-9d48-47f1-9247-e4ca1a0826b0",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0afd5162-99a7-4dae-890e-ccee4b225bdc",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5fb9edf-456b-49be-8129-c5e11ca25830",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee2f5df1-6a4e-4f51-80e0-c45842b2004b",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e66bece-b89a-4530-9a97-e8c1d59bd0f0",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2d35d79-cd5b-4937-9506-5bab9d516289",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "rates",
+                    "updatePrice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RateId\": \"ed4b660b-19d0-434b-9360-a4de2ea42eda\",\n  \"PriceUpdates\": [\n    {\n      \"FirstTimeUnitStartUtc\": \"2022-01-01T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-03T23:00:00.000Z\",\n      \"Value\": 111\n    },\n    {\n      \"CategoryId\": \"e3aa3117-dff0-46b7-b49a-2c0391e70ff9\",\n      \"FirstTimeUnitStartUtc\": \"2022-01-04T23:00:00.000Z\",\n      \"LastTimeUnitStartUtc\": \"2022-01-05T23:00:00.000Z\",\n      \"Value\": 222\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "00dd5755-ffd5-4b60-9d0f-665a4850f18e",
+    "name": "Connector Account notes Rates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

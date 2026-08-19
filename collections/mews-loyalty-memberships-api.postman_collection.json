@@ -1,0 +1,1744 @@
+{
+  "item": [
+    {
+      "id": "f8a80bc0-030d-4225-a2d0-34fd224daaa2",
+      "name": "Loyalty memberships",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf9c50f5-483f-4bcb-94ce-360df7a35951",
+          "name": "Get all loyalty memberships",
+          "request": {
+            "name": "Get all loyalty memberships",
+            "description": {
+              "content": "Returns all loyalty memberships of the enterprise, optionally filtered by specific loyalty membership identifiers, activity states, or other filter parameters. Note this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "loyaltyMemberships",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"ChainIds\": [\n    \"<uuid>\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"<uuid>\"\n  ],\n  \"AccountIds\": [\n    \"<uuid>\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"<uuid>\"\n  ],\n  \"MembershipStates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Codes\": [\n    \"<string>\"\n  ],\n  \"MembershipNumbers\": [\n    \"<string>\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e3aa8bb3-cb53-4b84-8fdd-09343996fb16",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"LoyaltyMemberships\": [\n    {\n      \"Id\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"State\": \"New\",\n      \"IsPrimary\": true,\n      \"ProviderMembershipId\": \"PRV-MBR-9842XKLT\",\n      \"Code\": \"MBR-2025-AX49ZT73\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-11-04T13:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\",\n      \"CreatorProfile\": null,\n      \"UpdaterProfile\": null\n    }\n  ],\n  \"Cursor\": \"905a4489-0960-4ac9-96ec-793f47365c92\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ece79644-d2d0-47f6-8266-41c1af8a894a",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be24863f-ef99-48b9-abbb-5e79a073e41a",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e068fd5-c3e4-4879-b4bf-e8d5bb2b989e",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc183374-cc9a-4508-ba0d-7be3b97ef43e",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12bf81e9-a812-4744-a505-88bcba837b7d",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "694a920e-ac2f-4dda-b3d3-e580d5ffb838",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f52f6c34-1489-4e6e-9deb-e0946739b4cf",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ChainIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"5fcd1933-22f2-40b9-84da-7db04cbecec2\"\n  ],\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2022-10-15T00:00:00Z\",\n    \"EndUtc\": \"2022-10-20T00:00:00Z\"\n  },\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"AccountIds\": [\n    \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n    \"bccdafd1-3e44-439d-861f-341526b597a9\"\n  ],\n  \"LoyaltyProgramIds\": [\n    \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n    \"da34b396-41f7-47f6-8847-aecf00a3f19e\"\n  ],\n  \"MembershipStates\": [\n    \"Pending\",\n    \"Enrolled\"\n  ],\n  \"ActivityStates\": [\n    \"Active\"\n  ],\n  \"MembershipNumbers\": [\n    \"MBR-2025-AX49ZT73\"\n  ],\n  \"ProviderMembershipIds\": [\n    \"PRV-MBR-9842XKLT\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46955519-2c56-466b-96fc-1da1733a549d",
+          "name": "Add loyalty memberships",
+          "request": {
+            "name": "Add loyalty memberships",
+            "description": {
+              "content": "Adds loyalty memberships to the enterprise. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "loyaltyMemberships",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"<uuid>\",\n      \"IsPrimary\": \"<boolean>\",\n      \"LoyaltyProgramId\": \"<uuid>\",\n      \"State\": \"<string>\",\n      \"Code\": \"<string>\",\n      \"MembershipNumber\": \"<string>\",\n      \"Points\": \"<integer>\",\n      \"ExpirationDate\": \"<date>\",\n      \"Url\": \"<uri>\",\n      \"LoyaltyTierId\": \"<uuid>\"\n    }\n  ],\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "60ef1cab-1b07-4ae4-a100-34081f6c03b4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"LoyaltyMemberships\": [\n    {\n      \"Id\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"State\": \"New\",\n      \"IsPrimary\": true,\n      \"ProviderMembershipId\": \"PRV-MBR-9842XKLT\",\n      \"Code\": \"MBR-2025-AX49ZT73\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-11-04T13:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\",\n      \"CreatorProfile\": null,\n      \"UpdaterProfile\": null\n    }\n  ],\n  \"Cursor\": \"905a4489-0960-4ac9-96ec-793f47365c92\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e51c5d5-d1c3-4741-8a90-c7882dea186a",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ccd6460-468e-4615-a1e3-bb7a47ba34a2",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73bc0ca0-d76e-4388-95de-5c2a987668c4",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ed0ed55-ac29-4690-9738-56a701d508cf",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "119b0f63-cd07-45d6-85b1-a619691957bc",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "60778531-db24-4ce2-89d1-0f2ffae73532",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4372c1a3-f594-4cb9-8f81-c1b23cb7b20f",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMemberships\": [\n    {\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"IsPrimary\": true,\n      \"State\": \"Enrolled\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-12-24T00:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "187abbdf-3de5-43ac-b85a-4e35b3a409f4",
+          "name": "Update loyalty memberships",
+          "request": {
+            "name": "Update loyalty memberships",
+            "description": {
+              "content": "Updates information about the specified loyalty memberships. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "loyaltyMemberships",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"<uuid>\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"State\": {\n        \"Value\": \"<string>\"\n      },\n      \"IsPrimary\": {\n        \"Value\": \"<boolean>\"\n      },\n      \"Code\": {\n        \"Value\": \"<string>\"\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"<string>\"\n      },\n      \"ProviderMembershipId\": {\n        \"Value\": \"<string>\"\n      },\n      \"Points\": {\n        \"Value\": \"<integer>\"\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"<string>\"\n      },\n      \"Url\": {\n        \"Value\": \"<string>\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"<uuid>\"\n      }\n    }\n  ],\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3fd7d6f1-227d-4be5-b10c-a956602434b7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"LoyaltyMemberships\": [\n    {\n      \"Id\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AccountId\": \"fadd5bb6-b428-45d5-94f8-fd0d89fece6d\",\n      \"LoyaltyProgramId\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\",\n      \"State\": \"New\",\n      \"IsPrimary\": true,\n      \"ProviderMembershipId\": \"PRV-MBR-9842XKLT\",\n      \"Code\": \"MBR-2025-AX49ZT73\",\n      \"MembershipNumber\": \"MBR-2025-AX49ZT73\",\n      \"Points\": 22,\n      \"ExpirationDate\": \"2029-11-04T13:00:00Z\",\n      \"Url\": \"https://rewards.example.com/member/PRV-MBR-9842XKLT\",\n      \"LoyaltyTierId\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\",\n      \"CreatorProfile\": null,\n      \"UpdaterProfile\": null\n    }\n  ],\n  \"Cursor\": \"905a4489-0960-4ac9-96ec-793f47365c92\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6334078e-86d9-4627-a7e0-537afebdaf03",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5cc9736-5e2c-46d1-9d90-0b0ae6428764",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9cc53bd7-bf71-4783-99d9-1a97c7d45c53",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7bcff24-fc7c-4cd4-a14f-3e195c1571df",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f850414-19be-4d25-8f52-4634de7b88ae",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78c7a17d-621b-43e8-b62a-c0afaed7aa85",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c75abfe-16c8-4655-bdc6-9648cffa7488",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipUpdates\": [\n    {\n      \"LoyaltyMembershipId\": \"905a4489-0960-4ac9-96ec-793f47365c92\",\n      \"LoyaltyProgramId\": {\n        \"Value\": \"f701dafb-5765-4cf4-b1dd-1f602a740ae5\"\n      },\n      \"State\": {\n        \"Value\": \"Canceled\"\n      },\n      \"IsPrimary\": {\n        \"Value\": true\n      },\n      \"MembershipNumber\": {\n        \"Value\": \"MBR-2025-AX49ZT73\"\n      },\n      \"Points\": {\n        \"Value\": 42\n      },\n      \"ExpirationDate\": {\n        \"Value\": \"2038-01-19T03:14:07Z\"\n      },\n      \"Url\": {\n        \"Value\": \"https://final-rewards.example.com/member/PRV-MBR-9842XKLT\"\n      },\n      \"LoyaltyTierId\": {\n        \"Value\": \"69eedfd2-6f25-42fc-b3c8-39df70f85e37\"\n      }\n    }\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb3d1a23-810c-4ddd-9570-12684240fb99",
+          "name": "Delete loyalty memberships",
+          "request": {
+            "name": "Delete loyalty memberships",
+            "description": {
+              "content": "Deletes loyalty memberships. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property/).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "loyaltyMemberships",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"LoyaltyMembershipIds\": [\n    \"<uuid>\"\n  ],\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "472791a7-95b2-449f-9d7f-d202b9918a5b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40c8edea-2d27-4a44-9736-3d590a273664",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0a9ffad-9b3b-4831-8247-0adf5f9dd10d",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95a7891e-ffd1-4f9c-9628-c440d3d29276",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c5f529c-f32f-4745-99fd-a7cd23212f4d",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79c67cae-fe38-4bb1-8ae7-9446fa1ecbf1",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3fda20f3-cf1f-4411-b6e0-8ae63f910db6",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a74dedc-6147-4756-87c4-16a77d869b6e",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "loyaltyMemberships",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"LoyaltyMembershipIds\": [\n    \"905a4489-0960-4ac9-96ec-793f47365c92\",\n    \"ac48674e-58a2-43d6-a02b-9ead0b213b17\"\n  ],\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "213d9727-57d3-4e3c-876b-2eb827e72e9d",
+    "name": "Connector Account notes Loyalty memberships API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

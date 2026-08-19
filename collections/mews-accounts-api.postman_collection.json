@@ -1,0 +1,1316 @@
+{
+  "item": [
+    {
+      "id": "857f5be4-39c2-4a44-b825-cd5820142ad1",
+      "name": "Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1f0c82f6-4714-4efd-a5ab-2967cb6c5f53",
+          "name": "Update accounts",
+          "request": {
+            "name": "Update accounts",
+            "description": {
+              "content": "Updates one or more existing accounts in the system. Note this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "accounts",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AccountUpdates\": [\n    {\n      \"Discriminator\": \"<string>\",\n      \"Id\": \"<uuid>\",\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"TaxIdentifier\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"BillingCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"AccountingCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Notes\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"LastName\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"FirstName\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"SecondLastName\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"BirthPlace\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Telephone\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Occupation\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"DietaryRequirements\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"LoyaltyCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"NationalityCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"CompanyId\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"BirthDate\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Sex\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Title\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Invoiceable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"BillAddressObjection\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Blacklist\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Blocklist\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Media\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"LoyaltyProgram\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"PreviousComplaint\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Returning\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Staff\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FriendOrFamily\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"TopManagement\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Important\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"VeryImportant\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Problematic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Cashlist\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"DisabledPerson\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Military\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Airline\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HealthCompliant\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"InRoom\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"WaitingForRoom\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Student\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ItFiscalCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ItLotteryCode\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"Company\": {\n        \"Email\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"TaxIdentifier\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"BillingCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"AccountingCode\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Notes\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Name\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"MotherCompanyId\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"WebsiteUrl\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Internal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Private\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"OnlineTravelAgency\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"GlobalDistributionSystem\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Marketing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Inactive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"GovernmentEntity\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"AddFeesToInvoices\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"AddTaxDeductedPaymentToInvoices\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"CreditRatingBasic\": \"<string>\",\n        \"Department\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"DunsNumber\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"ReferenceId\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Contact\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"ContactPerson\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Iata\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"Telephone\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"SourceId\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8424d10-b632-4959-b06b-ce3f76b6f875",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Accounts\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"ChainId\": \"79fa3c17-bec6-454f-b3be-b0ec00818acd\",\n        \"CreatedUtc\": \"2024-01-03T07:52:20Z\",\n        \"UpdatedUtc\": \"2024-01-18T10:20:31Z\",\n        \"UpdaterProfileId\": \"93f03906-ed13-4a26-b8dc-b0ec0082194f\",\n        \"Email\": \"example@example.com\",\n        \"TaxIdentifier\": \"CZ8810310963\",\n        \"BillingCode\": null,\n        \"AccountingCode\": null,\n        \"Notes\": \"Example notes\",\n        \"Name\": \"Example company\",\n        \"MotherCompanyId\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\",\n        \"WebsiteUrl\": \"https://www.example.com\",\n        \"InvoiceDueInterval\": null,\n        \"CreditRatingBasic\": \"CreditOk\",\n        \"Department\": \"Accounting\",\n        \"DunsNumber\": \"987654321\",\n        \"ReferenceId\": null,\n        \"ExternalIdentifier\": \"COM-123\",\n        \"AdditionalTaxIdentifier\": \"XY00112233445\",\n        \"Contact\": \"Sample contact\",\n        \"ContactPerson\": \"Sample person\",\n        \"FiscalIdentifier\": \"FiscalIdentifier\",\n        \"Iata\": \"PAO\",\n        \"Telephone\": \"111-222-333\",\n        \"SourceId\": \"F42098A0-8507-4963-ACC9-B0EC00821949\",\n        \"Classifications\": {\n          \"Corporate\": true,\n          \"Internal\": true,\n          \"Private\": true,\n          \"OnlineTravelAgency\": true,\n          \"GlobalDistributionSystem\": true,\n          \"Marketing\": true,\n          \"Inactive\": true\n        },\n        \"Options\": {\n          \"Invoiceable\": true,\n          \"AddFeesToInvoices\": true\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Customer\": {\n        \"ChainId\": \"79fa3c17-bec6-454f-b3be-b0ec00818acd\",\n        \"CreatedUtc\": \"2024-01-03T07:52:19Z\",\n        \"UpdatedUtc\": \"2024-01-18T10:25:41Z\",\n        \"UpdaterProfileId\": \"93f03906-ed13-4a26-b8dc-b0ec0082194f\",\n        \"Email\": \"example@example.com\",\n        \"TaxIdentifier\": \"CZ8810310963\",\n        \"BillingCode\": null,\n        \"AccountingCode\": null,\n        \"Notes\": \"Example notes\",\n        \"LastName\": \"Sample\",\n        \"FirstName\": \"Sample\",\n        \"SecondLastName\": null,\n        \"BirthPlace\": \"Sample place\",\n        \"Telephone\": \"111-222-333\",\n        \"Occupation\": null,\n        \"CarRegistrationNumber\": null,\n        \"LoyaltyCode\": null,\n        \"NationalityCode\": \"US\",\n        \"CompanyId\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\",\n        \"BirthDate\": \"2000-01-01T00:00:00Z\",\n        \"Sex\": \"Male\",\n        \"Title\": \"Mister\",\n        \"PreferredLanguageCode\": null,\n        \"Options\": {\n          \"SendMarketingEmails\": true,\n          \"Invoiceable\": true,\n          \"BillAddressObjection\": true\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": true,\n          \"Blacklist\": true,\n          \"Media\": true,\n          \"LoyaltyProgram\": true,\n          \"PreviousComplaint\": true,\n          \"Returning\": true,\n          \"Staff\": true,\n          \"FriendOrFamily\": true,\n          \"TopManagement\": true,\n          \"Important\": true,\n          \"VeryImportant\": true,\n          \"Problematic\": true,\n          \"Cashlist\": true,\n          \"DisabledPerson\": true,\n          \"Military\": true,\n          \"Airline\": true,\n          \"HealthCompliant\": true,\n          \"InRoom\": true,\n          \"WaitingForRoom\": true,\n          \"Student\": true\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": null,\n          \"ItFiscalCode\": null\n        }\n      },\n      \"Company\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff14e95d-6e13-40d6-be2a-13b12fe34348",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e16197f8-8f4d-4e53-8c25-ab6392049928",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48f1720a-9d98-477f-94c4-769207a21f10",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ba5bfe8-7f6e-44c5-a36d-7cfc19257802",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7da8311c-2672-4712-9ca7-b288c99a5b9b",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92deed4a-17f7-40ad-9d21-2cd115efd492",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33df135c-a05b-4469-bf95-15612c1bb7c3",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountUpdates\": [\n    {\n      \"Id\": \"3ff104e6-3ba8-4dfc-8d35-b0ec00c5fd4c\",\n      \"Discriminator\": \"Company\",\n      \"Customer\": null,\n      \"Company\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"Name\": {\n          \"Value\": \"Example company\"\n        },\n        \"MotherCompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"WebsiteUrl\": {\n          \"Value\": \"https://www.example.com\"\n        },\n        \"InvoiceDueInterval\": {\n          \"Value\": null\n        },\n        \"CreditRatingBasic\": {\n          \"Value\": \"CreditOk\"\n        },\n        \"Department\": {\n          \"Value\": \"Accounting\"\n        },\n        \"DunsNumber\": {\n          \"Value\": \"987654321\"\n        },\n        \"ReferenceId\": {\n          \"Value\": null\n        },\n        \"ExternalIdentifier\": {\n          \"Value\": \"COM-123\"\n        },\n        \"AdditionalTaxIdentifier\": {\n          \"Value\": \"XY00112233445\"\n        },\n        \"Contact\": {\n          \"Value\": \"Sample contact\"\n        },\n        \"ContactPerson\": {\n          \"Value\": \"Sample person\"\n        },\n        \"FiscalIdentifier\": {\n          \"Value\": \"FiscalIdentifier\"\n        },\n        \"Iata\": {\n          \"Value\": \"PAO\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"SourceId\": {\n          \"Value\": \"F42098A0-8507-4963-ACC9-B0EC00821949\"\n        },\n        \"Classifications\": {\n          \"Corporate\": {\n            \"Value\": true\n          },\n          \"Internal\": {\n            \"Value\": true\n          },\n          \"Private\": {\n            \"Value\": true\n          },\n          \"OnlineTravelAgency\": {\n            \"Value\": true\n          },\n          \"GlobalDistributionSystem\": {\n            \"Value\": true\n          },\n          \"Marketing\": {\n            \"Value\": true\n          },\n          \"Inactive\": {\n            \"Value\": true\n          }\n        },\n        \"Options\": {\n          \"Invoiceable\": {\n            \"Value\": \"true\"\n          },\n          \"AddFeesToInvoices\": {\n            \"Value\": \"true\"\n          }\n        }\n      }\n    },\n    {\n      \"Id\": \"71db411f-c1d6-4e1c-9cd7-44e8bf45f936\",\n      \"Discriminator\": \"Customer\",\n      \"Company\": null,\n      \"Customer\": {\n        \"Email\": {\n          \"Value\": \"example@example.com\"\n        },\n        \"TaxIdentifier\": {\n          \"Value\": \"CZ8810310963\"\n        },\n        \"BillingCode\": {\n          \"Value\": null\n        },\n        \"AccountingCode\": {\n          \"Value\": null\n        },\n        \"Notes\": {\n          \"Value\": \"Example notes\"\n        },\n        \"LastName\": {\n          \"Value\": \"Sample\"\n        },\n        \"FirstName\": {\n          \"Value\": \"Sample\"\n        },\n        \"SecondLastName\": {\n          \"Value\": null\n        },\n        \"BirthPlace\": {\n          \"Value\": \"Sample place\"\n        },\n        \"Telephone\": {\n          \"Value\": \"111-222-333\"\n        },\n        \"Occupation\": {\n          \"Value\": null\n        },\n        \"CarRegistrationNumber\": {\n          \"Value\": null\n        },\n        \"LoyaltyCode\": {\n          \"Value\": null\n        },\n        \"NationalityCode\": {\n          \"Value\": \"US\"\n        },\n        \"CompanyId\": {\n          \"Value\": \"839e9d92-aa8b-48bf-8384-b0ec0081bb34\"\n        },\n        \"BirthDate\": {\n          \"Value\": \"2000-01-01\"\n        },\n        \"Sex\": {\n          \"Value\": \"Male\"\n        },\n        \"Title\": {\n          \"Value\": \"Mister\"\n        },\n        \"PreferredLanguageCode\": {\n          \"Value\": null\n        },\n        \"Options\": {\n          \"SendMarketingEmails\": {\n            \"Value\": true\n          },\n          \"Invoiceable\": {\n            \"Value\": true\n          },\n          \"BillAddressObjection\": {\n            \"Value\": true\n          }\n        },\n        \"Classifications\": {\n          \"PaymasterAccount\": {\n            \"Value\": true\n          },\n          \"Blacklist\": {\n            \"Value\": true\n          },\n          \"Media\": {\n            \"Value\": true\n          },\n          \"LoyaltyProgram\": {\n            \"Value\": true\n          },\n          \"PreviousComplaint\": {\n            \"Value\": true\n          },\n          \"Returning\": {\n            \"Value\": true\n          },\n          \"Staff\": {\n            \"Value\": true\n          },\n          \"FriendOrFamily\": {\n            \"Value\": true\n          },\n          \"TopManagement\": {\n            \"Value\": true\n          },\n          \"Important\": {\n            \"Value\": true\n          },\n          \"VeryImportant\": {\n            \"Value\": true\n          },\n          \"Problematic\": {\n            \"Value\": true\n          },\n          \"Cashlist\": {\n            \"Value\": true\n          },\n          \"DisabledPerson\": {\n            \"Value\": true\n          },\n          \"Military\": {\n            \"Value\": true\n          },\n          \"Airline\": {\n            \"Value\": true\n          },\n          \"HealthCompliant\": {\n            \"Value\": true\n          },\n          \"InRoom\": {\n            \"Value\": true\n          },\n          \"WaitingForRoom\": {\n            \"Value\": true\n          },\n          \"Student\": {\n            \"Value\": true\n          }\n        },\n        \"LegalEntityIdentifiers\": {\n          \"ItDestinationCode\": {\n            \"Value\": null\n          },\n          \"ItFiscalCode\": {\n            \"Value\": null\n          }\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "035d8453-6047-42a3-9ed3-618376beee83",
+          "name": "Upload and link file to account",
+          "request": {
+            "name": "Upload and link file to account",
+            "description": {
+              "content": "Attaches the specified file to the account. \r\n\r\nAllowed MIME types: `application/pdf`, `image/bmp`, `image/gif`, `image/jpeg`, `image/png`, `image/tiff`.\r\n\r\nNote this operation supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/guidelines/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "accounts",
+                "addFile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AccountId\": \"<uuid>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Data\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"ChainId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "554b260b-ec00-4a9c-8d16-cfd32766203a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FileId\": \"f039f5b4-ff18-4510-9086-92b14a68ed78\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cde5b37b-0cdd-47c3-9bff-a09476f82056",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f87e9e91-0b17-4c88-8cf9-e6c0d825b1bb",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab6a46ae-d011-47d9-9bbf-ab243a4428db",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05627de0-3b19-43a7-aef7-2435845335eb",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e29b9d7-21c6-4944-b04b-b9310ed7dd9e",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88bf08fc-aef7-4ed8-ab27-d6954afd7d7e",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c5e1d3a-4aa3-4454-b1ec-2797c6d9f876",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "addFile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"Name\": \"document.pdf\",\n  \"Type\": \"application/pdf\",\n  \"ChainId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59639c7f-4518-40c9-82a1-c7427556f899",
+          "name": "Merge accounts",
+          "request": {
+            "name": "Merge accounts",
+            "description": {
+              "content": "Merges two or more accounts of the same account type together. The given source accounts will be merged into the given target account and the merged account will keep the target account ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "accounts",
+                "merge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"<string>\",\n      \"SourceAccountIds\": [\n        \"<uuid>\"\n      ],\n      \"TargetAccountId\": \"<uuid>\"\n    }\n  ],\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "405dd011-8436-40b4-9bbc-de16ac3f501a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6452ab35-1e63-475c-b608-8adc8e1ca4a6",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d8a888c-7c74-4d6d-a50f-1405ea3db713",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47c5d52b-0d40-4e94-95aa-0c6de58283fe",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f553abe-5eb6-49a5-b526-69d3df5a269d",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32e4a03d-f521-4286-a9f2-fbd4fd823992",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37da37a3-5ff9-47d3-b485-c958b2b36db1",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc88389e-2435-4cc8-a832-8b87310ae959",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "accounts",
+                    "merge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"AccountMergeParameters\": [\n    {\n      \"AccountType\": \"Company\",\n      \"SourceAccountIds\": [\n        \"b0c10ced-34eb-44b4-92e8-af5b008f3fb4\",\n        \"5176d000-bf17-40be-b140-9041d2b70eee\"\n      ],\n      \"TargetAccountId\": \"51262225-8130-4320-8210-af5b008f64e5\"\n    },\n    {\n      \"AccountType\": \"Customer\",\n      \"SourceAccountIds\": [\n        \"7799f19a-c9c9-42bf-968f-a759e3ea1ea6\",\n        \"bb926ffe-5310-48bc-8202-6165fa3bdcad\"\n      ],\n      \"TargetAccountId\": \"49b2abd4-df58-4f1d-bead-0fa6342f8a78\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e78199a7-76b9-4f08-8e8b-2cc662ec8e07",
+    "name": "Connector Account notes Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

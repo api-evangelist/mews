@@ -1,0 +1,1316 @@
+{
+  "item": [
+    {
+      "id": "aca717c1-a320-4974-8f54-b30c91af8020",
+      "name": "Resource blocks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a39a3245-bfdd-4dee-bada-f3f3c5047bdc",
+          "name": "Get all resource blocks",
+          "request": {
+            "name": "Get all resource blocks",
+            "description": {
+              "content": "Returns all resource blocks (out of order blocks or internal use blocks). \nNote this operation uses [Pagination](https://mews-systems.gitbook.io/connector-api/guidelines/pagination/) and supports [Portfolio Access Tokens](https://mews-systems.gitbook.io/connector-api/concepts/multi-property).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "resourceBlocks",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"Extent\": {\n    \"Inactive\": \"<boolean>\"\n  },\n  \"ResourceBlockIds\": [\n    \"<uuid>\"\n  ],\n  \"AssignedResourceIds\": [\n    \"<uuid>\"\n  ],\n  \"ActivityStates\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8df1825-b063-4a96-98bc-2138119ec55a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ResourceBlocks\": [\n    {\n      \"Id\": \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AssignedResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"IsActive\": true,\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-07-15T14:00:00Z\",\n      \"EndUtc\": \"2023-07-15T18:00:00Z\",\n      \"CreatedUtc\": \"2023-07-10T09:30:00Z\",\n      \"UpdatedUtc\": \"2023-07-10T09:30:00Z\",\n      \"DeletedUtc\": null,\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"Id\": \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AssignedResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"IsActive\": true,\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-07-20T10:00:00Z\",\n      \"EndUtc\": \"2023-07-22T12:00:00Z\",\n      \"CreatedUtc\": \"2023-07-18T14:20:00Z\",\n      \"UpdatedUtc\": \"2023-07-18T14:20:00Z\",\n      \"DeletedUtc\": null,\n      \"Name\": \"Staff Training Session\",\n      \"Notes\": null\n    },\n    {\n      \"Id\": \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AssignedResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"IsActive\": false,\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-06-01T20:00:00Z\",\n      \"EndUtc\": \"2023-06-03T23:59:59Z\",\n      \"CreatedUtc\": \"2023-06-01T16:45:00Z\",\n      \"UpdatedUtc\": \"2023-06-04T08:15:00Z\",\n      \"DeletedUtc\": \"2023-06-04T08:15:00Z\",\n      \"Name\": \"Renovation Block - Suite 1\",\n      \"Notes\": \"Room renovation completed, block removed\"\n    }\n  ],\n  \"Cursor\": \"9f0a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d10bf7e1-215a-4887-bc77-a431345e2f6d",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "545bf970-f061-430a-80ef-13743149358d",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47a31e41-f5a9-4ee9-a800-9463383014f7",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89744bca-a8c7-47bf-a275-2659250ea5e1",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70fd978e-114e-42e3-937b-7496a8ef8c63",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "776c37e0-be10-4c9f-b3e8-06766f4715b3",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c4eecb3-da6a-414f-9a0e-ef7184c4fae9",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n    \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ],\n  \"AssignedResourceIds\": [\n    \"20e00c32-d561-4008-8609-82d8aa525714\",\n    \"1ec29188-01ca-4294-9983-fac59f85a448\",\n    \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n  ],\n  \"ActivityStates\": [\n    \"Active\",\n    \"Deleted\"\n  ],\n  \"CollidingUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"CreatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-08-31T00:00:00Z\"\n  },\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-06-01T00:00:00Z\",\n    \"EndUtc\": \"2023-07-31T23:59:59Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e70725a-fffc-4f2a-b592-b3030eeed3ae",
+          "name": "Add resource block",
+          "request": {
+            "name": "Add resource block",
+            "description": {
+              "content": "Adds a new resource block to the specified resource for a defined period of time.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "resourceBlocks",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ResourceBlocks\": [\n    {\n      \"EndUtc\": \"<dateTime>\",\n      \"Name\": \"<string>\",\n      \"ResourceId\": \"<uuid>\",\n      \"StartUtc\": \"<dateTime>\",\n      \"Type\": \"<string>\",\n      \"Notes\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04a9cb5b-7923-48ed-a164-073fff5905b4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ResourceBlocks\": [\n    {\n      \"Id\": \"7f8e9d0c-1b2a-3c4d-5e6f-7a8b9c0d1e2f\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AssignedResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"IsActive\": true,\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"CreatedUtc\": \"2023-07-25T10:30:00Z\",\n      \"UpdatedUtc\": \"2023-07-25T10:30:00Z\",\n      \"DeletedUtc\": null,\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"Id\": \"8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AssignedResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"IsActive\": true,\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"CreatedUtc\": \"2023-07-25T10:30:00Z\",\n      \"UpdatedUtc\": \"2023-07-25T10:30:00Z\",\n      \"DeletedUtc\": null,\n      \"Name\": \"Staff Training Session\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"Id\": \"9f0a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"AssignedResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"IsActive\": true,\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"CreatedUtc\": \"2023-07-25T10:30:00Z\",\n      \"UpdatedUtc\": \"2023-07-25T10:30:00Z\",\n      \"DeletedUtc\": null,\n      \"Name\": \"Deep Cleaning Block\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6597c62-90e3-4ef9-9457-a80ebf8e16e5",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3deade69-ba74-4a1e-82a7-6d8f8c997575",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "946b1e54-978e-43e2-9c0c-200de91726b9",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12b930b9-b4f4-4723-949c-e660c399a33c",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09740be7-f2bd-4dd6-8308-4d5b8461a3eb",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c68a780e-03c5-480a-9827-41debb3d05d7",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04a125b6-5f85-479b-a293-fc58e19587ac",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlocks\": [\n    {\n      \"ResourceId\": \"20e00c32-d561-4008-8609-82d8aa525714\",\n      \"Name\": \"Maintenance Block - Room 101\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-01T14:00:00Z\",\n      \"EndUtc\": \"2023-08-01T18:00:00Z\",\n      \"Notes\": \"Scheduled maintenance for air conditioning unit\"\n    },\n    {\n      \"ResourceId\": \"1ec29188-01ca-4294-9983-fac59f85a448\",\n      \"Name\": \"Staff Training Session\",\n      \"Type\": \"InternalUse\",\n      \"StartUtc\": \"2023-08-05T10:00:00Z\",\n      \"EndUtc\": \"2023-08-05T16:00:00Z\",\n      \"Notes\": \"Internal training session for new staff members\"\n    },\n    {\n      \"ResourceId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n      \"Name\": \"Deep Cleaning Block\",\n      \"Type\": \"OutOfOrder\",\n      \"StartUtc\": \"2023-08-10T09:00:00Z\",\n      \"EndUtc\": \"2023-08-10T17:00:00Z\",\n      \"Notes\": \"Deep cleaning and sanitization process\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "770fe475-5f3c-4821-9e62-54e4844d8dcd",
+          "name": "Delete resource blocks",
+          "request": {
+            "name": "Delete resource blocks",
+            "description": {
+              "content": "Removes specified resource blocks from the resources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "resourceBlocks",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"ResourceBlockIds\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e53c191c-8b1c-4e85-9324-d3531b74878f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56ba5fed-78bd-45c8-9ec2-d8cfa06c4965",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "182bf02d-7a71-4681-b2aa-4845b4e98505",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a01db8b1-c006-46b0-8e76-3838509cc44f",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4cb69d3-8d76-452e-a25e-21b90a215256",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71042ac3-1369-4d73-8eb0-6155e6a2848c",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a8524c2-7be9-4fbc-a432-50baaea90f87",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64b44ae7-d771-4853-bcd2-e972c1441813",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "resourceBlocks",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"ResourceBlockIds\": [\n    \"63f4ebee-7e36-4ca9-b7d8-6331a8b009e5\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9041cc0d-9608-4095-b85b-81f47d3fdf3f",
+    "name": "Connector Account notes Resource blocks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}

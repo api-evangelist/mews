@@ -1,0 +1,1744 @@
+{
+  "item": [
+    {
+      "id": "e60cb379-ddb7-4a4c-a3db-cd81675705ec",
+      "name": "Routing rules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a815843c-a608-454f-a404-76731ff3de43",
+          "name": "Get all routing rules",
+          "request": {
+            "name": "Get all routing rules",
+            "description": {
+              "content": "Use [Get all billing automations](https://mews-systems.gitbook.io/connector-api/operations/billingautomations#get-all-billing-automations).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "routingRules",
+                "getAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"Limitation\": {\n    \"Count\": \"<integer>\",\n    \"Cursor\": \"<uuid>\"\n  },\n  \"EnterpriseIds\": [\n    \"<uuid>\"\n  ],\n  \"CompanyIds\": [\n    \"<uuid>\"\n  ],\n  \"RoutingRuleIds\": [\n    \"<uuid>\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"<dateTime>\",\n    \"EndUtc\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5e8bc265-458f-4a77-8e84-47539db608ce",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RoutingRules\": [\n    {\n      \"Id\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"SelectedStayItems\": null,\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\"\n    },\n    {\n      \"Id\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      },\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\"\n    }\n  ],\n  \"Cursor\": \"d98c9611-0006-4691-a835-af2e00b170c4\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac9fcad0-cbb0-45d2-8f6d-74ad4a99098c",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b9f87a1-c14c-4063-9193-bc0907c6b32d",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7a097af-69b9-486c-8550-269780d916ad",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c53f7c8-89c1-4688-a8f0-0575243273b6",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a61cf59c-b4c1-4cf6-b4bb-573b550f3671",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb7c2dcb-9396-4814-9d4b-a07979892909",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c245a734-b73a-448f-9d1b-749fc76e205d",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "getAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"CompanyIds\": [\n    \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n    \"956aa0f0-a090-42c8-bee2-991972d32f80\"\n  ],\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ],\n  \"UpdatedUtc\": {\n    \"StartUtc\": \"2023-10-01T00:00:00Z\",\n    \"EndUtc\": \"2023-10-31T00:00:00Z\"\n  },\n  \"EnterpriseIds\": [\n    \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"4d0201db-36f5-428b-8d11-4f0a65e960cc\"\n  ],\n  \"Limitation\": {\n    \"Count\": 100\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e9a04d5-97ef-4593-9ddb-d2dce18dc82c",
+          "name": "Add routing rules",
+          "request": {
+            "name": "Add routing rules",
+            "description": {
+              "content": "Use [Add billing automations](https://mews-systems.gitbook.io/connector-api/operations/billingautomations#add-billing-automations).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "routingRules",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"RoutingRules\": [\n    {\n      \"Applicability\": \"<string>\",\n      \"CompanyId\": \"<uuid>\",\n      \"CompanyRelation\": \"<string>\",\n      \"RouteType\": \"<string>\",\n      \"ServiceId\": \"<uuid>\",\n      \"AssignmentTargetType\": \"<string>\",\n      \"SelectedStayItems\": {\n        \"Nights\": \"<boolean>\",\n        \"CityTax\": \"<boolean>\",\n        \"ProductCategoryIds\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "44376d8a-655a-41cb-9aae-c7dd6287269e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RoutingRules\": [\n    {\n      \"Id\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"SelectedStayItems\": null,\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\"\n    },\n    {\n      \"Id\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      },\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4d40b6a-7331-4a9f-840a-3e6a4b6df354",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a763e90f-0f53-4143-98a8-8f01f27b1827",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c26cf6fa-7c66-4d79-a93b-2289b5e7c001",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2033cbc-74e9-4727-9256-fa1302d3c129",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12a1e8b3-3f16-4123-aae4-095472e0fbf2",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77a2162a-e1b7-43e0-a62c-4ddc0e7cfcae",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1588ac65-0c97-4dcf-aebf-c47c5efbea75",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRules\": [\n    {\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\"\n    },\n    {\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"AssignmentTargetType\": \"CompanyAsDetails\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d1e3334-74ea-4c4d-a801-f2885e7cddad",
+          "name": "Update routing rules",
+          "request": {
+            "name": "Update routing rules",
+            "description": {
+              "content": "Use [Update billing automations](https://mews-systems.gitbook.io/connector-api/operations/billingautomations#update-billing-automations) and [Update billing automations assignments](https://mews-systems.gitbook.io/connector-api/operations/billingautomations#update-billing-automations-assignments).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "routingRules",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"<uuid>\",\n      \"CompanyId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"<uuid>\"\n      },\n      \"CompanyRelation\": \"<string>\",\n      \"Applicability\": \"<string>\",\n      \"RouteType\": \"<string>\",\n      \"AssignmentTargetType\": \"<string>\",\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"CityTax\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dce73a7f-ffa7-4360-a7e5-a36a355e70ce",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RoutingRules\": [\n    {\n      \"Id\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CompanyId\": \"c6f5c82d-621a-4c8a-903b-1b0a9a23b71f\",\n      \"CompanyRelation\": \"PartnerCompany\",\n      \"Applicability\": \"PrepaidOnly\",\n      \"RouteType\": \"AllStayItems\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"SelectedStayItems\": null,\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\"\n    },\n    {\n      \"Id\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"EnterpriseId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n      \"CompanyId\": \"c021013e-4930-4592-8e32-91b0b1fc9663\",\n      \"CompanyRelation\": \"TravelAgency\",\n      \"Applicability\": \"Always\",\n      \"RouteType\": \"SelectedStayItems\",\n      \"ServiceId\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\",\n      \"SelectedStayItems\": {\n        \"Nights\": true,\n        \"CityTax\": true,\n        \"ProductCategoryIds\": [\n          \"004fa262-7b08-4853-b544-af2a00d5cf1f\",\n          \"8f0dc6ef-1fd4-44e4-b353-af2c00b24caf\",\n          \"d4c1b435-0ed1-4d98-9833-af2c00b28518\"\n        ]\n      },\n      \"CreatedUtc\": \"2023-10-01T11:48:57Z\",\n      \"UpdatedUtc\": \"2023-10-28T11:48:57Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ea59617-03c9-4094-a4d9-f0eef960e5d2",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73c97527-ff8b-4e23-9721-5935337ee7cf",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66666190-9a1c-4483-b3b7-88c727f98e31",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "017126b7-9da1-4200-a8c5-c969c6f2242f",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b47344e-765c-4a4e-ac95-0f530e53cfd5",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d63ce0d-73a7-4b29-a81c-aa0617f1b5eb",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee7944ac-99c0-4dbc-ba73-35fcc444c930",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleUpdates\": [\n    {\n      \"RoutingRuleId\": \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n      \"CompanyId\": {\n        \"Value\": \"c021013e-4930-4592-8e32-91b0b1fc9663\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"PartnerCompany\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"AllStayItems\"\n      }\n    },\n    {\n      \"RoutingRuleId\": \"d98c9611-0006-4691-a835-af2e00b170c4\",\n      \"CompanyId\": {\n        \"Value\": \"a793d381-65a2-4fa6-9514-00c4c5bfe607\"\n      },\n      \"ServiceId\": {\n        \"Value\": \"bd26d8db-86da-4f96-9efc-e5a4654a4a94\"\n      },\n      \"CompanyRelation\": {\n        \"Value\": \"TravelAgency\"\n      },\n      \"Applicability\": {\n        \"Value\": \"Always\"\n      },\n      \"RouteType\": {\n        \"Value\": \"SelectedStayItems\"\n      },\n      \"AssignmentTargetType\": {\n        \"Value\": \"CompanyAsDetails\"\n      },\n      \"SelectedStayItems\": {\n        \"Nights\": {\n          \"Value\": false\n        },\n        \"CityTax\": {\n          \"Value\": true\n        },\n        \"ProductCategoryIds\": {\n          \"Value\": [\n            \"004fa262-7b08-4853-b544-af2a00d5cf1f\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3df9ff91-54bc-4e41-9b88-1e3c63e25868",
+          "name": "Delete routing rules",
+          "request": {
+            "name": "Delete routing rules",
+            "description": {
+              "content": "Use [Delete billing automations](https://mews-systems.gitbook.io/connector-api/operations/billingautomations#delete-billing-automations).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "connector",
+                "v1",
+                "routingRules",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AccessToken\": \"<string>\",\n  \"Client\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"RoutingRuleIds\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fc494764-b3d7-4e88-9e27-99a8650aa632",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c141dfe-00ff-4cd8-8d07-01df3d7c0c02",
+              "name": "Server has successfully fulfilled the request and there is no additional information to send back.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17bd247f-7002-4282-b9ba-1e2c71cd8e77",
+              "name": "Error caused by the client app, e.g. in case of malformed request or invalid identifier of a resource. In most cases, such an error signifies a bug in the client app (consumer of the API).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c94834d7-73be-47ed-9455-568fa8fa48c3",
+              "name": "Error caused by usage of invalid ClientToken, AccessToken, or you may not have the necessary permission to use the endpoint.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc626c99-7146-463d-a41d-da8ecd8067f1",
+              "name": "Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c1b017d-539b-4162-9993-72d6772bbb4c",
+              "name": "Error caused by heavy request that takes too long to process (typically tens of seconds). To get around this, request data in smaller batches. For more information, see [Request timeouts](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-timeouts)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e54a57b8-35e8-45e8-b495-09111c9edc86",
+              "name": "Error caused by too many requests sent in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](https://mews-systems.gitbook.io/connector-api/guidelines/requests#request-limits).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56bdd096-a900-456c-8597-8d691727bd13",
+              "name": "Unexpected error on the Mews side. This may be due to a software fault. If such a situation occurs, the error will be logged and the development team notified, however you can raise an issue through GitHub on our [documentation repository](https://github.com/MewsSystems/gitbook-connector-api).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "connector",
+                    "v1",
+                    "routingRules",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ClientToken\": \"E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D\",\n  \"AccessToken\": \"C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D\",\n  \"Client\": \"Sample Client 1.0.0\",\n  \"RoutingRuleIds\": [\n    \"ff785b22-5422-4d1d-87f4-af2e00b3dfda\",\n    \"d98c9611-0006-4691-a835-af2e00b170c4\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"RequestId\": \"string\",\n  \"Details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mews.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a4542857-457e-4173-888d-2a4dfe0e3d59",
+    "name": "Connector Account notes Routing rules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "General-purpose API that enables partners of Mews to access data and services in Mews Operations\n\nContact Support:\n Name: Partner success\n Email: partnersuccess@mews.com",
+      "type": "text/plain"
+    }
+  }
+}
