@@ -5,6 +5,18 @@ kind: company
 description: Mews is a cloud property management system (PMS) for hotels, hostels, and apartments. Mews
   exposes a comprehensive Connector API, a Distributor API for booking, and a Channel Manager API. The
   Connector API publishes a full OpenAPI 3.0.4 spec covering operations, events, and webhooks for partners.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -1108,6 +1120,9 @@ apis:
   - type: OpenAPI Source
     url: https://api.mews.com/Swagger/connector/swagger.yaml
 common:
+  - type: CapabilityMap
+    url: capabilities/mews-capability-edges.yml
+    name: Mews Business Capability Map
   - type: AgenticAccess
     url: agentic-access/mews-agentic-access.yml
   - type: TrustCenter
