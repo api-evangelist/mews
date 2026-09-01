@@ -366,7 +366,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Credit cards
+  - Credit Cards
   tags_raw:
   - Credit cards
   properties:
@@ -454,7 +454,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Exchange rates
+  - Exchange Rates
   tags_raw:
   - Exchange rates
   properties:
@@ -560,7 +560,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Loyalty programs
+  - Loyalty Programs
   tags_raw:
   - Loyalty programs
   properties:
@@ -620,7 +620,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Order items
+  - Order Items
   tags_raw:
   - Order items
   properties:
@@ -708,7 +708,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Payment plans
+  - Payment Plans
   tags_raw:
   - Payment plans
   properties:
@@ -724,7 +724,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Payment requests
+  - Payment Requests
   tags_raw:
   - Payment requests
   properties:
@@ -768,7 +768,7 @@ apis:
   humanURL: https://docs.mews.com/connector-api
   baseURL: https://api.mews.com
   tags:
-  - Product categories
+  - Product Categories
   tags_raw:
   - Product categories
   properties:
